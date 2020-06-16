@@ -79,7 +79,7 @@ public class MainPresenter implements Presenter {
     public View.OnClickListener registerListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            mMainActivity.registerView.creatView(mMainActivity.findViewById(R.id.activity_main));
         }
     };
 
@@ -106,7 +106,7 @@ public class MainPresenter implements Presenter {
     public View.OnClickListener netSettingListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            mMainActivity.registerView.creatView(mMainActivity.findViewById(R.id.activity_main));
+
         }
     };
 

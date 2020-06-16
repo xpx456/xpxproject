@@ -20,5 +20,6 @@ public class Guest {
     public String items = "";
     public String mobil = "";
     public String address = "";
+    public String utime = "";
 
 }

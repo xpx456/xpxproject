@@ -48,6 +48,7 @@
     <string name="query_head_count">人数</string>
     <string name="query_head_car">车牌号</string>
     <string name="query_head_card">卡号</string>
+    <string name="query_time">选择日期</string>
 
     <string name="register_title">访客登记</string>
     <string name="register_base_title">基础信息</string>
@@ -64,6 +65,7 @@
     <string name="register_card">卡号</string>
     <string name="register_face_title">人脸采集</string>
     <string name="register_finger_title">指静脉采集</string>
+    <string name="register_s_time">选择时间</string>
 
     <string name="register_btn_exist">离开</string>
     <string name="register_btn_print">打印访客单</string>

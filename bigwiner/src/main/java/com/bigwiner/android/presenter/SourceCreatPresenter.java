@@ -162,6 +162,8 @@ public class SourceCreatPresenter implements Presenter {
     public void doSubmit() {
 
         mSourceCreatActivity.waitDialog.show();
+        if(mSourceCreatActivity.iscreating == true)
+            return;
         mSourceCreatActivity.sourceData.name = mSourceCreatActivity.name.getText().toString();
         mSourceCreatActivity.sourceData.port = mSourceCreatActivity.port.getText().toString();
         if(!mSourceCreatActivity.port.getText().toString().equals(mSourceCreatActivity.getString(R.string.source_port_hit)))
@@ -189,7 +191,7 @@ public class SourceCreatPresenter implements Presenter {
             AppUtils.showMessage(mSourceCreatActivity,"请完整填写资料");
             return;
         }
-
+        mSourceCreatActivity.iscreating = true;
         if(mSourceCreatActivity.sourceData.id.length() == 0)
         SourceAsks.getSourceAdd(mSourceCreatActivity,mSourceCreatHandler,mSourceCreatActivity.sourceData);
         else

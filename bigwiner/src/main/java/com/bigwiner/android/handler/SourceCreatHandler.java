@@ -61,6 +61,7 @@ public class SourceCreatHandler extends Handler {
                 break;
             case SourceAsks.SOURCE_EDIT_RESULT:
                 theActivity.waitDialog.hide();
+                theActivity.iscreating = false;
                 NetObject netObject1 = (NetObject) msg.obj;
                 SourceData sourceData1 = (SourceData) netObject1.item;
                 if(ContactsPrase.praseData(theActivity, (NetObject) msg.obj))
@@ -73,7 +74,9 @@ public class SourceCreatHandler extends Handler {
                 }
                 break;
             case NetUtils.NO_INTERFACE:
+            case NetUtils.NO_NET_WORK:
                 theActivity.waitDialog.hide();
+                theActivity.iscreating = false;
                 AppUtils.showMessage(theActivity,theActivity.getString(R.string.error_net_network));
                 break;
             case NetUtils.TOKEN_ERROR:

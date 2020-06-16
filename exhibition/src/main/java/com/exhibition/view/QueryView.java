@@ -3,6 +3,7 @@ package com.exhibition.view;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -19,6 +20,7 @@ import com.exhibition.entity.MyPageListData;
 import com.exhibition.view.adapter.QueryListAdapter;
 
 import intersky.apputils.AppUtils;
+import intersky.apputils.DoubleDatePickerDialog;
 import intersky.apputils.TimeUtils;
 
 public class QueryView {
@@ -52,6 +54,7 @@ public class QueryView {
             tebLayer = mainView.findViewById(R.id.tebiconlist);
             tebpage = mainView.findViewById(R.id.tebeditvalue);
             btngo = mainView.findViewById(R.id.went);
+            data.setOnClickListener(detepickListener);
             listview.setLayoutManager(new LinearLayoutManager(context));
         }
     };
@@ -107,7 +110,25 @@ public class QueryView {
         icon.setOnClickListener(pageClickListener);
     }
 
+    public void onDataPick() {
+        AppUtils.creatDataPicker(context, data.getText().toString(), context.getString(R.string.query_time), mOnDaySetListener);
+    }
 
+    public View.OnClickListener detepickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            onDataPick();
+        }
+    };
+
+    public DoubleDatePickerDialog.OnDateSetListener mOnDaySetListener = new DoubleDatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker startDatePicker, int startYear, int startMonthOfYear, int startDayOfMonth, int hour, int miniute) {
+            String textString = String.format("%04d-%02d-%02d", startYear, startMonthOfYear + 1, startDayOfMonth);
+            data.setText(textString);
+        }
+    };
 
     public QueryListAdapter.OnItemClickListener queryItemClickListener = new QueryListAdapter.OnItemClickListener() {
 

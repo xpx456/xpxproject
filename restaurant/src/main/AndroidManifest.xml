@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.restaurant">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:name=".view.RestaurantApplication"
         android:allowBackup="true"
@@ -13,6 +19,9 @@
         android:largeHeap="true"
         tools:replace="android:allowBackup"
         android:theme="@style/AppPadTheme">
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" /> <!--MqttService-->
+        <service android:name="com.restaurant.service.MyMqttService"/> <!--MyMqttService-->
 
         <activity
             android:name=".view.activity.MainActivity"

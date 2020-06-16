@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="125px"
+            android:layout_marginLeft="280px"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/back"
             android:textColor="@color/white"
@@ -38,8 +38,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/head"
-        android:background="@color/white">
+        android:layout_below="@+id/head"
+        android:background="#f5f5f6">
 
         <RelativeLayout
             android:id="@+id/pagelayer"
@@ -48,6 +48,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30px"
+            android:background="@drawable/about_bg"
             android:clipChildren="false">
 
             <androidx.viewpager.widget.ViewPager
@@ -62,6 +63,7 @@
             android:layout_width="1360px"
             android:layout_height="204px"
             android:layout_below="@+id/pagelayer"
+            android:background="@drawable/about_bg"
             android:layout_centerHorizontal="true">
 
             <RelativeLayout

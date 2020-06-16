@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.restaurant.R;
 import com.restaurant.handler.MainHandler;
+import com.restaurant.view.RestaurantApplication;
 import com.restaurant.view.SuccessView;
 import com.restaurant.view.activity.MainActivity;
 
@@ -35,6 +36,7 @@ public class MainPresenter implements Presenter {
         mMainActivity.setting = mMainActivity.findViewById(R.id.setting);
         mMainActivity.setting.setOnClickListener(settingListener);
         mMainActivity.successView = new SuccessView(mMainActivity);
+        RestaurantApplication.mApp.myMqttService.startService(mMainActivity,RestaurantApplication.mApp.clidenid);
         updataTime();
     }
 

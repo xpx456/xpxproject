@@ -49,7 +49,7 @@ public class SourceCreatActivity extends BaseActivity {
     public RelativeLayout shade;
     public PopupWindow popupWindow;
     public SourceData sourceData;
-
+    public boolean iscreating = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -16,7 +16,7 @@ import java.util.List;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "exhibition.db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
 
     private static final String TABLE_GUEST = "TABLE_GUEST";
     private static final String GUEST_NAME = "GUEST_NAME";
@@ -31,7 +31,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String GUEST_ITEMS = "GUEST_ITEMS";
     private static final String GUEST_MOBIL = "GUEST_MOBIL";
     private static final String GUEST_SEX = "GUEST_SEX";
-
+    private static final String GUEST_USERFUL_TIME = "GUEST_USERFUL_TIME";
     private static DBHelper mDBHelper;
     private SQLiteDatabase db = null;
     public static DBHelper getInstance(Context context) {
@@ -62,7 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String sql = "CREATE TABLE " + TABLE_GUEST + " (" + GUEST_RECORDID
                 + " TEXT PRIMARY KEY," + GUEST_NAME + " TEXT," + GUEST_ADDRESS + " TEXT," + GUEST_TYPE
                 + " TEXT," + GUEST_TIME + " TEXT,"  + GUEST_COUNT + " TEXT,"  + GUEST_LICENCE + " TEXT,"  + GUEST_CARD
-                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"
+                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"+ GUEST_USERFUL_TIME + " TEXT,"
                 + GUEST_CAR + " TEXT)";
         db.execSQL(sql);
     }
@@ -76,7 +76,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String sql = "CREATE TABLE " + TABLE_GUEST + " (" + GUEST_RECORDID
                 + " TEXT PRIMARY KEY," + GUEST_NAME + " TEXT," + GUEST_ADDRESS + " TEXT," + GUEST_TYPE
                 + " TEXT," + GUEST_TIME + " TEXT,"  + GUEST_COUNT + " TEXT,"  + GUEST_LICENCE + " TEXT,"  + GUEST_CARD
-                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"
+                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"+ GUEST_USERFUL_TIME + " TEXT,"
                 + GUEST_CAR + " TEXT)";
         db.execSQL(sql);
     }
@@ -102,6 +102,7 @@ public class DBHelper extends SQLiteOpenHelper {
             info.items = c.getString(c.getColumnIndex(GUEST_ITEMS));
             info.mobil = c.getString(c.getColumnIndex(GUEST_MOBIL));
             info.address = c.getString(c.getColumnIndex(GUEST_ADDRESS));
+            info.utime = c.getString(c.getColumnIndex(GUEST_USERFUL_TIME));
             servers.add(info);
         }
 
@@ -130,6 +131,7 @@ public class DBHelper extends SQLiteOpenHelper {
             info.items = c.getString(c.getColumnIndex(GUEST_ITEMS));
             info.mobil = c.getString(c.getColumnIndex(GUEST_MOBIL));
             info.address = c.getString(c.getColumnIndex(GUEST_ADDRESS));
+            info.utime = c.getString(c.getColumnIndex(GUEST_USERFUL_TIME));
             servers.put(info.rid,info);
         }
 
@@ -161,6 +163,7 @@ public class DBHelper extends SQLiteOpenHelper {
             info.items = c.getString(c.getColumnIndex(GUEST_ITEMS));
             info.mobil = c.getString(c.getColumnIndex(GUEST_MOBIL));
             info.address = c.getString(c.getColumnIndex(GUEST_ADDRESS));
+            info.utime = c.getString(c.getColumnIndex(GUEST_USERFUL_TIME));
             break;
         }
 
@@ -186,6 +189,7 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(GUEST_MOBIL, sInfo.mobil);
         cv.put(GUEST_LICENCE, sInfo.licence);
         cv.put(GUEST_ITEMS, sInfo.items);
+        cv.put(GUEST_USERFUL_TIME, sInfo.utime);
         int iRet = (int) db.insert(TABLE_GUEST, null, cv);
         if (-1 == iRet) {
             iRet = db.update(TABLE_GUEST, cv, GUEST_RECORDID + "=?", new String[]

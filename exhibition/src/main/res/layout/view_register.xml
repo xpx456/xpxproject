@@ -7,6 +7,7 @@
     android:background="#00000000">
 
     <RelativeLayout
+        android:id="@+id/hidinput"
         android:layout_width="1365px"
         android:layout_height="825px"
         android:layout_centerVertical="true"
@@ -76,6 +77,17 @@
                         android:layout_toRightOf="@+id/date"
                         android:background="@drawable/filtreditbg">
 
+                        <TextView
+                            android:id="@+id/nametitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20px"
+                            android:text="@string/register_name"
+                            android:textColor="#156ec9"
+                            android:textSize="25px" />
+
 
                         <EditText
                             android:id="@+id/namevalue"
@@ -83,13 +95,12 @@
                             android:layout_height="match_parent"
                             android:layout_marginLeft="20px"
                             android:layout_marginRight="5px"
+                            android:layout_toRightOf="@+id/nametitle"
                             android:background="#00000000"
                             android:gravity="left|center_vertical"
-                            android:hint="@string/register_name"
                             android:singleLine="true"
                             android:text=""
                             android:textColor="#737373"
-                            android:textColorHint="#156ec9"
                             android:textSize="25px" />
 
                     </RelativeLayout>
@@ -103,6 +114,17 @@
                         android:layout_toRightOf="@+id/name"
                         android:background="@drawable/filtreditbg">
 
+                        <TextView
+                            android:id="@+id/itemtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20px"
+                            android:text="@string/register_items"
+                            android:textColor="#156ec9"
+                            android:textSize="25px" />
+
 
                         <EditText
                             android:id="@+id/itemsvalue"
@@ -111,12 +133,11 @@
                             android:layout_marginLeft="20px"
                             android:layout_marginRight="5px"
                             android:background="#00000000"
+                            android:layout_toRightOf="@+id/itemtitle"
                             android:gravity="left|center_vertical"
-                            android:hint="@string/register_items"
                             android:singleLine="true"
                             android:text=""
                             android:textColor="#737373"
-                            android:textColorHint="#156ec9"
                             android:textSize="25px" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -147,15 +168,16 @@
                             android:textSize="25px" />
 
 
-                        <TextView
+                        <Spinner
                             android:id="@+id/sexvalue"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="55px"
+                            android:layout_marginLeft="20px"
                             android:layout_marginRight="5px"
                             android:layout_toLeftOf="@+id/array"
                             android:layout_toRightOf="@+id/sexdate"
+                            android:background="#00000000"
                             android:gravity="left|center_vertical"
                             android:text=""
                             android:textColor="#737373"
@@ -184,7 +206,16 @@
                         android:layout_toRightOf="@+id/sex"
                         android:background="@drawable/filtreditbg">
 
-
+                        <TextView
+                            android:id="@+id/cartitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20px"
+                            android:text="@string/register_car"
+                            android:textColor="#156ec9"
+                            android:textSize="25px" />
                         <EditText
                             android:id="@+id/carvalue"
                             android:layout_width="match_parent"
@@ -192,12 +223,11 @@
                             android:layout_marginLeft="20px"
                             android:layout_marginRight="5px"
                             android:background="#00000000"
+                            android:layout_toRightOf="@+id/cartitle"
                             android:gravity="left|center_vertical"
-                            android:hint="@string/register_car"
                             android:singleLine="true"
                             android:text=""
                             android:textColor="#737373"
-                            android:textColorHint="#156ec9"
                             android:textSize="25px" />
                     </RelativeLayout>
                 </RelativeLayout>
@@ -225,21 +255,31 @@
                     android:layout_toRightOf="@+id/date"
                     android:background="@drawable/filtreditbg">
 
+                    <TextView
+                        android:id="@+id/addresstitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10px"
+                        android:layout_marginLeft="20px"
+                        android:text="@string/register_address"
+                        android:textColor="#156ec9"
+                        android:textSize="25px" />
 
                     <EditText
                         android:id="@+id/addressvalue"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="20px"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10px"
                         android:layout_marginRight="5px"
                         android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/addresstitle"
                         android:background="#00000000"
                         android:gravity="left|top"
-                        android:hint="@string/register_address"
                         android:text=""
                         android:textColor="#737373"
-                        android:textColorHint="#156ec9"
                         android:textSize="25px" />
 
                 </RelativeLayout>
@@ -253,6 +293,16 @@
                     android:layout_marginTop="10px"
                     android:background="@drawable/filtreditbg">
 
+                    <TextView
+                        android:id="@+id/licensetitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="@string/register_license"
+                        android:textColor="#156ec9"
+                        android:textSize="25px" />
 
                     <EditText
                         android:id="@+id/licensevalue"
@@ -261,12 +311,11 @@
                         android:layout_marginLeft="20px"
                         android:layout_marginRight="5px"
                         android:background="#00000000"
+                        android:layout_toRightOf="@+id/licensetitle"
                         android:gravity="left|center_vertical"
-                        android:hint="@string/register_license"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="#737373"
-                        android:textColorHint="#156ec9"
                         android:textSize="25px" />
 
                 </RelativeLayout>
@@ -280,6 +329,16 @@
                     android:layout_marginTop="10px"
                     android:background="@drawable/filtreditbg">
 
+                    <TextView
+                        android:id="@+id/mobiltitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="@string/register_mobil"
+                        android:textColor="#156ec9"
+                        android:textSize="25px" />
 
                     <EditText
                         android:id="@+id/mobilvalue"
@@ -288,12 +347,12 @@
                         android:layout_marginLeft="20px"
                         android:layout_marginRight="5px"
                         android:background="#00000000"
+                        android:inputType="number"
                         android:gravity="left|center_vertical"
-                        android:hint="@string/register_mobil"
+                        android:layout_toRightOf="@+id/mobiltitle"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="#737373"
-                        android:textColorHint="#156ec9"
                         android:textSize="25px" />
 
                 </RelativeLayout>
@@ -307,6 +366,16 @@
                     android:layout_marginTop="10px"
                     android:background="@drawable/filtreditbg">
 
+                    <TextView
+                        android:id="@+id/typetitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="@string/register_type"
+                        android:textColor="#156ec9"
+                        android:textSize="25px" />
 
                     <EditText
                         android:id="@+id/typevalue"
@@ -315,12 +384,11 @@
                         android:layout_marginLeft="20px"
                         android:layout_marginRight="5px"
                         android:background="#00000000"
+                        android:layout_toRightOf="@+id/typetitle"
                         android:gravity="left|center_vertical"
-                        android:hint="@string/register_type"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="#737373"
-                        android:textColorHint="#156ec9"
                         android:textSize="25px" />
 
                 </RelativeLayout>
@@ -333,7 +401,16 @@
                     android:layout_centerVertical="true"
                     android:layout_marginTop="10px"
                     android:background="@drawable/filtreditbg">
-
+                    <TextView
+                        android:id="@+id/counttitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="@string/register_count"
+                        android:textColor="#156ec9"
+                        android:textSize="25px" />
 
                     <EditText
                         android:id="@+id/countvalue"
@@ -341,13 +418,13 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="20px"
                         android:layout_marginRight="5px"
+                        android:layout_toRightOf="@+id/counttitle"
                         android:background="#00000000"
+                        android:inputType="number"
                         android:gravity="left|center_vertical"
-                        android:hint="@string/register_count"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="#737373"
-                        android:textColorHint="#156ec9"
                         android:textSize="25px" />
 
                 </RelativeLayout>
@@ -372,20 +449,29 @@
                     android:layout_centerVertical="true"
                     android:background="@drawable/filtreditbg">
 
+                    <TextView
+                        android:id="@+id/timetitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="@string/register_time"
+                        android:textColor="#156ec9"
+                        android:textSize="25px" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/timevalue"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="20px"
                         android:layout_marginRight="5px"
                         android:background="#00000000"
+                        android:layout_toRightOf="@+id/timetitle"
                         android:gravity="left|center_vertical"
-                        android:hint="@string/register_time"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="#737373"
-                        android:textColorHint="#156ec9"
                         android:textSize="25px" />
 
                 </RelativeLayout>
@@ -399,6 +485,16 @@
                     android:layout_marginTop="10px"
                     android:background="@drawable/filtreditbg">
 
+                    <TextView
+                        android:id="@+id/cardtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20px"
+                        android:text="@string/register_card"
+                        android:textColor="#156ec9"
+                        android:textSize="25px" />
 
                     <EditText
                         android:id="@+id/cardvalue"
@@ -407,12 +503,12 @@
                         android:layout_marginLeft="20px"
                         android:layout_marginRight="5px"
                         android:background="#00000000"
+                        android:inputType="number"
+                        android:layout_toRightOf="@+id/cardtitle"
                         android:gravity="left|center_vertical"
-                        android:hint="@string/register_card"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="#737373"
-                        android:textColorHint="#156ec9"
                         android:textSize="25px" />
 
                 </RelativeLayout>

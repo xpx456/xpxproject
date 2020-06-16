@@ -41,6 +41,7 @@ public class AboutPresenter implements Presenter {
         mAboutActivity.mViewPager= (ViewPager) mAboutActivity.findViewById(R.id.des_pager);
         mAboutActivity.listview = mAboutActivity.findViewById(R.id.little_pager);
         mAboutActivity.back = mAboutActivity.findViewById(R.id.back1);
+        mAboutActivity.back.setText("<"+mAboutActivity.getString(R.string.back));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mAboutActivity);
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         mAboutActivity.listview.setLayoutManager(linearLayoutManager);
