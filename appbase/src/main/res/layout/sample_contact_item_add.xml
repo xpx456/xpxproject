@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="65dip"
+    android:layout_height="65dip"
+    android:background="#ffffff"
+    >
+
+    <RelativeLayout
+        android:id="@+id/conversationlayer"
+        android:layout_width="66dp"
+        android:layout_height="70dip"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/contact_img"
+            android:layout_width="36.0dip"
+            android:layout_height="36.0dip"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_bg_cycle_add"
+            android:src="@drawable/addselect" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="20.0dip"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/contact_img"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:textSize="11dp"
+            android:maxLines="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="#00000000"
+            android:text="@string/select_contact_add"
+            android:textColor="#000000"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout >

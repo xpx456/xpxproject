@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/customer_page_left"
+        android:layout_width="310dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="#e5e5e5" >
+
+        <RelativeLayout
+            android:id="@+id/customer_head_left"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentTop="true"
+            android:background="#467eb7" >
+
+            <TextView
+                android:id="@+id/customer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:text="客户"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/customer_customer_add"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/customeradd" />
+        </RelativeLayout>
+
+        <intersky.mywidget.SearchViewLayout
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/customer_head_left"
+            />
+
+        <ListView
+            android:id="@+id/contacts_List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search"
+            android:background="#ffffff"
+            android:divider="#ececec"
+            android:dividerHeight="0sp"></ListView>
+
+        <intersky.mywidget.MySlideBar
+            android:id="@+id/slideBar"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/search"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:background="#00000000" />
+
+
+        <RelativeLayout
+            android:id="@+id/letter_layer"
+            android:layout_width="82dip"
+            android:layout_height="82dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_bg_letter_round"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/letter_text"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_bg_letter_cycle"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="A"
+                android:textColor="#ffffff"
+                android:textSize="31dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/customer_page_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/customer_page_left"
+        android:background="#cecece" >
+
+        <RelativeLayout
+            android:id="@+id/customer_head_right"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="#467eb7" >
+
+            <TextView
+                android:id="@+id/customer_detial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:text="客户详细信息"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/customer_content_edit"
+                android:layout_width="80dip"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:text="编辑"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/customer_base"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/customer_head_right"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="32dip"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/xml_base"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/customer_edit_layer"
+            android:layout_width="match_parent"
+            android:layout_height="250dip"
+            android:layout_below="@+id/customer_base"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="32dip"
+            android:background="#ffffff" >
+
+            <RelativeLayout
+                android:id="@+id/customer_name_layer"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentTop="true"
+                android:background="#ffffff" >
+                
+                                <TextView
+                    android:id="@+id/customer_name_txt_stare"
+                    android:layout_width="20dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="*"
+                    android:textColor="#ff0000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/customer_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/customer_name_txt_stare"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="@string/xml_customer_name"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/customer_name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_toRightOf="@+id/customer_name_txt"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/customer_name_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="27dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#d7d7d7" >
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/customer_phone_layer"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_below="@+id/customer_name_layer" >
+
+                <TextView
+                    android:id="@+id/customer_phone_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="@string/xml_customer_phone"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/customer_phone_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_toRightOf="@+id/customer_phone_txt"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/customer_phone_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="27dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#d7d7d7" >
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/customer_mobil_layer"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_below="@+id/customer_phone_layer" >
+
+                <TextView
+                    android:id="@+id/customer_mobil_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="@string/xml_customer_mobil"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/customer_mobil_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_toRightOf="@+id/customer_mobil_txt"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/customer_mobil_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="27dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#d7d7d7" >
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/customer_mail_layer"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_below="@+id/customer_mobil_layer" >
+
+                <TextView
+                    android:id="@+id/customer_mail_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="@string/xml_customer_mail"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/customer_mail_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_toRightOf="@+id/customer_mail_txt"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/customer_mail_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="27dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#d7d7d7" >
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/customer_address_layer"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_below="@+id/customer_mail_layer" >
+
+                <TextView
+                    android:id="@+id/customer_address_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dip"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="@string/xml_customer_address"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/customer_address_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_toRightOf="@+id/customer_address_txt"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/customer_backup"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/customer_edit_layer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="32dip"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/xml_backup"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/customer_edit_back_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/customer_backup"
+            android:layout_marginLeft="32dip"
+            android:layout_centerHorizontal="true"
+            android:background="#ffffff" >
+
+            <EditText
+                android:id="@+id/customer_backup_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:gravity="left"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

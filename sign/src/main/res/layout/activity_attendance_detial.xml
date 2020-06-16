@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/ttt"
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:layout_width="0px" android:layout_height="0px"/>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/save_text"
+        android:background="@color/whiteex">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteex">
+
+            <RelativeLayout
+                android:id="@+id/top_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dip"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+
+                <TextView
+                    android:id="@+id/address_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="47dp"
+                    android:layout_below="@+id/time_text"
+                    android:layout_marginLeft="10dip"
+                    android:ellipsize="end"
+                    android:gravity="top|left"
+                    android:text="@string/xml_sing_address"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <TextView
+                    android:id="@+id/address_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="47dp"
+                    android:layout_below="@+id/time_text"
+                    android:layout_toRightOf="@+id/address_title"
+                    android:layout_marginRight="10dip"
+                    android:ellipsize="end"
+                    android:gravity="top|left"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_layer"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+
+                <EditText
+                    android:id="@+id/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:background="#00000000"
+                    android:gravity="left|top"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/keyword_sign_remark"
+                    android:textColorHint="#b6ada8"
+                    android:minHeight="203dip"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+
+                <intersky.mywidget.MyLinearLayout
+                    android:id="@+id/image_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edit_text"
+                    android:layout_marginBottom="39dp"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="20dp"></intersky.mywidget.MyLinearLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/save_text"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:ellipsize="end"
+        android:gravity="center_vertical|center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/navBarBkColor"
+        android:background="#ffffff"
+        android:text="@string/button_word_summit"
+        android:textSize="18dp" />
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+</RelativeLayout>

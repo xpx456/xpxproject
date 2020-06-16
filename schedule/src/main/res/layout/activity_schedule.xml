@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_schedule"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <intersky.mywidget.MyViewPager
+        android:id="@+id/load_pager"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_alignParentTop="true"
+        android:background="#000000"></intersky.mywidget.MyViewPager>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/load_pager"
+        android:background="#e6e6e6">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/load_pager"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/creat"
+        android:background="#f2f2f2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/event_List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:divider="#cccccc"
+            android:dividerHeight="0dip" />
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/creat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="17dp"
+        android:background="#ffffff"
+        android:textColor="#68c8f2"
+        android:text="@string/schdule_new"
+        />
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+</RelativeLayout>

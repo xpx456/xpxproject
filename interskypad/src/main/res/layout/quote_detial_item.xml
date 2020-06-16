@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="141dip">
+
+    <LinearLayout
+        android:id="@+id/detial_list_head_layer"
+        android:layout_width="match_parent"
+        android:layout_height="140dip"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/detial_list_head_layer1"
+            android:layout_width="match_parent"
+            android:layout_height="140dip"
+            android:layout_weight="9">
+
+            <ImageView
+                android:id="@+id/quote_list_detial_null"
+                android:layout_width="120dip"
+                android:layout_height="90dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/temp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/detial_list_head_layer2"
+            android:layout_width="match_parent"
+            android:layout_height="140dip"
+            android:layout_weight="10">
+
+            <TextView
+                android:id="@+id/quote_list_detial_itemid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/detial_list_head_layer3"
+            android:layout_width="match_parent"
+            android:layout_height="140dip"
+            android:layout_weight="10">
+
+            <TextView
+                android:id="@+id/quote_list_detial_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/detial_list_head_layer4"
+            android:layout_width="match_parent"
+            android:layout_height="140dip"
+            android:layout_weight="11">
+
+            <TextView
+                android:id="@+id/quote_list_detial_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/detial_list_head_layer5"
+            android:layout_width="match_parent"
+            android:layout_height="140dip"
+            android:layout_weight="11">
+
+            <TextView
+                android:id="@+id/quote_list_detial_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_below="@+id/detial_list_head_layer"
+        android:background="#c3c3c3">
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

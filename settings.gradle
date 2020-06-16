@@ -1,0 +1,6 @@
+include ':intersky', ':interskypad', ':appbase', ':autoupdate', ':budge', ':chat', ':conversation', ':document', ':filetools', ':function', ':json', ':leave', ':mail', ':mywidget', ':notice', ':oa', ':riche', ':scan', ':schedule', ':select', ':talk', ':task', ':toolbar', ':vote', ':workreport', ':xpxnet', ':AppUtils', ':bigwiner', ':guide', ':sign', ':attendance', ':map'
+include ':test'
+include ':exhibition'
+include ':strang'
+include ':bookpage'
+include ':restaurant'

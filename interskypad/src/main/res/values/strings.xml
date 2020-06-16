@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name_pad">畅想移动HD</string>
+
+    <string name="activity_title_login">登录</string>
+    <string name="activity_title_servicelist">服务器列表</string>
+    <string name="activity_title_servicesetting">服务器配置</string>
+    <string name="activity_gride_attachment">附件列表</string>
+
+    <string name="sex_male">男</string>
+    <string name="sex_female">女</string>
+    <string name="sex_unknowfemale">未知</string>
+
+    <string name="error_msg_port">端口输入有误</string>
+    <string name="error_connect_sercive_fail">连接服务器失败</string>
+
+    <string name="login_title_service">服务器</string>
+    <string name="login_title_user">用户名</string>
+    <string name="login_title_password">密　码</string>
+    <string name="login_title_dologin">登录</string>
+
+    <string name="servicelist_head_name">名称</string>
+    <string name="servicelist_head_address">IP地址</string>
+    <string name="servicelist_head_port">端口</string>
+    <string name="servicelist_add">添加</string>
+    <string name="servicelist_deleteservice">删除服务器？</string>
+
+
+    <string name="servicesetting_name">名　称:</string>
+    <string name="servicesetting_pattern">模　式:</string>
+    <string name="servicesetting_address">IP地址:</string>
+    <string name="servicesetting_port">端　口:</string>
+    <string name="servicesetting_ip">IP</string>
+    <string name="servicesetting_agent">代理远程</string>
+
+
+    <string name="dialog_word_tip">提示</string>
+
+
+    <string name="xml_category">分类</string>
+
+    <string name="keyword_savesuccess">保存成功</string>
+    <string name="keyword_deletesuccess">删除成功</string>
+
+
+    <string name="xml_dangqiandenglu">当前登录用户</string>
+    <string name="xml_fuwuqishezhi">服务器设置</string>
+    <string name="xml_cleandata">清空所有缓存数据</string>
+    <string name="xml_guanyu">关于畅享云</string>
+    <string name="xml_tuichu">退出登录</string>
+    <string name="message_claen">确定要清空所有的缓存数据?</string>
+    <string name="keyword_cleansuccess">清理成功</string>
+    <string name="message_exit">退出后不会删除任何历史数据，下次登陆依然可以使用本账号</string>
+
+
+    <string name="webAddress">官方网站:　http://www.intersky.com.cn</string>
+    <string name="contectUs">联系我们:　services@intersky.com.cn</string>
+    <string name="sinaWeibo">新浪微博:　@畅想软件</string>
+    <string name="tele">服务热线:　4006-722-622</string>
+    <string name="aboutIntersky">关于畅享云</string>
+
+    <string name="product_cat_all">全部</string>
+
+    <string name="product_all">已经全部加载</string>
+    <string name="detial_itemno">Item No.:</string>
+    <string name="detial_barcodeo">Barcodeo:</string>
+    <string name="detial_ename">ENG Name:</string>
+    <string name="detial_cbm">CBM:</string>
+    <string name="detial_package">Package:</string>
+    <string name="detial_unit">Unit:</string>
+    <string name="detial_ememo">ENG Memo:</string>
+    <string name="detial_salesprice">Sales Price:</string>
+    <string name="detial_pcsctn">Pcs/Ctn:</string>
+    <string name="detial_minimumqty">Minimum Qty:</string>
+    <string name="detial_especification">ENG Specification:</string>
+    <string name="detial_gw">G.W.:</string>
+    <string name="detial_nw">N.W.:</string>
+
+    <string name="xml_base">基本信息</string>
+    <string name="xml_backup">备注</string>
+    <string name="xml_customer_name">名称：</string>
+    <string name="xml_customer_phone">电话：</string>
+    <string name="xml_customer_mobil">手机：</string>
+    <string name="xml_customer_mail">邮箱：</string>
+    <string name="xml_customer_address">地址：</string>
+    <string name="xml_customer_unsave">您还没保存本次编辑，是否放弃保存？</string>
+    <string name="xml_customer_name_empty">客户名称不能为空</string>
+    <string name="xml_customer_new_title">新建客户</string>
+    <string name="xml_customer_new_message">您将要保存报价单，是否将新建客户添加到客户列表中？</string>
+
+    <string name="xml_quote">报价</string>
+    <string name="xml_quote_all">全  部</string>
+    <string name="xml_quote_submit">已提交</string>
+    <string name="xml_quote_unsubmit">未提交</string>
+    <string name="xml_quote_order">订单号</string>
+    <string name="xml_quote_customer">客户</string>
+    <string name="xml_quote_ordertime">订单时间</string>
+    <string name="xml_quote_describe">说明</string>
+
+    <string name="xml_quote_searchhit">请输入订单号或客户</string>
+
+    <string name="xml_quote_submit_order">确定提交报价单吗？</string>
+    <string name="xml_quote_delete_order">确定删除？</string>
+
+    <string name="xml_quote_addto_order">加入到购物车</string>
+    <string name="xml_quote_removeto_order">从购物车移除</string>
+
+    <string name="xml_quote_addto_order1">加入到购物车？</string>
+    <string name="xml_quote_removeto_order1">从购物车移除？</string>
+
+    <string name="about_net">官方网站：http://www.intersky.com.cn</string>
+    <string name="about_mail">联系我们：services@intersky.com.cn</string>
+    <string name="about_weibo">新浪微博：@畅想软件</string>
+    <string name="about_phone">服务热线：4006-722-622</string>
+
+    <string name="update_category">正在获取分类信息</string>
+    <string name="update_catalog">正在获取产品信息</string>
+    <string name="update_catalog_pic">正在下载产品图片</string>
+    <string name="update_category_fail">获取分类信息失败</string>
+    <string name="update_catalog_fail">获取产品信息失败</string>
+    <string name="update_catalog_pic_fail">获取产品图片</string>
+    <string name="update_catalog_pic_fail_ex">失败</string>
+    <string name="update_success">更新完成</string>
+    <string name="update_tyr_again">重试</string>
+</resources>

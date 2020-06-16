@@ -1,0 +1,34 @@
+<resources>
+    <string name="cancle">取消</string>
+    <string name="button_word_ok">确定</string>
+    <string name="button_word_cancle">取消</string>
+    <string name="keyword_mon_e">周一</string>
+    <string name="keyword_tue_e">周二</string>
+    <string name="keyword_wen_e">周三</string>
+    <string name="keyword_ths_e">周四</string>
+    <string name="keyword_fri_e">周五</string>
+    <string name="keyword_sat_e">周六</string>
+    <string name="keyword_sun_e">周日</string>
+
+    <string name="keyword_mun">星期一</string>
+    <string name="keyword_tus">星期二</string>
+    <string name="keyword_wen">星期三</string>
+    <string name="keyword_ths">星期四</string>
+    <string name="keyword_fri">星期五</string>
+    <string name="keyword_sat">星期六</string>
+    <string name="keyword_sun">星期天</string>
+
+    <string name="keyword_today">今天</string>
+    <string name="keyword_before">更早以前</string>
+    <string name="keyword_yestday">昨天</string>
+    <string name="keyword_promiess">获取权限失败</string>
+
+    <string name="map_baidu">百度地图</string>
+    <string name="map_gaode">高德地图</string>
+    <string name="map_tengxun">腾讯地图</string>
+    <string name="map_google">谷歌地图</string>
+
+    <string name="address_empty">地址为空</string>
+
+    <string name="address_eraly">查看日期不能大于今天</string>
+</resources>

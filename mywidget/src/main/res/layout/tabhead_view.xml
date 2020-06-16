@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <LinearLayout
+        android:id="@+id/tebhead"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="#ffffff">
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/hv"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/tebhead1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/selectline"
+        android:layout_width="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_height="1dp"
+        android:visibility="invisible"
+        android:background="#00000000">
+
+        <RelativeLayout
+            android:id="@+id/selectlinedetial"
+            android:layout_width="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_height="1dp"
+            android:background="#ff0000">
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

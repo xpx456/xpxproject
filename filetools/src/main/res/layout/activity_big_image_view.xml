@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_big_image_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/load_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"></androidx.viewpager.widget.ViewPager>
+
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:background="#f2f2f2" >
+
+        <RelativeLayout
+            android:id="@+id/leftbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/navleftBtn3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="left|center"
+                android:layout_centerVertical="true"
+                android:src="@drawable/lefticon2" />
+
+            <TextView
+                android:id="@+id/page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_toRightOf="@+id/navleftBtn3"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+            "
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="19dip"
+            android:background="@drawable/shape_btn_ok"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/button_word_ok"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttom"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:background="#fe595959" >
+
+        <TextView
+            android:id="@+id/priview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dip"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/button_word_orige"
+            android:textColor="#ebebeb"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="19dip"/>
+    </RelativeLayout>
+
+</RelativeLayout>

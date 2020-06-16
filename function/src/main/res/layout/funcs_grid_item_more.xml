@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    >
+
+    <RelativeLayout
+        android:id="@+id/fun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/fun_img"
+            android:layout_width="67.0dip"
+            android:layout_height="67.0dip"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/fun_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fun_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11.0dip"
+            android:maxLines="1"
+            android:maxWidth="120dp"
+            android:textColor="#acacac"
+            android:textSize="14.0dp" />
+    </RelativeLayout>
+
+</RelativeLayout >

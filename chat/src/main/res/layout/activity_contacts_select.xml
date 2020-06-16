@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_busines2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <ListView
+        android:id="@+id/busines_List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/horizon_listview_Layer"
+        android:layout_alignParentTop="true"
+        android:background="#f2f2f2"
+        android:divider="#ececec"
+        android:dividerHeight="0sp"></ListView>
+
+    <RelativeLayout
+        android:id="@+id/horizon_listview_Layer"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="#f7f7f7"
+        android:visibility="visible">
+
+        <intersky.mywidget.HorizontalListView
+            android:id="@+id/horizon_listview"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="10dp"
+            android:background="#f7f7f7"
+            android:visibility="visible"></intersky.mywidget.HorizontalListView>
+
+
+
+
+        <TextView
+            android:id="@+id/save_btn"
+            android:layout_width="80dp"
+            android:layout_height="27dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_style_alert_dialog_button_blue"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/button_word_ok"
+            android:textColor="#ffffff"
+            android:textSize="18dip"/>
+
+        <TextView
+            android:id="@+id/selecttext"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="10dp"
+            android:background="#00000000"
+            android:gravity="center_vertical|left"
+            android:text="@string/contact_select"
+            android:textColor="#000000"
+            android:textSize="16dp"/>
+    </RelativeLayout>
+
+    <intersky.mywidget.MySlideBar
+        android:id="@+id/slideBar"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="right|center_vertical"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/letter_layer"
+        android:layout_width="82dip"
+        android:layout_height="82dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_bg_letter_round"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/letter_text"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_bg_letter_cycle"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="31dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

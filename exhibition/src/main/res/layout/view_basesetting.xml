@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:background="@drawable/queryhead"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/main_btn4"
+        android:textColor="@color/white"
+        android:textSize="35px" />
+
+    <RelativeLayout
+        android:id="@+id/contentlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head"
+        android:background="@drawable/querybody">
+        
+        <RelativeLayout
+            android:id="@+id/print"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_marginTop="25px"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/printtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/base_setting_title_print"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+
+            <RadioGroup
+                android:id="@+id/printgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/printtitle"
+                android:layout_marginLeft="105px"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/printopen"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_print_open"/>
+                <RadioButton
+                    android:id="@+id/printcolse"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_print_close"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/codetype"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_below="@+id/print"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/codetypetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/base_setting_title_codetype"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+
+            <RadioGroup
+                android:id="@+id/codetypegroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/codetypetitle"
+                android:layout_marginLeft="105px"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/codetypeopen"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_codetype_open"/>
+                <RadioButton
+                    android:id="@+id/codetypecolse"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_codetype_close"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/licence"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_below="@+id/codetype"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/licencetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/base_setting_title_licence"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+
+            <RadioGroup
+                android:id="@+id/licencegroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/licencetitle"
+                android:layout_marginLeft="105px"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/licenceopen"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_licence_open"/>
+                <RadioButton
+                    android:id="@+id/licencecolse"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_licence_close"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/face"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_below="@+id/licence"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/facetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/base_setting_title_face"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+
+            <RadioGroup
+                android:id="@+id/facegroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/facetitle"
+                android:layout_marginLeft="105px"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/faceopen"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_face_open"/>
+                <RadioButton
+                    android:id="@+id/facecolse"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_face_close"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/safe"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_below="@+id/face"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/safetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/base_setting_title_safe"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+
+            <RadioGroup
+                android:id="@+id/safegroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/safetitle"
+                android:layout_marginLeft="105px"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/safeopen"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_safe_open"/>
+                <RadioButton
+                    android:id="@+id/safecolse"
+                    android:layout_width="150px"
+                    android:layout_height="65px"
+                    android:textSize="25px"
+                    android:textColor="#666666"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/base_setting_safe_close"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cache"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_below="@+id/safe"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/cachetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/base_setting_title_cache"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+
+            <TextView
+                android:id="@+id/cachesize"
+                android:layout_width="150px"
+                android:layout_height="65px"
+                android:layout_toRightOf="@+id/cachetitle"
+                android:layout_marginLeft="105px"
+                android:textSize="25px"
+                android:textColor="#666666"
+                android:gravity="left|center_vertical"
+                android:text=""/>
+
+
+            <TextView
+                android:id="@+id/cacheclean"
+                android:layout_width="150px"
+                android:layout_height="65px"
+                android:layout_toRightOf="@+id/cachesize"
+                android:textSize="25px"
+                android:textColor="#666666"
+                android:gravity="left|center_vertical"
+                android:text=""/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

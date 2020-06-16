@@ -1,0 +1,186 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_busines2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/top_layer"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#00000000">
+    </intersky.mywidget.SearchViewLayout>
+
+    <LinearLayout
+        android:id="@+id/teblayer"
+        android:layout_width="match_parent"
+        android:layout_height="47dip"
+        android:background="#ffffff"
+        android:layout_below="@+id/top_layer"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/daytxt"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:singleLine="true"
+                android:text="@string/xml_workreport_dday"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:id="@+id/line11"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ececec"
+                android:layout_above="@+id/line12"></RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/line12"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                android:layout_alignParentBottom="true"></RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/line13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#6299f3"
+                android:visibility="invisible"
+                android:layout_alignParentBottom="true"></RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/week"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/weektxt"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:singleLine="true"
+                android:text="@string/xml_workreport_dweek"
+                android:textSize="16dp" />
+            <RelativeLayout
+                android:id="@+id/line21"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ececec"
+                android:layout_above="@+id/line22"></RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/line22"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                android:layout_alignParentBottom="true"></RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/line23"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#6299f3"
+                android:visibility="invisible"
+                android:layout_alignParentBottom="true"></RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/month"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/monthtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:singleLine="true"
+                android:text="@string/xml_workreport_dmonthy"
+                android:textSize="16dp" />
+            <RelativeLayout
+                android:id="@+id/line31"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ececec"
+                android:layout_above="@+id/line32"></RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/line32"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                android:layout_alignParentBottom="true"></RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/line33"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#6299f3"
+                android:visibility="invisible"
+                android:layout_alignParentBottom="true"></RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <intersky.mywidget.NoScrollViewPager
+        android:id="@+id/load_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/teblayer"
+        android:layout_above="@+id/buttomlayer"
+        android:background="#f2f2f2"></intersky.mywidget.NoScrollViewPager>
+
+    <LinearLayout
+        android:id="@+id/buttomlayer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:background="#ffffff">
+
+
+        <TextView
+            android:id="@+id/read"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ellipsize="end"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:singleLine="true"
+            android:background="#ffffff"
+            android:textColor="#0082ff"
+            android:text="@string/button_set_read"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77000000"
+        android:visibility="invisible"></RelativeLayout>
+</RelativeLayout>

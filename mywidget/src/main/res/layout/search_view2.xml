@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_busines2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <EditText
+        android:id="@+id/other"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <RelativeLayout
+        android:id="@+id/nomal"
+        android:layout_width="match_parent"
+        android:layout_height="64dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/shape_search_bg2">
+
+            <ImageView
+                android:id="@+id/search_img"
+                android:layout_width="24dip"
+                android:layout_height="24dip"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="26dp"
+                android:src="@drawable/search_noma_icon" />
+
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dip"
+                android:layout_toRightOf="@+id/search_img"
+                android:gravity="center_vertical|left"
+                android:text="@string/searchview_title_search"
+                android:textColor="#B9B9B9"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="64dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@+id/cancle_btn"
+            android:background="@drawable/shape_search_bg2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/search_img2"
+                    android:layout_width="15dip"
+                    android:layout_height="15dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/search_noma_icon" />
+
+                <EditText
+                    android:id="@+id/search_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="9dip"
+                    android:layout_toLeftOf="@+id/clean"
+                    android:layout_toRightOf="@+id/search_img2"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/searchview_title_search"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:textColor="#000000"
+                    android:textColorHint="#B9B9B9"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/clean"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/clean"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cancle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical|left"
+            android:text="@string/button_word_cancle"
+            android:textColor="#B9B9B9"
+            android:textSize="16dp" />
+    </RelativeLayout>
+</RelativeLayout>

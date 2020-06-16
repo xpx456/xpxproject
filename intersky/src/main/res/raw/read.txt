@@ -1,0 +1,55 @@
+﻿handle事件即各种id对应
+0000000
+前2位：模块id
+main 10
+conversation 11
+chat 12
+task 13
+mail 14
+appbase 15
+function 16
+file 17
+document 18
+apputils 19
+budge 20
+mywidget 21
+scan 22
+select 23
+xpxnet 24
+toolbar 25
+task 26
+workreport 27
+notice 28
+vote 29
+oa 30
+leave 31
+sign 32
+attence 33
+第3位 事件类型
+1 - 网络请求成功事件
+2 - 网络请求失败事件
+3 - 模块内内事件
+4 - 权限请求返回事件
+6 - 模块间事件
+
+第4，5位 模块内类型id
+
+
+LoginAsks 00
+OaMessageAsks 10
+ImAsks 20
+TaskAsks 30
+MailAsks 40
+IwebFunction 50
+ScheduleAsks 60
+FunAsks 70
+WorkFlowAsks 80
+DocumentAsks 90
+WorkReportAsks 01
+
+
+第6，7位 事件id 00-99
+
+
+通知id
+Document 1-4

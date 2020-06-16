@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/headselectlayer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/top_layer"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/person_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000">
+
+            <RelativeLayout
+                android:id="@+id/person_layer_head"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#00000000">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000">
+
+                    <TextView
+                        android:id="@+id/person_head_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/textcolor2"
+                        android:textSize="@dimen/nomal_edit_size" />
+
+                    <ImageView
+                        android:id="@+id/person_img"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/person_head_title"
+                        android:src="@drawable/sniper1" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/whiteex"></RelativeLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/statu_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000">
+
+            <RelativeLayout
+                android:id="@+id/statu_layer_head"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#00000000">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000">
+
+                    <TextView
+                        android:id="@+id/statu_head_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/textcolor2"
+                        android:textSize="@dimen/nomal_edit_size" />
+
+                    <ImageView
+                        android:id="@+id/statu_img"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/statu_head_title"
+                        android:src="@drawable/sniper1" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/whiteex"></RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/select_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000">
+
+
+            <RelativeLayout
+                android:id="@+id/select_layer_head"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#00000000">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000">
+
+                    <TextView
+                        android:id="@+id/select_head_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/textcolor2"
+                        android:textSize="@dimen/nomal_edit_size" />
+
+                    <ImageView
+                        android:id="@+id/select_img"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/select_head_title"
+                        android:src="@drawable/sniper1" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/headselectlayer"
+        android:background="@color/whiteex"></RelativeLayout>
+
+    <intersky.mywidget.PullToRefreshView
+        android:id="@+id/mail_pull_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"
+        android:layout_marginBottom="50dp"
+        android:background="#00000000"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rl_bottom"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/stage_detial_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </intersky.mywidget.PullToRefreshView>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"
+        android:background="#77000000"
+        android:visibility="invisible"></RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/classlistlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+
+        <RelativeLayout
+            android:id="@+id/class_listlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000">
+
+            <ListView
+                android:id="@+id/class_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:divider="#00000000"
+                android:dividerHeight="0dp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/whiteex"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/taskview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                >
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ntask_nodeborad" />
+
+                <TextView
+                    android:id="@+id/taskviewtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@+id/image1"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/stage_view"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sysview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                >
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ntask_tjfx" />
+
+                <TextView
+                    android:id="@+id/sysviewtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@+id/image2"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/sys_time"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

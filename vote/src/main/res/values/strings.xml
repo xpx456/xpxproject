@@ -1,0 +1,36 @@
+<resources>
+    <string name="xml_newvote">发起投票</string>
+    <string name="xml_vote_hit_title">投票主题</string>
+    <string name="xml_vote_title">投票参与者</string>
+    <string name="xml_vote_form">投票方式</string>
+    <string name="xml_vote_time">截至日期</string>
+    <string name="xml_vote_name">是否匿名</string>
+    <string name="xml_vote_1">单选</string>
+    <string name="xml_vote_2">多选</string>
+    <string name="xml_vote_end">截至时间不能早于当前时间</string>
+    <string name="xml_vote_max_pic">图片最多选择4张</string>
+    <string name="xml_vote_name_hit">请输入投票项</string>
+    <string name="xml_vote_item_add">添加选项</string>
+    <string name="xml_vote_item_delete">删除选项</string>
+    <string name="xml_vote_item_delete_camcle">取消删除</string>
+    <string name="xml_vote">投票</string>
+    <string name="xml_vote_n">新建投票</string>
+    <string name="xml_vote_center">投票中心</string>
+    <string name="xml_vote_no">您未投</string>
+    <string name="xml_vote_noed">您已投</string>
+    <string name="xml_vote_noname">匿名</string>
+    <string name="xml_vote_hasname">实名</string>
+    <string name="xml_vote_doing">进行中</string>
+    <string name="xml_vote_closed">已关闭</string>
+    <string name="xml_vote_between">至</string>
+    <string name="xml_vote_total">共计</string>
+    <string name="xml_vote_tic">票</string>
+    <string name="xml_vote_close">关闭</string>
+    <string name="xml_vote_record">记录</string>
+    <string name="xml_vote_record_title">投票记录</string>
+    <string name="xml_vote_delete_msg">您确定要删除？</string>
+    <string name="xml_vote_delete_item_msg">您确定要删除此项吗？</string>
+    <string name="xml_vote_name_type_no">匿名投票</string>
+    <string name="xml_vote_name_type_yes">实名投票</string>
+
+</resources>

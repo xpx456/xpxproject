@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:minHeight="50dp">
+
+        <RelativeLayout
+            android:id="@+id/titlelayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/item_id"
+                android:layout_width="wrap_content"
+                android:layout_height="30dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:gravity="center_vertical|left"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="17dip" />
+
+            <EditText
+                android:id="@+id/item_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:minHeight="30dip"
+                android:background="#00000000"
+                android:layout_toRightOf="@+id/item_id"
+                android:layout_toLeftOf="@+id/image_cion"
+                android:gravity="center_vertical|left"
+                android:textColor="#000000"
+                android:textColorHint="#8c8c8c"
+                android:hint="@string/xml_vote_name_hit"
+                android:textSize="16dp" />
+
+
+            <ImageView
+                android:id="@+id/image_cion"
+                android:layout_width="35dip"
+                android:layout_height="35dip"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="2.5dip"
+                android:src="@drawable/crm_new_pic_icon" />
+        </RelativeLayout>
+
+        <intersky.mywidget.MyLinearLayout
+            android:id="@+id/image_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/titlelayer"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"></intersky.mywidget.MyLinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="5dp"
+            android:background="#f2f2f2"></RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

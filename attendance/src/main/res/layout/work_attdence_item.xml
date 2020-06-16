@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="55dip" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dip"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/cyclework1"
+            android:layout_width="22dip"
+            android:layout_height="22dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@drawable/shape_bg_round1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="上"
+            android:textColor="#ffffff"
+            android:textSize="14.0dp" />
+
+        <TextView
+            android:id="@+id/signtime"
+            android:layout_width="wrap_content"
+            android:layout_height="22dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/cyclework1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="上班打卡时间8:00"
+            android:textColor="#000000"
+            android:textSize="15.0dp" />
+
+
+        <TextView
+            android:id="@+id/subtext"
+            android:layout_width="wrap_content"
+            android:layout_height="22dip"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/signtime"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="#ff4c2e"
+            android:textSize="15.0dp" />
+
+        <ImageView
+            android:id="@+id/addressimage"
+            android:layout_width="12dip"
+            android:layout_height="13dip"
+            android:layout_below="@+id/signtime"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/cyclework1"
+            android:src="@drawable/dynamic" />
+
+        <TextView
+            android:id="@+id/signaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:layout_below="@+id/signtime"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/addressimage"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="#b4b4b4"
+            android:textSize="14.0dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/signaddress"
+            android:layout_toRightOf="@+id/addressimage"
+            android:background="#00000000" >
+
+            <TextView
+                android:id="@+id/updata"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:gravity="left|center_vertical"
+                android:text="更新打卡 >"
+                android:visibility="invisible"
+                android:textColor="#1c9bf2"
+                android:textSize="15.0dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="1dp"
+            android:layout_height="103dip"
+            android:layout_below="@+id/cyclework1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="21dp"
+            android:background="#b8b8b8" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

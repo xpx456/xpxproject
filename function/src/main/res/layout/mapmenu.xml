@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_map_menu"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dip"
+        android:background="#00000000" >
+
+        <TextView
+            android:id="@+id/textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:gravity="center_vertical|center"
+            android:singleLine="true"
+            android:text="@string/menu_shiyongyixia"
+            android:textColor="#aaaaaa"
+            android:textSize="16dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#aaaaaa" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gaodelayer"
+        android:layout_width="wrap_content"
+        android:layout_height="35dip"
+        android:background="#00000000" >
+
+        <ImageView
+            android:id="@+id/image_gaode"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:src="@drawable/gaode" />
+
+        <TextView
+            android:id="@+id/textview_gaode"
+            android:layout_width="wrap_content"
+            android:layout_height="35dip"
+            android:layout_toRightOf="@+id/image_gaode"
+            android:gravity="center_vertical|center"
+            android:layout_marginLeft="5dip"
+            android:text="@string/menu_gaode"
+            android:textColor="#000000"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/textview_gaoded"
+            android:layout_width="wrap_content"
+            android:layout_height="35dip"
+            android:layout_toRightOf="@+id/textview_gaode"
+            android:background="@color/toolBarBgColor"
+            android:gravity="center_vertical|center"
+            android:text="@string/menu_download"
+            android:textColor="#ffffff"
+            android:textSize="15dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#aaaaaa" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/baidulayer"
+        android:layout_width="wrap_content"
+        android:layout_height="35dip"
+        android:background="#00000000" >
+
+        <ImageView
+            android:id="@+id/image_baidu"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:src="@drawable/baidumap" />
+
+        <TextView
+            android:id="@+id/textview_baidu"
+            android:layout_width="wrap_content"
+            android:layout_height="35dip"
+            android:layout_toRightOf="@+id/image_baidu"
+            android:gravity="center_vertical|center"
+            android:layout_marginLeft="5dip"
+            android:text="@string/menu_baidu"
+            android:textColor="#000000"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/textview_baidud"
+            android:layout_width="wrap_content"
+            android:layout_height="35dip"
+            android:layout_toRightOf="@+id/textview_baidu"
+            android:background="@color/toolBarBgColor"
+            android:gravity="center_vertical|center"
+            android:text="@string/menu_download"
+            android:textColor="#ffffff"
+            android:textSize="15dip" />
+    </RelativeLayout>
+
+</LinearLayout>

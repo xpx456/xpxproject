@@ -1,0 +1,17 @@
+<resources>
+
+    <color name="textcolor">#767676</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="whiteex">#f2f2f2</color>
+    <color name="gray">#707070</color>
+    <color name="textcolor2">#626262</color>
+    <color name="strokecolor">#c3c3c3</color>
+    <color name="serverhead">#aaaaaa</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="text1">#b4b4b4</color>
+    <color name="navBarBkColor">#2ca7ea</color>
+    <color name="whiteex2">#e2e2e2</color>
+    <color name="style_divider_color">#C9C7CD</color>
+    <color name="result_view2">#4c4c4c</color>
+</resources>

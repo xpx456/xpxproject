@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="app_name">restaurant</string>
+    <string name="main_time">当前时间：</string>
+    <string name="main_type">当前餐种：</string>
+    <string name="main_imf">请刷卡或者输入指静脉结算</string>
+
+    <string name="main_fail">结算失败</string>
+    <string name="main_success">结算成功</string>
+    <string name="main_user">用户：</string>
+    <string name="main_cast">本次花费：￥</string>
+    <string name="main_last">账户余额：￥</string>
+</resources>

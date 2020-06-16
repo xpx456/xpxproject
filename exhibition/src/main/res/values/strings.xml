@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Exhibition</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="username">用户名</string>
+    <string name="password">账户密码</string>
+    <string name="login_in">登录</string>
+    <string name="other">其他方式登录</string>
+    <string name="finger">指静脉登录</string>
+    <string name="face">人脸识别登录</string>
+    <string name="code">密码登录</string>
+    <string name="second">秒</string>
+    <string name="last">操作倒计时:</string>
+
+    <string name="back">返回首页</string>
+    <string name="about_title">公司简介</string>
+
+    <string name="main_btn1">访客登记</string>
+    <string name="main_btn2">公司简介</string>
+    <string name="main_btn3">查询记录</string>
+    <string name="main_btn4">基础设置</string>
+    <string name="main_btn5">网络设置</string>
+    <string name="main_btn6">系统升级</string>
+    <string name="main_title1">欢迎登陆</string>
+    <string name="main_title2">展厅系统</string>
+
+    <string name="query_title">查询记录</string>
+    <string name="query_date_title">日期</string>
+    <string name="query_keyword_title">关键字</string>
+    <string name="query_btn_search">查询</string>
+    <string name="query_btn_go">前往</string>
+    <string name="query_head_time">时间</string>
+    <string name="query_head_name">姓名</string>
+    <string name="query_head_type">访客类型</string>
+    <string name="query_head_sex">性别</string>
+    <string name="query_head_count">人数</string>
+    <string name="query_head_car">车牌号</string>
+    <string name="query_head_card">卡号</string>
+
+    <string name="register_title">访客登记</string>
+    <string name="register_base_title">基础信息</string>
+    <string name="register_name">姓名</string>
+    <string name="register_items">携带物品</string>
+    <string name="register_sex">性别</string>
+    <string name="register_car">车牌号</string>
+    <string name="register_address">住址</string>
+    <string name="register_license">证件号码</string>
+    <string name="register_mobil">手机号</string>
+    <string name="register_type">访客类型</string>
+    <string name="register_count">访客人数</string>
+    <string name="register_time">有效时间</string>
+    <string name="register_card">卡号</string>
+    <string name="register_face_title">人脸采集</string>
+    <string name="register_finger_title">指静脉采集</string>
+
+    <string name="register_btn_exist">离开</string>
+    <string name="register_btn_print">打印访客单</string>
+    <string name="register_btn_submit">提交</string>
+
+    <string name="base_setting_title_print">打印登记</string>
+    <string name="base_setting_print_open">开启</string>
+    <string name="base_setting_print_close">关闭</string>
+
+    <string name="base_setting_title_codetype">条码类型</string>
+    <string name="base_setting_codetype_open">二维码</string>
+    <string name="base_setting_codetype_close">其他</string>
+
+    <string name="base_setting_title_licence">证件保密</string>
+    <string name="base_setting_licence_open">开启</string>
+    <string name="base_setting_licence_close">关闭</string>
+
+    <string name="base_setting_title_face">人像对比</string>
+    <string name="base_setting_face_open">开启</string>
+    <string name="base_setting_face_close">关闭</string>
+
+    <string name="base_setting_title_safe">安全认证</string>
+    <string name="base_setting_safe_open">开启</string>
+    <string name="base_setting_safe_close">关闭</string>
+
+    <string name="base_setting_title_cache">数据缓存</string>
+    <string name="base_setting_cache_clean">清除缓存</string>
+
+    <string name="netsetting_ip_hit">服务器ip</string>
+    <string name="netsetting_port_hit">服务器端口</string>
+
+    <string name="systemupdate_version_title">版本号</string>
+    <string name="systemupdate_update_title">版本更新</string>
+    <string name="systemupdate_progress_title">下载进度</string>
+</resources>

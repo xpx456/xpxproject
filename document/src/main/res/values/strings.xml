@@ -1,0 +1,30 @@
+<resources>
+    <string name="document_my">我的文档</string>
+    <string name="document_documentmanager">文档管理</string>
+    <string name="document_chuanshu">传输列表</string>
+    <string name="document_chuanshu_download">下载列表</string>
+    <string name="document_searchfilename">搜索文件名</string>
+    <string name="document_upload_pic">上传图片</string>
+    <string name="document_upload_video">上传视频</string>
+    <string name="document_upload_file">上传文件</string>
+    <string name="document_company">公司文档</string>
+    <string name="document_share">共享文档</string>
+    <string name="document_deletefile">是否删除选中文件或文件夹</string>
+    <string name="document_tip">提示</string>
+    <string name="document_xiazai">      下载列表       </string>
+    <string name="document_shangchuan">      上传列表       </string>
+    <string name="document_uploading">正在上传</string>
+    <string name="document_downloading">正在下载</string>
+    <string name="document_downloadfinish">下载完成</string>
+    <string name="document_uploadfinish">上传完成</string>
+    <string name="document_xuandingdocument">选定：我的文档</string>
+    <string name="document_uploadposition">选择上传位置</string>
+    <string name="document_newdocument">新建文件夹</string>
+    <string name="document_cannotcreat">此处不可新建文件夹</string>
+
+    <string name="document_hasaddto_download">已经添加到下载列表</string>
+    <string name="file_downloadunfinish">下载还未完成</string>
+    <string name="file_deleteed">该文件不存在或已经被删除</string>
+    <string name="error_get_data_fail">获取数据失败</string>
+    <string name="error_fail">失败</string>
+</resources>

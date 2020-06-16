@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#f2f2f2"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <RelativeLayout
+                android:id="@+id/content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <EditText
+                    android:id="@+id/answer_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="10dip"
+                    android:background="#00000000"
+                    android:gravity="top|left"
+                    android:hint="@string/xml_vote_hit_title"
+                    android:minHeight="145dip"
+                    android:textColor="#000000"
+                    android:textColorHint="#8c8c8c"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content1"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/item_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contentlayer"
+                    android:background="#ffffff"
+                    android:orientation="vertical"></LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/voterlayer"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_below="@+id/content5"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff">
+
+
+                <TextView
+                    android:id="@+id/voter_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/xml_vote_title"
+                    android:textColor="#000000"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/voter_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="46dp"
+                    android:layout_toLeftOf="@+id/voterarray1"
+                    android:layout_toRightOf="@+id/voter_title"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="#8c8c8c"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/voterarray1"
+                    android:layout_width="14dip"
+                    android:layout_height="14dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:src="@drawable/skip" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/vote_formlayer"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_below="@+id/voterlayer"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff">
+
+
+                <TextView
+                    android:id="@+id/vote_form_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/xml_vote_form"
+                    android:textColor="#000000"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/vote_form_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="46dp"
+                    android:layout_toLeftOf="@+id/vote_formarray1"
+                    android:layout_toRightOf="@+id/vote_form_title"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="#8c8c8c"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/vote_formarray1"
+                    android:layout_width="14dip"
+                    android:layout_height="14dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:src="@drawable/skip" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/timelayer"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_below="@+id/vote_formlayer"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff">
+
+
+                <TextView
+                    android:id="@+id/time_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/xml_vote_time"
+                    android:textColor="#000000"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/time_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="46dp"
+                    android:layout_toLeftOf="@+id/array2"
+                    android:layout_toRightOf="@+id/time_title"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:textColor="#8c8c8c"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/array2"
+                    android:layout_width="14dip"
+                    android:layout_height="14dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:src="@drawable/skip" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/noname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/timelayer"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/switch_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/xml_vote_name"
+                    android:textColor="#000000"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/swich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:switchMinWidth="20dp"
+                    android:textOn=""
+                    android:textOff=""
+                    android:thumb="@drawable/thumb"
+                    android:track="@drawable/track" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+</RelativeLayout>

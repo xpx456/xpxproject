@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_workflow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <intersky.mywidget.TabHeadView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        app:isScoll="false"
+        app:colorline="#000000"
+        app:colorlineselect="@color/toolBarBgColor"
+        app:colortxt1="#000000"
+        app:colortxt2="@color/toolBarBgColor"
+        app:textsizenomal="16dp"
+        app:selectlingtype="1"
+        app:itemheight = "40dp"
+        app:textsizebig="18dp"
+        android:background="#ffffff"/>
+
+
+    <intersky.mywidget.NoScrollViewPager
+        android:id="@+id/load_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head"
+        android:background="#f2f2f2"></intersky.mywidget.NoScrollViewPager>
+
+</RelativeLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:background="@drawable/queryhead"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/main_btn6"
+        android:textColor="@color/white"
+        android:textSize="35px" />
+
+    <RelativeLayout
+        android:id="@+id/contentlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head"
+        android:background="@drawable/querybody">
+
+        <RelativeLayout
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="25px"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+            <TextView
+            android:id="@+id/versiontitle"
+            android:layout_width="120px"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:layout_centerVertical="true"
+            android:gravity="left|center_horizontal"
+            android:text="@string/systemupdate_version_title"
+            android:textColor="#156ec9"
+            android:layout_alignParentLeft="true"
+            android:textSize="25px" />
+
+
+            <TextView
+                android:id="@+id/versionvalue"
+                android:layout_width="120px"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="left|center_horizontal"
+                android:text="1.19"
+                android:textColor="#737373"
+                android:layout_toRightOf="@+id/versiontitle"
+                android:layout_marginLeft="100px"
+                android:textSize="25px" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_below="@+id/version"
+            android:layout_marginTop="10px"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+
+            <TextView
+                android:id="@+id/updatetitle"
+                android:layout_width="120px"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="left|center_horizontal"
+                android:text="@string/systemupdate_update_title"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+
+            <TextView
+                android:id="@+id/updatevalue"
+                android:layout_width="120px"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="left|center_horizontal"
+                android:text="有更新"
+                android:textColor="#737373"
+                android:layout_toRightOf="@+id/updatetitle"
+                android:layout_marginLeft="100px"
+                android:textSize="25px" />
+
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="65px"
+            android:layout_below="@+id/update"
+            android:layout_marginTop="10px"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+
+            <TextView
+                android:id="@+id/progresstitle"
+                android:layout_width="120px"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="left|center_horizontal"
+                android:text="@string/systemupdate_progress_title"
+                android:textColor="#156ec9"
+                android:layout_alignParentLeft="true"
+                android:textSize="25px" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

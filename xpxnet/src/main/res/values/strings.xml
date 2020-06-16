@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">XpxNet</string>
+    <string name="error_net_network">网络连接错误</string>
+    <string name="no_net_network">无网络链接</string>
+</resources>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
+
+
+            <RelativeLayout
+                android:id="@+id/layer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/citytitle"
+                    android:layout_width="71dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/company_city"
+                    android:textColor="@color/txt_hit"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/cityvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/citytitle"
+                    android:gravity="left|center_vertical"
+                    android:text="未知"
+                    android:textColor="@color/txt_nomal2"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layer2"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/addresstitle"
+                    android:layout_width="71dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/company_address"
+                    android:textColor="@color/txt_hit"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/addressvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/addresstitle"
+                    android:gravity="left|center_vertical"
+                    android:text=""
+                    android:textColor="@color/txt_nomal2"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layer3"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/phonetitle"
+                    android:layout_width="71dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/company_phone"
+                    android:textColor="@color/txt_hit"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/phonevalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/phonetitle"
+                    android:gravity="left|center_vertical"
+                    android:text=""
+                    android:textColor="@color/txt_nomal2"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/layer6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layer4"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/mailtitle"
+                    android:layout_width="71dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/company_mail"
+                    android:textColor="@color/txt_hit"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/mailvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/mailtitle"
+                    android:gravity="left|center_vertical"
+                    android:text=""
+                    android:textColor="@color/txt_nomal2"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/layer5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layer6"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/webtitle"
+                    android:layout_width="71dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/company_web"
+                    android:textColor="@color/txt_hit"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/webvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/webtitle"
+                    android:gravity="left|center_vertical"
+                    android:text=""
+                    android:textColor="@color/txt_nomal2"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layer7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layer5"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/characteristictitle"
+                    android:layout_width="71dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/company_characteristic"
+                    android:textColor="@color/txt_hit"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/characteristicvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/characteristictitle"
+                    android:gravity="left|center_vertical"
+                    android:text="暂无描述"
+                    android:textColor="@color/txt_nomal2"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

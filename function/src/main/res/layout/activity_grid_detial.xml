@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/grid_detail_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:scrollbars="none"
+        android:background="#f7f7f7" >
+
+        <LinearLayout
+            android:id="@+id/tebs"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:background="#f7f7f7"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/listscoll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/scrollView1"
+        android:layout_marginBottom="50dp"
+        android:scrollbars="none"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/warnList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:scrollbars="none"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/actions"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/back"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/button_word_taskBack" />
+
+        <Button
+            android:id="@+id/summit"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/button_word_summit" />
+
+        <Button
+            android:id="@+id/accept"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/button_word_accept" />
+
+        <Button
+            android:id="@+id/veto"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/button_word_veto" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:background="#F7F7F7" >
+
+        <TextView
+            android:id="@+id/save_text"
+            android:layout_width="match_parent"
+            android:layout_height="35dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="#FF4344"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            android:text="@string/button_saveok"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+</RelativeLayout>

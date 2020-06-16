@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/quote_head_layer"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:background="#6191c1" >
+
+        <TextView
+            android:id="@+id/quote_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|center"
+            android:singleLine="true"
+            android:text="@string/xml_quote"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/quote_order_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/quote_head_layer" >
+
+        <RelativeLayout
+            android:id="@+id/quote_teb_layer"
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:layout_alignParentTop="true"
+            android:background="#e7e7e7" >
+
+            <intersky.mywidget.ScanSearchViewLayout
+                android:id="@+id/catalog_search_layer"
+                android:layout_width="230dip"
+                android:layout_height="40dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_search_bg" >
+            </intersky.mywidget.ScanSearchViewLayout>
+
+            <TextView
+                android:id="@+id/quote_all"
+                android:layout_width="100dip"
+                android:layout_height="40dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:background="@drawable/shape_quote_lefts"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:text="@string/xml_quote_all"
+                android:textColor="#467eb7"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/quote_submit"
+                android:layout_width="100dip"
+                android:layout_height="40dip"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/quote_all"
+                android:background="@drawable/shape_quote_center"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:text="@string/xml_quote_submit"
+                android:textColor="#467eb7"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/quote_unsubmit"
+                android:layout_width="100dip"
+                android:layout_height="40dip"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/quote_submit"
+                android:background="@drawable/shape_quote_right"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:text="@string/xml_quote_unsubmit"
+                android:textColor="#467eb7"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/quote_list_head_layer"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/quote_teb_layer"
+            android:background="#f0eff4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10" >
+
+                <TextView
+                    android:id="@+id/quote_list_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="@string/xml_quote_order"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10" >
+
+                <TextView
+                    android:id="@+id/quote_list_customer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="@string/xml_quote_customer"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10" >
+
+                <TextView
+                    android:id="@+id/quote_list_ordertime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="@string/xml_quote_ordertime"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="9" >
+
+                <TextView
+                    android:id="@+id/quote_list_describe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="@string/xml_quote_describe"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10" >
+
+                <TextView
+                    android:id="@+id/quote_list_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/quote_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/quote_list_head_layer"
+            android:background="#ffffff" >
+        </androidx.viewpager.widget.ViewPager>
+    </RelativeLayout>
+
+</RelativeLayout>

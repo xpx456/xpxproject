@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_work_sign"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteex" >
+
+    <EditText
+        android:id="@+id/ttt"
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:layout_width="0px" android:layout_height="0px"/>
+    <RelativeLayout
+        android:id="@+id/sign_time"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/date_cion"
+            android:layout_width="23dip"
+            android:layout_height="23dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:src="@drawable/cal" />
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@+id/date_cion"
+            android:textColor="#b4b4b4"
+            android:textSize="13dp" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/sign_detial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_time"
+        android:background="#ffffff" >
+
+        <RelativeLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ececec"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/address_name"
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:layout_below="@+id/line1"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical|left"
+            android:layout_marginLeft="20dip"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:textSize="@dimen/nomal_edit_size" />
+
+        <TextView
+            android:id="@+id/btn_change"
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:layout_below="@+id/line1"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical|left"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/iosblue"
+            android:text="地点微调"
+            android:singleLine="true"
+            android:textSize="@dimen/nomal_edit_size" />
+
+        <intersky.mywidget.MyRelativeLayout
+            android:id="@+id/layermap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address_name"
+            android:clickable="true"
+            android:background="#ffffff" >
+        <com.amap.api.maps2d.MapView
+            android:id="@+id/detial_cion"
+            android:layout_width="match_parent"
+            android:layout_height="100dip"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="10dp"
+            android:clickable="false"/>
+        </intersky.mywidget.MyRelativeLayout>
+        <RelativeLayout
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ececec"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/layermap"/>
+
+
+        <TextView
+            android:id="@+id/detial_content"
+            android:layout_width="wrap_content"
+            android:layout_height="47dip"
+            android:layout_below="@+id/line2"
+            android:gravity="center_vertical|left"
+            android:layout_marginLeft="20dip"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:text="@string/xml_attendanceat2"
+            android:textSize="@dimen/nomal_edit_size" />
+
+        <EditText
+            android:id="@+id/detial_content_edit"
+            android:layout_width="match_parent"
+            android:layout_height="47dip"
+            android:layout_below="@+id/line2"
+            android:gravity="center_vertical|left"
+            android:layout_toRightOf="@+id/detial_content"
+            android:background="#00000000"
+            android:textColor="#000000"
+            android:hint=""
+            android:textColorHint="#b4aba6"
+            android:layout_marginLeft="20dp"
+            android:singleLine="true"
+            android:textSize="@dimen/nomal_edit_size" />
+
+        <RelativeLayout
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/detial_content"
+            android:background="#ececec" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/sign_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sign_detial"
+        android:background="#f0eff5" >
+
+        <ImageView
+            android:id="@+id/sign_btn"
+            android:layout_width="117dip"
+            android:layout_height="117dip"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="61dp"
+            android:src="@drawable/signbtn" >
+        </ImageView>
+
+        <RelativeLayout
+            android:id="@+id/textline"
+            android:layout_width="wrap_content"
+            android:layout_height="47dip"
+            android:layout_below="@+id/sign_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:visibility="invisible"
+            android:background="#00000000" >
+
+            <TextView
+                android:id="@+id/sign_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="47dip"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#b4b4b4"
+                android:singleLine="true"
+                android:text="@string/xml_sign_count"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/sign_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="47dip"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#086fb3"
+                android:layout_toRightOf="@+id/sign_text1"
+                android:autoLink="all"
+                android:text="@string/xml_sign_none"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/sign_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="47dip"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#b4b4b4"
+                android:layout_toRightOf="@+id/sign_text2"
+                android:singleLine="true"
+                android:text="@string/xml_sign_count_a"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/sign_text"
+            android:layout_width="wrap_content"
+            android:layout_height="47dip"
+            android:layout_below="@+id/sign_btn"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textColor="#b4b4b4"
+            android:layout_marginTop="13dp"
+            android:singleLine="true"
+            android:text="@string/xml_sign_none"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

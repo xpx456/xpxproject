@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/whiteex">
+
+
+    <RelativeLayout
+        android:id="@+id/project_title"
+        android:layout_width="match_parent"
+        android:background="@color/whiteex"
+        android:layout_height="50dp">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/contact_img"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|left"
+            android:maxLines="1"
+            android:textColor="@color/textcolor"
+            android:text="@string/task_detial_creat_son_task"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/contact_img"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/shape_bg_cycle"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="#ffffff"
+            android:textSize="19dip" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:gravity="center_vertical|left"
+            android:maxLines="1"
+            android:textColor="#ff0000"
+            android:text="@string/button_delete"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

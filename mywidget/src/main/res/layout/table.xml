@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/table_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"></RelativeLayout>
+
+
+    <intersky.mywidget.MyHScrollView
+        android:id="@+id/table_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/table_base"
+        android:scrollbars="none"
+        android:background="#00000000">
+
+        <LinearLayout
+            android:id="@+id/head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            />
+
+   </intersky.mywidget.MyHScrollView>
+    <intersky.mywidget.MyScrollView
+        android:id="@+id/gride_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/table_base"
+        android:scrollbars="none"
+        android:background="#00000000" >
+
+        <LinearLayout
+            android:id="@+id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            />
+
+    </intersky.mywidget.MyScrollView>
+    <intersky.mywidget.MySwipeRefreshLayout
+        android:id="@+id/gank_swipe_refresh_layout"
+        android:layout_below="@+id/table_head"
+        android:layout_toRightOf="@+id/gride_left"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+        <intersky.mywidget.MyScrollView
+            android:id="@+id/contentv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+        >
+
+            <intersky.mywidget.MyHScrollView
+                android:id="@+id/contenth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:background="#00000000" >
+
+                <LinearLayout
+                    android:id="@+id/content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    />
+            </intersky.mywidget.MyHScrollView>
+        </intersky.mywidget.MyScrollView>
+    </intersky.mywidget.MySwipeRefreshLayout>
+
+
+</RelativeLayout>

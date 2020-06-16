@@ -1,0 +1,388 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_document"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <RelativeLayout
+        android:id="@+id/tab_content_null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="50dip"
+        android:background="#f2f2f2" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tab_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="50dip" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mian_buttom_layer"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="#e0e0e0"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_yunpan"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/mian_img_yunpan"
+                android:layout_width="33dip"
+                android:layout_height="24dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dip"
+                android:src="@drawable/yunpan" />
+
+            <TextView
+                android:id="@+id/mian_buttom_yunpan_text"
+                android:layout_width="wrap_content"
+                android:layout_height="18dip"
+                android:layout_below="@+id/mian_img_yunpan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dip"
+                android:gravity="center_vertical|center"
+                android:text="@string/document_documentmanager"
+                android:textColor="#5e5c5c"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_detial"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/mian_img_detial"
+                android:layout_width="33dip"
+                android:layout_height="24dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dip"
+                android:src="@drawable/detial" />
+
+            <TextView
+                android:id="@+id/mian_buttom_detial_text"
+                android:layout_width="wrap_content"
+                android:layout_height="18dip"
+                android:layout_below="@+id/mian_img_detial"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dip"
+                android:gravity="center_vertical|center"
+                android:text="@string/document_chuanshu"
+                android:textColor="#5e5c5c"
+                android:textSize="14dp" />
+
+            <RelativeLayout
+                android:id="@+id/mian_buttom_detial_new"
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dip"
+                android:layout_toRightOf="@+id/mian_img_detial"
+                android:background="@drawable/shape_bg_round_red"
+                android:visibility="invisible" >
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000"
+        android:visibility="invisible" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/headimf"
+        android:layout_width="match_parent"
+        android:layout_height="120dip"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:id="@+id/picturelayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000" >
+
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="70dip"
+                android:layout_height="70dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dip"
+                android:src="@drawable/btn_picture" />
+
+            <TextView
+                android:id="@+id/picturetext"
+                android:layout_width="match_parent"
+                android:layout_height="20dip"
+                android:layout_below="@+id/picture"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/document_upload_pic"
+                android:textColor="#6c6c6c"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/videolayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000" >
+
+            <ImageView
+                android:id="@+id/video"
+                android:layout_width="70dip"
+                android:layout_height="70dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dip"
+                android:src="@drawable/btn_video" />
+
+            <TextView
+                android:id="@+id/videotext"
+                android:layout_width="match_parent"
+                android:layout_height="20dip"
+                android:layout_below="@+id/video"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/document_upload_video"
+                android:textColor="#6c6c6c"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/allfilelayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000" >
+
+            <ImageView
+                android:id="@+id/allfile"
+                android:layout_width="70dip"
+                android:layout_height="70dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dip"
+                android:src="@drawable/btn_all" />
+
+            <TextView
+                android:id="@+id/alltext"
+                android:layout_width="match_parent"
+                android:layout_height="20dip"
+                android:layout_below="@+id/allfile"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/document_upload_file"
+                android:textColor="#6c6c6c"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mian_buttom_layer_delete"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="#454545"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_download_delete"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/mian_buttom_download_delete_text"
+                android:layout_width="match_parent"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/btnbgtextd"
+                android:gravity="center_vertical|center"
+                android:text="@string/button_delete"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_download_cancle"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/mian_buttom_downloa_cancle_text"
+                android:layout_width="match_parent"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/btnbgtext"
+                android:gravity="center_vertical|center"
+                android:text="@string/button_word_cancle"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/mian_more_layer_select"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mian_buttom_layer_select"
+        android:layout_alignParentRight="true"
+        android:background="#454545"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:id="@+id/mian_reneme_layer_select"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:layout_alignParentTop="true"
+            android:background="#454545" >
+
+            <ImageView
+                android:id="@+id/reneme_icon"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/edit_tools_rename" />
+
+            <TextView
+                android:id="@+id/mian_buttom_reneme_text"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_toRightOf="@+id/reneme_icon"
+                android:gravity="center_vertical|left"
+                android:text="@string/button_word_rename"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mian_buttom_layer_select"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="#454545"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_down"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/mian_buttom_down_text"
+                android:layout_width="match_parent"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/btnbgtext"
+                android:gravity="center_vertical|center"
+                android:text="@string/button_word_download"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/mian_buttom_delete_text"
+                android:layout_width="match_parent"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/btnbgtextd"
+                android:gravity="center_vertical|center"
+                android:text="@string/button_delete"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_cancle"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/mian_buttom_cancle_text"
+                android:layout_width="match_parent"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/btnbgtext"
+                android:gravity="center_vertical|center"
+                android:text="@string/button_word_cancle"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mian_buttom_more"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/mian_buttom_more_text"
+                android:layout_width="match_parent"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/btnbgtext"
+                android:gravity="center_vertical|center"
+                android:text="@string/menu_more"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

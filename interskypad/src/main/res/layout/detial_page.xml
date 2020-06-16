@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/detial_img_layer"
+        android:layout_width="380dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="#bfbfbf">
+
+        <ImageView
+            android:id="@+id/detial_img"
+            android:layout_width="360dip"
+            android:layout_height="360dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/temp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/detial_img_layer"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:id="@+id/detial_infmation_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/detial_itemno"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="30dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_itemno"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_itemno_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="30dip"
+                    android:layout_toRightOf="@+id/detial_itemno"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_barcode"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_itemno_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_barcodeo"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_barcode_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_itemno_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_barcode"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_ename"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_barcode_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_ename"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_ename_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_barcode_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_ename"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_cbm"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_ename_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_cbm"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_cbm_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_ename_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_cbm"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_package"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_cbm_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_package"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_package_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_cbm_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_package"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_unit"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_package_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_unit"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_unit_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_package_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_unit"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_salesprice"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_unit_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_salesprice"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_salesprice_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_unit_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_salesprice"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_pcsctn"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_salesprice_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_pcsctn"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_pcsctn_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_salesprice_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_pcsctn"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_minimumqty"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_pcsctn_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_minimumqty"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_minimumqty_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_pcsctn_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_minimumqty"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_especifcation"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_minimumqty_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_especification"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_especifcation_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_minimumqty_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_especifcation"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_gw"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_especifcation_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_gw"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_gw_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_especifcation_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_gw"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_nw"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_gw_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_nw"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_nw_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_gw_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_nw"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_emeno"
+                    android:layout_width="170dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_nw_e"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="@string/detial_ememo"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detial_emeno_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_nw_e"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_toRightOf="@+id/detial_emeno"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:id="@+id/detial_unshow_infmation_f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/detial_emeno_e">
+
+                    <TextView
+                        android:id="@+id/detial_factory_name"
+                        android:layout_width="170dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="5dip"
+                        android:gravity="center_vertical|right"
+                        android:singleLine="true"
+                        android:text="工厂简称："
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_name_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_toRightOf="@+id/detial_factory_name"
+                        android:gravity="center_vertical|left"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_number"
+                        android:layout_width="170dip"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_name_e"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="5dip"
+                        android:gravity="center_vertical|right"
+                        android:singleLine="true"
+                        android:text="工厂货号："
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_number_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_name_e"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_toRightOf="@+id/detial_factory_number"
+                        android:gravity="center_vertical|left"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_cillbill"
+                        android:layout_width="170dip"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_number_e"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="5dip"
+                        android:gravity="center_vertical|right"
+                        android:singleLine="true"
+                        android:text="是否开票："
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_cillbill_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_number_e"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_toRightOf="@+id/detial_factory_cillbill"
+                        android:gravity="center_vertical|left"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_price"
+                        android:layout_width="170dip"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_cillbill_e"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="5dip"
+                        android:gravity="center_vertical|right"
+                        android:singleLine="true"
+                        android:text="采购单价："
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_price_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_cillbill_e"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="7dip"
+                        android:layout_toRightOf="@+id/detial_factory_price"
+                        android:gravity="center_vertical|left"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_rate"
+                        android:layout_width="170dip"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_price_e"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="5dip"
+                        android:gravity="center_vertical|right"
+                        android:singleLine="true"
+                        android:text="退税率："
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detial_factory_rate_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detial_factory_price_e"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_toRightOf="@+id/detial_factory_rate"
+                        android:gravity="center_vertical|left"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

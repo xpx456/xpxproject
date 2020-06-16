@@ -1,0 +1,141 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.aliyun.ams.emas-services'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        applicationId "com.intersky"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 162
+        versionName '3.4.9.16'
+        multiDexEnabled true
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters "armeabi-v7a"
+            abiFilters "x86"
+            abiFilters "armeabi"
+            abiFilters "arm64-v8a"
+            abiFilters "x86_64"
+        }
+    }
+
+
+
+    buildTypes {
+
+        release {// 备注："release"类型的构建类型
+            //minifyEnabled false
+            //signingConfigs signingConfigs.release;
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+           // applicationIdSuffix = '.realease'
+        }
+
+        debug {// 备注："debug"类型的构建类型
+            //applicationIdSuffix ".debug"
+            //signingConfigs signingConfigs.debug;
+        }
+//
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+    }
+    signingConfigs {
+        //        debug {
+//            storeFile file('xpxproject.jks')
+//            storePassword "8842500"
+//            keyAlias "intersky"
+//            keyPassword "8842500"
+//        }
+        debug {
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            storeFile file('xpxproject.jks')
+            storePassword "8842500"
+            keyAlias "intersky"
+            keyPassword "8842500"
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.appcompat:appcompat:1.0.0'
+    api 'androidx.media:media:1.0.0'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api project(':toolbar')
+    api project(':AppUtils')
+    api project(':budge')
+    api project(':conversation')
+    api project(':mywidget')
+    api project(':filetools')
+    api project(':appbase')
+    api project(':function')
+    api project(':json')
+    implementation project(':oa')
+    api project(':select')
+    api project(':document')
+    api project(':mail')
+    api project(':scan')
+    api project(':talk')
+    api 'com.aliyun.ams:huawei-push:2.6.3.305'
+    api 'com.aliyun.ams:huawei-push-base:2.6.3.305'
+    api 'com.aliyun.ams:alicloud-android-third-push:3.0.9@aar'
+    api('com.aliyun.ams:alicloud-android-push:3.1.9') {
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'support-fragment'
+        exclude group: 'com.android.support', module: 'support-media-compat'
+    }
+    api 'com.aliyun.ams:alicloud-android-feedback:latest.integration'
+    api 'com.aliyun.ams:alicloud-android-utdid:latest.integration'
+    api 'com.aliyun.ams:alicloud-android-ut:latest.integration'
+    api 'com.aliyun.ams:alicloud-android-utils:latest.integration'
+
+    api project(':riche')
+    api files('libs\\libddshare.jar')
+    api files('libs\\umeng-analytics-8.0.2.jar')
+    api files('libs\\umeng-common-2.2.5.jar')
+    api files('libs\\umeng-share-Ding-6.9.8.jar')
+    api files('libs\\umeng-share-core-6.9.8.jar')
+    api files('libs\\umeng-share-douban-6.9.8.jar')
+    api files('libs\\umeng-share-tencentWB-6.9.8.jar')
+    api files('libs\\umeng-sharetool-6.9.8.jar')
+    api files('libs\\umeng-share-wechat-full-6.9.8.jar')
+    api files('libs\\umeng-share-QQ-full-6.9.8.jar')
+    api files('libs\\wechat-sdk-android-without-mta-5.4.3.jar')
+    api files('libs\\open_sdk_r6137_lite.jar')
+    api files('libs\\umeng-share-sina-simplify-6.9.8.jar')
+    api project(path: ':autoupdate')
+    api files('libs\\Msc.jar')
+    api project(path: ':attendance')
+    api project(path: ':map')
+    api 'androidx.multidex:multidex:2.0.0@aar'
+    api 'com.tencent.bugly:crashreport:latest.release'
+    api 'com.tencent.bugly:nativecrashreport:latest.release'
+    api project(path: ':task')
+    api project(path: ':vote')
+    api project(path: ':sign')
+    api project(path: ':schedule')
+    api project(path: ':attendance')
+    api project(path: ':notice')
+    api project(path: ':leave')
+    api project(path: ':workreport')
+    api project(path: ':chat')
+
+}

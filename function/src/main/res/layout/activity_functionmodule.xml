@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ctivity_functionmodule"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+    <RelativeLayout
+        android:id="@+id/searchViewlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/search_shape"
+            android:hint="@string/searchview_title_search"
+            android:imeOptions="actionSearch"
+            android:textSize="14dp"
+            android:padding="8dp"
+            android:singleLine="true"></EditText>
+
+        <!--<TextView-->
+            <!--android:id="@+id/searchText"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dip"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:background="@drawable/search_shape"-->
+            <!--android:padding="8dp"-->
+            <!--android:textSize="14dp"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="@string/searchview_title_search"-->
+            <!--android:visibility="invisible"></TextView>-->
+
+        <ImageView
+            android:id="@+id/scan"
+            android:layout_width="35dip"
+            android:layout_height="35dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:src="@drawable/scan"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <HorizontalScrollView
+        android:id="@+id/hScrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#f2f2f2"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/classes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2"
+            android:orientation="horizontal"></LinearLayout>
+    </HorizontalScrollView>
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/hScrollView1"
+        android:layout_below="@+id/searchViewlayer"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#00ffffff"
+        android:visibility="invisible"></ListView>
+
+    <intersky.mywidget.TableView
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/hScrollView1"
+        android:layout_below="@+id/searchViewlayer"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:focusable="true"
+        android:visibility="invisible">
+    </intersky.mywidget.TableView>
+
+
+    <WebView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/hScrollView1"
+        android:layout_below="@+id/searchViewlayer"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#00ffffff"
+        android:visibility="invisible" />
+
+    <intersky.mywidget.ShadeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#66000000">
+    </intersky.mywidget.ShadeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77000000"
+        android:visibility="invisible"></RelativeLayout>
+</RelativeLayout>

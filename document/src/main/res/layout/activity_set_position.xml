@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_set_position"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e9e9e9" >
+
+    <RelativeLayout
+        android:id="@+id/horizon_listview_Layer"
+        android:layout_width="match_parent"
+        android:layout_height="25dip"
+        android:layout_alignParentTop="true"
+        android:background="#e9e9e9" >
+
+        <intersky.mywidget.HorizontalListView
+            android:id="@+id/horizon_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" >
+        </intersky.mywidget.HorizontalListView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/horizon_listview_Layer"
+        android:layout_marginBottom="50dip"
+        android:layout_marginTop="25dip"
+        android:background="#000000" >
+
+        <ListView
+            android:id="@+id/select_List"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/selectPositionfilebuttom"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="#393f4f"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#393f4f" >
+
+            <intersky.mywidget.TextButton
+                android:id="@+id/btnleft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/button_word_cancle"
+                android_custom:shapeColor="gray"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#393f4f" >
+
+            <intersky.mywidget.TextButton
+                android:id="@+id/btnright"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/document_xuandingdocument"
+                android_custom:shapeColor="blue"
+                android:textSize="17dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

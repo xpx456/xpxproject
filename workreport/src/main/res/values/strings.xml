@@ -1,0 +1,76 @@
+<resources>
+    <string name="xml_workreport">工作汇报</string>
+    <string name="xml_workreport_dday">日报</string>
+    <string name="xml_workreport_dweek">周报</string>
+    <string name="xml_workreport_dmonthy">月报</string>
+    <string name="xml_workreport_xdday">写日报</string>
+    <string name="xml_workreport_xdweek">写周报</string>
+    <string name="xml_workreport_xdmonthy">写月报</string>
+    <string name="xml_workreport_help">需协调与帮助</string>
+    <string name="xml_workreport_tday1">今日已完成工作</string>
+    <string name="xml_workreport_tday2">明日工作计划</string>
+    <string name="xml_workreport_tweek1">本周已完成工作</string>
+    <string name="xml_workreport_tweeks">本周工作总结</string>
+    <string name="xml_workreport_tweek2">下周工作计划</string>
+    <string name="xml_workreport_tmonth1">本月工作内容</string>
+    <string name="xml_workreport_tmonths">本月工作总结</string>
+    <string name="xml_workreport_tmonth2">下月工作计划</string>
+    <string name="xml_workreport_dday1">的日报</string>
+    <string name="xml_workreport_dweek1">的周报</string>
+    <string name="xml_workreport_dmonthy1">的月报</string>
+    <string name="xml_workreport_deletehead">（点击头像删除）</string>
+    <string name="xml_workreport_norepy">暂无评论</string>
+    <string name="xml_workreport_delete_day">您确定要删除此日报？</string>
+    <string name="xml_workreport_delete_month">您确定要删除此月报？</string>
+    <string name="xml_workreport_delete_week">您确定要删除此周报？</string>
+    <string name="xml_workreport_deletetitle">删除工作汇报</string>
+    <string name="xml_workreport_leave_delete">您确定要撤销？</string>
+    <string name="xml_workreport_leave_deletetitle">删除审批</string>
+    <string name="xml_workreport_notice_delete">您确定要删除此公告？</string>
+    <string name="xml_attdance_new_title">新建考勤</string>
+    <string name="xml_leave_new_type">请选择(必填)</string>
+
+    <string name="xml_workreport_finish">已完成工作不能为空</string>
+    <string name="xml_workreport_plane">工作计划不能为空</string>
+    <string name="xml_workreport_select_sender">请选择发送对象</string>
+
+    <string name="xml_workreport_my_receive">我收到的</string>
+    <string name="xml_workreport_my_send">我发出的</string>
+    <string name="xml_workreport_my_join">抄送我的</string>
+
+    <string name="xml_workreport_day">写日报</string>
+    <string name="xml_workreport_week">写周报</string>
+    <string name="xml_workreport_monthy">写月报</string>
+
+    <string name="noInfoFind">没有查找到与此相关的信息</string>
+    <string name="keyword_lodingfinish">已经为您加载了所有的数据了</string>
+
+    <string name="xml_workreport_worktime">工作时间</string>
+    <string name="xml_workreport_hinttext">(文本)</string>
+    <string name="xml_workreport_backup">备注</string>
+    <string name="xml_workreport_sendto">发送给</string>
+    <string name="xml_workreport_ccto">抄送给</string>
+
+    <string name="xml_leave_approve">审批人</string>
+    <string name="xml_leave_type_i">请选择(必填)</string>
+    <string name="xml_leave_day_i">请输入请假天数(必填)</string>
+    <string name="xml_leave_reason_i">请输入请假事由(必填)</string>
+    <string name="xml_notice_title_hit">请输入公告标题</string>
+    <string name="xml_notice_content_hit">请输入公告内容</string>
+    <string name="xml_notice_read_hit">已读人数</string>
+    <string name="xml_notice_unread_hit">未读人数</string>
+
+    <string name="report_time_mesage">请填写工作时间</string>
+    <string name="report_mesage">请填写</string>
+    <string name="report_mesage_ssendss">请选择发送对象</string>
+    <string name="report_deit_day">修改日报</string>
+    <string name="report_deit_week">修改周报</string>
+    <string name="report_deit_month">修改月报</string>
+
+    <string name="xml_begin">开始</string>
+    <string name="xml_end">截至</string>
+    <string name="xml_select">选择时间</string>
+    <string name="message_begin_end">结束时间不能早于开始时间</string>
+
+    <string name="keyword_xingqi">星期</string>
+</resources>

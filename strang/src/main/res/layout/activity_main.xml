@@ -1,0 +1,193 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/tab_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="50dp"
+        android:background="#ececec"></RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/conversation"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/layerout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/conversation_image"
+                    android:layout_width="35dip"
+                    android:layout_height="35dip"
+                    android:src="@drawable/conversation" />
+
+                <TextView
+                    android:id="@+id/conversation_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/conversation_image"
+                    android:layout_centerHorizontal="true"
+                    android:text="会话"
+                    android:textColor="#4d4d4d"
+                    android:textSize="7dip" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/conversation_hit"
+                android:layout_width="18dip"
+                android:layout_height="18dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="-6dip"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@+id/layerout1"
+                android:background="@drawable/shape_hit_bg_red"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="12dip"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/work"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/work_image"
+                    android:layout_width="35dip"
+                    android:layout_height="35dip"
+                    android:src="@drawable/work" />
+
+                <TextView
+                    android:id="@+id/work_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/work_image"
+                    android:layout_centerHorizontal="true"
+                    android:text="工作"
+                    android:textColor="#4d4d4d"
+                    android:textSize="7dip" />
+
+                <TextView
+                    android:id="@+id/work_hit"
+                    android:layout_width="8.0dip"
+                    android:layout_height="8.0dip"
+                    android:layout_alignTop="@+id/work_image"
+                    android:layout_alignRight="@+id/work_image"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/shape_hit_bg_red"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textColor="#ffffff"
+                    android:textSize="6dp"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/more"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/more_image"
+                android:layout_width="35dip"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/more" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contacts"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/contacts_image"
+                    android:layout_width="35dip"
+                    android:layout_height="35dip"
+                    android:src="@drawable/contacts" />
+
+                <TextView
+                    android:id="@+id/contacts_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contacts_image"
+                    android:layout_centerHorizontal="true"
+                    android:text="通讯录"
+                    android:textColor="#4d4d4d"
+                    android:textSize="7dip" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/my_image"
+                    android:layout_width="35dip"
+                    android:layout_height="35dip"
+                    android:src="@drawable/my" />
+
+                <TextView
+                    android:id="@+id/my_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_image"
+                    android:layout_centerHorizontal="true"
+                    android:text="我"
+                    android:textColor="#4d4d4d"
+                    android:textSize="7dip" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

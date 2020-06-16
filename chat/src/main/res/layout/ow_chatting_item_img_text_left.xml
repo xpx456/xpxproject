@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/timelayer"
+        android:layout_width="fill_parent"
+        android:layout_height="19dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_chat_time_bg"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/imagelay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
+
+
+        <intersky.mywidget.CircleImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/contact_detial_head"
+            android:focusable="false" />
+
+        <RelativeLayout
+            android:id="@+id/textcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:layout_marginLeft="15dp"
+            android:background="#00000000">
+
+            <intersky.mywidget.CircleImageView
+                android:id="@+id/tv_chatcontent"
+                android:layout_width="wrap_content"
+                android:maxWidth="148dp"
+                android:layout_height="148dp"
+                app:typecycle="rounded_rect"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart" />
+
+            <intersky.mywidget.RoundProgressBar
+                android:id="@+id/roundProgressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible"
+                app:max="100"
+                app:roundColor="#a6a6a6"
+                app:roundProgressColor="#22ef16"
+                app:roundWidth="2dip"
+                app:textColor="#22ef16"
+                app:textIsDisplayable="false"
+                app:textSize="8dp"/>
+
+            <TextView
+                android:id="@+id/fail"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/shape_round_red"
+                android:gravity="center_vertical|center_horizontal"
+                android:visibility="invisible"
+                android:text="!"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/loding"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"
+                android:src="@drawable/loding_gray"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

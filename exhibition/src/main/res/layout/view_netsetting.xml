@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:background="@drawable/queryhead"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/main_btn5"
+        android:textColor="@color/white"
+        android:textSize="35px" />
+
+    <RelativeLayout
+        android:id="@+id/contentlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head"
+        android:background="@drawable/querybody">
+
+        <RelativeLayout
+            android:id="@+id/ip"
+            android:layout_width="505px"
+            android:layout_height="65px"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="25px"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/filtreditbg">
+
+
+            <EditText
+                android:id="@+id/ipvalue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20px"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="20px"
+                android:textColor="#737373"
+                android:singleLine="true"
+                android:background="#00000000"
+                android:hint="@string/netsetting_ip_hit"
+                android:textColorHint="#156ec9"
+                android:textSize="25px"
+                android:text=""
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/port"
+            android:layout_width="505px"
+            android:layout_height="65px"
+            android:layout_below="@+id/ip"
+            android:layout_marginTop="10px"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/filtreditbg">
+
+
+            <EditText
+                android:id="@+id/portvalue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20px"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="20px"
+                android:textColor="#737373"
+                android:singleLine="true"
+                android:background="#00000000"
+                android:hint="@string/netsetting_port_hit"
+                android:textColorHint="#156ec9"
+                android:textSize="25px"
+                android:text=""
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

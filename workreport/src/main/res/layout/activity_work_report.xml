@@ -1,0 +1,349 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <RelativeLayout
+        android:id="@+id/top_layer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#2ca7ea"></RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/top_tool"
+        android:layout_width="fill_parent"
+        android:layout_height="140dp"
+        android:layout_below="@+id/top_layer"
+        android:background="#2ca7ea">
+
+
+        <View
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#2ca7ea" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/receive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+
+
+                <ImageView
+                    android:id="@+id/task_image"
+                    android:layout_width="86dip"
+                    android:layout_height="86dip"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/workreport_myreceive_normal" />
+
+                <TextView
+                    android:id="@+id/task_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/task_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/xml_workreport_my_receive"
+                    android:textColor="#ffffff"
+                    android:textSize="17dip" />
+                <TextView
+                    android:id="@+id/task_image_hit"
+                    android:layout_width="18dip"
+                    android:layout_height="18dip"
+                    android:layout_alignTop="@+id/task_image"
+                    android:layout_alignRight="@+id/task_image"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/shape_bg_round"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="9dp"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#2ca7ea" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/mail_image"
+                    android:layout_width="86dip"
+                    android:layout_height="86dip"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/workreport_mysend_normal" />
+
+                <TextView
+                    android:id="@+id/mail_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mail_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/xml_workreport_my_send"
+                    android:textColor="#ffffff"
+                    android:textSize="17dip" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#2ca7ea" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/joinin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/document_image"
+                    android:layout_width="86dip"
+                    android:layout_height="85dip"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/workreport_mycanyu_normal" />
+
+                <TextView
+                    android:id="@+id/document_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/document_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/xml_workreport_my_join"
+                    android:textColor="#ffffff"
+                    android:textSize="17dip" />
+
+                <TextView
+                    android:id="@+id/document_image_hit"
+                    android:layout_width="18dip"
+                    android:layout_height="18dip"
+                    android:layout_alignTop="@+id/document_image"
+                    android:layout_alignRight="@+id/document_image"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/shape_bg_round"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="9dp"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#2ca7ea" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/mid_layer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/top_tool"
+        android:background="#2ca7ea"></RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/buttom_layer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/mid_layer"
+        android:layout_marginTop="23dp"
+        android:background="#f2f2f2">
+
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f2f2f2" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/day"
+                android:layout_width="110dp"
+                android:layout_height="143dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_report_bg">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/day_image"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/workreprot_addday_icon" />
+
+                    <TextView
+                        android:id="@+id/day_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/day_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="28dp"
+                        android:text="@string/xml_workreport_day"
+                        android:textColor="#83858c"
+                        android:textSize="16dip" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f2f2f2" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/week"
+                android:layout_width="110dp"
+                android:layout_height="143dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_report_bg">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/week_image"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/workreprot_addwork_icon" />
+
+                    <TextView
+                        android:id="@+id/week_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/week_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="28dp"
+                        android:text="@string/xml_workreport_week"
+                        android:textColor="#83858c"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f2f2f2" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/month"
+                android:layout_width="110dp"
+                android:layout_height="143dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_report_bg">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/month_image"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/workreprot_addmonth_icon" />
+
+                    <TextView
+                        android:id="@+id/month_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/month_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="28dp"
+                        android:text="@string/xml_workreport_monthy"
+                        android:textColor="#83858c"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f2f2f2" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

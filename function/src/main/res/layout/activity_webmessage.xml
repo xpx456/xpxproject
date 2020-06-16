@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" >
+    </WebView>
+
+    <LinearLayout
+        android:id="@+id/actions"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/back"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/taskBack" />
+
+        <Button
+            android:id="@+id/summit"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/summit" />
+
+        <Button
+            android:id="@+id/accept"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/accept" />
+
+        <Button
+            android:id="@+id/veto"
+            style="@style/task_action_style"
+            android:textColor="#8c8c8c"
+            android:textSize="14dp"
+            android:text="@string/veto" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+</RelativeLayout>

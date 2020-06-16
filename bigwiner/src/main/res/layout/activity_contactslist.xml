@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_about"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff" />
+
+
+    <RelativeLayout
+        android:id="@+id/headlayer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_below="@+id/stutebar"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:id="@+id/titlelayer"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentTop="true"
+            android:background="#00000000">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/back2" />
+
+            <TextView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="@string/contacts_talk"
+                android:textColor="#259B24"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/titletext"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/contacts_list_title"
+                android:textColor="@color/txt_nomal"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headlayer"
+        android:visibility="gone"
+        android:background="#ffffff"/>
+
+    <intersky.mywidget.PullToRefreshView
+        android:id="@+id/headview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttomaciton"
+        android:layout_below="@+id/search"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contacts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:divider="#F5F5F5"
+            android:dividerHeight="10dp" />
+    </intersky.mywidget.PullToRefreshView>
+
+
+    <intersky.mywidget.MySlideBar
+        android:id="@+id/slideBar"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/buttomaciton"
+        android:layout_gravity="right|center_vertical"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/letter_layer"
+        android:layout_width="82dip"
+        android:layout_height="82dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_bg_letter_round"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/letter_text"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_bg_letter_cycle"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="31dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+
+</RelativeLayout>

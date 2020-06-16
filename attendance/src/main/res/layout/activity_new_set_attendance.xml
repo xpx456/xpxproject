@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_work_sign"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteex">
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteex">
+
+            <RelativeLayout
+                android:id="@+id/name_layer"
+                android:layout_width="match_parent"
+                android:layout_height="46dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dip"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/keyword_workattdencename"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <EditText
+                    android:id="@+id/name_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:layout_toRightOf="@+id/name_title"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/keyword_workattdencenamehit"
+                    android:maxLines="1"
+                    android:background="#00000000"
+                    android:textColor="#000000"
+                    android:textColorHint="#cecece"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_below="@+id/name_layer"
+                android:layout_marginLeft="6dip"
+                android:gravity="left|center_vertical"
+                android:text="@string/keyword_workattdencenametime"
+                android:textColor="#aaaaaa"
+                android:textSize="14dp" />
+
+            <RelativeLayout
+                android:id="@+id/atteance_start_layer"
+                android:layout_width="match_parent"
+                android:layout_height="46dip"
+                android:layout_below="@+id/time_title"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/atteance_start_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dip"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/keyword_workattdencenametimestart"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <TextView
+                    android:id="@+id/atteance_start_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@+id/date_cion2"
+                    android:layout_toRightOf="@+id/atteance_start_title"
+                    android:gravity="right|center_vertical"
+                    android:text="08:30"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <ImageView
+                    android:id="@+id/date_cion2"
+                    android:layout_width="7dip"
+                    android:layout_height="12.5dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/arraw" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/atteance_end_layer"
+                android:layout_width="match_parent"
+                android:layout_height="46dip"
+                android:layout_below="@+id/atteance_start_layer"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/atteance_end_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dip"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/keyword_workattdencenametimeend"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <TextView
+                    android:id="@+id/atteance_end_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@+id/date_cion1"
+                    android:layout_toRightOf="@+id/atteance_end_title"
+                    android:gravity="right|center_vertical"
+                    android:text="17:30"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <ImageView
+                    android:id="@+id/date_cion1"
+                    android:layout_width="7dip"
+                    android:layout_height="12.5dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/arraw" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/atteance_day_layer"
+                android:layout_width="match_parent"
+                android:layout_height="46dip"
+                android:layout_below="@+id/atteance_end_layer"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/atteance_day_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dip"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/keyword_workattdencenametimeday"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <TextView
+                    android:id="@+id/atteance_day_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@+id/date_cion"
+                    android:layout_toRightOf="@+id/atteance_day_title"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <ImageView
+                    android:id="@+id/date_cion"
+                    android:layout_width="7dip"
+                    android:layout_height="12.5dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/arraw" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/time_persion"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_below="@+id/atteance_day_layer"
+                android:layout_marginLeft="6dip"
+                android:gravity="left|center_vertical"
+                android:text="@string/keyword_workattdencenamepersion"
+                android:textColor="#aaaaaa"
+                android:textSize="14dp" />
+
+            <RelativeLayout
+                android:id="@+id/ccayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_persion"
+                android:background="#ffffff"
+                android:minHeight="75dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cctitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="6dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/keyword_workattdencenamepersion"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/report_edit_size" />
+
+                <TextView
+                    android:id="@+id/cctitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cctitle"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/xml_workreport_deletehead"
+                    android:textColor="#dfdfe1"
+                    android:textSize="15dp" />
+
+                <intersky.mywidget.MyLinearLayout
+                    android:id="@+id/copyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_below="@+id/cctitle"
+                    android:layout_marginTop="5dp"></intersky.mywidget.MyLinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/btndelete"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/ccayer"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:visibility="invisible"
+                android:background="@drawable/btn_shape_red1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/xml_attdance_delete"
+                android:textColor="#ffffff"
+                android:textSize="19dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

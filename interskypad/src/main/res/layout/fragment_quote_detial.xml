@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/quote_head_layer"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:background="#6191c1" >
+
+        <TextView
+            android:id="@+id/quote_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|center"
+            android:singleLine="true"
+            android:text="@string/xml_quote"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+        
+            <RelativeLayout
+        android:id="@+id/quote_back_layer"
+        android:layout_width="80dip"
+        android:layout_height="50dip"
+        android:layout_alignParentLeft="true"
+        android:background="#6191c1" >
+
+        <ImageView
+            android:id="@+id/quote_back"
+            android:layout_width="35dip"
+            android:layout_height="35dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:src="@drawable/buttobackward" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/quote_order_detial_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/quote_head_layer"
+        android:background="#e7e7e7" >
+
+        <RelativeLayout
+            android:id="@+id/quote_order_detial_imflayer"
+            android:layout_width="match_parent"
+            android:layout_height="100dip"
+            android:layout_alignParentTop="true" >
+
+            <RelativeLayout
+                android:id="@+id/quote_order_detial_time"
+                android:layout_width="350dip"
+                android:layout_height="50dip"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" >
+
+                <TextView
+                    android:id="@+id/quote_detial_text_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="报价时间："
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/quote_order_detial_customer"
+                android:layout_width="350dip"
+                android:layout_height="50dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/quote_order_detial_time" >
+
+                <TextView
+                    android:id="@+id/quote_detial_customer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="客户："
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <RelativeLayout
+                    android:id="@+id/quote_order_edit_detial_customer_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40dip"
+                    android:layout_toRightOf="@+id/quote_detial_customer_text"
+                    android:background="@drawable/shape_search_bg" >
+
+                    <intersky.mywidget.SpinnerView
+                        android:id="@+id/server_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#00000000"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/quote_order_detial_describe"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/quote_order_detial_time" >
+
+                <TextView
+                    android:id="@+id/quote_detial_text_describe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="说明："
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <RelativeLayout
+                    android:id="@+id/quote_order_edit_detial_describe_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40dip"
+                    android:layout_toRightOf="@+id/quote_detial_text_describe"
+                    android:background="@drawable/shape_search_bg" >
+
+                    <EditText
+                        android:id="@+id/quote_detial_edit_describe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:background="#00000000"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/quote_order_detial_customerimf"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_below="@+id/quote_order_detial_describe"
+                android:layout_toRightOf="@+id/quote_order_detial_customer" >
+
+                <TextView
+                    android:id="@+id/quote_detial_text_customerimf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="信息："
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <RelativeLayout
+                    android:id="@+id/quote_order_edit_detial_customerimf_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40dip"
+                    android:layout_toRightOf="@+id/quote_detial_text_customerimf"
+                    android:background="@drawable/shape_search_bg" >
+
+                    <TextView
+                        android:id="@+id/quote_detial_edit_customerimf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:background="#00000000"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/quote_detial_list_head_layer"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/quote_order_detial_imflayer"
+            android:background="#f0eff4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/quote_detial_list_head_layer1"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_weight="9" >
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/quote_detial_list_head_layer2"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_weight="10" >
+
+                <TextView
+                    android:id="@+id/quote_list_detial_itemid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="编号"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/quote_detial_list_head_layer3"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_weight="10" >
+
+                <TextView
+                    android:id="@+id/quote_list_detial_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="名称"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/quote_detial_list_head_layer4"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_weight="11" >
+
+                <TextView
+                    android:id="@+id/quote_list_detial_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="价格"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/quote_detial_list_head_layer5"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_weight="11" >
+
+                <TextView
+                    android:id="@+id/quote_list_detial_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center"
+                    android:singleLine="true"
+                    android:text="计量单位"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/quote_detial_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/quote_detial_list_head_layer"
+            android:layout_marginBottom="60dip"
+            android:divider="#d9d9d9"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/quote_detail_submit"
+            android:layout_width="120dip"
+            android:layout_height="44dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="15dip"
+            android:background="@drawable/btn_quote_long"
+            android:gravity="center_vertical|center"
+            android:singleLine="true"
+            android:text="提交"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/quote_detial_save"
+            android:layout_width="120dip"
+            android:layout_height="44dip"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="30dip"
+            android:layout_toLeftOf="@+id/quote_detail_submit"
+            android:background="@drawable/btn_quote_long"
+            android:gravity="center_vertical|center"
+            android:singleLine="true"
+            android:text="保存"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+
+</RelativeLayout>

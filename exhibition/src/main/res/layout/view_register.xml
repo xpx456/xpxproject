@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:layout_width="1365px"
+        android:layout_height="825px"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="#00000000">
+
+        <TextView
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:background="@drawable/queryhead"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/register_title"
+            android:textColor="@color/white"
+            android:textSize="35px" />
+
+        <RelativeLayout
+            android:id="@+id/contentlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/head"
+            android:background="@drawable/querybody">
+
+            <View
+                android:id="@+id/baseicon"
+                android:layout_width="1dp"
+                android:layout_height="14px"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="120px"
+                android:layout_marginTop="20px"
+                android:background="#3f6dde" />
+
+            <TextView
+                android:id="@+id/base_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="3px"
+                android:layout_marginTop="15px"
+                android:layout_toRightOf="@+id/baseicon"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/register_base_title"
+                android:textColor="#828282"
+                android:textSize="20px" />
+
+            <LinearLayout
+                android:id="@+id/layercenter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/base_title"
+                android:layout_marginLeft="120px"
+                android:layout_marginTop="10px"
+                android:background="#00000000"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65px">
+
+                    <RelativeLayout
+                        android:id="@+id/name"
+                        android:layout_width="505px"
+                        android:layout_height="65px"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/date"
+                        android:background="@drawable/filtreditbg">
+
+
+                        <EditText
+                            android:id="@+id/namevalue"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20px"
+                            android:layout_marginRight="5px"
+                            android:background="#00000000"
+                            android:gravity="left|center_vertical"
+                            android:hint="@string/register_name"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="#737373"
+                            android:textColorHint="#156ec9"
+                            android:textSize="25px" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/items"
+                        android:layout_width="505px"
+                        android:layout_height="65px"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="120px"
+                        android:layout_toRightOf="@+id/name"
+                        android:background="@drawable/filtreditbg">
+
+
+                        <EditText
+                            android:id="@+id/itemsvalue"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20px"
+                            android:layout_marginRight="5px"
+                            android:background="#00000000"
+                            android:gravity="left|center_vertical"
+                            android:hint="@string/register_items"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="#737373"
+                            android:textColorHint="#156ec9"
+                            android:textSize="25px" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65px"
+                    android:layout_marginTop="10px">
+
+                    <RelativeLayout
+                        android:id="@+id/sex"
+                        android:layout_width="505px"
+                        android:layout_height="65px"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/filtreditbg">
+
+
+                        <TextView
+                            android:id="@+id/sexdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20px"
+                            android:text="@string/register_sex"
+                            android:textColor="#156ec9"
+                            android:textSize="25px" />
+
+
+                        <TextView
+                            android:id="@+id/sexvalue"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55px"
+                            android:layout_marginRight="5px"
+                            android:layout_toLeftOf="@+id/array"
+                            android:layout_toRightOf="@+id/sexdate"
+                            android:gravity="left|center_vertical"
+                            android:text=""
+                            android:textColor="#737373"
+                            android:textSize="25px" />
+
+                        <TextView
+                            android:id="@+id/array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10px"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="▼"
+                            android:textColor="#156ec9"
+                            android:textSize="30px" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/car"
+                        android:layout_width="505px"
+                        android:layout_height="65px"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="120px"
+                        android:layout_toRightOf="@+id/sex"
+                        android:background="@drawable/filtreditbg">
+
+
+                        <EditText
+                            android:id="@+id/carvalue"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20px"
+                            android:layout_marginRight="5px"
+                            android:background="#00000000"
+                            android:gravity="left|center_vertical"
+                            android:hint="@string/register_car"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="#737373"
+                            android:textColorHint="#156ec9"
+                            android:textSize="25px" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layerleft"
+                android:layout_width="505px"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layercenter"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="120px"
+                android:layout_marginTop="10px"
+                android:background="#00000000"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/address"
+                    android:layout_width="505px"
+                    android:layout_height="122px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/date"
+                    android:background="@drawable/filtreditbg">
+
+
+                    <EditText
+                        android:id="@+id/addressvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5px"
+                        android:layout_marginBottom="5dp"
+                        android:background="#00000000"
+                        android:gravity="left|top"
+                        android:hint="@string/register_address"
+                        android:text=""
+                        android:textColor="#737373"
+                        android:textColorHint="#156ec9"
+                        android:textSize="25px" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/license"
+                    android:layout_width="505px"
+                    android:layout_height="65px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/filtreditbg">
+
+
+                    <EditText
+                        android:id="@+id/licensevalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginRight="5px"
+                        android:background="#00000000"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/register_license"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#737373"
+                        android:textColorHint="#156ec9"
+                        android:textSize="25px" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mobil"
+                    android:layout_width="505px"
+                    android:layout_height="65px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/filtreditbg">
+
+
+                    <EditText
+                        android:id="@+id/mobilvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginRight="5px"
+                        android:background="#00000000"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/register_mobil"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#737373"
+                        android:textColorHint="#156ec9"
+                        android:textSize="25px" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/type"
+                    android:layout_width="505px"
+                    android:layout_height="65px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/filtreditbg">
+
+
+                    <EditText
+                        android:id="@+id/typevalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginRight="5px"
+                        android:background="#00000000"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/register_type"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#737373"
+                        android:textColorHint="#156ec9"
+                        android:textSize="25px" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/count"
+                    android:layout_width="505px"
+                    android:layout_height="65px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/filtreditbg">
+
+
+                    <EditText
+                        android:id="@+id/countvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginRight="5px"
+                        android:background="#00000000"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/register_count"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#737373"
+                        android:textColorHint="#156ec9"
+                        android:textSize="25px" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layerright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layercenter"
+                android:layout_marginLeft="120px"
+                android:layout_marginTop="10px"
+                android:layout_toRightOf="@+id/layerleft"
+                android:background="#00000000"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/time"
+                    android:layout_width="505px"
+                    android:layout_height="65px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/filtreditbg">
+
+
+                    <EditText
+                        android:id="@+id/timevalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginRight="5px"
+                        android:background="#00000000"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/register_time"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#737373"
+                        android:textColorHint="#156ec9"
+                        android:textSize="25px" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/card"
+                    android:layout_width="505px"
+                    android:layout_height="65px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/filtreditbg">
+
+
+                    <EditText
+                        android:id="@+id/cardvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginRight="5px"
+                        android:background="#00000000"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/register_card"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#737373"
+                        android:textColorHint="#156ec9"
+                        android:textSize="25px" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25px">
+
+                    <View
+                        android:id="@+id/faceicon"
+                        android:layout_width="1dp"
+                        android:layout_height="14px"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="3px"
+                        android:layout_marginTop="20px"
+                        android:background="#3f6dde" />
+
+                    <TextView
+                        android:id="@+id/face_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="3px"
+                        android:layout_marginTop="15px"
+                        android:layout_toRightOf="@+id/faceicon"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="@string/register_face_title"
+                        android:textColor="#828282"
+                        android:textSize="20px" />
+
+
+                    <View
+                        android:id="@+id/fingericon"
+                        android:layout_width="1dp"
+                        android:layout_height="14px"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="135px"
+                        android:layout_marginTop="20px"
+                        android:layout_toRightOf="@+id/face_title"
+                        android:background="#3f6dde" />
+
+                    <TextView
+                        android:id="@+id/finger_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="3px"
+                        android:layout_marginTop="15px"
+                        android:layout_toRightOf="@+id/fingericon"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="@string/register_face_title"
+                        android:textColor="#828282"
+                        android:textSize="20px" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="50px"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="45px"
+                android:background="#00000000"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_cancle"
+                    android:layout_width="140px"
+                    android:layout_height="50px"
+                    android:background="@drawable/register_btn_gray"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/register_btn_exist"
+                    android:textColor="#929292"
+                    android:textSize="20px" />
+
+                <TextView
+                    android:id="@+id/btn_print"
+                    android:layout_width="140px"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="56px"
+                    android:background="@drawable/register_btn_gray"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/register_btn_print"
+                    android:textColor="#929292"
+                    android:textSize="20px" />
+
+                <TextView
+                    android:id="@+id/btn_submit"
+                    android:layout_width="140px"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="56px"
+                    android:background="@drawable/register_btn_blue"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/register_btn_submit"
+                    android:textColor="#ffffff"
+                    android:textSize="20px" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

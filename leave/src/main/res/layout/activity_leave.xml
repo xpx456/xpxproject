@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/ttt"
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:layout_width="0px" android:layout_height="0px"/>
+
+    <intersky.mywidget.PoorPriorityScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="50dp"
+        android:background="#f2f2f2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <RelativeLayout
+                android:id="@+id/leavetype"
+                android:layout_width="match_parent"
+                android:layout_height="54dip"
+                android:layout_alignParentTop="true"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/leavetypetitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/xml_leave_type_title"
+                    android:textColor="#9a9ca3"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/leavetypearray"
+                    android:layout_width="14dip"
+                    android:layout_height="14dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:src="@drawable/skip" />
+
+                <TextView
+                    android:id="@+id/leavetypename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/leavetypearray"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/xml_leave_new_type"
+                    android:textColor="#ceced3"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lin1"
+            android:layout_width="10dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/leavetype"
+            android:layout_alignParentLeft="true"
+            android:background="#ffffff">
+        </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leavebegin"
+                android:layout_width="match_parent"
+                android:layout_height="54dip"
+                android:layout_below="@+id/lin1"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/leavebegintitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="开始时间"
+                    android:textColor="#9a9ca3"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/leavebeginarray"
+                    android:layout_width="14dip"
+                    android:layout_height="14dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:src="@drawable/skip" />
+
+                <TextView
+                    android:id="@+id/leavebeginname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/leavebeginarray"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="请选择"
+                    android:textColor="#ceced3"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/lin2"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/leavebegin"
+                android:layout_alignParentLeft="true"
+                android:background="#ffffff">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leaveend"
+                android:layout_width="match_parent"
+                android:layout_height="54dip"
+                android:layout_below="@+id/lin2"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/leaveendtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="结束时间"
+                    android:textColor="#9a9ca3"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/leaveendarray"
+                    android:layout_width="14dip"
+                    android:layout_height="14dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:src="@drawable/skip" />
+
+                <TextView
+                    android:id="@+id/leaveendname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/leaveendarray"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="请选择"
+                    android:textColor="#ceced3"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/lin3"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/leaveend"
+                android:layout_alignParentLeft="true"
+                android:background="#ffffff">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leaveday"
+                android:layout_width="match_parent"
+                android:layout_height="54dip"
+                android:layout_below="@+id/lin3"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/leavedaytitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="请假天数"
+                    android:textColor="#9a9ca3"
+                    android:textSize="16dp" />
+
+
+                <EditText
+                    android:id="@+id/leavedayname"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/leavedaytitle"
+                    android:background="#00000000"
+                    android:ellipsize="end"
+                    android:inputType="numberDecimal"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/xml_leave_day_i"
+                    android:textColor="#9a9ca3"
+                    android:textColorHint="#ceced3"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lin4"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/leaveday"
+                android:layout_alignParentLeft="true"
+                android:background="#ffffff">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin4"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/content1title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="end"
+                    android:text="请假事由"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#9a9ca3"
+                    android:textSize="16dp" />
+
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content1text"
+                    android:layout_width="match_parent"
+                    android:layout_height="165dp"
+                    android:layout_toRightOf="@+id/content1title"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="17dp" />
+
+
+            </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/content5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/content1"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/image_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"></LinearLayout>
+
+        </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/sendayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content5"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:minHeight="85dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sendtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="13dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/xml_leave_approve"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/sendtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/sendtitle"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/xml_workreport_deletehead"
+                    android:textColor="#dfdfe1"
+                    android:textSize="15dp" />
+
+                <intersky.mywidget.MyLinearLayout
+                    android:id="@+id/sender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sendtitle"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="5dp"></intersky.mywidget.MyLinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lin7"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/sendayer"
+                android:layout_alignParentLeft="true"
+                android:background="#ffffff">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ccayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin7"
+                android:background="#ffffff"
+                android:minHeight="75dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cctitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="13dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/workreport_ccto"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/cctitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cctitle"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/xml_workreport_deletehead"
+                    android:textColor="#dfdfe1"
+                    android:textSize="15dp" />
+
+                <intersky.mywidget.MyLinearLayout
+                    android:id="@+id/copyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cctitle"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="5dp"></intersky.mywidget.MyLinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </intersky.mywidget.PoorPriorityScrollView>
+
+    <LinearLayout
+        android:id="@+id/edit_mail_buttom_layer_select"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:background="#00000000"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/buttom_takephoto"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/takephoto_img2"
+                android:layout_width="42dip"
+                android:layout_height="29dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/takephoto2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttom_picture"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/picture_img"
+                android:layout_width="42dip"
+                android:layout_height="29dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/picture" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+</RelativeLayout>

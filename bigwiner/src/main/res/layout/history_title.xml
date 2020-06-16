@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    >
+
+    <RelativeLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="@color/bg_color"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+    </RelativeLayout >
+
+    <RelativeLayout
+        android:id="@+id/conversationlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/empty"
+        android:layout_centerHorizontal="true">
+
+
+        <TextView
+            android:id="@+id/conversation_title"
+            android:layout_width="match_parent"
+            android:layout_height="64dip"
+            android:layout_marginLeft="18dip"
+            android:gravity="left|center_vertical"
+            android:ellipsize="end"
+            android:textColor="@color/txt_nomal"
+            android:text="今天"
+            android:textSize="22dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout >

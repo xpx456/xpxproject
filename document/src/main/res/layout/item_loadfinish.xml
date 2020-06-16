@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/layer_item"
+        android:layout_width="match_parent"
+        android:layout_height="68dip"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/conversation_img"
+            android:layout_width="51.0dip"
+            android:layout_height="51.0dip"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="@string/app_name"
+            android:layout_marginLeft="10dip"
+            android:scaleType="centerCrop"
+            android:layout_centerVertical="true" />
+
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="match_parent"
+            android:layout_height="20dip"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/conversation_img"
+            android:layout_marginLeft="17dp"
+            android:layout_toLeftOf="@+id/item_selecticon_layer"
+            android:layout_marginTop="10dip"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/item_date"
+            android:layout_width="match_parent"
+            android:layout_height="20dip"
+            android:layout_toRightOf="@+id/conversation_img"
+            android:layout_marginLeft="17dp"
+            android:layout_below="@+id/item_name"
+            android:layout_marginRight="85dip"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:textColor="#b1b1b1"
+            android:textSize="12dp" />
+
+        <RelativeLayout
+            android:id="@+id/item_selecticon_layer"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dip" >
+
+            <ImageView
+                android:id="@+id/item_selecticon"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/item_ProgressBar_layer"
+            android:layout_width="38dip"
+            android:layout_height="38dip"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:layout_toLeftOf="@+id/item_selecticon_layer" >
+
+            <intersky.mywidget.RoundProgressBar
+                android:id="@+id/roundProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android_custom:roundColor="#a6a6a6"
+                android_custom:roundProgressColor="#22ef16"
+                android_custom:roundWidth="2dip"
+                android_custom:textColor="#9A32CD"
+                android_custom:textIsDisplayable="false"
+                android_custom:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/item_state_icon"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:id="@+id/line"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/layer_item"
+        android:background="#ececec" >
+    </RelativeLayout>
+
+</RelativeLayout>

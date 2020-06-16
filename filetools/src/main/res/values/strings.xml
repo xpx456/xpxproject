@@ -1,0 +1,29 @@
+<resources>
+    <string name="album_title">选择相册</string>
+    <string name="album_photoaddmax1">最多只能选择</string>
+    <string name="album_photoaddmax2">张图片</string>
+    <string name="video_selectvideo">选择视频</string>
+    <string name="file_save_success">收藏成功</string>
+    <string name="file_save_exitst">你已经收藏过该文件</string>
+    <string name="file_unknowfile">无法识别该文件</string>
+    <string name="file_unexitst">文件已存在</string>
+    <string name="file_downloadunfinish">下载还未完成</string>
+    <string name="file_downloadununexist">该文件不存在或已经被删除</string>
+    <string name="file_downloadagain">下载失败，正在尝试重新下载</string>
+    <string name="file_upload_position_error">此处不可上传文件,请重新选择上传位置</string>
+    <string name="promiss_error_autio">无法使用语音功能,请检查相关权限</string>
+    <string name="promiss_error_camera">无法使用拍照功能,请检查相关权限</string>
+    <string name="title_attachment_path">路径</string>
+    <string name="title_attachment_size">大小</string>
+    <string name="attachment_outcoche">剩余空间不足100MB，请清理手机缓存</string>
+    <string name="attachment_downloadununexist">该文件不存在或已经被删除</string>
+    <string name="attachment_downloadagain">下载失败，正在尝试重新下载</string>
+    <string name="attachment_loding">加载中，请稍后</string>
+    <string name="sex_unknowfemale">未知</string>
+    <string name="sex_female">女</string>
+    <string name="sex_male">男</string>
+    <string name="sex_secrate">保密</string>
+    <string name="menu_more">更多</string>
+    <string name="title_selectfile">选择文件</string>
+    <string name="files_saveto">已保存到</string>
+</resources>

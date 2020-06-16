@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff" />
+
+
+    <RelativeLayout
+        android:id="@+id/headlayer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_below="@+id/stutebar"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:id="@+id/titlelayer"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentTop="true"
+            android:background="#00000000">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/back2" />
+
+            <TextView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="@string/contacts_talk"
+                android:textColor="#259B24"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/titletext"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/attdenct_person_title"
+                android:textColor="@color/txt_nomal"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <intersky.mywidget.TabHeadView
+        android:id="@+id/head"
+        app:isScoll="false"
+        app:colorline="#00000000"
+        app:colorlineselect="@color/txt_nomal"
+        app:colortxt1="@color/txt_hit"
+        app:colortxt2="@color/txt_nomal"
+        app:textsizenomal="16dp"
+        app:selectlingtype="1"
+        app:itemheight = "40dp"
+        app:textsizebig="22dp"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_below="@+id/headlayer"/>
+
+    <intersky.mywidget.NoScrollViewPager
+        android:id="@+id/load_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head"
+        android:layout_above="@+id/buttomaciton"
+        android:background="@color/bg_color"></intersky.mywidget.NoScrollViewPager>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+
+</RelativeLayout>

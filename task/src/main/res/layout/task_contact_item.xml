@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00000000">
+    <RelativeLayout
+        android:id="@+id/conversationlayer"
+        android:layout_width="30dp"
+        android:layout_height="30dip"
+        android:background="#00000000">
+
+        <TextView
+            android:id="@+id/contact_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="12dip"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_bg_cycle"
+            android:text=""
+            android:textColor="#ffffff"/>
+
+    </RelativeLayout>
+</RelativeLayout>

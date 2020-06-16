@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_lable"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <ListView
+        android:id="@+id/warnList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:divider="#00000000"
+        android:dividerHeight="0dp"
+        android:layout_above="@+id/hScrollView1" >
+    </ListView>
+
+    <HorizontalScrollView
+        android:id="@+id/hScrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#f2f2f2"
+        android:visibility="invisible"
+        android:scrollbars="none"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/classesBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+</RelativeLayout>

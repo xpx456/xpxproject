@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:id="@+id/conversationlayer"
+        android:layout_width="match_parent"
+        android:layout_height="67dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/bunselect">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/contact_img"
+            android:layout_width="42.0dip"
+            android:layout_height="42.0dip"
+            android:layout_marginLeft="22dip"
+            android:layout_toRightOf="@+id/select"
+            android:layout_centerVertical="true"
+            android:textSize="20dip"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_bg_cycle"
+            android:textColor="#ffffff"/>
+
+
+        <TextView
+            android:id="@+id/conversation_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/contact_img"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="15dip"
+            android:gravity="left|center_vertical"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:text=""
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/conversation_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/contact_img"
+            android:layout_below="@+id/conversation_title"
+            android:layout_marginLeft="15dip"
+            android:gravity="left|center_vertical"
+            android:maxLines="1"
+            android:textColor="#c1c1c1"
+            android:text=""
+            android:textSize="14dip" />
+
+        <RelativeLayout
+            android:id="@+id/buttomline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:background="#ececec"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout >
