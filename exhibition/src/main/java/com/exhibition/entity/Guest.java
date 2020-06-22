@@ -1,5 +1,9 @@
 package com.exhibition.entity;
 
+import com.finger.entity.Finger;
+
+import java.util.ArrayList;
+
 import intersky.apputils.AppUtils;
 
 public class Guest {
@@ -21,5 +25,6 @@ public class Guest {
     public String mobil = "";
     public String address = "";
     public String utime = "";
+    public ArrayList<Finger> fingers = new ArrayList<>();
 
 }

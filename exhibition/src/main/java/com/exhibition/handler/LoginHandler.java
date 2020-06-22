@@ -1,5 +1,6 @@
 package com.exhibition.handler;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
@@ -16,6 +17,9 @@ public class LoginHandler extends Handler {
 
     public LoginActivity theActivity;
     public static final int UPDATA_TIME = 100001;
+    public static final int GET_FINGER_IMG_SUCCESS = 100002;
+    public static final int GET_LOGIN_SUCCESS = 100003;
+    public static final int GET_LOGIN_FAIL = 100004;
     public LoginHandler(LoginActivity mLoginActivity) {
         theActivity = mLoginActivity;
     }
@@ -26,6 +30,15 @@ public class LoginHandler extends Handler {
         switch (msg.what) {
             case UPDATA_TIME:
                 theActivity.lastSecond.setText(String.valueOf(ExhibitionApplication.mApp.timeoud));
+                break;
+            case GET_FINGER_IMG_SUCCESS:
+                theActivity.imageView.setImageBitmap(ExhibitionApplication.mApp.fingerManger.lastgetFinger.sampleimg.get(0));
+                break;
+            case GET_LOGIN_SUCCESS:
+                theActivity.mLoginPresenter.praseLoginImf((Intent) msg.obj);
+                break;
+            case GET_LOGIN_FAIL:
+                theActivity.mLoginPresenter.praseLoginImf((Intent) msg.obj);
                 break;
         }
 

@@ -1,25 +1,34 @@
 package intersky.apputils;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.ImageFormat;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.graphics.YuvImage;
+import android.net.Uri;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.lang.ref.SoftReference;
+import java.nio.ByteBuffer;
 import java.util.HashMap;
 
 
@@ -259,4 +268,92 @@ public class BitmapCache extends Activity {
 		}
 		return bitmapSize;
 	}
+
+
+	public static void saveBitmap(Bitmap bitmap,String path,String name) {
+		try {
+			File dirFile = new File(path);
+			if (!dirFile.exists()) {              //如果不存在，那就建立这个文件夹
+				dirFile.mkdirs();
+			}
+			File file = new File(path, name + ".jpg");
+			FileOutputStream fos = new FileOutputStream(file);
+			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+			fos.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static byte[] Bitmap2Bytes(Bitmap bm) {
+
+
+
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
+		return baos.toByteArray();
+	}
+
+	public static Bitmap Bytes2Bimap(byte[] buffer,int width,int height) {
+
+
+		if (buffer.length != 0) {
+			Bitmap stitchBmp = Bitmap.createBitmap(width, height, Bitmap.Config.ALPHA_8);
+
+			stitchBmp.copyPixelsFromBuffer(ByteBuffer.wrap(buffer));
+			return stitchBmp;
+		} else {
+			return null;
+		}
+
+	}
+
+	public static byte[] readFile(File file) {
+		RandomAccessFile rf = null;
+		byte[] data = null;
+		try {
+			rf = new RandomAccessFile(file, "r");
+			data = new byte[(int) rf.length()];
+			rf.readFully(data);
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		} finally {
+			closeQuietly(rf);
+		}
+		return data;
+	}
+
+	//关闭读取file
+	public static void closeQuietly(Closeable closeable) {
+		try {
+			if (closeable != null) {
+				closeable.close();
+			}
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+	}
+
+	public static Bitmap createBitmap(byte[] values, int picW, int picH) {
+		if(values == null || picW <= 0 || picH <= 0)
+			return null;
+		//使用8位来保存图片
+		Bitmap bitmap = Bitmap
+				.createBitmap(picW, picH, Bitmap.Config.ARGB_8888);
+		int pixels[] = new int[picW * picH];
+		for (int i = 0; i < pixels.length; ++i) {
+			//关键代码，生产灰度图
+			pixels[i] = values[i] * 256 * 256 + values[i] * 256 + values[i] + 0xFF000000;
+		}
+		bitmap.setPixels(pixels, 0, picW, 0, 0, picW, picH);
+		values = null;
+		pixels = null;
+		return bitmap;
+	}
+
+
 }

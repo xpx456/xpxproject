@@ -32,5 +32,4 @@ public class VideoActivity extends PadBaseActivity {
 
     }
 
-
 }

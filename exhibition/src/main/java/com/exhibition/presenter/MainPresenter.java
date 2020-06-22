@@ -1,9 +1,14 @@
 package com.exhibition.presenter;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.view.View;
 
 import com.exhibition.R;
+import com.exhibition.handler.LoginHandler;
+import com.exhibition.handler.MainHandler;
+import com.exhibition.receiver.LoginReceiver;
+import com.exhibition.receiver.MainReceiver;
 import com.exhibition.view.ExhibitionApplication;
 import com.exhibition.view.QueryView;
 import com.exhibition.view.RegisterView;
@@ -17,14 +22,17 @@ import intersky.appbase.Presenter;
 public class MainPresenter implements Presenter {
 
     public MainActivity mMainActivity;
-
+    public MainHandler mMainHandler;
     public MainPresenter(MainActivity MainActivity) {
         mMainActivity = MainActivity;
+        mMainHandler = new MainHandler(mMainActivity);
+        mMainActivity.setBaseReceiver(new MainReceiver(mMainHandler));
     }
 
     @Override
     public void initView() {
         mMainActivity.setContentView(R.layout.activity_main);
+        mMainActivity.flagFillBack = false;
         mMainActivity.title = mMainActivity.findViewById(R.id.maintitle);
         mMainActivity.btn1 = mMainActivity.findViewById(R.id.main_btn1);
         mMainActivity.btn2 = mMainActivity.findViewById(R.id.main_btn2);
@@ -106,7 +114,8 @@ public class MainPresenter implements Presenter {
     public View.OnClickListener netSettingListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            Intent intent=new Intent(Settings.ACTION_SETTINGS);
+            mMainActivity.startActivity(intent);
         }
     };
 
@@ -131,5 +140,13 @@ public class MainPresenter implements Presenter {
     private void startAbout() {
         Intent intent = new Intent(mMainActivity, AboutActivity.class);
         mMainActivity.startActivity(intent);
+    }
+
+    public void addFinger(Intent intent)
+    {
+        if(mMainActivity.registerView != null)
+        {
+            mMainActivity.registerView.addFinger(ExhibitionApplication.mApp.fingerManger.lastgetFinger);
+        }
     }
 }

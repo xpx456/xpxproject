@@ -8,7 +8,7 @@
         android:id="@+id/screenbtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00000000"
+        android:background="@drawable/main_bg"
         />
     <SurfaceView
         android:id="@+id/video"

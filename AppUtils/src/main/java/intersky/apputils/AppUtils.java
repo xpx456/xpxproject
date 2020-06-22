@@ -165,7 +165,7 @@ public class AppUtils {
     }
 
 
-    public static PopupWindow creatPopView(Context mContext,int lid,int oid,View location,InitView initView)
+    public static PopupWindow creatPopView(Context mContext, int lid, int oid, View location, InitView initView,  DestoryView destoryView)
     {
         View popupWindowView = LayoutInflater.from(mContext).inflate(lid, null);
         RelativeLayout lsyer = (RelativeLayout) popupWindowView.findViewById(oid);
@@ -180,16 +180,12 @@ public class AppUtils {
             @Override
             public void onClick(View v) {
                 finalPopupWindow.dismiss();
-
             }
         });
         ColorDrawable dw = new ColorDrawable(0x00ffffff);
+        popupWindow1.getContentView().setTag(destoryView);
         popupWindow1.setBackgroundDrawable(dw);
-        popupWindow1.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-            }
-        });
+        popupWindow1.setOnDismissListener(new MyDismiss(destoryView,popupWindowView));
         popupWindow1.showAtLocation(location,
                 Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 0);
         initView.initView(popupWindowView);
@@ -1725,4 +1721,27 @@ public class AppUtils {
     {
         void initView(View view);
     }
+
+    public interface DestoryView
+    {
+        void destoryView(View view);
+    }
+
+    private static class MyDismiss implements PopupWindow.OnDismissListener{
+
+        public DestoryView destoryView;
+        public View view;
+
+        public MyDismiss(DestoryView destoryView,View view)
+        {
+            this.destoryView = destoryView;
+            this.view = view;
+        }
+
+        @Override
+        public void onDismiss() {
+            destoryView.destoryView(view);
+        }
+    }
+
 }

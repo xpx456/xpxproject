@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.exhibition"
+        applicationId "com.exhibition"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -50,4 +50,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.0.0'
     implementation project(path: ':mywidget')
+    implementation project(path: ':finger')
+    implementation project(path: ':iccard')
 }

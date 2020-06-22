@@ -541,6 +541,27 @@
                         android:textColor="#828282"
                         android:textSize="20px" />
 
+                    <RelativeLayout
+                        android:id="@+id/btnface"
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5px"
+                        android:layout_marginTop="20px"
+                        android:layout_below="@+id/face_title"
+                        android:background="@drawable/login_round_green_btn"
+                        >
+                        <ImageView
+                            android:id="@+id/faceimg"
+                            android:layout_width="70px"
+                            android:layout_height="70px"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/face"
+                            />
+
+                    </RelativeLayout>
+
 
                     <View
                         android:id="@+id/fingericon"
@@ -561,9 +582,20 @@
                         android:layout_marginTop="15px"
                         android:layout_toRightOf="@+id/fingericon"
                         android:gravity="center_vertical|center_horizontal"
-                        android:text="@string/register_face_title"
+                        android:text="@string/register_finger_title"
                         android:textColor="#828282"
                         android:textSize="20px" />
+
+
+
+                    <intersky.mywidget.MyLinearLayout
+                        android:id="@+id/finger_image_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="100px"
+                        android:layout_toRightOf="@+id/fingericon"
+                        android:layout_marginLeft="5px"
+                        android:layout_marginTop="20px"
+                        android:layout_below="@+id/finger_title"></intersky.mywidget.MyLinearLayout>
 
                 </RelativeLayout>
 

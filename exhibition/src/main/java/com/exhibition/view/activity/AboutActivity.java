@@ -7,8 +7,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import com.bookpage.view.BookPageView;
-import com.bookpage.view.CoverPageView;
 import com.exhibition.R;
 import com.exhibition.presenter.AboutPresenter;
 import com.exhibition.view.adapter.GallyPageAdapter;

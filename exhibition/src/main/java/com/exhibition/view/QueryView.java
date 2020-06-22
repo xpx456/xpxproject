@@ -59,8 +59,15 @@ public class QueryView {
         }
     };
 
+    public AppUtils.DestoryView destoryView = new AppUtils.DestoryView() {
+        @Override
+        public void destoryView(View view) {
+
+        }
+    };
+
     public void creatView(View location) {
-        popupWindow = AppUtils.creatPopView(context,R.layout.view_query,R.id.view_query,location,initView);
+        popupWindow = AppUtils.creatPopView(context,R.layout.view_query,R.id.view_query,location,initView,destoryView);
         data.setText(TimeUtils.getDate());
         MyPageListData pageListData = new MyPageListData(DBHelper.getInstance(context).scanGuest(TimeUtils.getDate(),""));
         setData(pageListData);

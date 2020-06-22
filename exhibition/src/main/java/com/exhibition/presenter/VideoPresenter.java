@@ -11,6 +11,7 @@ import com.exhibition.R;
 import com.exhibition.view.ExhibitionApplication;
 import com.exhibition.view.activity.LoginActivity;
 import com.exhibition.view.activity.VideoActivity;
+import com.finger.FingerManger;
 
 import java.io.IOException;
 
@@ -67,6 +68,7 @@ public class VideoPresenter implements Presenter {
     @Override
     public void Destroy() {
         releasePlayer();
+        ExhibitionApplication.mApp.fingerManger.destory();
     }
 
     public MediaPlayer.OnPreparedListener mPrepareListener = new MediaPlayer.OnPreparedListener() {
@@ -103,8 +105,13 @@ public class VideoPresenter implements Presenter {
 
         }
         public void surfaceCreated(SurfaceHolder holder) {
-            mVideoActivity.mediaPlayer.setDisplay(mVideoActivity.videoView.getHolder());
-            mVideoActivity.mediaPlayer.prepareAsync();
+            if(ExhibitionApplication.mApp.video != null)
+            {
+
+                mVideoActivity.mediaPlayer.setDisplay(mVideoActivity.videoView.getHolder());
+                mVideoActivity.mediaPlayer.prepareAsync();
+            }
+
 
         }
         public void surfaceDestroyed(SurfaceHolder holder) {
@@ -118,13 +125,14 @@ public class VideoPresenter implements Presenter {
         try {
             if(ExhibitionApplication.mApp.video == null)
             {
-                AssetManager am = mVideoActivity.getAssets();
-                try {
-                    AssetFileDescriptor afd= am.openFd("splash.mp4");
-                    mVideoActivity.mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                AssetManager am = mVideoActivity.getAssets();
+//                try {
+//                    AssetFileDescriptor afd= am.openFd("splash.mp4");
+//                    mVideoActivity.mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+                mVideoActivity.videoView.setVisibility(View.INVISIBLE);
                 //给MediaPlayer设置播放源
 
             }

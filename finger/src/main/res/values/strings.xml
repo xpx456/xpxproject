@@ -1,0 +1,10 @@
+<resources>
+    <string name="finger_get_start">请把手指放入指静脉识别口</string>
+    <string name="finger_error">设备错误，请把手指放入指静脉识别口</string>
+    <string name="finger_leave">手指已离开，请把手指放入指静脉识别口</string>
+    <string name="finger_same">该手指已注册过，请放入不同手指</string>
+    <string name="finger_success_again">识别成功，请再保存一次，请把手指放入指静脉识别口</string>
+    <string name="finger_querity_again">识别失败，请重新识别，请把手指放入指静脉识别口</string>
+    <string name="finger_error_max">设备错误次数过多，识别结束</string>
+    <string name="finger_success">识别成功，指静脉已保存</string>
+</resources>

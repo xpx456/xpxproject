@@ -1,12 +1,18 @@
 package com.exhibition.view;
 
+import android.app.ActivityManager;
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Environment;
 
 import com.exhibition.handler.AppHandler;
+import com.exhibition.view.activity.MainActivity;
 import com.exhibition.view.activity.VideoActivity;
+import com.finger.FingerManger;
+import com.iccard.IcCardManager;
+import com.iccard.handler.IcCardHandler;
 
 
 import org.json.JSONException;
@@ -14,6 +20,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import intersky.appbase.AppActivityManager;
 import intersky.apputils.AppUtils;
@@ -27,12 +34,14 @@ public class ExhibitionApplication extends Application {
     public static final String VIDEO_PATH = "video";
     public static final String PHOTO_PATH = "photo";
     public static final String SETTING_PATH = "setting";
+    public static final String FINGER_PATH = "finger";
     public static final String SETTING_NAME = "setting.txt";
     public static final int CHECK_TIME_OUT = 10000;
     public static final int SET_TIME_MAX = 10001;
     public static final int SET_VIDEO_SHOW = 10002;
     public static final int SET_VIDEO_HID = 10003;
     public static final int TIME_MAX = 300;
+    public static final int MAX_FINGER_SIZE = 3;
     public AppActivityManager appActivityManager;
     public static ExhibitionApplication mApp;
     public int timeoud = TIME_MAX;
@@ -41,11 +50,17 @@ public class ExhibitionApplication extends Application {
     public AppHandler handler = new AppHandler();
     public JSONObject setjson = new JSONObject();
     public File video = null;
+    public File fingerbase;
     public ArrayList<File> photos = new ArrayList<File>();
+    public FingerManger fingerManger;
+    public IcCardManager icCardManager;
     public void onCreate() {
         mApp = this;
+
         fileUtils = FileUtils.init(mApp,null,null,null);
         fileUtils.pathUtils.setBase("/exhibtion");
+        icCardManager = IcCardManager.init(mApp);
+        fingerManger = FingerManger.init(mApp,fileUtils.pathUtils.getfilePath("db")+"/exhibtion.db");
         File file = new File(fileUtils.pathUtils.getAppPath());
         GlideConfiguration.init(file);
         appActivityManager = AppActivityManager.getAppActivityManager(mApp);
@@ -72,6 +87,8 @@ public class ExhibitionApplication extends Application {
                 mApp.sendBroadcast(new Intent(ACTION_UPDATA_TIMEOUT));
             }
         }
+
+        if(handler != null)
         handler.sendEmptyMessageDelayed(CHECK_TIME_OUT,1000);
     }
 
@@ -96,6 +113,7 @@ public class ExhibitionApplication extends Application {
 
     private void initSetting() {
         File setting = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH));
+        fingerbase = new File(fileUtils.pathUtils.getfilePath(FINGER_PATH));
         File setfile = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH)+"/"+SETTING_NAME);
         if(setfile.exists())
         {
@@ -223,4 +241,5 @@ public class ExhibitionApplication extends Application {
             return null;
         }
     }
+
 }

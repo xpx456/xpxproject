@@ -4,14 +4,18 @@ import android.content.Intent;
 import android.view.View;
 
 import com.exhibition.R;
+import com.exhibition.database.DBHelper;
+import com.exhibition.entity.Guest;
 import com.exhibition.handler.LoginHandler;
 import com.exhibition.receiver.LoginReceiver;
 import com.exhibition.view.ExhibitionApplication;
-import com.exhibition.view.activity.AboutActivity;
 import com.exhibition.view.activity.LoginActivity;
 import com.exhibition.view.activity.MainActivity;
+import com.finger.FingerManger;
 
 import intersky.appbase.Presenter;
+import intersky.apputils.AppUtils;
+import intersky.mywidget.conturypick.DbHelper;
 
 public class LoginPresenter implements Presenter {
 
@@ -37,10 +41,13 @@ public class LoginPresenter implements Presenter {
         mLoginActivity.btnLogin = mLoginActivity.findViewById(R.id.login_btn);
         mLoginActivity.logingOut = mLoginActivity.findViewById(R.id.login_out);
         mLoginActivity.lastSecond = mLoginActivity.findViewById(R.id.count);
+        mLoginActivity.fingerlayer = mLoginActivity.findViewById(R.id.fingerinarea);
+        mLoginActivity.passwordlayer = mLoginActivity.findViewById(R.id.passwordloginarea);
+        mLoginActivity.imageView = mLoginActivity.findViewById(R.id.fingerimg);
         mLoginActivity.lastSecond.setText(String.valueOf(ExhibitionApplication.mApp.timeoud));
         mLoginActivity.btnLogin.setOnClickListener(loginListener);
         mLoginActivity.logingOut.setOnClickListener(logoutListener);
-        setPasswordLoginBtn();
+        setFingerLoginBtn();
     }
 
     @Override
@@ -74,18 +81,20 @@ public class LoginPresenter implements Presenter {
 
     public void setPasswordLoginBtn() {
         mLoginActivity.botton1.setBackgroundResource(R.drawable.login_round_green_btn);
-        mLoginActivity.botton2.setBackgroundResource(R.drawable.login_round_puple_btn);
+        mLoginActivity.botton2.setBackgroundResource(R.drawable.finger_get_bg);
         mLoginActivity.image1.setImageResource(R.drawable.face);
         mLoginActivity.image2.setImageResource(R.drawable.finger);
         mLoginActivity.title1.setText(mLoginActivity.getString(R.string.face));
         mLoginActivity.title2.setText(mLoginActivity.getString(R.string.finger));
         mLoginActivity.botton1.setOnClickListener(faceListener);
         mLoginActivity.botton2.setOnClickListener(fingerListener);
+        mLoginActivity.passwordlayer.setVisibility(View.VISIBLE);
+        mLoginActivity.fingerlayer.setVisibility(View.INVISIBLE);
     }
 
     public void setFaceLoginBtn() {
         mLoginActivity.botton1.setBackgroundResource(R.drawable.login_round_blue_btn);
-        mLoginActivity.botton2.setBackgroundResource(R.drawable.login_round_puple_btn);
+        mLoginActivity.botton2.setBackgroundResource(R.drawable.finger_get_bg);
         mLoginActivity.image1.setImageResource(R.drawable.code);
         mLoginActivity.image2.setImageResource(R.drawable.finger);
         mLoginActivity.title1.setText(mLoginActivity.getString(R.string.code));
@@ -103,11 +112,30 @@ public class LoginPresenter implements Presenter {
         mLoginActivity.title2.setText(mLoginActivity.getString(R.string.face));
         mLoginActivity.botton1.setOnClickListener(codeListener);
         mLoginActivity.botton2.setOnClickListener(faceListener);
+        mLoginActivity.fingerlayer.setVisibility(View.VISIBLE);
+        mLoginActivity.passwordlayer.setVisibility(View.INVISIBLE);
+        ExhibitionApplication.mApp.fingerManger.startReconize();
     }
 
     public void doLogin() {
+        ExhibitionApplication.mApp.fingerManger.stopReconize();
         Intent intent = new Intent(mLoginActivity, MainActivity.class);
         mLoginActivity.startActivity(intent);
+    }
+
+    public void praseLoginImf(Intent intent)
+    {
+        if(intent.getBooleanExtra("success",false) == true)
+        {
+            String fearid = intent.getStringExtra("feaid");
+            String id = fearid.substring(14,fearid.length());
+            Guest guest = DBHelper.getInstance(mLoginActivity).getGuestInfo(id);
+            AppUtils.showMessage(mLoginActivity,guest.name);
+        }
+        else
+        {
+            ExhibitionApplication.mApp.fingerManger.startReconize();
+        }
     }
 
 
@@ -121,7 +149,7 @@ public class LoginPresenter implements Presenter {
     public View.OnClickListener faceListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            setFaceLoginBtn();
+//            setFaceLoginBtn();
         }
     };
 

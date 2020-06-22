@@ -30,6 +30,9 @@ public class LoginActivity extends PadBaseActivity {
     public TextView btnLogin;
     public TextView logingOut;
     public TextView lastSecond;
+    public RelativeLayout fingerlayer;
+    public RelativeLayout passwordlayer;
+    public ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

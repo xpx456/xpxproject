@@ -2,5 +2,7 @@ include ':intersky', ':interskypad', ':appbase', ':autoupdate', ':budge', ':chat
 include ':test'
 include ':exhibition'
 include ':strang'
-include ':bookpage'
 include ':restaurant'
+include ':finger'
+include ':face'
+include ':iccard'

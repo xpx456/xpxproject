@@ -7,6 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.exhibition.entity.Guest;
+import com.exhibition.utils.FingerUtils;
+import com.finger.entity.Finger;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +22,7 @@ import java.util.List;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "exhibition.db";
-    public static final int DB_VERSION = 2;
+    public static final int DB_VERSION = 4;
 
     private static final String TABLE_GUEST = "TABLE_GUEST";
     private static final String GUEST_NAME = "GUEST_NAME";
@@ -32,6 +38,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String GUEST_MOBIL = "GUEST_MOBIL";
     private static final String GUEST_SEX = "GUEST_SEX";
     private static final String GUEST_USERFUL_TIME = "GUEST_USERFUL_TIME";
+    private static final String GUEST_FINGER = "GUEST_FINGER";
     private static DBHelper mDBHelper;
     private SQLiteDatabase db = null;
     public static DBHelper getInstance(Context context) {
@@ -62,7 +69,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String sql = "CREATE TABLE " + TABLE_GUEST + " (" + GUEST_RECORDID
                 + " TEXT PRIMARY KEY," + GUEST_NAME + " TEXT," + GUEST_ADDRESS + " TEXT," + GUEST_TYPE
                 + " TEXT," + GUEST_TIME + " TEXT,"  + GUEST_COUNT + " TEXT,"  + GUEST_LICENCE + " TEXT,"  + GUEST_CARD
-                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"+ GUEST_USERFUL_TIME + " TEXT,"
+                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"+ GUEST_USERFUL_TIME + " TEXT,"+ GUEST_FINGER + " TEXT,"
                 + GUEST_CAR + " TEXT)";
         db.execSQL(sql);
     }
@@ -76,7 +83,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String sql = "CREATE TABLE " + TABLE_GUEST + " (" + GUEST_RECORDID
                 + " TEXT PRIMARY KEY," + GUEST_NAME + " TEXT," + GUEST_ADDRESS + " TEXT," + GUEST_TYPE
                 + " TEXT," + GUEST_TIME + " TEXT,"  + GUEST_COUNT + " TEXT,"  + GUEST_LICENCE + " TEXT,"  + GUEST_CARD
-                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"+ GUEST_USERFUL_TIME + " TEXT,"
+                + " TEXT," + GUEST_ITEMS + " TEXT,"  + GUEST_MOBIL + " TEXT," + GUEST_SEX + " TEXT,"+ GUEST_USERFUL_TIME + " TEXT,"+ GUEST_FINGER + " TEXT,"
                 + GUEST_CAR + " TEXT)";
         db.execSQL(sql);
     }
@@ -103,6 +110,7 @@ public class DBHelper extends SQLiteOpenHelper {
             info.mobil = c.getString(c.getColumnIndex(GUEST_MOBIL));
             info.address = c.getString(c.getColumnIndex(GUEST_ADDRESS));
             info.utime = c.getString(c.getColumnIndex(GUEST_USERFUL_TIME));
+            measureFinger(c.getString(c.getColumnIndex(GUEST_FINGER)),info);
             servers.add(info);
         }
 
@@ -132,6 +140,7 @@ public class DBHelper extends SQLiteOpenHelper {
             info.mobil = c.getString(c.getColumnIndex(GUEST_MOBIL));
             info.address = c.getString(c.getColumnIndex(GUEST_ADDRESS));
             info.utime = c.getString(c.getColumnIndex(GUEST_USERFUL_TIME));
+            measureFinger(c.getString(c.getColumnIndex(GUEST_FINGER)),info);
             servers.put(info.rid,info);
         }
 
@@ -164,6 +173,7 @@ public class DBHelper extends SQLiteOpenHelper {
             info.mobil = c.getString(c.getColumnIndex(GUEST_MOBIL));
             info.address = c.getString(c.getColumnIndex(GUEST_ADDRESS));
             info.utime = c.getString(c.getColumnIndex(GUEST_USERFUL_TIME));
+            measureFinger(c.getString(c.getColumnIndex(GUEST_FINGER)),info);
             break;
         }
 
@@ -190,6 +200,8 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(GUEST_LICENCE, sInfo.licence);
         cv.put(GUEST_ITEMS, sInfo.items);
         cv.put(GUEST_USERFUL_TIME, sInfo.utime);
+        cv.put(GUEST_FINGER, measureFingerJson(sInfo));
+
         int iRet = (int) db.insert(TABLE_GUEST, null, cv);
         if (-1 == iRet) {
             iRet = db.update(TABLE_GUEST, cv, GUEST_RECORDID + "=?", new String[]
@@ -205,4 +217,41 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public void measureFinger(String json,Guest guest)
+    {
+        try {
+            JSONArray jsonArray = new JSONArray(json);
+            for(int i = 0 ; i < jsonArray.length() ; i++)
+            {
+                JSONObject jo = jsonArray.getJSONObject(i);
+                Finger finger = new Finger();
+                finger.rid = jo.getString("rid");
+                finger.gid = jo.getString("gid");
+                FingerUtils.getFingerImage(finger);
+                guest.fingers.add(finger);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String measureFingerJson(Guest guest)
+    {
+        try {
+            JSONArray jsonArray = new JSONArray();
+            for(int i = 0 ; i < guest.fingers.size() ; i++)
+            {
+                JSONObject jo = new JSONObject();
+                jo.put("gid",guest.fingers.get(i).gid);
+                jo.put("rid",guest.rid);
+                jsonArray.put(jo);
+            }
+            return jsonArray.toString();
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
 }
