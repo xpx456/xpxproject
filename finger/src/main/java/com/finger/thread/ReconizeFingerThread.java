@@ -1,11 +1,13 @@
 package com.finger.thread;
 
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Message;
 
 import com.finger.FingerManger;
 import com.finger.entity.Finger;
+import com.zkteco.biometric.exception.ZKWFPModuleException;
 
 import intersky.apputils.BitmapCache;
 import jx.vein.javajar.JXFVJavaInterface;
@@ -33,6 +35,19 @@ public class ReconizeFingerThread extends Thread {
 
     @Override
     public void run() {
+        if(fingerManger.type == FingerManger.TYPE_FINGER_EXHIBITION)
+        {
+            type1();
+        }
+        else
+        {
+            type2();
+        }
+        super.run();
+    }
+
+    public void type1()
+    {
         int rat = fingerManger.jxfvJavaInterface.jxInitCapEnv(fingerManger.devHandle);
         int erreycount = 0;
         if (rat == 0) {
@@ -133,6 +148,34 @@ public class ReconizeFingerThread extends Thread {
             if (fingerManger.fingerHandler != null)
                 fingerManger.fingerHandler.sendEmptyMessage(GET_FINGER_ERROR_FINISH);
         }
-        super.run();
+    }
+
+    public void type2()
+    {
+
+        while (fingerManger.fingerlogin)
+        {
+            if(fingerManger.isOpen){
+                try {
+                    int ret = fingerManger.module.captureFinger(0);
+                    if(0 == ret){
+                        int[] id = new int[1];
+                        ret = fingerManger.module.identify(0,id);
+                        if(ret == 0x100A){
+                        }else if(ret == 0x1008||ret == 0xFFFF){
+                        }else if(ret == 0x0000){
+                            Intent intent1 = new Intent(FingerManger.ACTION_GET_LOGIN_SUCCESS);
+                            intent1.putExtra("feaid",String.valueOf(id[0]));
+                            intent1.putExtra("success",true);
+                            fingerManger.context.sendBroadcast(intent1);
+                        }
+                    }else if(0x1012 == ret){
+                    }
+                } catch (ZKWFPModuleException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
     }
 }

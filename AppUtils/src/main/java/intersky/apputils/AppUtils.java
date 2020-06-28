@@ -165,32 +165,32 @@ public class AppUtils {
     }
 
 
-    public static PopupWindow creatPopView(Context mContext, int lid, int oid, View location, InitView initView,  DestoryView destoryView)
-    {
-        View popupWindowView = LayoutInflater.from(mContext).inflate(lid, null);
-        RelativeLayout lsyer = (RelativeLayout) popupWindowView.findViewById(oid);
-        lsyer.setFocusable(true);
-        lsyer.setFocusableInTouchMode(true);
-        PopupWindow popupWindow1 = new PopupWindow(popupWindowView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT, true);
-        popupWindowView.setFocusable(true);
-        popupWindowView.setFocusableInTouchMode(true);
-        popupWindow1.setAnimationStyle(R.style.PopupAnimation);
-        final PopupWindow finalPopupWindow = popupWindow1;
-        lsyer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finalPopupWindow.dismiss();
-            }
-        });
-        ColorDrawable dw = new ColorDrawable(0x00ffffff);
-        popupWindow1.getContentView().setTag(destoryView);
-        popupWindow1.setBackgroundDrawable(dw);
-        popupWindow1.setOnDismissListener(new MyDismiss(destoryView,popupWindowView));
-        popupWindow1.showAtLocation(location,
-                Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 0);
-        initView.initView(popupWindowView);
-        return popupWindow1;
-    }
+//    public static PopupWindow creatPopView(Context mContext, int lid, int oid, View location, InitView initView,  DestoryView destoryView)
+//    {
+//        View popupWindowView = LayoutInflater.from(mContext).inflate(lid, null);
+//        RelativeLayout lsyer = (RelativeLayout) popupWindowView.findViewById(oid);
+//        lsyer.setFocusable(true);
+//        lsyer.setFocusableInTouchMode(true);
+//        PopupWindow popupWindow1 = new PopupWindow(popupWindowView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT, true);
+//        popupWindowView.setFocusable(true);
+//        popupWindowView.setFocusableInTouchMode(true);
+//        popupWindow1.setAnimationStyle(R.style.PopupAnimation);
+//        final PopupWindow finalPopupWindow = popupWindow1;
+//        lsyer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finalPopupWindow.dismiss();
+//            }
+//        });
+//        ColorDrawable dw = new ColorDrawable(0x00ffffff);
+//        popupWindow1.getContentView().setTag(destoryView);
+//        popupWindow1.setBackgroundDrawable(dw);
+//        popupWindow1.setOnDismissListener(new MyDismiss(destoryView,popupWindowView));
+//        popupWindow1.showAtLocation(location,
+//                Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 0);
+//        initView.initView(popupWindowView);
+//        return popupWindow1;
+//    }
 
     public static PopupWindow creatDialogTowButtonView(Context mContext,final RelativeLayout mRelativeLayout,View view,View location)
     {
@@ -1717,31 +1717,31 @@ public class AppUtils {
         return false;
     }
 
-    public interface InitView
-    {
-        void initView(View view);
-    }
-
-    public interface DestoryView
-    {
-        void destoryView(View view);
-    }
-
-    private static class MyDismiss implements PopupWindow.OnDismissListener{
-
-        public DestoryView destoryView;
-        public View view;
-
-        public MyDismiss(DestoryView destoryView,View view)
-        {
-            this.destoryView = destoryView;
-            this.view = view;
-        }
-
-        @Override
-        public void onDismiss() {
-            destoryView.destoryView(view);
-        }
-    }
+//    public interface InitView
+//    {
+//        void initView(View view);
+//    }
+//
+//    public interface DestoryView
+//    {
+//        void destoryView(View view);
+//    }
+//
+//    private static class MyDismiss implements PopupWindow.OnDismissListener{
+//
+//        public DestoryView destoryView;
+//        public View view;
+//
+//        public MyDismiss(DestoryView destoryView,View view)
+//        {
+//            this.destoryView = destoryView;
+//            this.view = view;
+//        }
+//
+//        @Override
+//        public void onDismiss() {
+//            destoryView.destoryView(view);
+//        }
+//    }
 
 }

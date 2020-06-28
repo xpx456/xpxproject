@@ -2,14 +2,20 @@ package com.finger.thread;
 
 
 import android.graphics.BitmapFactory;
+import android.hardware.usb.UsbManager;
 import android.os.Handler;
 import android.os.Message;
 
 import com.finger.FingerManger;
 import com.finger.entity.CacheFinger;
 import com.finger.entity.Finger;
+import com.zkteco.android.biometric.core.device.ParameterHelper;
+import com.zkteco.android.biometric.core.device.TransportType;
+import com.zkteco.biometric.ZKWFPModuleFactory;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import intersky.apputils.BitmapCache;
 import jx.vein.javajar.JXFVJavaInterface;
@@ -73,9 +79,24 @@ public class InitdeviceThread extends Thread {
 
     @Override
     public void run() {
-        initUSBDriver();
-        checkDeviceConnect();
-        ceatDb();
+        if(fingerManger.type == FingerManger.TYPE_FINGER_EXHIBITION)
+        {
+            initUSBDriver();
+            checkDeviceConnect();
+            ceatDb();
+        }
+        else if(fingerManger.type == FingerManger.TYPE_FINGER_RESTURANT)
+        {
+            Map fingerprintParams = new HashMap();
+            //set vid
+            fingerprintParams.put(ParameterHelper.PARAM_KEY_VID, FingerManger.VID);
+            //set pid
+            fingerprintParams.put(ParameterHelper.PARAM_KEY_PID, FingerManger.PID);
+            fingerManger.module = ZKWFPModuleFactory.createFingerprintSensor(fingerManger.context, TransportType.USBSCSI, fingerprintParams);
+            if(fingerManger.isOpen == false)
+            fingerManger.OnBnOpen();
+
+        }
         super.run();
     }
 }

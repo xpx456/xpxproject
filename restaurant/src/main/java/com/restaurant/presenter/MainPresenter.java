@@ -83,6 +83,6 @@ public class MainPresenter implements Presenter {
 
     public void closeSuccess()
     {
-        mMainActivity.successView.hid();
+//        mMainActivity.successView.hid();
     }
 }

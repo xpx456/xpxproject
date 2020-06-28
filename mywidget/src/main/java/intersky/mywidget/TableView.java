@@ -16,15 +16,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import java.util.ArrayList;
+//import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * Created by xpx on 2017/2/14.
  */
 //SwipeRefreshLayout.OnRefreshListener,MySwipeRefreshLayout.OnLoadMoreListener
-public class TableView extends RelativeLayout implements SwipeRefreshLayout.OnRefreshListener, MySwipeRefreshLayout.OnLoadMoreListener {
+public class TableView extends RelativeLayout implements MySwipeRefreshLayout.OnRefreshListener, MySwipeRefreshLayout.OnLoadMoreListener {
 
     private View mTable;
     private RelativeLayout tableBase;

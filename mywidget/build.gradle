@@ -37,5 +37,5 @@ dependencies {
     implementation project(':AppUtils')
     implementation project(':talk')
     implementation 'org.jsoup:jsoup:1.12.1'
-//    implementation files('libs\\commons-lang3-3.0.1.jar')
+    implementation files('libs\\commons-lang3-3.0.1.jar')
 }

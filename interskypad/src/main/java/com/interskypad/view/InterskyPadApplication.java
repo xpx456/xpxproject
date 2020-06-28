@@ -1,12 +1,12 @@
 package com.interskypad.view;
 
+import android.app.Application;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 
 import androidx.core.content.FileProvider;
-import androidx.multidex.MultiDexApplication;
 
 import com.interksy.autoupdate.UpDataManager;
 import com.interskypad.database.DBHelper;
@@ -35,7 +35,7 @@ import intersky.xpxnet.net.Service;
  *
  * History:
  */
-public class InterskyPadApplication extends MultiDexApplication {
+public class InterskyPadApplication extends Application {
 
 	public static final String CHECK_VERSION_URL = "http://www.intersky.com.cn/app/android.version/interskypad.txt";
 	public static final String UPDATA_APP_URL = "http://www.intersky.com.cn/app/android.version/interskypad.apk";

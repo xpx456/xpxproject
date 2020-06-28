@@ -22,11 +22,10 @@ import com.exhibition.view.adapter.QueryListAdapter;
 import intersky.apputils.AppUtils;
 import intersky.apputils.DoubleDatePickerDialog;
 import intersky.apputils.TimeUtils;
+import intersky.mywidget.PopView;
 
-public class QueryView {
+public class QueryView extends PopView {
 
-    public Context context;
-    public View mainView;
     public RelativeLayout btnDate;
     public TextView data;
     public TextView btnSearch;
@@ -38,47 +37,40 @@ public class QueryView {
     public MyPageListData pageListData;
     public QueryListAdapter queryListAdapter;
     public PopupWindow popupWindow;
+
     public QueryView(Context context) {
-        this.context = context;
+        super(context);
+        initView();
     }
 
-    public AppUtils.InitView initView = new AppUtils.InitView() {
-        @Override
-        public void initView(View view) {
-            mainView = view;
-            btnDate = mainView.findViewById(R.id.date);
-            data = mainView.findViewById(R.id.datevalue);
-            btnSearch = mainView.findViewById(R.id.searchbtn);
-            keyword = mainView.findViewById(R.id.keywordvalue);
-            listview = mainView.findViewById(R.id.querylist);
-            tebLayer = mainView.findViewById(R.id.tebiconlist);
-            tebpage = mainView.findViewById(R.id.tebeditvalue);
-            btngo = mainView.findViewById(R.id.went);
-            data.setOnClickListener(detepickListener);
-            listview.setLayoutManager(new LinearLayoutManager(context));
-        }
-    };
+    @Override
+    public void initView() {
+        mainView = LayoutInflater.from(context).inflate(R.layout.view_query, null);
+        btnDate = mainView.findViewById(R.id.date);
+        data = mainView.findViewById(R.id.datevalue);
+        btnSearch = mainView.findViewById(R.id.searchbtn);
+        keyword = mainView.findViewById(R.id.keywordvalue);
+        listview = mainView.findViewById(R.id.querylist);
+        tebLayer = mainView.findViewById(R.id.tebiconlist);
+        tebpage = mainView.findViewById(R.id.tebeditvalue);
+        btngo = mainView.findViewById(R.id.went);
+        data.setOnClickListener(detepickListener);
+        listview.setLayoutManager(new LinearLayoutManager(context));
+        close =mainView.findViewById(R.id.view_query);
+    }
 
-    public AppUtils.DestoryView destoryView = new AppUtils.DestoryView() {
-        @Override
-        public void destoryView(View view) {
+    @Override
+    public void destoryView() {
+    }
 
-        }
-    };
 
     public void creatView(View location) {
-        popupWindow = AppUtils.creatPopView(context,R.layout.view_query,R.id.view_query,location,initView,destoryView);
         data.setText(TimeUtils.getDate());
         MyPageListData pageListData = new MyPageListData(DBHelper.getInstance(context).scanGuest(TimeUtils.getDate(),""));
         setData(pageListData);
+        super.creatView(location);
     }
 
-    public void hidView() {
-        if(popupWindow != null)
-        {
-            popupWindow.dismiss();
-        }
-    }
 
     private void setData(MyPageListData pageListData) {
         this.pageListData = pageListData;

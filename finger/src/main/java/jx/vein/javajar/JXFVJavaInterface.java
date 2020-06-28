@@ -12,12 +12,12 @@ public class JXFVJavaInterface {
 	public static final int veinFeatureSize =1344;
 	
 	static {
-		System.loadLibrary("JXFVJavaInterface");
-		System.loadLibrary("JXFVM");
-		System.loadLibrary("JXFVD");
-		System.loadLibrary("JXFVBase");
-		System.loadLibrary("usb1.0");
-		System.loadLibrary("sqlite3");
+//		System.loadLibrary("JXFVJavaInterface");
+//		System.loadLibrary("JXFVM");
+//		System.loadLibrary("JXFVD");
+//		System.loadLibrary("JXFVBase");
+//		System.loadLibrary("usb1.0");
+//		System.loadLibrary("sqlite3");
 	}
 	
 	

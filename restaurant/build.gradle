@@ -44,4 +44,5 @@ dependencies {
     implementation project(path: ':xpxnet')
     implementation project(path: ':appbase')
     implementation project(path: ':AppUtils')
+    implementation project(path: ':mywidget')
 }

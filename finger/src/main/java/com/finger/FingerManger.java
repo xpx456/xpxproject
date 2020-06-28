@@ -1,18 +1,26 @@
 package com.finger;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.usb.UsbDevice;
+import android.hardware.usb.UsbManager;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.finger.entity.CacheFinger;
 import com.finger.entity.Finger;
 import com.finger.handler.FingerHandler;
+import com.finger.receicer.UsbReceiver;
 import com.finger.thread.InitdeviceThread;
 import com.finger.thread.ReconizeFingerThread;
 import com.finger.thread.RegisterFingerThread;
 import com.finger.view.GetFingerView;
+import com.zkteco.biometric.ZKWFPModule;
+import com.zkteco.biometric.exception.ZKWFPModuleException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -23,6 +31,12 @@ import jx.vein.javajar.JXFVJavaInterface;
 
 
 public class FingerManger {
+
+    public static final String ACTION_USB_PERMISSION = "com.zkteco.finger.USB_PERMISSION";
+    public static final int PID = 0x1001;
+    public static final int VID = 0xABCD;
+    public static final int TYPE_FINGER_EXHIBITION = 0;
+    public static final int TYPE_FINGER_RESTURANT = 1;
 
     public static final int STATE_CONNECT = 0; //已经连接
     public static final int STATE_NONE = -1; //未检测到设备
@@ -57,23 +71,52 @@ public class FingerManger {
     public Finger lastgetFinger;
     public HashMap<String,ArrayList<CacheFinger>> hashFingers;
     public boolean fingerlogin = false;
-    public static FingerManger init(Context context,String dbname) {
+    public int type;
+    public UsbManager musbManager;
+    public ZKWFPModule module;
+    public boolean isOpen = false;
+    public UsbReceiver usbReceiver;
+    public static FingerManger init(Context context,String dbname,int type) {
 
         if (fingerManger == null) {
             synchronized (FingerManger.class) {
                 if (fingerManger == null) {
                     fingerManger = new FingerManger(context);
-                    fingerManger.dbname = dbname;
+                    fingerManger.type = type;
                     fingerManger.fingerHandler = new FingerHandler(fingerManger);
+                    fingerManger.dbname = dbname;
+                    if(fingerManger.type == TYPE_FINGER_EXHIBITION)
+                    {
+                        fingerManger.jxfvJavaInterface = new JXFVJavaInterface();
+
+                    }
+                    else
+                    {
+                        fingerManger.usbReceiver = new UsbReceiver(fingerManger);
+                        fingerManger.musbManager = (UsbManager) context.getSystemService(Context.USB_SERVICE);
+                    }
                     fingerManger.initdeviceThread = new InitdeviceThread(fingerManger);
                     fingerManger.initdeviceThread.start();
                 }
                 else
                 {
                     fingerManger.context = context;
-                    fingerManger.dbname = dbname;
-                    fingerManger.jxfvJavaInterface = new JXFVJavaInterface();
+                    fingerManger.type = type;
                     fingerManger.fingerHandler = new FingerHandler(fingerManger);
+                    fingerManger.dbname = dbname;
+                    if(fingerManger.type == TYPE_FINGER_RESTURANT)
+                    {
+                        fingerManger.jxfvJavaInterface = new JXFVJavaInterface();
+                    }
+                    else
+                    {
+                        fingerManger.usbReceiver = new UsbReceiver(fingerManger);
+                        IntentFilter intentFilter = new IntentFilter();
+                        intentFilter.addAction(ACTION_USB_PERMISSION);
+                        intentFilter.addAction(UsbManager.ACTION_USB_ACCESSORY_ATTACHED);
+                        fingerManger.context.unregisterReceiver(fingerManger.usbReceiver);
+                        fingerManger.context.registerReceiver(fingerManger.usbReceiver,intentFilter);
+                    }
                     fingerManger.initdeviceThread = new InitdeviceThread(fingerManger);
                     fingerManger.initdeviceThread.start();
                 }
@@ -97,14 +140,13 @@ public class FingerManger {
 
     public FingerManger(Context context) {
         this.context = context;
-        jxfvJavaInterface = new JXFVJavaInterface();
     }
 
-    public void startGetFingerImage(Context context, View location, int count) {
+    public void startGetFingerImage(Context context, View location, int count,Finger finger) {
         getFingerView = new GetFingerView(context);
         getFingerView.creatView(location);
         getFingerView.tip.setText(context.getString(R.string.finger_get_start));
-        registerFingerThread = new RegisterFingerThread(fingerManger,count);
+        registerFingerThread = new RegisterFingerThread(fingerManger,count,finger);
         registerFingerThread.start();
     }
 
@@ -187,7 +229,15 @@ public class FingerManger {
         fingerHandler = null;
         initdeviceThread = null;
         registerFingerThread = null;
-        jxfvJavaInterface.jxDeInitUSBDriver(devHandle);
+        if(type == FingerManger.TYPE_FINGER_EXHIBITION)
+        {
+            jxfvJavaInterface.jxDeInitUSBDriver(devHandle);
+        }
+        else
+        {
+            fingerManger.context.unregisterReceiver(usbReceiver);
+        }
+
     }
 
     public ArrayList<Finger> measureFiners(File finger)
@@ -361,4 +411,44 @@ public class FingerManger {
             return null;
         }
     }
+
+
+    //-------------------------------------------------------------------------------------
+
+
+    public void initDevice() {
+        musbManager = (UsbManager)context.getSystemService(Context.USB_SERVICE);
+        for (UsbDevice device : musbManager.getDeviceList().values())
+        {
+            if (device.getVendorId() == VID && device.getProductId() == PID)
+            {
+                if(!musbManager.hasPermission(device)){
+                    Intent intent = new Intent(ACTION_USB_PERMISSION);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+                    musbManager.requestPermission(device, pendingIntent);
+                }else{
+                    openDevice();
+                }
+            }
+        }
+    }
+
+    public void OnBnOpen(){
+        if(isOpen){
+            return;
+        }
+        initDevice();
+    }
+
+    public void  openDevice(){
+        try {
+            module.open(0);
+            module.writeSystemParam(0,4,0);
+            isOpen = true;
+        } catch (ZKWFPModuleException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

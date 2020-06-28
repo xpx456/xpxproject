@@ -7,76 +7,33 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.exhibition.R;
+import com.exhibition.database.DBHelper;
 import com.exhibition.entity.Guest;
+import com.exhibition.entity.MyPageListData;
 import com.exhibition.view.adapter.QueryListAdapter;
 
-public class BaseSettingView {
+import intersky.apputils.TimeUtils;
+import intersky.mywidget.PopView;
 
-    public Context context;
-    public View mainView;
-    public TextView btnCancle;
-    public TextView btnPrint;
-    public TextView btnSubmit;
+public class BaseSettingView extends PopView {
 
     public EditText name;
-    public TextView sex;
-    public EditText address;
-    public EditText licence;
-    public EditText mobil;
-    public EditText type;
-    public EditText count;
-
-    public EditText items;
-    public EditText car;
-    public EditText time;
-    public EditText card;
 
 
 
     public BaseSettingView(Context context) {
-        this.context = context;
+        super(context);
+        initView();
     }
 
-    public View creatView() {
-
+    @Override
+    public void initView() {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mainView = inflater.inflate(R.layout.view_register,null);
-        btnCancle = mainView.findViewById(R.id.btn_cancle);
-        btnPrint = mainView.findViewById(R.id.btn_print);
-        btnSubmit = mainView.findViewById(R.id.btn_submit);
-
-        name = mainView.findViewById(R.id.namevalue);
-        sex = mainView.findViewById(R.id.sexvalue);
-        address = mainView.findViewById(R.id.addressvalue);
-        licence = mainView.findViewById(R.id.licensevalue);
-        mobil = mainView.findViewById(R.id.mobilvalue);
-        type = mainView.findViewById(R.id.typevalue);
-        count = mainView.findViewById(R.id.countvalue);
-        items = mainView.findViewById(R.id.itemsvalue);
-        car = mainView.findViewById(R.id.carvalue);
-        time = mainView.findViewById(R.id.timevalue);
-        card = mainView.findViewById(R.id.cardvalue);
-
-        return mainView;
+        mainView = inflater.inflate(R.layout.view_basesetting,null);
     }
 
-    public void setData(Guest guest) {
+    public void creatView(View location) {
+        super.creatView(location);
     }
 
-
-    public QueryListAdapter.OnItemClickListener queryItemClickListener = new QueryListAdapter.OnItemClickListener() {
-
-        @Override
-        public void onItemClick(Guest guest, int position, View view) {
-
-        }
-
-    };
-
-    public View.OnClickListener pageClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-        }
-    };
 }

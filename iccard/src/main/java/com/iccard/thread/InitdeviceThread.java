@@ -3,7 +3,10 @@ package com.iccard.thread;
 
 import android.os.Message;
 import com.iccard.IcCardManager;
+import com.iccard.SerialPortFinder;
 import com.mjk.adplayer.utils.HardWareCommunicationUtils;
+
+import java.io.IOException;
 
 public class InitdeviceThread extends Thread {
 
@@ -26,12 +29,41 @@ public class InitdeviceThread extends Thread {
         msg.obj = devHandle;
     }
 
-
+    public void getdriver() {
+        icCardManager.mSerialPortFinder = new SerialPortFinder();
+        String[] entries = icCardManager.mSerialPortFinder.getAllDevices();
+        String[] entryValues = icCardManager.mSerialPortFinder.getAllDevicesPath();
+        String path = "";
+        if(entries.length > 0)
+        {
+            for(int i = 0 ; i < entries.length ; i++)
+            {
+                if(entries[i].equals("ttyS1"))
+                {
+                    path = entryValues[i];
+                }
+            }
+        }
+        try {
+            icCardManager.mSerialPort = icCardManager.getSerialPort(path);
+            icCardManager.mOutputStream = icCardManager.mSerialPort.getOutputStream();
+            icCardManager.mInputStream = icCardManager.mSerialPort.getInputStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Override
     public void run() {
-        initCard();
+        if(icCardManager.type == IcCardManager.TYPE_FINGER_EXHIBITION)
+        {
+            initCard();
+        }
+        else
+        {
+            getdriver();
+        }
         super.run();
     }
 }

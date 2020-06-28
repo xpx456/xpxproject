@@ -1,6 +1,7 @@
 package com.finger.view;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -8,36 +9,32 @@ import android.widget.TextView;
 import com.finger.R;
 
 import intersky.apputils.AppUtils;
+import intersky.mywidget.PopView;
 
-public class GetFingerView {
+public class GetFingerView extends PopView {
 
-    public Context context;
     public TextView tip;
     public View mainView;
-    public PopupWindow popupWindow;
     public GetFingerView(Context context) {
-        this.context = context;
+        super(context);
+        initView();
     }
 
-    public AppUtils.InitView initView = new AppUtils.InitView()
-    {
+    @Override
+    public void initView() {
+        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mainView = inflater.inflate(R.layout.view_finger_get,null);
+        tip = mainView.findViewById(R.id.tip);
+        close =mainView.findViewById(R.id.view_finger);
+    }
 
-        @Override
-        public void initView(View view) {
-            mainView = view;
-            tip = mainView.findViewById(R.id.tip);
-        }
-    };
+    @Override
+    public void destoryView() {
 
-    public AppUtils.DestoryView destoryView = new AppUtils.DestoryView() {
-        @Override
-        public void destoryView(View view) {
-
-        }
-    };
+    }
 
     public void creatView(View location) {
-        popupWindow = AppUtils.creatPopView(context, R.layout.view_finger_get,R.id.view_finger,location,initView,destoryView);
+        super.creatView(location);
     }
 
     public void setText(String imf) {

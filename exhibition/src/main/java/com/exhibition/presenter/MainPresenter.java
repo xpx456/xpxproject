@@ -5,13 +5,14 @@ import android.provider.Settings;
 import android.view.View;
 
 import com.exhibition.R;
-import com.exhibition.handler.LoginHandler;
 import com.exhibition.handler.MainHandler;
-import com.exhibition.receiver.LoginReceiver;
 import com.exhibition.receiver.MainReceiver;
+import com.exhibition.view.BaseSettingView;
 import com.exhibition.view.ExhibitionApplication;
 import com.exhibition.view.QueryView;
 import com.exhibition.view.RegisterView;
+import com.exhibition.view.SafeSettingView;
+import com.exhibition.view.SystemSettingView;
 import com.exhibition.view.activity.AboutActivity;
 import com.exhibition.view.activity.MainActivity;
 
@@ -50,6 +51,9 @@ public class MainPresenter implements Presenter {
         mMainActivity.exist.setOnClickListener(existListner);
         mMainActivity.queryView = new QueryView(mMainActivity);
         mMainActivity.registerView = new RegisterView(mMainActivity);
+        mMainActivity.baseSettingView = new BaseSettingView(mMainActivity);
+        mMainActivity.safeSettingView = new SafeSettingView(mMainActivity);
+        mMainActivity.systemSettingView = new SystemSettingView(mMainActivity);
         String name = "";
         try {
              name = ExhibitionApplication.mApp.setjson.getString("name");
@@ -108,21 +112,21 @@ public class MainPresenter implements Presenter {
     public View.OnClickListener baseSettingListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            mMainActivity.baseSettingView.creatView(mMainActivity.findViewById(R.id.activity_main));
         }
     };
 
     public View.OnClickListener netSettingListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent=new Intent(Settings.ACTION_SETTINGS);
-            mMainActivity.startActivity(intent);
+            mMainActivity.safeSettingView.creatView(mMainActivity.findViewById(R.id.activity_main));
         }
     };
 
     public View.OnClickListener updateListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            mMainActivity.systemSettingView.creatView(mMainActivity.findViewById(R.id.activity_main));
         }
     };
 
@@ -146,7 +150,7 @@ public class MainPresenter implements Presenter {
     {
         if(mMainActivity.registerView != null)
         {
-            mMainActivity.registerView.addFinger(ExhibitionApplication.mApp.fingerManger.lastgetFinger);
+//            mMainActivity.registerView.addFinger(ExhibitionApplication.mApp.fingerManger.lastgetFinger);
         }
     }
 }

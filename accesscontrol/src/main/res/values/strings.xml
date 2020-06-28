@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">accesscontrol</string>
+    <string name="main_fail">考勤失败</string>
+    <string name="main_success">考勤成功</string>
+</resources>

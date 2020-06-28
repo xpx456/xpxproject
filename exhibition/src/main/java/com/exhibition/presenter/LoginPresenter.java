@@ -47,7 +47,7 @@ public class LoginPresenter implements Presenter {
         mLoginActivity.lastSecond.setText(String.valueOf(ExhibitionApplication.mApp.timeoud));
         mLoginActivity.btnLogin.setOnClickListener(loginListener);
         mLoginActivity.logingOut.setOnClickListener(logoutListener);
-        setFingerLoginBtn();
+        setPasswordLoginBtn();
     }
 
     @Override
@@ -118,7 +118,7 @@ public class LoginPresenter implements Presenter {
     }
 
     public void doLogin() {
-        ExhibitionApplication.mApp.fingerManger.stopReconize();
+        //ExhibitionApplication.mApp.fingerManger.stopReconize();
         Intent intent = new Intent(mLoginActivity, MainActivity.class);
         mLoginActivity.startActivity(intent);
     }

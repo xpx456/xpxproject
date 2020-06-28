@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AppUtils" />
+            <option value="$PROJECT_DIR$/accesscontrol" />
             <option value="$PROJECT_DIR$/appbase" />
             <option value="$PROJECT_DIR$/attendance" />
             <option value="$PROJECT_DIR$/autoupdate" />

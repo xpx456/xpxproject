@@ -31,7 +31,7 @@
     <string name="main_btn2">公司简介</string>
     <string name="main_btn3">查询记录</string>
     <string name="main_btn4">基础设置</string>
-    <string name="main_btn5">网络设置</string>
+    <string name="main_btn5">安全设置</string>
     <string name="main_btn6">系统升级</string>
     <string name="main_title1">欢迎登陆</string>
     <string name="main_title2">展厅系统</string>
@@ -79,6 +79,8 @@
     <string name="base_setting_codetype_open">二维码</string>
     <string name="base_setting_codetype_close">其他</string>
 
+    <string name="base_setting_title_title">展厅名称</string>
+
     <string name="base_setting_title_licence">证件保密</string>
     <string name="base_setting_licence_open">开启</string>
     <string name="base_setting_licence_close">关闭</string>
@@ -91,6 +93,10 @@
     <string name="base_setting_safe_open">开启</string>
     <string name="base_setting_safe_close">关闭</string>
 
+
+    <string name="base_setting_title_admincode">管理员密码</string>
+    <string name="base_setting_title_admincode_button">点击修改</string>
+
     <string name="base_setting_title_cache">数据缓存</string>
     <string name="base_setting_cache_clean">清除缓存</string>
 
@@ -99,5 +105,5 @@
 
     <string name="systemupdate_version_title">版本号</string>
     <string name="systemupdate_update_title">版本更新</string>
-    <string name="systemupdate_progress_title">下载进度</string>
+    <string name="systemupdate_btn_instens">点击更新</string>
 </resources>

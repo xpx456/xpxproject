@@ -11,8 +11,8 @@ import com.exhibition.handler.AppHandler;
 import com.exhibition.view.activity.MainActivity;
 import com.exhibition.view.activity.VideoActivity;
 import com.finger.FingerManger;
-import com.iccard.IcCardManager;
-import com.iccard.handler.IcCardHandler;
+//import com.iccard.IcCardManager;
+//import com.iccard.handler.IcCardHandler;
 
 
 import org.json.JSONException;
@@ -53,14 +53,14 @@ public class ExhibitionApplication extends Application {
     public File fingerbase;
     public ArrayList<File> photos = new ArrayList<File>();
     public FingerManger fingerManger;
-    public IcCardManager icCardManager;
+//    public IcCardManager icCardManager;
     public void onCreate() {
         mApp = this;
 
         fileUtils = FileUtils.init(mApp,null,null,null);
         fileUtils.pathUtils.setBase("/exhibtion");
-        icCardManager = IcCardManager.init(mApp);
-        fingerManger = FingerManger.init(mApp,fileUtils.pathUtils.getfilePath("db")+"/exhibtion.db");
+//        icCardManager = IcCardManager.init(mApp,IcCardManager.TYPE_FINGER_EXHIBITION);
+        //fingerManger = FingerManger.init(mApp,fileUtils.pathUtils.getfilePath("db")+"/exhibtion.db");
         File file = new File(fileUtils.pathUtils.getAppPath());
         GlideConfiguration.init(file);
         appActivityManager = AppActivityManager.getAppActivityManager(mApp);

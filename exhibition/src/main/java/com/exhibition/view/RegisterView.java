@@ -27,11 +27,10 @@ import intersky.apputils.AppUtils;
 import intersky.apputils.DoubleDatePickerDialog;
 import intersky.apputils.TimeUtils;
 import intersky.mywidget.MyLinearLayout;
+import intersky.mywidget.PopView;
 
-public class RegisterView {
+public class RegisterView extends PopView {
 
-    public Context context;
-    public View mainView;
     public ArrayAdapter<String> sAdapter;
     public List<String> sexstring = new ArrayList<>();
     public TextView btnCancle;
@@ -51,66 +50,74 @@ public class RegisterView {
     public TextView time;
     public EditText card;
     public View fingerbtn;
-    public Guest guest;
-    public PopupWindow popupWindow;
+    public Guest guest = new Guest();
     public MyLinearLayout fingerlayout;
-    public View location;
+
     public RegisterView(Context context) {
-        this.context = context;
+        super(context);
+        initView();
+    }
+
+    @Override
+    public void initView() {
+        mainView = LayoutInflater.from(context).inflate(R.layout.view_register, null);
+        btnCancle = mainView.findViewById(R.id.btn_cancle);
+        btnPrint = mainView.findViewById(R.id.btn_print);
+        btnSubmit = mainView.findViewById(R.id.btn_submit);
+        hidinput = mainView.findViewById(R.id.hidinput);
+        name = mainView.findViewById(R.id.namevalue);
+        sex = mainView.findViewById(R.id.sexvalue);
+        address = mainView.findViewById(R.id.addressvalue);
+        licence = mainView.findViewById(R.id.licensevalue);
+        mobil = mainView.findViewById(R.id.mobilvalue);
+        type = mainView.findViewById(R.id.typevalue);
+        count = mainView.findViewById(R.id.countvalue);
+        items = mainView.findViewById(R.id.itemsvalue);
+        car = mainView.findViewById(R.id.carvalue);
+        time = mainView.findViewById(R.id.timevalue);
+        card = mainView.findViewById(R.id.cardvalue);
+        fingerlayout = mainView.findViewById(R.id.finger_image_content);
+        if(guest.fingers.size() < ExhibitionApplication.MAX_FINGER_SIZE)
+        {
+            for(int i = 0 ; i < guest.fingers.size() ; i++)
+            {
+                addFingerView(guest.fingers.get(i));
+            }
+            initAddTextView();
+        }
+        sexstring.clear();
+        sexstring.add(context.getString(R.string.sex_male));
+        sexstring.add(context.getString(R.string.sex_female));
+        sAdapter = new ArrayAdapter<String>(context, R.layout.sex_cell,
+                sexstring);
+        sex.setAdapter(sAdapter);
+        setViewData();
+        sex.setOnItemSelectedListener(sniperItemClick);
+        time.setOnClickListener(timepickListener);
+        btnSubmit.setOnClickListener(saveListener);
+        hidinput.setOnClickListener(hidinputListener);
+        fingerbtn.setOnClickListener(startRecordFingerListener);
+        close =mainView.findViewById(R.id.view_register);
+        super.initView();
+    }
+
+    @Override
+    public void destoryView() {
+        fingerlayout.removeAllViews();
+        guest = null;
+    }
+
+    @Override
+    public void cleanView() {
 
     }
 
+    public void creatView(View location) {
+        this.guest = new Guest();
+        super.creatView(location);
+    }
 
-    public AppUtils.InitView initView = new AppUtils.InitView() {
-        @Override
-        public void initView(View view) {
-            mainView = view;
-            btnCancle = mainView.findViewById(R.id.btn_cancle);
-            btnPrint = mainView.findViewById(R.id.btn_print);
-            btnSubmit = mainView.findViewById(R.id.btn_submit);
-            hidinput = mainView.findViewById(R.id.hidinput);
-            name = mainView.findViewById(R.id.namevalue);
-            sex = mainView.findViewById(R.id.sexvalue);
-            address = mainView.findViewById(R.id.addressvalue);
-            licence = mainView.findViewById(R.id.licensevalue);
-            mobil = mainView.findViewById(R.id.mobilvalue);
-            type = mainView.findViewById(R.id.typevalue);
-            count = mainView.findViewById(R.id.countvalue);
-            items = mainView.findViewById(R.id.itemsvalue);
-            car = mainView.findViewById(R.id.carvalue);
-            time = mainView.findViewById(R.id.timevalue);
-            card = mainView.findViewById(R.id.cardvalue);
-            fingerlayout = mainView.findViewById(R.id.finger_image_content);
-            if(guest.fingers.size() < ExhibitionApplication.MAX_FINGER_SIZE)
-            {
-                for(int i = 0 ; i < guest.fingers.size() ; i++)
-                {
-                    addFingerView(guest.fingers.get(i));
-                }
-                initAddTextView();
-            }
-            sexstring.clear();
-            sexstring.add(context.getString(R.string.sex_male));
-            sexstring.add(context.getString(R.string.sex_female));
-            sAdapter = new ArrayAdapter<String>(context, R.layout.sex_cell,
-                    sexstring);
-            sex.setAdapter(sAdapter);
-            setViewData();
-            sex.setOnItemSelectedListener(sniperItemClick);
-            time.setOnClickListener(timepickListener);
-            btnSubmit.setOnClickListener(saveListener);
-            hidinput.setOnClickListener(hidinputListener);
-            fingerbtn.setOnClickListener(startRecordFingerListener);
-        }
-    };
 
-    public AppUtils.DestoryView destoryView = new AppUtils.DestoryView() {
-        @Override
-        public void destoryView(View view) {
-            fingerlayout.removeAllViews();
-            guest = null;
-        }
-    };
 
     private void initAddTextView() {
         LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -138,24 +145,6 @@ public class RegisterView {
         fingerlayout.addView(view,index);
     }
 
-    public void creatView(View location) {
-        this.location = location;
-        this.guest = new Guest();
-        popupWindow = AppUtils.creatPopView(context,R.layout.view_register,R.id.view_register,location,initView,destoryView);
-    }
-
-    public void creatView(View location,Guest guest) {
-        this.location = location;
-        this.guest = guest;
-        popupWindow = AppUtils.creatPopView(context,R.layout.view_register,R.id.view_register,location,initView,destoryView);
-    }
-
-    public void hidView() {
-        if(popupWindow != null)
-        {
-            popupWindow.dismiss();
-        }
-    }
 
     public void setViewData()
     {
@@ -282,17 +271,17 @@ public class RegisterView {
     public View.OnClickListener startRecordFingerListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            ExhibitionApplication.mApp.fingerManger.startGetFingerImage(context, location,2);
+            Finger finger = new Finger();
+            finger.rid = FingerUtils.getFingerrid(guest);
+            finger.gid = FingerUtils.getFingerGudid(guest.fingers.size());
+            ExhibitionApplication.mApp.fingerManger.startGetFingerImage(context, location,2,finger);
         }
     };
 
 
     public void addFinger(Finger finger)
     {
-        finger.rid = FingerUtils.getFingerrid(guest);
-        finger.gid = FingerUtils.getFingerGudid(guest.fingers.size());
         addFingerView(finger,guest.fingers.size());
         guest.fingers.add(finger);
-
     }
 }

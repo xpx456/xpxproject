@@ -3,9 +3,12 @@ package com.finger.thread;
 
 import android.graphics.Bitmap;
 import android.os.Message;
+import android.text.TextUtils;
+import android.view.View;
 
 import com.finger.FingerManger;
 import com.finger.entity.Finger;
+import com.zkteco.biometric.exception.ZKWFPModuleException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -25,18 +28,24 @@ public class RegisterFingerThread extends Thread {
     public static final int GET_FINGER_ERROR_FINISH = 13006;
     public static final int GET_FINGER_PLEASE_LEAVE= 13007;
     public FingerManger fingerManger;
-    public int min = 1;
-    public Finger finger = new Finger();
-    public RegisterFingerThread(FingerManger fingerManger,int min)
+    public int min = 3;
+    public Finger finger;
+    public RegisterFingerThread(FingerManger fingerManger,int min,Finger finger)
     {
         this.fingerManger = fingerManger;
         this.min = min;
-
+        this.finger = finger;
     }
 
 
     @Override
     public void run() {
+        type1();
+        super.run();
+    }
+
+    public void type1()
+    {
         int rat = fingerManger.jxfvJavaInterface.jxInitCapEnv(fingerManger.devHandle);
         int erreycount = 0;
         if(rat == 0) {
@@ -66,11 +75,11 @@ public class RegisterFingerThread extends Thread {
                 if(getrat == -100) {
                     erreycount++;
                     if(fingerManger.fingerHandler != null)
-                    fingerManger.fingerHandler.sendEmptyMessage(GET_FINGER_ERROR);
+                        fingerManger.fingerHandler.sendEmptyMessage(GET_FINGER_ERROR);
                 }
                 if(getrat == 3) {
                     if(fingerManger.fingerHandler != null)
-                    fingerManger.fingerHandler.sendEmptyMessage(GET_FINGER_lEAVE);
+                        fingerManger.fingerHandler.sendEmptyMessage(GET_FINGER_lEAVE);
                 }
                 if(getrat == 2) {
                     boolean dosave = true;
@@ -150,6 +159,6 @@ public class RegisterFingerThread extends Thread {
             if(fingerManger.fingerHandler != null)
                 fingerManger.fingerHandler.sendEmptyMessage(GET_FINGER_ERROR_FINISH);
         }
-        super.run();
     }
+
 }

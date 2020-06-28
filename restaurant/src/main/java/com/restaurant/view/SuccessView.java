@@ -11,9 +11,10 @@ import android.widget.TextView;
 import com.restaurant.R;
 
 import intersky.apputils.AppUtils;
+import intersky.mywidget.PopView;
 
 
-public class SuccessView {
+public class SuccessView extends PopView {
 
     public Context context;
     public View mainView;
@@ -22,32 +23,11 @@ public class SuccessView {
     public TextView cast;
     public TextView last;
     public PopupWindow popupWindow;
-    public AppUtils.InitView initView = new AppUtils.InitView() {
-        @Override
-        public void initView(View view) {
-            mainView = view;
-            user = mainView.findViewById(R.id.uservalue);
-            type = mainView.findViewById(R.id.typevalue);
-            cast = mainView.findViewById(R.id.castvalue);
-            last = mainView.findViewById(R.id.lastvalue);
 
-        }
-    };
 
     public SuccessView(Context context) {
-        this.context = context;
+        super(context);
     }
-
-    public void creatView(View location) {
-        popupWindow = AppUtils.creatPopView(context,R.layout.view_success,R.id.success,location,initView);
-    }
-
-    public void hid() {
-        if(popupWindow != null)
-        popupWindow.dismiss();
-    }
-
-
 }
 
 
