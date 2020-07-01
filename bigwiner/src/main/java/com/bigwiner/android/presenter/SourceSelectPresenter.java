@@ -162,7 +162,9 @@ public class SourceSelectPresenter implements Presenter {
                 BigwinerApplication.mApp.businesstypeSelect.list.size() == 0 &&
                 BigwinerApplication.mApp.businessareaSelect.list.size() == 0 &&
                 BigwinerApplication.mApp.positions.list.size() == 0)
-            ConversationAsks.getBaseData(mSourceSelectActivity,mSourceSelectHandler,"all");
+        {
+            BigwinerApplication.mApp.getBaseData();
+        }
 //        ConversationAsks.getSourceData(mSourceSelectActivity,mSourceSelectHandler);
         mSourceSelectActivity.mNoScrollViewPager.setCurrentItem(0);
         clickTeb(mSourceSelectActivity.btnPosition.getId());

@@ -250,7 +250,7 @@ public class BigwinerApplication extends Application {
         guidePics.add(new GuidePic(R.drawable.splash));
         NetUtils.init(mApp);
         NetUtils.getInstance().addaskManagerThread("imchat",1000,1);
-        ConversationAsks.getBaseData(mApp,mAppHandler,"all");
+        getBaseData();
 
         ScanUtils.init(mApp);
         BaseLibsInit.init(mApp);
@@ -281,6 +281,17 @@ public class BigwinerApplication extends Application {
                 ,BigwinerApplication.mApp.sampleChatFunctions,BigwinerApplication.mApp.mMapManager
                 ,BigwinerApplication.mApp.mFileUtils.pathUtils.getfilePath("/im/head")+"/");
         BigwinerApplication.mApp.conversationManager = BigWinerConversationManager.init(BigwinerApplication.mApp);
+    }
+
+    public void getBaseData() {
+        if(BigwinerApplication.mApp.ports.list.size() == 0 &&
+                BigwinerApplication.mApp.businesstypeSelect.list.size() == 0 &&
+                BigwinerApplication.mApp.businessareaSelect.list.size() == 0 &&
+                BigwinerApplication.mApp.positions.list.size() == 0)
+        {
+            ConversationAsks.getBaseData(mApp,mAppHandler,"all");
+        }
+
     }
 
     public void initApllacation() {

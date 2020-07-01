@@ -93,9 +93,10 @@
     <string name="base_setting_safe_open">开启</string>
     <string name="base_setting_safe_close">关闭</string>
 
-
-    <string name="base_setting_title_admincode">管理员密码</string>
+    <string name="base_setting_title_admincode_title">设置管理员密码</string>
+    <string name="base_setting_title_admincode">管理密码</string>
     <string name="base_setting_title_admincode_button">点击修改</string>
+
 
     <string name="base_setting_title_cache">数据缓存</string>
     <string name="base_setting_cache_clean">清除缓存</string>
@@ -103,7 +104,15 @@
     <string name="netsetting_ip_hit">服务器ip</string>
     <string name="netsetting_port_hit">服务器端口</string>
 
+    <string name="base_setting_title_name_title">设置展厅名称</string>
+    <string name="base_setting_title_name">展厅名称</string>
+    <string name="base_setting_name_change">点击修改</string>
+
     <string name="systemupdate_version_title">版本号</string>
     <string name="systemupdate_update_title">版本更新</string>
     <string name="systemupdate_btn_instens">点击更新</string>
+    <string name="systemupdate_none">暂无更新</string>
+
+    <string name="error_use_admin">请使用管理员登录</string>
+    <string name="login_error">用户名或密码错误</string>
 </resources>

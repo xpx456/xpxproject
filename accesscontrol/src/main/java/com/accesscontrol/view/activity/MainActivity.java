@@ -12,8 +12,7 @@ import intersky.appbase.PadBaseActivity;
 public class MainActivity extends PadBaseActivity {
 
     public MainPresenter mMainPresenter = new MainPresenter(this);
-    public TextView time;
-    public TextView type;
+    public ImageView contact;
     public ImageView setting;
     public SuccessView successView;
 

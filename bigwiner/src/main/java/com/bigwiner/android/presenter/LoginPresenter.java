@@ -131,6 +131,7 @@ public class LoginPresenter implements Presenter {
 
     public void doLogin()
     {
+        BigwinerApplication.mApp.getBaseData();
         Login(mLoginActivity.phoneNumber.getText().toString(),mLoginActivity.passWord.getText().toString());
     }
 

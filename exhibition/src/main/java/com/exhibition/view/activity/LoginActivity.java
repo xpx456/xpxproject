@@ -3,6 +3,7 @@ package com.exhibition.view.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -33,6 +34,7 @@ public class LoginActivity extends PadBaseActivity {
     public RelativeLayout fingerlayer;
     public RelativeLayout passwordlayer;
     public ImageView imageView;
+    public View hid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

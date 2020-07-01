@@ -45,6 +45,8 @@ public class MeetingContactsListActivity extends BaseActivity {
     public ArrayList<Contacts> applyContacts = new ArrayList<Contacts>();
     public ArrayList<Contacts> readyContacts = new ArrayList<Contacts>();
     public ModuleDetial dateDetial = new ModuleDetial();
+    public ModuleDetial applyDetial1 = new ModuleDetial();
+    public ModuleDetial applyDetial2 = new ModuleDetial();
     public Meeting meeting;
     public NoScrollViewPager mViewPager;
     public ConversationPageAdapter mLoderPageAdapter;

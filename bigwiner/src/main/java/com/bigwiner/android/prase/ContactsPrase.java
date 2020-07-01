@@ -359,20 +359,20 @@ public class ContactsPrase {
                     contacts.sex = 1;
                 else
                     contacts.sex = 2;
-                moduleDetial.currentpage = jsonObject.getInt("pageNo",1);
-                moduleDetial.totlepage = jsonObject.getInt("totalPage",1);
-                moduleDetial.totleszie = jsonObject.getInt("totalcount",0);
-                moduleDetial.currentszie = BigwinerApplication.mApp.contactManager.mContactss.size();
                 ChatUtils.getChatUtils().addHead(contacts);
                 contactss.add(contacts);
             }
+            moduleDetial.currentpage = jsonObject.getInt("pageNo",1);
+            moduleDetial.totlepage = jsonObject.getInt("totalPage",1);
+            moduleDetial.totleszie = jsonObject.getInt("totalcount",0);
+            moduleDetial.currentszie = BigwinerApplication.mApp.contactManager.mContactss.size();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
     }
 
-    public static void paseMeetApplyContacts(Context context, NetObject net, ArrayList<Contacts> contactss) {
+    public static void paseMeetApplyContacts(Context context, NetObject net, ArrayList<Contacts> contactss,ModuleDetial moduleDetial) {
         String json = net.result;
         contactss.clear();
         if(AppUtils.success(json) == false)
@@ -422,6 +422,10 @@ public class ContactsPrase {
                 ChatUtils.getChatUtils().addHead(contacts);
                 contactss.add(contacts);
             }
+            moduleDetial.currentpage = jsonObject.getInt("pageNo",1);
+            moduleDetial.totlepage = jsonObject.getInt("totalPage",1);
+            moduleDetial.totleszie = jsonObject.getInt("totalcount",0);
+            moduleDetial.currentszie = BigwinerApplication.mApp.contactManager.mContactss.size();
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -1,8 +1,11 @@
 package com.exhibition.presenter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
+import com.amap.api.location.AMapLocationListener;
 import com.exhibition.R;
 import com.exhibition.database.DBHelper;
 import com.exhibition.entity.Guest;
@@ -12,6 +15,8 @@ import com.exhibition.view.ExhibitionApplication;
 import com.exhibition.view.activity.LoginActivity;
 import com.exhibition.view.activity.MainActivity;
 import com.finger.FingerManger;
+
+import org.json.JSONException;
 
 import intersky.appbase.Presenter;
 import intersky.apputils.AppUtils;
@@ -30,6 +35,7 @@ public class LoginPresenter implements Presenter {
     @Override
     public void initView() {
         mLoginActivity.setContentView(R.layout.activity_login);
+        mLoginActivity.hid = mLoginActivity.findViewById(R.id.activity_login);
         mLoginActivity.botton1 = mLoginActivity.findViewById(R.id.button1);
         mLoginActivity.botton2 = mLoginActivity.findViewById(R.id.button2);
         mLoginActivity.image1 = mLoginActivity.findViewById(R.id.buttonimg1);
@@ -47,6 +53,7 @@ public class LoginPresenter implements Presenter {
         mLoginActivity.lastSecond.setText(String.valueOf(ExhibitionApplication.mApp.timeoud));
         mLoginActivity.btnLogin.setOnClickListener(loginListener);
         mLoginActivity.logingOut.setOnClickListener(logoutListener);
+        mLoginActivity.hid.setOnClickListener(hidinputListener);
         setPasswordLoginBtn();
     }
 
@@ -93,14 +100,16 @@ public class LoginPresenter implements Presenter {
     }
 
     public void setFaceLoginBtn() {
-        mLoginActivity.botton1.setBackgroundResource(R.drawable.login_round_blue_btn);
-        mLoginActivity.botton2.setBackgroundResource(R.drawable.finger_get_bg);
-        mLoginActivity.image1.setImageResource(R.drawable.code);
-        mLoginActivity.image2.setImageResource(R.drawable.finger);
-        mLoginActivity.title1.setText(mLoginActivity.getString(R.string.code));
-        mLoginActivity.title2.setText(mLoginActivity.getString(R.string.finger));
-        mLoginActivity.botton1.setOnClickListener(codeListener);
-        mLoginActivity.botton2.setOnClickListener(fingerListener);
+
+        AppUtils.showMessage(mLoginActivity,"暂未开放");
+//        mLoginActivity.botton1.setBackgroundResource(R.drawable.login_round_blue_btn);
+//        mLoginActivity.botton2.setBackgroundResource(R.drawable.finger_get_bg);
+//        mLoginActivity.image1.setImageResource(R.drawable.code);
+//        mLoginActivity.image2.setImageResource(R.drawable.finger);
+//        mLoginActivity.title1.setText(mLoginActivity.getString(R.string.code));
+//        mLoginActivity.title2.setText(mLoginActivity.getString(R.string.finger));
+//        mLoginActivity.botton1.setOnClickListener(codeListener);
+//        mLoginActivity.botton2.setOnClickListener(fingerListener);
     }
 
     public void setFingerLoginBtn() {
@@ -119,8 +128,22 @@ public class LoginPresenter implements Presenter {
 
     public void doLogin() {
         //ExhibitionApplication.mApp.fingerManger.stopReconize();
-        Intent intent = new Intent(mLoginActivity, MainActivity.class);
-        mLoginActivity.startActivity(intent);
+        try {
+            String password = ExhibitionApplication.mApp.setjson.getString("password");
+            if(mLoginActivity.user.getText().toString().equals(ExhibitionApplication.ACCOUNT) && mLoginActivity.password.getText().toString().equals(password))
+            {
+                ExhibitionApplication.mApp.isadmin = true;
+                Intent intent = new Intent(mLoginActivity, MainActivity.class);
+                mLoginActivity.startActivity(intent);
+            }
+            else
+            {
+                AppUtils.showMessage(mLoginActivity,mLoginActivity.getString(R.string.login_error));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void praseLoginImf(Intent intent)
@@ -149,7 +172,7 @@ public class LoginPresenter implements Presenter {
     public View.OnClickListener faceListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-//            setFaceLoginBtn();
+            setFaceLoginBtn();
         }
     };
 
@@ -171,6 +194,15 @@ public class LoginPresenter implements Presenter {
         @Override
         public void onClick(View v) {
             mLoginActivity.finish();
+        }
+    };
+
+    public View.OnClickListener hidinputListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            InputMethodManager imm2 = (InputMethodManager) mLoginActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm2.hideSoftInputFromWindow(mLoginActivity.user.getWindowToken(), 0);
+            imm2.hideSoftInputFromWindow(mLoginActivity.password.getWindowToken(), 0);
         }
     };
 }

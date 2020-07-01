@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import intersky.xpxnet.net.Contral;
 import intersky.xpxnet.net.NameValuePair;
 import intersky.xpxnet.net.NetObject;
+import intersky.xpxnet.net.NetTaskManagerThread;
 import intersky.xpxnet.net.NetUtils;
 import intersky.xpxnet.net.ResposeResult;
 
@@ -57,6 +58,10 @@ public class DownloadTask extends NetTask {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
+		if(endCallback != null)
+		{
+			endCallback.doremove(mRecordId);
 		}
 	}
 }

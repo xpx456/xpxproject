@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
@@ -82,4 +83,6 @@ public class PopView implements PopIntFace{
             destoryView();
         }
     };
+
+
 }

@@ -39,8 +39,8 @@ android {
         applicationId 'com.bigwiner'
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 37
-        versionName '7.2.9.07'
+        versionCode 38
+        versionName '7.2.9.08'
         multiDexEnabled true
         ndk{
             abiFilters "armeabi-v7a"

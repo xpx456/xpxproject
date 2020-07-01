@@ -1,5 +1,6 @@
 package intersky.xpxnet.net;
 
+import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,6 +22,8 @@ public class MyNetTaskManagerThread implements Runnable {
 
 	private String name;
 
+
+
 	public MyNetTaskManagerThread(int poolsize,int sleeptime,String name) {
 		mNetTaskManager = NetTaskManager.getInstance();
 		POOL_SIZE = poolsize;
@@ -35,8 +38,26 @@ public class MyNetTaskManagerThread implements Runnable {
 		// TODO Auto-generated method stub
 		while (!isStop) {
 			NetTask mNetTask = mNetTaskManager.getNetTask(name);
+			HashMap<String,NetTask> hsah = mNetTaskManager.threadHashHash.get(name);
 			if (mNetTask != null) {
-				mPool.execute(mNetTask);
+				if(hsah != null)
+				{
+					if(!hsah.containsKey(mNetTask.mRecordId))
+					{
+						mNetTask.endCallback = endCallback;
+						mNetTaskManager.threadHashHash.get(name).put(mNetTask.mRecordId,mNetTask);
+						mPool.execute(mNetTask);
+					}
+					else
+					{
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+
 			} else {  //如果当前未有downloadTask在任务队列中
 				try {
 					// 查询任务完成失败的,重新加载任务队列
@@ -63,4 +84,16 @@ public class MyNetTaskManagerThread implements Runnable {
 		this.isStop = isStop;
 	}
 
+	public EndCallback endCallback = new EndCallback() {
+		@Override
+		public void doremove(String  mRecordId) {
+			HashMap<String,NetTask> hsah = mNetTaskManager.threadHashHash.get(name);
+			if(mRecordId != null && hsah != null)
+			{
+				if(hsah.containsKey(mRecordId))
+					hsah.remove(mRecordId);
+			}
+
+		}
+	};
 }

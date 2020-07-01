@@ -22,7 +22,7 @@ public class MainReceiver extends BaseReceiver {
 		this.mHandler = mHandler;
 		this.intentFilter = new IntentFilter();
 		intentFilter.addAction(FingerManger.ACTION_GET_FINGER_SUCCESS);
-
+		intentFilter.addAction(ExhibitionApplication.ACTION_SET_NAME);
 	}
 	
 	@Override
@@ -37,7 +37,14 @@ public class MainReceiver extends BaseReceiver {
 			if(mHandler!=null)
 				mHandler.sendMessage(msg);
 		}
+		else if (intent.getAction().equals(ExhibitionApplication.ACTION_SET_NAME)) {
 
+			Message msg = new Message();
+			msg.what = MainHandler.EVENT_SET_NAME;
+			msg.obj = intent;
+			if(mHandler!=null)
+				mHandler.sendMessage(msg);
+		}
 	}
 
 }

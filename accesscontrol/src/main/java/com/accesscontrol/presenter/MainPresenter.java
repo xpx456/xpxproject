@@ -26,7 +26,10 @@ public class MainPresenter implements Presenter {
     @Override
     public void initView() {
         mMainActivity.setContentView(R.layout.activity_main);
+        mMainActivity.setting = mMainActivity.findViewById(R.id.btnsetting);
+        mMainActivity.contact = mMainActivity.findViewById(R.id.btncontact);
         mMainActivity.setting.setOnClickListener(settingListener);
+        mMainActivity.contact.setOnClickListener(contactListener);
         mMainActivity.successView = new SuccessView(mMainActivity);
         AccessControlApplication.mApp.myMqttService.startService(mMainActivity,AccessControlApplication.mApp.clidenid);
         updataTime();
@@ -63,8 +66,14 @@ public class MainPresenter implements Presenter {
         }
     };
 
+    public View.OnClickListener contactListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+        }
+    };
+
     public void updataTime() {
-        mMainActivity.time.setText(TimeUtils.getDateAndTime());
+        //mMainActivity.time.setText(TimeUtils.getDateAndTime());
         mainHandler.sendEmptyMessageDelayed(MainHandler.UPDATA_TIME,1000);
     }
 

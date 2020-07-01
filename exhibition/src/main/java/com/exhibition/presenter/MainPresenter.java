@@ -153,4 +153,14 @@ public class MainPresenter implements Presenter {
 //            mMainActivity.registerView.addFinger(ExhibitionApplication.mApp.fingerManger.lastgetFinger);
         }
     }
+
+    public void setName(Intent intent)
+    {
+        try {
+            mMainActivity.title.setText(ExhibitionApplication.mApp.setjson.getString("name"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

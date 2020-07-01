@@ -38,12 +38,12 @@ public class MeetingContactsListHandler extends Handler {
                 NetObject netObject = (NetObject) msg.obj;
                 if((int)netObject.item == 1)
                 {
-                    ContactsPrase.paseMeetApplyContacts(theActivity, (NetObject) msg.obj,theActivity.applyContacts);
+                    ContactsPrase.paseMeetApplyContacts(theActivity, (NetObject) msg.obj,theActivity.applyContacts,theActivity.applyDetial1);
                     theActivity.needAdapter.notifyDataSetChanged();
                 }
                 else
                 {
-                    ContactsPrase.paseMeetApplyContacts(theActivity, (NetObject) msg.obj,theActivity.readyContacts);
+                    ContactsPrase.paseMeetApplyContacts(theActivity, (NetObject) msg.obj,theActivity.readyContacts,theActivity.applyDetial2);
                     theActivity.readyAdapter.notifyDataSetChanged();
                 }
                 break;
@@ -61,12 +61,14 @@ public class MeetingContactsListHandler extends Handler {
                 if(ContactsPrase.praseData(theActivity, (NetObject) msg.obj))
                 {
                     theActivity.mMeetingContactsListPresenter.onHead();
+                    theActivity.applyDetial1.reset();
+                    theActivity.applyDetial2.reset();
                     theActivity.readyContacts.clear();
                     theActivity.applyContacts.clear();
                     ContactsAsks.getMeetingMeaseContacts(theActivity,theActivity.mMeetingContactsListPresenter.mMeetingContactsListHandler
-                            ,theActivity.meeting,2);
+                            ,theActivity.meeting,2,theActivity.applyDetial2.pagesize,theActivity.applyDetial2.currentpage);
                     ContactsAsks.getMeetingMeaseContacts(theActivity,theActivity.mMeetingContactsListPresenter.mMeetingContactsListHandler
-                            ,theActivity.meeting,1);
+                            ,theActivity.meeting,1,theActivity.applyDetial1.pagesize,theActivity.applyDetial1.currentpage);
                 }
                 break;
             case NetUtils.NO_INTERFACE:

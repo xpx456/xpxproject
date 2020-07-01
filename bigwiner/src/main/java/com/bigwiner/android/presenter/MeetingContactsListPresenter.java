@@ -91,8 +91,15 @@ public class MeetingContactsListPresenter implements Presenter {
                     mMeetingContactsListActivity.canAdapter.setOnItemClickListener(mMeetingContactsListActivity.onContactItemClickListener);
                     break;
                 case 1:
-                    View mView2 = mMeetingContactsListActivity.getLayoutInflater().inflate(R.layout.conversation_pager2, null);
+                    View mView2 = mMeetingContactsListActivity.getLayoutInflater().inflate(R.layout.conversation_pager3, null);
                     RecyclerView listView2 = mView2.findViewById(R.id.busines_List);
+                    PullToRefreshView pullToRefreshView1 = mView2.findViewById(R.id.headview);
+                    pullToRefreshView1.getmFooterView().setBackgroundColor(Color.rgb(255, 255, 255));
+                    pullToRefreshView1.getmHeaderView().setBackgroundColor(Color.rgb(255, 255, 255));
+                    pullToRefreshView1.onFooterRefreshComplete();
+                    pullToRefreshView1.onHeaderRefreshComplete();
+                    pullToRefreshView1.setOnFooterRefreshListener(mMeetingContactsListActivity.onFooterRefreshListener);
+                    pullToRefreshView1.setOnHeaderRefreshListener(mMeetingContactsListActivity.onHeadRefreshListener);
                     listView2.setLayoutManager(new LinearLayoutManager(mMeetingContactsListActivity));
                     listView2.setAdapter(mMeetingContactsListActivity.needAdapter);
                     mMeetingContactsListActivity.listViews.add(listView2);
@@ -100,8 +107,15 @@ public class MeetingContactsListPresenter implements Presenter {
                     mMeetingContactsListActivity.needAdapter.setOnItemClickListener(mMeetingContactsListActivity.onContactItemClickListener);
                     break;
                 case 2:
-                    View mView3 = mMeetingContactsListActivity.getLayoutInflater().inflate(R.layout.conversation_pager2, null);
+                    View mView3 = mMeetingContactsListActivity.getLayoutInflater().inflate(R.layout.conversation_pager3, null);
                     RecyclerView listView3 = mView3.findViewById(R.id.busines_List);
+                    PullToRefreshView pullToRefreshView2 = mView3.findViewById(R.id.headview);
+                    pullToRefreshView2.getmFooterView().setBackgroundColor(Color.rgb(255, 255, 255));
+                    pullToRefreshView2.getmHeaderView().setBackgroundColor(Color.rgb(255, 255, 255));
+                    pullToRefreshView2.onFooterRefreshComplete();
+                    pullToRefreshView2.onHeaderRefreshComplete();
+                    pullToRefreshView2.setOnFooterRefreshListener(mMeetingContactsListActivity.onFooterRefreshListener);
+                    pullToRefreshView2.setOnHeaderRefreshListener(mMeetingContactsListActivity.onHeadRefreshListener);
                     listView3.setLayoutManager(new LinearLayoutManager(mMeetingContactsListActivity));
                     listView3.setAdapter(mMeetingContactsListActivity.readyAdapter);
                     mMeetingContactsListActivity.listViews.add(listView3);
@@ -174,7 +188,7 @@ public class MeetingContactsListPresenter implements Presenter {
             if(mMeetingContactsListActivity.applyContacts.size() == 0)
             {
                 ContactsAsks.getMeetingMeaseContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
-                        ,mMeetingContactsListActivity.meeting,1);
+                        ,mMeetingContactsListActivity.meeting,1,mMeetingContactsListActivity.applyDetial1.pagesize,mMeetingContactsListActivity.applyDetial1.currentpage);
             }
         }
         else
@@ -182,31 +196,81 @@ public class MeetingContactsListPresenter implements Presenter {
             if(mMeetingContactsListActivity.readyContacts.size() == 0)
             {
                 ContactsAsks.getMeetingMeaseContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
-                        ,mMeetingContactsListActivity.meeting,2);
+                        ,mMeetingContactsListActivity.meeting,2,mMeetingContactsListActivity.applyDetial2.pagesize,mMeetingContactsListActivity.applyDetial2.currentpage);
             }
         }
     }
 
     public void onFoot()
     {
-        if(mMeetingContactsListActivity.dateDetial.currentpage < mMeetingContactsListActivity.dateDetial.totlepage)
+        if(mMeetingContactsListActivity.mViewPager.getCurrentItem() == 0)
         {
-            mMeetingContactsListActivity.waitDialog.show();
-            ContactsAsks.getMeetingDateContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
-                    ,mMeetingContactsListActivity.meeting,mMeetingContactsListActivity.dateDetial.pagesize,mMeetingContactsListActivity.dateDetial.currentpage+1);
+            if(mMeetingContactsListActivity.dateDetial.currentpage < mMeetingContactsListActivity.dateDetial.totlepage)
+            {
+                mMeetingContactsListActivity.waitDialog.show();
+                ContactsAsks.getMeetingDateContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
+                        ,mMeetingContactsListActivity.meeting,mMeetingContactsListActivity.dateDetial.pagesize,mMeetingContactsListActivity.dateDetial.currentpage+1);
+            }
+            else
+            {
+                AppUtils.showMessage(mMeetingContactsListActivity, mMeetingContactsListActivity.getString(R.string.system_addall));
+            }
         }
-        else
+        else if(mMeetingContactsListActivity.mViewPager.getCurrentItem() == 1)
         {
-            AppUtils.showMessage(mMeetingContactsListActivity, mMeetingContactsListActivity.getString(R.string.system_addall));
+            if(mMeetingContactsListActivity.applyDetial1.currentpage < mMeetingContactsListActivity.applyDetial1.totlepage)
+            {
+                mMeetingContactsListActivity.waitDialog.show();
+                ContactsAsks.getMeetingMeaseContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
+                        ,mMeetingContactsListActivity.meeting,1,mMeetingContactsListActivity.applyDetial1.pagesize,mMeetingContactsListActivity.applyDetial1.currentpage+1);
+            }
+            else
+            {
+                AppUtils.showMessage(mMeetingContactsListActivity, mMeetingContactsListActivity.getString(R.string.system_addall));
+            }
         }
+        else if(mMeetingContactsListActivity.mViewPager.getCurrentItem() == 2)
+        {
+            if(mMeetingContactsListActivity.applyDetial1.currentpage < mMeetingContactsListActivity.applyDetial1.totlepage)
+            {
+                mMeetingContactsListActivity.waitDialog.show();
+                ContactsAsks.getMeetingMeaseContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
+                        ,mMeetingContactsListActivity.meeting,2,mMeetingContactsListActivity.applyDetial2.pagesize,mMeetingContactsListActivity.applyDetial2.currentpage+1);
+            }
+            else
+            {
+                AppUtils.showMessage(mMeetingContactsListActivity, mMeetingContactsListActivity.getString(R.string.system_addall));
+            }
+        }
+
+
     }
 
     public void onHead()
     {
-        mMeetingContactsListActivity.waitDialog.show();
-        mMeetingContactsListActivity.dateDetial.reset();
-        mMeetingContactsListActivity.candDateContacts.clear();
-        ContactsAsks.getMeetingDateContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
-                ,mMeetingContactsListActivity.meeting,mMeetingContactsListActivity.dateDetial.pagesize,mMeetingContactsListActivity.dateDetial.currentpage);
+        if(mMeetingContactsListActivity.mViewPager.getCurrentItem() == 0)
+        {
+            mMeetingContactsListActivity.waitDialog.show();
+            mMeetingContactsListActivity.dateDetial.reset();
+            mMeetingContactsListActivity.candDateContacts.clear();
+            ContactsAsks.getMeetingDateContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
+                    ,mMeetingContactsListActivity.meeting,mMeetingContactsListActivity.dateDetial.pagesize,mMeetingContactsListActivity.dateDetial.currentpage);
+        }
+        else if(mMeetingContactsListActivity.mViewPager.getCurrentItem() == 1)
+        {
+            mMeetingContactsListActivity.waitDialog.show();
+            mMeetingContactsListActivity.applyDetial1.reset();
+            mMeetingContactsListActivity.applyContacts.clear();
+            ContactsAsks.getMeetingMeaseContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
+                    ,mMeetingContactsListActivity.meeting,1,mMeetingContactsListActivity.applyDetial1.pagesize,mMeetingContactsListActivity.applyDetial1.currentpage);
+        }
+        else if(mMeetingContactsListActivity.mViewPager.getCurrentItem() == 2)
+        {
+            mMeetingContactsListActivity.waitDialog.show();
+            mMeetingContactsListActivity.applyDetial2.reset();
+            mMeetingContactsListActivity.readyContacts.clear();
+            ContactsAsks.getMeetingMeaseContacts(mMeetingContactsListActivity,mMeetingContactsListHandler
+                    ,mMeetingContactsListActivity.meeting,2,mMeetingContactsListActivity.applyDetial2.pagesize,mMeetingContactsListActivity.applyDetial2.currentpage);
+        }
     }
 }

@@ -99,6 +99,9 @@ public class PostNetListTask extends NetTask {
 			}
 
 		}
-
+		if(endCallback != null)
+		{
+			endCallback.doremove(mRecordId);
+		}
 	}
 }

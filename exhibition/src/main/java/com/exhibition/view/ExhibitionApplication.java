@@ -28,6 +28,8 @@ import intersky.apputils.GlideConfiguration;
 import intersky.filetools.FileUtils;
 
 public class ExhibitionApplication extends Application {
+    public static final String ACCOUNT = "admin";
+    public static final String PASSWORD = "admin";
     public static final String ACTION_UPDATA_TIMEOUT = "ACTION_UPDATA_TIMEOUT";
     public static final String EXHIBITION_DATA = "EXHIBITION_DATA";
     public static final String DATA_SETTING = "DATA_SETTING";
@@ -36,6 +38,9 @@ public class ExhibitionApplication extends Application {
     public static final String SETTING_PATH = "setting";
     public static final String FINGER_PATH = "finger";
     public static final String SETTING_NAME = "setting.txt";
+    public static final String UPDATA_PATH = "updata";
+    public static final String UPDATA_NAME = "exhibition.apk";
+    public static final String ACTION_SET_NAME = "ACTION_SET_NAME";
     public static final int CHECK_TIME_OUT = 10000;
     public static final int SET_TIME_MAX = 10001;
     public static final int SET_VIDEO_SHOW = 10002;
@@ -52,7 +57,9 @@ public class ExhibitionApplication extends Application {
     public File video = null;
     public File fingerbase;
     public ArrayList<File> photos = new ArrayList<File>();
+    public File apk;
     public FingerManger fingerManger;
+    public boolean isadmin = false;
 //    public IcCardManager icCardManager;
     public void onCreate() {
         mApp = this;
@@ -93,6 +100,7 @@ public class ExhibitionApplication extends Application {
     }
 
     public void startVideo() {
+        isadmin = false;
         setVideoshow();
         Intent intent = new Intent(appActivityManager.getCurrentActivity(), VideoActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -112,9 +120,11 @@ public class ExhibitionApplication extends Application {
     }
 
     private void initSetting() {
-        File setting = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH));
+        File setpath = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH));
+        fileUtils.pathUtils.getfilePath(UPDATA_PATH);
         fingerbase = new File(fileUtils.pathUtils.getfilePath(FINGER_PATH));
         File setfile = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH)+"/"+SETTING_NAME);
+        apk = new File(fileUtils.pathUtils.getfilePath(UPDATA_PATH)+"/"+UPDATA_NAME);
         if(setfile.exists())
         {
             String readjson = fileUtils.getFileContent(setfile);
@@ -124,12 +134,12 @@ public class ExhibitionApplication extends Application {
                 setjson = jsonObject;
             }
             setfile.delete();
-            fileUtils.writeTxtToFile(setjson.toString(),setfile.getPath(),setfile.getName());
+            fileUtils.writeTxtToFile(setjson.toString(),setpath.getPath()+"/",setfile.getName());
         }
         else
         {
             setjson = creadNewSettingJson();
-            fileUtils.writeTxtToFile(setjson.toString(),setfile.getPath(),setfile.getName());
+            fileUtils.writeTxtToFile(setjson.toString(),setpath.getPath()+"/",setfile.getName());
         }
 
     }
@@ -168,18 +178,12 @@ public class ExhibitionApplication extends Application {
 
         try {
             JSONObject jsonObject = new JSONObject();
-            JSONObject basesetting = new JSONObject();
-            JSONObject netsetting = new JSONObject();
-            jsonObject.put("basesetting", basesetting);
-            jsonObject.put("netsetting", netsetting);
-            basesetting.put("name","");
-            basesetting.put("print",true);
-            basesetting.put("codetype",true);
-            basesetting.put("licence",true);
-            basesetting.put("face",true);
-            basesetting.put("safe",true);
-            netsetting.put("ip","");
-            netsetting.put("port","");
+            jsonObject.put("name","");
+            jsonObject.put("print",false);
+            jsonObject.put("licence",true);
+            jsonObject.put("face",false);
+            jsonObject.put("safe",true);
+            jsonObject.put("password",PASSWORD);
             return jsonObject;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -191,55 +195,40 @@ public class ExhibitionApplication extends Application {
     private JSONObject mesureSettingJson(String json) {
         try {
             JSONObject jsonObject = new JSONObject(json);
-            JSONObject basesetting;
-            JSONObject netsetting;
-            if(jsonObject.has("basesetting"))
-            {
-                basesetting = jsonObject.getJSONObject("basesetting");
-            }
-            else
-            {
-                basesetting = new JSONObject();
-            }
 
-            if(basesetting.has("name") == false) {
-                basesetting.put("name","");
+            if(jsonObject.has("name") == false) {
+                jsonObject.put("name","");
             }
-            if(basesetting.has("print") == false) {
-                basesetting.put("print",true);
+            if(jsonObject.has("print") == false) {
+                jsonObject.put("print",false);
             }
-            if(basesetting.has("codetype") == false) {
-                basesetting.put("codetype",true);
+            if(jsonObject.has("licence") == false) {
+                jsonObject.put("licence",true);
             }
-            if(basesetting.has("licence") == false) {
-                basesetting.put("licence",true);
+            if(jsonObject.has("face") == false) {
+                jsonObject.put("face",false);
             }
-            if(basesetting.has("face") == false) {
-                basesetting.put("face",true);
+            if(jsonObject.has("safe") == false) {
+                jsonObject.put("safe",true);
             }
-            if(basesetting.has("safe") == false) {
-                basesetting.put("safe",true);
-            }
-
-            if(jsonObject.has("netsetting"))
-            {
-                netsetting = jsonObject.getJSONObject("netsetting");
-            }
-            else
-            {
-                netsetting = new JSONObject();
-            }
-            if(netsetting.has("ip") == false) {
-                netsetting.put("ip","");
-            }
-            if(netsetting.has("port") == false) {
-                netsetting.put("port","");
+            if(jsonObject.has("password") == false) {
+                jsonObject.put("password",PASSWORD);
             }
             return jsonObject;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public void saveSetting() {
+        File setpath = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH));
+        File setfile = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH)+"/"+SETTING_NAME);
+        if(setfile.exists())
+        {
+            setfile.delete();
+        }
+        fileUtils.writeTxtToFile(setjson.toString(),setpath.getPath()+"/",setfile.getName());
     }
 
 }

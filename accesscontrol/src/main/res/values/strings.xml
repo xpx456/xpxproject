@@ -2,4 +2,25 @@
     <string name="app_name">accesscontrol</string>
     <string name="main_fail">考勤失败</string>
     <string name="main_success">考勤成功</string>
+
+    <string name="setting_title">系统设置</string>
+    <string name="setting_base_title">基础设置：</string>
+    <string name="setting_base_time_title">时间设置：</string>
+    <string name="setting_base_time_check">校对</string>
+    <string name="setting_base_langue_title">语言设置：</string>
+    <string name="setting_base_system_sound_title">系统提示音：</string>
+    <string name="setting_base_key_sound_title">按键提示音：</string>
+    <string name="setting_base_ic_title">ic卡加密：</string>
+    <string name="setting_base_password_title">联机密码：</string>
+    <string name="setting_base_super_title">超级管理员：</string>
+
+
+    <string name="setting_contact">通讯设置</string>
+    <string name="setting_contact_equipment_name_title">设备名称：</string>
+    <string name="setting_contact_equipment_code_title">设备编号：</string>
+    <string name="setting_contact_rs485rat_title">RS485波特率：</string>
+    <string name="setting_contact_rs485type_title">RS485模式：</string>
+    <string name="setting_contact_nettype_title">网络模式：</string>
+    <string name="setting_contact_wify_title">WIFI模式：</string>
+    <string name="setting_contact_bag_title">包大小：</string>
 </resources>

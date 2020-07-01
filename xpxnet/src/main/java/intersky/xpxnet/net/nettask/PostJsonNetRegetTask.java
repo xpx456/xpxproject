@@ -108,6 +108,9 @@ public class PostJsonNetRegetTask extends NetTask {
             }
 
         }
-
+        if(endCallback != null)
+        {
+            endCallback.doremove(mRecordId);
+        }
     }
 }

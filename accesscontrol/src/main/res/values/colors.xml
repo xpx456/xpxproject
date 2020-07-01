@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorimf">#666666</color>
-    666666
+    <color name="settting_title">#3bc3db</color>
+    <color name="settting_title2">#666666</color>
+    <color name="settting_value">#444444</color>
 </resources>

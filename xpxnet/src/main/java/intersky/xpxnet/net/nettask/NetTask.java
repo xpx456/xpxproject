@@ -6,8 +6,10 @@ import android.os.Message;
 
 import intersky.apputils.AppUtils;
 import intersky.xpxnet.net.Contral;
+import intersky.xpxnet.net.EndCallback;
 import intersky.xpxnet.net.FinishItem;
 import intersky.xpxnet.net.NetObject;
+import intersky.xpxnet.net.NetTaskManagerThread;
 import intersky.xpxnet.net.NetUtils;
 import intersky.xpxnet.net.ResposeResult;
 import okhttp3.Call;
@@ -26,6 +28,7 @@ public class NetTask implements Runnable {
 	public Object item;
 	public FinishItem finishItem;
 	public checkToken checkToken;
+	public EndCallback endCallback;
 
 	public NetTask(String url, Handler mHandler, int successEvent,  Context mContext) {
 		this.mUrl = url;
@@ -113,7 +116,10 @@ public class NetTask implements Runnable {
 			}
 
 		}
-
+		if(endCallback != null)
+		{
+			endCallback.doremove(mRecordId);
+		}
 	}
 
 	public interface checkToken{

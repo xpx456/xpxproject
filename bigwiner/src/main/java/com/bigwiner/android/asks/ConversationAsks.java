@@ -131,6 +131,7 @@ public class ConversationAsks {
             String postBody = jsonObject.toString();
             PostJsonNetRegetTask mPostNetTask = new PostJsonNetRegetTask(urlString, mHandler, BASE_DATA_RESULT,
                     BASE_DATA_FAIL, mContext, postBody, type,BigwinerApplication.mApp.checkToken);
+            mPostNetTask.mRecordId = BigwinerApplication.BASE_NET_PATH + BASE_DATA_PATH;
             NetTaskManager.getInstance().addNetTask(mPostNetTask);
         } catch (JSONException e) {
             e.printStackTrace();

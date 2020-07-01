@@ -553,7 +553,7 @@ public class StrangApplication extends Application {
     public void initUmShare()
     {
         UMConfigure.init(this, "5e5b16854ca35749c2000052", "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
-        PlatformConfig.setWeixin("wxa5ebdefe4a3485cf", "ca84fcfad71172530a5959ffabd41440");
+        PlatformConfig.setWeixin("wx6eb98ad4b2315a2f", "ca84fcfad71172530a5959ffabd41440");
         PlatformConfig.setQQZone("101857284", "a1bbe8166f9d412dc3eeeaefa193c844");
         //3921700954 /04b48b094faeb16683c32669824ebdad
         PlatformConfig.setSinaWeibo("4038552739", "6963c833fa7b6aad859eed528e121239", "http://sns.whalecloud.com");

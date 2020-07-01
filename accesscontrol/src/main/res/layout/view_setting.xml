@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/success"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="1134px"
+        android:layout_height="60px"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/setting_head">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="45px"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/setting_title"
+            android:textColor="#ffffff"
+            android:textSize="20px" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bg"
+        android:layout_width="1134px"
+        android:layout_height="640px"
+        android:layout_below="@+id/head"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/success_bg">
+        <RelativeLayout
+            android:id="@+id/base"
+            android:layout_width="430px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="#00000000">
+            <TextView
+                android:id="@+id/basetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17px"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/setting_base_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title"
+                />
+            <View
+                android:id="@+id/line"
+                android:layout_width="65px"
+                android:layout_height="1px"
+                android:layout_marginTop="8px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/basetitle"
+                android:background="@color/settting_title"
+                />
+
+            <RelativeLayout
+                android:id="@+id/base_time"
+                android:layout_width="430px"
+                android:layout_height="25px"
+                android:layout_below="@+id/line"
+                android:layout_marginTop="20px"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/base_time_title"
+                    android:layout_width="155px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_base_time_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/base_time_value"
+                    android:layout_width="190px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_time_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="2020-06-22 06:20:12"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/base_time_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_time_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="5px"
+                    android:text="@string/button_set_read"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_title"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/base_langue"
+                android:layout_width="430px"
+                android:layout_height="25px"
+                android:layout_below="@+id/base_time"
+                android:layout_marginTop="5px"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/base_langue_title"
+                    android:layout_width="155px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_base_langue_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/base_langue_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_langue_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/base_langue_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_langue_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="invisible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/base_system_sound"
+                android:layout_width="430px"
+                android:layout_height="25px"
+                android:layout_below="@+id/base_time"
+                android:layout_marginTop="5px"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/base_system_sound_title"
+                    android:layout_width="155px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_base_system_sound_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/base_system_sound_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_system_sound_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/base_system_sound_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_system_sound_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="invisible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/alert"
+            android:layout_width="352px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/base"
+            android:background="#00000000">
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/Interface"
+            android:layout_width="352px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/alert"
+            android:background="#00000000">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contact"
+            android:layout_width="430px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/base"
+            android:layout_alignParentLeft="true"
+            android:background="#00000000">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/net"
+            android:layout_width="352px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alert"
+            android:layout_toRightOf="@+id/contact"
+            android:background="#00000000">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/weigen"
+            android:layout_width="352px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Interface"
+            android:layout_toRightOf="@+id/net"
+            android:background="#00000000">
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/verson"
+            android:layout_width="352px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weigen"
+            android:layout_toRightOf="@+id/net"
+            android:background="#00000000">
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -16,6 +16,8 @@ public class NetTaskManager {
 	private static NetTaskManager mNetTaskMananger;
 	private HashMap<String,LinkedList<NetTask>> mHashNetTasks;
 	private HashMap<String,Set<String>> mHasTaskIdSet;
+	public HashMap<String,NetTask> threadHash = new HashMap<String,NetTask>();
+	public HashMap<String,HashMap<String,NetTask>> threadHashHash = new HashMap<String,HashMap<String,NetTask>>();
 	private NetTaskManager() {
 
 		mNetTasks = new LinkedList<NetTask>();
@@ -36,12 +38,15 @@ public class NetTaskManager {
 		mNetTasks.clear();
 		mHashNetTasks.clear();
 		mHasTaskIdSet.clear();
+		threadHash.clear();
+		threadHashHash.clear();
 	}
 
 	//1.先执行
 	public void addNetTask(NetTask mNetTask) {
 		synchronized (mNetTasks) {
-			if (!isTaskRepeat(mNetTask.mRecordId)) {
+			if (!isTaskRepeat(mNetTask.mRecordId) ) {
+				if(!threadHash.containsKey(mNetTask.mRecordId))
 				mNetTasks.addLast(mNetTask);
 			}
 		}
@@ -53,18 +58,23 @@ public class NetTaskManager {
 			if(mHashNetTasks.containsKey(name))
 			{
 				LinkedList<NetTask> mNetTasks = mHashNetTasks.get(name);
+				HashMap<String, NetTask> hash = threadHashHash.get(name);
 				if(!isTaskRepeat(mNetTask.mRecordId,name))
 				{
+					if(!hash.containsKey(mNetTask.mRecordId))
 					mNetTasks.add(mNetTask);
 				}
 			}
 			else
 			{
 				LinkedList<NetTask> mNetTasks = new LinkedList<NetTask>();
+				mHashNetTasks.put(name,mNetTasks);
+				HashMap<String, NetTask> hash = new HashMap<String, NetTask>();
+				threadHashHash.put(name,hash);
 				if(!isTaskRepeat(mNetTask.mRecordId,name))
 				{
-					mNetTasks.add(mNetTask);
-					mHashNetTasks.put(name,mNetTasks);
+					if(!hash.containsKey(mNetTask.mRecordId))
+						mNetTasks.add(mNetTask);
 				}
 
 			}

@@ -209,7 +209,7 @@ public class MainHandler extends Handler {
                 ConversationPrase.praseBaseData(theActivity, (NetObject) msg.obj);
                 break;
             case ConversationAsks.BASE_DATA_FAIL:
-                ConversationAsks.getBaseData(theActivity,theActivity.mMainPresenter.mMainHandler,"all");
+                //ConversationAsks.getBaseData(theActivity,theActivity.mMainPresenter.mMainHandler,"all");
                 break;
             case UPDATA_MAIN_FRIENDS:
 

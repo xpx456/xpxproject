@@ -68,5 +68,10 @@ public class FilesizeNetTask extends NetTask {
 
 		}
 
+		if(endCallback != null)
+		{
+			endCallback.doremove(mRecordId);
+		}
+
 	}
 }

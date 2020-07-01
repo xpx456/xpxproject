@@ -29,6 +29,7 @@ import android.os.StatFs;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -43,6 +44,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -118,7 +120,7 @@ public class AppUtils {
 
     }
 
-    public static void creatDialogTowButton(Context mContext, String message, String title, String btnname1, String btnname2, String btnname3,
+    public static AlertDialog creatDialogTowButton(Context mContext, String message, String title, String btnname1, String btnname2, String btnname3,
                                             DialogInterface.OnClickListener btnlistener1, DialogInterface.OnClickListener btnlistener2, DialogInterface.OnClickListener btnlistener3)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
@@ -127,10 +129,10 @@ public class AppUtils {
         builder.setNegativeButton(btnname1, btnlistener1 );
         builder.setNeutralButton(btnname2,btnlistener2);
         builder.setPositiveButton(btnname3, btnlistener3);
-        builder.show();
+        return builder.show();
     }
 
-    public static void creatDialogTowButton(Context mContext,String message,String title,String btnname1,String btnname2,
+    public static AlertDialog creatDialogTowButton(Context mContext,String message,String title,String btnname1,String btnname2,
                                             DialogInterface.OnClickListener btnlistener1,DialogInterface.OnClickListener btnlistener2)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
@@ -138,13 +140,13 @@ public class AppUtils {
         builder.setTitle(title);
         builder.setNegativeButton(btnname1, btnlistener1 );
         builder.setPositiveButton(btnname2, btnlistener2);
-        builder.show();
+        return builder.show();
     }
 
-    public static void creatDialogTowButtonEdit(Context mContext,String message,String title,String btnname1,String btnname2,
-                                                EditDialogListener btnlistener1,EditDialogListener btnlistener2,String hit)
+    public static AlertDialog creatDialogTowButtonEdit(final Context mContext, String message, String title, String btnname1, String btnname2,
+                                                EditDialogListener btnlistener1, EditDialogListener btnlistener2, String hit)
     {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         builder.setMessage(message);
         builder.setTitle(title);
         final EditText et = new EditText(mContext);
@@ -160,9 +162,34 @@ public class AppUtils {
         {
             btnlistener2.setEditText(et);
         }
-        builder.show();
+        return builder.show();
 
     }
+
+    public static AlertDialog creatDialogTowButtonEditPass(final Context mContext, String message, String title, String btnname1, String btnname2,
+                                                    EditDialogListener btnlistener1, EditDialogListener btnlistener2, String hit)
+    {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setMessage(message);
+        builder.setTitle(title);
+        final EditText et = new EditText(mContext);
+        et.getText().append(hit);
+        builder.setView(et);
+        et.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        builder.setNegativeButton(btnname1, btnlistener1);
+        builder.setPositiveButton(btnname2, btnlistener2);
+        if(btnlistener1 != null)
+        {
+            btnlistener1.setEditText(et);
+        }
+        if(btnlistener2 != null)
+        {
+            btnlistener2.setEditText(et);
+        }
+        return builder.show();
+
+    }
+
 
 
 //    public static PopupWindow creatPopView(Context mContext, int lid, int oid, View location, InitView initView,  DestoryView destoryView)
@@ -1744,4 +1771,9 @@ public class AppUtils {
 //        }
 //    }
 
+    public static void hidInput(Context context,View view) {
+        view.requestFocus();
+        InputMethodManager imm2 = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm2.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 }

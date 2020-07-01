@@ -1,5 +1,6 @@
 package intersky.xpxnet.net;
 
+import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -19,6 +20,8 @@ public class NetTaskManagerThread implements Runnable {
 	// 是否停止
 	private boolean isStop = false;
 
+
+
 	public NetTaskManagerThread() {
 		mNetTaskManager = NetTaskManager.getInstance();
 		mPool = Executors.newFixedThreadPool(POOL_SIZE);
@@ -31,7 +34,17 @@ public class NetTaskManagerThread implements Runnable {
 		while (!isStop) {
 			NetTask mNetTask = mNetTaskManager.getNetTask();
 			if (mNetTask != null) {
-				mPool.execute(mNetTask);
+				if(!mNetTaskManager.threadHash.containsKey(mNetTask.mRecordId))
+				{
+					mNetTask.endCallback = endCallback;
+					mNetTaskManager.threadHash.put(mNetTask.mRecordId,mNetTask);
+					mPool.execute(mNetTask);
+				}
+				else
+				{
+					continue;
+				}
+
 			} else {  //如果当前未有downloadTask在任务队列中
 				try {
 					// 查询任务完成失败的,重新加载任务队列
@@ -57,5 +70,17 @@ public class NetTaskManagerThread implements Runnable {
 	public void setStop(boolean isStop) {
 		this.isStop = isStop;
 	}
+
+	public EndCallback endCallback = new EndCallback() {
+		@Override
+		public void doremove(String mRecordId) {
+			if(mRecordId != null)
+			{
+				if(mNetTaskManager.threadHash.containsKey(mRecordId))
+					mNetTaskManager.threadHash.remove(mRecordId);
+			}
+		}
+	};
+
 
 }

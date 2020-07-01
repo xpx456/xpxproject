@@ -114,6 +114,9 @@ public class PostJsonNetTask extends NetTask {
             }
 
         }
-
+        if(endCallback != null)
+        {
+            endCallback.doremove(mRecordId);
+        }
     }
 }

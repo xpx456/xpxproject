@@ -351,13 +351,15 @@ public class ContactsAsks {
     }
 
     //status 状态 根据状态查询相关列表 2 已处理 （已处理列表） 1 需处理 （需处理列表）
-    public static void getMeetingMeaseContacts(Context mContext , Handler mHandler, Meeting meeting,int stute) {
+    public static void getMeetingMeaseContacts(Context mContext , Handler mHandler, Meeting meeting,int stute,int pagesize, int current) {
         String urlString = BigwinerApplication.BASE_NET_PATH+MEETING_CONTACT_MEASURE_PATH;
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("token", NetUtils.getInstance().token);
             jsonObject.put("no",meeting.recordid);
             jsonObject.put("status",stute);
+            jsonObject.put("pagesize",pagesize);
+            jsonObject.put("currentpage",current);
             String postBody = jsonObject.toString();
             PostJsonNetTask mPostNetTask = new PostJsonNetTask(urlString, mHandler, CONTACTS_APPLY_LIST_RESULT,
                     mContext, postBody,stute,BigwinerApplication.mApp.checkToken);
