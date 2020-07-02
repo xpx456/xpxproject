@@ -8,33 +8,33 @@
 
     <ImageView
         android:id="@+id/headlogo"
-        android:layout_width="462px"
-        android:layout_height="184px"
+        android:layout_width="427px"
+        android:layout_height="170px"
         android:layout_alignParentTop="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55px"
+        android:layout_marginTop="125px"
         android:src="@drawable/logo" />
 
 
     <ImageView
         android:id="@+id/btncontact"
-        android:layout_width="386px"
-        android:layout_height="386px"
+        android:layout_width="327px"
+        android:layout_height="327px"
         android:layout_below="@+id/headlogo"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="215px"
-        android:layout_marginTop="85px"
+        android:layout_marginLeft="45px"
+        android:layout_marginTop="350px"
         android:src="@drawable/contact" />
 
 
     <ImageView
         android:id="@+id/btnsetting"
-        android:layout_width="386px"
-        android:layout_height="386px"
+        android:layout_width="327px"
+        android:layout_height="327px"
         android:layout_below="@+id/headlogo"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="215px"
-        android:layout_marginTop="85px"
+        android:layout_marginRight="45px"
+        android:layout_marginTop="350px"
         android:src="@drawable/contact" />
 
 </RelativeLayout>

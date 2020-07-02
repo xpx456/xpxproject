@@ -40,6 +40,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -49,6 +50,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -1744,32 +1746,14 @@ public class AppUtils {
         return false;
     }
 
-//    public interface InitView
-//    {
-//        void initView(View view);
-//    }
-//
-//    public interface DestoryView
-//    {
-//        void destoryView(View view);
-//    }
-//
-//    private static class MyDismiss implements PopupWindow.OnDismissListener{
-//
-//        public DestoryView destoryView;
-//        public View view;
-//
-//        public MyDismiss(DestoryView destoryView,View view)
-//        {
-//            this.destoryView = destoryView;
-//            this.view = view;
-//        }
-//
-//        @Override
-//        public void onDismiss() {
-//            destoryView.destoryView(view);
-//        }
-//    }
+    public static PopupMenu creatPopMenu(Context context, View location, int id, PopupMenu.OnMenuItemClickListener onMenuItemClickListener) {
+        PopupMenu popupMenu = new PopupMenu(context,location);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(id, popupMenu.getMenu());
+        popupMenu.show();
+        popupMenu.setOnMenuItemClickListener(onMenuItemClickListener);
+        return popupMenu;
+    }
 
     public static void hidInput(Context context,View view) {
         view.requestFocus();

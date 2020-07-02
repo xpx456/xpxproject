@@ -95,7 +95,7 @@
             android:id="@+id/a6"
             style="@style/about_item_style"
             android:layout_toRightOf="@+id/a5"
-            android:text="《畅享云用户协议和隐私声明》"
+            android:text="《外贸快车CRM用户协议和隐私声明》"
             android:textColor="#0082ff"
             android:textSize="@dimen/about_below_size" />
     </RelativeLayout>

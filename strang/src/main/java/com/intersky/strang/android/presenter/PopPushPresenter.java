@@ -48,7 +48,7 @@ public class PopPushPresenter implements Presenter {
         View view = mPopPuseActivity.popupWindow;
         TextView mtv = (TextView) view.findViewById(R.id.a111);
         SpannableString spanStrStart = new SpannableString(mPopPuseActivity.getString(R.string.safe_message));
-        SpannableString spanStrClick = new SpannableString("《畅享云用户协议和隐私声明》");
+        SpannableString spanStrClick = new SpannableString("《外贸快车CRM用户协议和隐私声明》");
         spanStrClick.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {

@@ -13,9 +13,8 @@ import intersky.xpxnet.net.Service;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "intersky.db";
-    public static final int DB_VERSION = 47;
-    public static final String OLD_DB_NAME = "InterSky.db";
+    public static final String DB_NAME = "strang.db";
+    public static final int DB_VERSION = 1;
 
     private static final String TABLE_SERVICE = "TABLE_SERVICE";
     private static final String SERVICE_NAME = "SERVICE_NAME";
@@ -64,7 +63,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if(oldVersion < 46)
+        if(oldVersion < 2)
         {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_SERVICE);
 

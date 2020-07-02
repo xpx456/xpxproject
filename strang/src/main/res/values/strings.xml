@@ -116,7 +116,7 @@
     <string name="xml_dangqiandenglu">当前登录用户</string>
     <string name="xml_fuwuqishezhi">服务器设置</string>
     <string name="xml_cleandata">清空所有缓存数据</string>
-    <string name="xml_guanyu">关于畅享云</string>
+    <string name="xml_guanyu">关于外贸快车CRM</string>
     <string name="xml_tuichu">退出登录</string>
     <string name="message_claen">确定要清空所有的缓存数据?</string>
     <string name="keyword_cleansuccess">清理成功</string>
@@ -135,7 +135,7 @@
     <string name="safe_loing_title1">扫描二维码登录</string>
     <string name="safe_loing_title2">扫描结果</string>
 
-    <string name="safe_title">畅享云用户协议和隐私声明</string>
+    <string name="safe_title">外贸快车CRM用户协议和隐私声明</string>
     <string name="safe_message">请务必仔细阅读充分理解</string>
     <string name="safe_message_end">的各项条款。点击同意，开始接受我们的服务。</string>
 

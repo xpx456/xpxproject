@@ -115,10 +115,10 @@ import static com.alibaba.mtl.appmonitor.AppMonitorDelegate.TAG;
 public class StrangApplication extends Application {
 
     //http://www.intersky.com.cn/app/android.version/open.html
-    public static final String CHECK_VERSION_URL = "http://www.intersky.com.cn/app/android.version/android_json.txt";
-    public static final String UPDATA_APP_URL = "http://www.intersky.com.cn/app/android.version/android_app.apk";
-    public static final String UPDATA_NAME = "intersky.apk";
-    public static final String CONVERSATION_DB_NAME = "com.intersky.conversation";
+    public static final String CHECK_VERSION_URL = "http://www.intersky.com.cn/app/android.version/strang.txt";
+    public static final String UPDATA_APP_URL = "http://www.intersky.com.cn/app/android.version/strang.apk";
+    public static final String UPDATA_NAME = "strang.apk";
+    public static final String CONVERSATION_DB_NAME = "com.intersky.strang.conversation";
     public static final int CONVERSATION_DB_VERSION = 10;
     public static final int SHARE_PERMISSION_REQUEST_CODE = 1001;
     public static final boolean istest = false;
@@ -552,11 +552,11 @@ public class StrangApplication extends Application {
 
     public void initUmShare()
     {
-        UMConfigure.init(this, "5e5b16854ca35749c2000052", "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
+        UMConfigure.init(this, "5efd491edbc2ec078c814486", "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
         PlatformConfig.setWeixin("wx6eb98ad4b2315a2f", "ca84fcfad71172530a5959ffabd41440");
-        PlatformConfig.setQQZone("101857284", "a1bbe8166f9d412dc3eeeaefa193c844");
+        PlatformConfig.setQQZone("1110647374", "pHz9kjNS1849h1nS");
         //3921700954 /04b48b094faeb16683c32669824ebdad
-        PlatformConfig.setSinaWeibo("4038552739", "6963c833fa7b6aad859eed528e121239", "http://sns.whalecloud.com");
+        PlatformConfig.setSinaWeibo("2065070000", "b4c743f07655e09cace5a927a1cb7cca", "http://sns.whalecloud.com");
         PlatformConfig.setDing("dingoa0k7ufuwsklq4ix4p");
         //        PlatformConfig.setDing("dingoalmlnohc0wggfedpk");
     }
@@ -582,7 +582,7 @@ public class StrangApplication extends Application {
     public GetProvideGetPath getProvidePath = new GetProvideGetPath() {
         @Override
         public Uri getProvideGetPath(File file) {
-            return FileProvider.getUriForFile(StrangApplication.mApp, "com.intersky.fileprovider", file);
+            return FileProvider.getUriForFile(StrangApplication.mApp, "com.intersky.strang.fileprovider", file);
         }
     };
 
@@ -868,9 +868,9 @@ public class StrangApplication extends Application {
 
     public void initThridChannel()
     {
-        MiPushRegister.register(mApp, "2882303761518224508", "5221822434508");
+        MiPushRegister.register(mApp, "2882303761518457597", "5541845717597");
         HuaWeiRegister.register(mApp);
-        OppoRegister.register(mApp, "9a6fecc4c68f47c18cb4c59274398364", "0974d5aa66c040ac8f1107f29fc926f9"); // appKey/appSecret在OPPO开发者平台获取
+        OppoRegister.register(mApp, "d2164a6d8a214422a70af2873af7d42c", "d3f0c32c951d427ea4627c85451612d6"); // appKey/appSecret在OPPO开发者平台获取
         VivoRegister.register(mApp);
     }
 

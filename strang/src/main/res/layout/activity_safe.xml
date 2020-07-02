@@ -9,8 +9,6 @@
         android:id="@+id/show"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/headlayer"
-        android:background="#ffffff"
-        android:layout_above="@+id/buttomaciton"/>
+        android:background="#ffffff" />
 
 </RelativeLayout>

@@ -59,6 +59,12 @@ public class NetTaskManager {
 			{
 				LinkedList<NetTask> mNetTasks = mHashNetTasks.get(name);
 				HashMap<String, NetTask> hash = threadHashHash.get(name);
+				if(hash == null)
+				{
+					hash = new HashMap<String, NetTask>();
+					threadHashHash.put(name,hash);
+
+				}
 				if(!isTaskRepeat(mNetTask.mRecordId,name))
 				{
 					if(!hash.containsKey(mNetTask.mRecordId))
@@ -69,8 +75,12 @@ public class NetTaskManager {
 			{
 				LinkedList<NetTask> mNetTasks = new LinkedList<NetTask>();
 				mHashNetTasks.put(name,mNetTasks);
-				HashMap<String, NetTask> hash = new HashMap<String, NetTask>();
-				threadHashHash.put(name,hash);
+				HashMap<String, NetTask> hash = threadHashHash.get(name);
+				if(hash == null)
+				{
+					hash = new HashMap<String, NetTask>();
+					threadHashHash.put(name,hash);
+				}
 				if(!isTaskRepeat(mNetTask.mRecordId,name))
 				{
 					if(!hash.containsKey(mNetTask.mRecordId))

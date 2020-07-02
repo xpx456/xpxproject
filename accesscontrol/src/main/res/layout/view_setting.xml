@@ -8,8 +8,8 @@
 
     <RelativeLayout
         android:id="@+id/head"
-        android:layout_width="1134px"
-        android:layout_height="60px"
+        android:layout_width="744px"
+        android:layout_height="55px"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
@@ -21,29 +21,32 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="45px"
+            android:layout_marginLeft="40px"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/setting_title"
             android:textColor="#ffffff"
-            android:textSize="20px" />
+            android:textSize="25px" />
 
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/bg"
-        android:layout_width="1134px"
-        android:layout_height="640px"
+        android:layout_width="744px"
+        android:layout_height="1075px"
         android:layout_below="@+id/head"
         android:layout_centerHorizontal="true"
         android:background="@drawable/success_bg">
+
         <RelativeLayout
             android:id="@+id/base"
-            android:layout_width="430px"
+            android:layout_width="410px"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_marginTop="40px"
             android:layout_alignParentLeft="true"
             android:background="#00000000">
+
             <TextView
                 android:id="@+id/basetitle"
                 android:layout_width="wrap_content"
@@ -57,7 +60,7 @@
                 android:textColor="@color/settting_title"
                 />
             <View
-                android:id="@+id/line"
+                android:id="@+id/baseline"
                 android:layout_width="65px"
                 android:layout_height="1px"
                 android:layout_marginTop="8px"
@@ -68,16 +71,16 @@
 
             <RelativeLayout
                 android:id="@+id/base_time"
-                android:layout_width="430px"
+                android:layout_width="410px"
                 android:layout_height="25px"
-                android:layout_below="@+id/line"
-                android:layout_marginTop="20px"
+                android:layout_below="@+id/baseline"
+                android:layout_marginTop="17px"
                 android:layout_alignParentLeft="true"
                 android:background="#00000000">
 
                 <TextView
                     android:id="@+id/base_time_title"
-                    android:layout_width="155px"
+                    android:layout_width="150px"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:gravity="right|center_vertical"
@@ -89,7 +92,7 @@
 
                 <TextView
                     android:id="@+id/base_time_value"
-                    android:layout_width="190px"
+                    android:layout_width="180px"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/base_time_title"
                     android:gravity="left|center_vertical"
@@ -105,8 +108,7 @@
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/base_time_value"
                     android:gravity="left|center_vertical"
-                    android:layout_marginLeft="5px"
-                    android:text="@string/button_set_read"
+                    android:text="@string/setting_base_time_check"
                     android:textSize="@dimen/setting_value"
                     android:textColor="@color/settting_title"
                     />
@@ -115,16 +117,16 @@
 
             <RelativeLayout
                 android:id="@+id/base_langue"
-                android:layout_width="430px"
+                android:layout_width="410px"
                 android:layout_height="25px"
-                android:layout_below="@+id/base_time"
                 android:layout_marginTop="5px"
+                android:layout_below="@+id/base_time"
                 android:layout_alignParentLeft="true"
                 android:background="#00000000">
 
                 <TextView
                     android:id="@+id/base_langue_title"
-                    android:layout_width="155px"
+                    android:layout_width="150px"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:gravity="right|center_vertical"
@@ -163,16 +165,16 @@
 
             <RelativeLayout
                 android:id="@+id/base_system_sound"
-                android:layout_width="430px"
+                android:layout_width="410px"
                 android:layout_height="25px"
-                android:layout_below="@+id/base_time"
                 android:layout_marginTop="5px"
+                android:layout_below="@+id/base_langue"
                 android:layout_alignParentLeft="true"
                 android:background="#00000000">
 
                 <TextView
                     android:id="@+id/base_system_sound_title"
-                    android:layout_width="155px"
+                    android:layout_width="150px"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:gravity="right|center_vertical"
@@ -202,7 +204,199 @@
                     android:gravity="left|center_vertical"
                     android:layout_marginLeft="0px"
                     android:text="▼"
-                    android:visibility="invisible"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/base_key_sound_sound"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/base_system_sound"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/base_key_sound_sound_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_base_key_sound_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/base_key_sound_sound_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_key_sound_sound_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/base_key_sound_sound_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_key_sound_sound_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/base_ic_sound"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/base_key_sound_sound"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/base_ic_sound_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_base_ic_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/base_ic_sound_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_ic_sound_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/base_ic_sound_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_ic_sound_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/base_password_sound"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/base_key_sound_sound"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/base_password_sound_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_base_password_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/base_password_sound_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_password_sound_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/base_password_sound_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_password_sound_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/base_super"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/base_password_sound"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/base_super_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_base_super_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/base_super_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_super_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/base_super_sound_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/base_super_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
                     android:textSize="@dimen/setting_value"
                     android:textColor="@color/settting_value"
                     />
@@ -210,58 +404,1632 @@
             </RelativeLayout>
 
         </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/alert"
-            android:layout_width="352px"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/base"
-            android:background="#00000000">
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/Interface"
-            android:layout_width="352px"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/alert"
-            android:background="#00000000">
-        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/contact"
-            android:layout_width="430px"
+            android:layout_width="410px"
             android:layout_height="wrap_content"
             android:layout_below="@+id/base"
+            android:layout_marginTop="40px"
             android:layout_alignParentLeft="true"
             android:background="#00000000">
+
+            <TextView
+                android:id="@+id/contacttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17px"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/setting_contact_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title"
+                />
+            <View
+                android:id="@+id/contactline"
+                android:layout_width="65px"
+                android:layout_height="1px"
+                android:layout_marginTop="8px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/contacttitle"
+                android:background="@color/settting_title"
+                />
+
+            <RelativeLayout
+                android:id="@+id/contact_equipment_name"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="17px"
+                android:layout_below="@+id/contactline"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/contact_equipment_name_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_contact_equipment_name_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/contact_equipment_name_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_equipment_name_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contact_equipment_code"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/contact_equipment_name"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/contact_equipment_code_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_contact_equipment_code_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/contact_equipment_code_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_equipment_code_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contact_rs485rat"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/contact_equipment_code"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/contact_rs485rat_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_contact_rs485rat_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/contact_rs485rat_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_rs485rat_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/contact_rs485rat_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_rs485rat_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contact_rs485type"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/contact_rs485rat"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/contact_rs485type_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_contact_rs485type_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/contact_rs485type_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_rs485type_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/contact_rs485type_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_rs485type_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contact_nettype"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/contact_rs485type"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/contact_nettype_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_contact_nettype_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/contact_nettype_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_nettype_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/contact_nettype_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_nettype_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contact_wify"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/contact_nettype"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/contact_wify_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_contact_wify_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/contact_wify_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_wify_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/contact_wify_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_wify_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contact_bag"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/contact_wify"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/contact_bag_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_contact_bag_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/contact_bag_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/contact_bag_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="20m"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/alert"
+            android:layout_width="410px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:layout_below="@+id/contact"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/alerttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17px"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/setting_alert_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title"
+                />
+            <View
+                android:id="@+id/alertline"
+                android:layout_width="65px"
+                android:layout_height="1px"
+                android:layout_marginTop="8px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/alerttitle"
+                android:background="@color/settting_title"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/alert_output"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="17px"
+                android:layout_below="@+id/alertline"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/alert_output_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_alert_output_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/alert_output_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/alert_output_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/alert_output_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/alert_output_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+            android:id="@+id/alert_sound"
+            android:layout_width="410px"
+            android:layout_height="25px"
+                android:layout_marginTop="5px"
+            android:layout_below="@+id/alert_output"
+            android:layout_alignParentLeft="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/alert_sound_title"
+                android:layout_width="150px"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="right|center_vertical"
+                android:text="@string/setting_alert_sound_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title2"
+                />
+
+
+            <TextView
+                android:id="@+id/alert_sound_value"
+                android:layout_width="105px"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/alert_sound_title"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="35px"
+                android:text="中文"
+                android:textSize="@dimen/setting_value"
+                android:textColor="@color/settting_value"
+                />
+
+            <TextView
+                android:id="@+id/alert_sound_array"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/alert_sound_value"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="0px"
+                android:text="▼"
+                android:visibility="visible"
+                android:textSize="@dimen/setting_value"
+                android:textColor="@color/settting_value"
+                />
+
+        </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/alert_ver"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/alert_sound"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/alert_ver_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_alert_ver_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/alert_ver_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/alert_ver_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/alert_vertime"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/alert_ver"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/alert_vertime_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_alert_vertime_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/alert_vertime_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/alert_vertime_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/alert_vertime_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/alert_vertime_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/alert_detory"
+                android:layout_width="410px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/alert_vertime"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/alert_detory_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_alert_detory_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/alert_detory_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/alert_detory_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/alert_detory_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/alert_detory_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/widget"
+            android:layout_width="334px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/base"
+            android:layout_marginTop="40px"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/widgettitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17px"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/setting_widget_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title"
+                />
+            <View
+                android:id="@+id/widgetline"
+                android:layout_width="65px"
+                android:layout_height="1px"
+                android:layout_marginTop="8px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/widgettitle"
+                android:background="@color/settting_title"
+                />
+
+            <RelativeLayout
+                android:id="@+id/widget_imf_speed"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="17px"
+                android:layout_below="@+id/widgetline"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/widget_imf_speed_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_widget_imf_speed_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/widget_imf_speed_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_imf_speed_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/widget_imf_speed_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_imf_speed_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/widget_img"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/widget_imf_speed"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/widget_img_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_widget_img_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/widget_img_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_img_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/widget_img_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_img_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/widget_vertime"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/widget_img"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/widget_vertime_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_widget_vertime_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/widget_vertime_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_vertime_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/widget_vertime_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_vertime_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/widget_veralerttime_mask"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/widget_vertime"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/widget_veralerttime_mask_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_widget_veralerttime_mask_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/widget_veralerttime_mask_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_veralerttime_mask_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/widget_veralerttime_mask_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_veralerttime_mask_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/widget_light"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/widget_veralerttime_mask"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/widget_light_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_widget_light_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/widget_light_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_light_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/widget_light_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_light_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/widget_volume_port"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/widget_light"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/widget_volume_port_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_widget_volume_port_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/widget_volume_port_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_volume_port_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/widget_volume_port_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/widget_volume_port_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/net"
-            android:layout_width="352px"
+            android:layout_width="334px"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/alert"
+            android:layout_marginTop="40px"
+            android:layout_below="@+id/widget"
             android:layout_toRightOf="@+id/contact"
             android:background="#00000000">
+
+            <TextView
+                android:id="@+id/nettitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17px"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/setting_net_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title"
+                />
+            <View
+                android:id="@+id/netline"
+                android:layout_width="65px"
+                android:layout_height="1px"
+                android:layout_marginTop="8px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/nettitle"
+                android:background="@color/settting_title"
+                />
+
+            <RelativeLayout
+                android:id="@+id/net_dchp"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="17px"
+                android:layout_below="@+id/netline"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_dchp_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_dchp_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/net_dchp_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_dchp_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/net_dchp_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_dchp_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/net_port"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/net_dchp"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_port_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_port_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/net_port_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_port_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/net_ip"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/net_port"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_ip_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_ip_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/net_ip_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_ip_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/net_subnet_mask"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/net_ip"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_subnet_mask_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_subnet_mask_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/net_subnet_mask_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_subnet_mask_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/net_gateway"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/net_subnet_mask"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_gateway_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_gateway_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/net_gateway_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_gateway_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/net_service_port"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/net_gateway"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_service_port_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_service_port_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/net_service_port_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_service_port_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/net_service_ip"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/net_service_port"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_service_ip_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_service_ip_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/net_service_ip_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_service_ip_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/net_timeout"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/net_service_ip"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/net_timeout_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_net_timeout_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/net_timeout_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_timeout_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/net_timeout_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/net_timeout_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/weigen"
-            android:layout_width="352px"
+            android:layout_width="334px"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Interface"
-            android:layout_toRightOf="@+id/net"
+            android:layout_below="@+id/net"
+            android:layout_toRightOf="@+id/alert"
+            android:layout_marginTop="15px"
             android:background="#00000000">
+
+
+            <TextView
+                android:id="@+id/weigentitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17px"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/setting_weigen_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title"
+                />
+            <View
+                android:id="@+id/weigenline"
+                android:layout_width="65px"
+                android:layout_height="1px"
+                android:layout_marginTop="8px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/weigentitle"
+                android:background="@color/settting_title"
+                />
+
+            <RelativeLayout
+                android:id="@+id/weigen_digit"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="17px"
+                android:layout_below="@+id/weigenline"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/weigen_digit_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_weigen_digit_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/weigen_digit_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_digit_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/weigen_digit_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_digit_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weigen_pulse_w"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/weigen_digit"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/weigen_pulse_w_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_weigen_pulse_w_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/weigen_pulse_w_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_pulse_w_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weigen_pulse_interval"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/weigen_pulse_w"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/weigen_pulse_interval_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_weigen_pulse_interval_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <EditText
+                    android:id="@+id/weigen_pulse_interval_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_pulse_interval_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:background="#00000000"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weigen_weigen_output"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/weigen_pulse_interval"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/weigen_weigen_output_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_weigen_weigen_output_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/weigen_weigen_output_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_weigen_output_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/weigen_weigen_output_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_weigen_output_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weigen_weigen_weigen_output"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/weigen_weigen_output"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/weigen_weigen_weigen_output_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_weigen_weigen_output_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/weigen_weigen_weigen_output_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_weigen_weigen_output_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="中文"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/weigen_weigen_weigen_output_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/weigen_weigen_weigen_output_value"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="0px"
+                    android:text="▼"
+                    android:visibility="visible"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
 
         <RelativeLayout
             android:id="@+id/verson"
-            android:layout_width="352px"
+            android:layout_width="334px"
             android:layout_height="wrap_content"
             android:layout_below="@+id/weigen"
-            android:layout_toRightOf="@+id/net"
+            android:layout_marginTop="40px"
+            android:layout_toRightOf="@+id/alert"
             android:background="#00000000">
+
+
+            <TextView
+                android:id="@+id/versiontitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="17px"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/setting_version_title"
+                android:textSize="@dimen/setting_title"
+                android:textColor="@color/settting_title"
+                />
+            <View
+                android:id="@+id/versionline"
+                android:layout_width="65px"
+                android:layout_height="1px"
+                android:layout_marginTop="8px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/versiontitle"
+                android:background="@color/settting_title"
+                />
+
+            <RelativeLayout
+                android:id="@+id/verson_now"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_marginTop="17px"
+                android:layout_below="@+id/versionline"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/verson_now_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_version_now_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/verson_now_value"
+                    android:layout_width="105px"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/verson_now_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="1.0"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/version_new"
+                android:layout_width="334px"
+                android:layout_height="25px"
+                android:layout_below="@+id/verson_now"
+                android:layout_marginTop="17px"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/version_new_title"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/setting_version_new_title"
+                    android:textSize="@dimen/setting_title"
+                    android:textColor="@color/settting_title2"
+                    />
+
+
+                <TextView
+                    android:id="@+id/version_new_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/version_new_title"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="35px"
+                    android:text="2.0"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_value"
+                    />
+
+                <TextView
+                    android:id="@+id/version_new_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/version_new_value"
+                    android:layout_marginLeft="20px"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/setting_version_btn_budata"
+                    android:textSize="@dimen/setting_value"
+                    android:textColor="@color/settting_title"
+                    />
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
     </RelativeLayout>

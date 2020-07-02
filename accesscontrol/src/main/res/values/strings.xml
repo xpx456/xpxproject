@@ -4,7 +4,7 @@
     <string name="main_success">考勤成功</string>
 
     <string name="setting_title">系统设置</string>
-    <string name="setting_base_title">基础设置：</string>
+    <string name="setting_base_title">基础设置</string>
     <string name="setting_base_time_title">时间设置：</string>
     <string name="setting_base_time_check">校对</string>
     <string name="setting_base_langue_title">语言设置：</string>
@@ -15,7 +15,7 @@
     <string name="setting_base_super_title">超级管理员：</string>
 
 
-    <string name="setting_contact">通讯设置</string>
+    <string name="setting_contact_title">通讯设置</string>
     <string name="setting_contact_equipment_name_title">设备名称：</string>
     <string name="setting_contact_equipment_code_title">设备编号：</string>
     <string name="setting_contact_rs485rat_title">RS485波特率：</string>
@@ -23,4 +23,46 @@
     <string name="setting_contact_nettype_title">网络模式：</string>
     <string name="setting_contact_wify_title">WIFI模式：</string>
     <string name="setting_contact_bag_title">包大小：</string>
+
+
+    <string name="setting_alert_title">报警设置</string>
+    <string name="setting_alert_output_title">报警输出：</string>
+    <string name="setting_alert_sound_title">报警声音：</string>
+    <string name="setting_alert_ver_title">验证失败次数：</string>
+    <string name="setting_alert_vertime_title">验证失败时长：</string>
+    <string name="setting_alert_detory_title">防拆报警：</string>
+
+
+
+    <string name="setting_net_title">网络设置</string>
+    <string name="setting_net_dchp_title">DCHP：</string>
+    <string name="setting_net_port_title">端口：</string>
+    <string name="setting_net_ip_title">IP：</string>
+    <string name="setting_net_subnet_mask_title">子网掩码：</string>
+    <string name="setting_net_gateway_title">网关信息：</string>
+    <string name="setting_net_service_port_title">服务器端口：</string>
+    <string name="setting_net_service_ip_title">服务器ip：</string>
+    <string name="setting_net_timeout_title">连接超时设置：</string>
+
+
+    <string name="setting_widget_title">界面设置</string>
+    <string name="setting_widget_imf_speed_title">滚动速度：</string>
+    <string name="setting_widget_img_title">静脉图像：</string>
+    <string name="setting_widget_vertime_title">验证成功停留：</string>
+    <string name="setting_widget_veralerttime_mask_title">验证报警时长：</string>
+    <string name="setting_widget_light_title">亮度设置：</string>
+    <string name="setting_widget_volume_port_title">音量设置：</string>
+
+
+    <string name="setting_weigen_title">韦根设置</string>
+    <string name="setting_weigen_digit_title">自定义位数：</string>
+    <string name="setting_weigen_pulse_w_title">脉冲宽度：</string>
+    <string name="setting_weigen_pulse_interval_title">脉冲间隔：</string>
+    <string name="setting_weigen_output_title">韦根内容：</string>
+    <string name="setting_weigen_weigen_output_title">韦根输出：</string>
+
+    <string name="setting_version_title">版本设置</string>
+    <string name="setting_version_now_title">当前版本号：</string>
+    <string name="setting_version_new_title">最新版本号：</string>
+    <string name="setting_version_btn_budata">升级</string>
 </resources>
