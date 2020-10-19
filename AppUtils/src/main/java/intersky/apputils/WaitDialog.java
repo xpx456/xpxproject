@@ -16,6 +16,18 @@ public class WaitDialog {
         this.context = context;
     };
 
+    public boolean isshow()
+    {
+        if(dialog == null)
+        {
+            return false;
+        }
+        else
+        {
+            return dialog.isShowing();
+        }
+    }
+
     public void show()
     {
         if(dialog != null)

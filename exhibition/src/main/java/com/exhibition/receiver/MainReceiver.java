@@ -21,7 +21,6 @@ public class MainReceiver extends BaseReceiver {
 	{
 		this.mHandler = mHandler;
 		this.intentFilter = new IntentFilter();
-		intentFilter.addAction(FingerManger.ACTION_GET_FINGER_SUCCESS);
 		intentFilter.addAction(ExhibitionApplication.ACTION_SET_NAME);
 	}
 	
@@ -29,15 +28,7 @@ public class MainReceiver extends BaseReceiver {
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 
-		if (intent.getAction().equals(FingerManger.ACTION_GET_FINGER_SUCCESS)) {
-
-			Message msg = new Message();
-			msg.what = MainHandler.EVENT_GET_FINGER;
-			msg.obj = intent;
-			if(mHandler!=null)
-				mHandler.sendMessage(msg);
-		}
-		else if (intent.getAction().equals(ExhibitionApplication.ACTION_SET_NAME)) {
+		if (intent.getAction().equals(ExhibitionApplication.ACTION_SET_NAME)) {
 
 			Message msg = new Message();
 			msg.what = MainHandler.EVENT_SET_NAME;

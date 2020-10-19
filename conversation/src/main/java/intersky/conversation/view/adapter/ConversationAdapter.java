@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import intersky.apputils.AppUtils;
 import intersky.apputils.StringUtils;
 import intersky.apputils.TimeUtils;
+import intersky.conversation.ConversationManager;
 import intersky.conversation.R;
 import intersky.appbase.entity.Conversation;
 
@@ -68,10 +69,12 @@ public class ConversationAdapter extends BaseAdapter {
         convertView = mInflater.inflate(R.layout.conversation_item, null);
         mview = new ViewHoder();
         mview.mtitle = (TextView) convertView.findViewById(R.id.conversation_title);
+        mview.mhead = (TextView) convertView.findViewById(R.id.head_title);
         mview.imageView = (ImageView) convertView.findViewById(R.id.conversation_img);
         mview.msubject = (TextView) convertView.findViewById(R.id.conversation_subject);
         mview.mtime = (TextView) convertView.findViewById(R.id.conversation_time);
         mview.mhit = (TextView) convertView.findViewById(R.id.hit);
+        mview.buttom = (TextView) convertView.findViewById(R.id.bottom);
         convertView.setTag(mview);
 
         String name = mConversation.mTitle;
@@ -84,7 +87,8 @@ public class ConversationAdapter extends BaseAdapter {
             if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_NOTICE))
                 mview.imageView.setImageResource(R.drawable.huihua_msglist_gonggaoicn);
             else if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_MESSAGE)) {
-                mview.imageView.setImageResource(R.drawable.huihuamessage);
+                mview.imageView.setImageResource(R.drawable.contact_head);
+                ConversationManager.setContactCycleHead(mview.mhead,mConversation.mTitle);
             } else if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_TASK)) {
                 mview.imageView.setImageResource(R.drawable.huihuatask);
             } else if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_LEAVE)) {
@@ -99,7 +103,10 @@ public class ConversationAdapter extends BaseAdapter {
                 mview.imageView.setImageResource(R.drawable.huihua_msglist_mail);
             } else if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_IWEB_APPROVE)) {
                 mview.imageView.setImageResource(R.drawable.huihua_msglist_rwsp);
-            } else if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_GROP_MESSAGE)) {
+            }
+            else if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_IWEB_REMIND)) {
+                mview.imageView.setImageResource(R.drawable.huihua_msglist_remind);
+            }else if (mConversation.mType.equals(Conversation.CONVERSATION_TYPE_GROP_MESSAGE)) {
                 mview.imageView.setImageResource(R.drawable.huihua_msglist_mess);
             }
         }
@@ -111,12 +118,22 @@ public class ConversationAdapter extends BaseAdapter {
         if(type == true)
         AppUtils.measureHit(mview.mhit,mConversation.mHit);
 
+        if(position == getCount()-1)
+        {
+            mview.buttom.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            mview.buttom.setVisibility(View.GONE);
+        }
         return convertView;
     }
 
     public class ViewHoder {
         ImageView imageView;
+        View buttom;
         TextView mtitle;
+        TextView mhead;
         TextView msubject;
         TextView mtime;
         TextView mhit;

@@ -13,10 +13,12 @@ import com.finger.thread.RegisterFingerThread;
 
 import java.util.ArrayList;
 
+import jx.vein.javajar.JXFVJavaInterface;
+
 public class FingerHandler extends Handler {
 
     public static final int CHECK_FINGER_TOUCHE = 10000;
-
+    public static final int START_INIT_DETIAL = 10001;
     public FingerManger fingerManger;
 
     public FingerHandler(FingerManger fingerManger)
@@ -27,21 +29,21 @@ public class FingerHandler extends Handler {
     @Override
     public void handleMessage(Message msg) {
         switch (msg.what) {
-            case CHECK_FINGER_TOUCHE:
-                fingerManger.checkFingerTouch();
-                break;
             case InitdeviceThread.INIT_DEVICE_SUB_FINISH:
-                fingerManger.devHandle = (long) msg.obj;
+                if(fingerManger.type == FingerManger.TYPE_FINGER_EXHIBITION)
+                {
+                    fingerManger.devHandle = (long) msg.obj;
+                }
+                else
+                {
+                    fingerManger.startReconize();
+                }
                 break;
             case InitdeviceThread.GET_DEVICE_DB_FINISH:
                 fingerManger.dbHandle = (long) msg.obj;
                 break;
             case InitdeviceThread.GET_DEVICE_CONNECT_STAE:
                 fingerManger.deviceState = (int) msg.obj;
-                if(fingerManger.deviceState == FingerManger.STATE_CONNECT)
-                {
-                    fingerManger.checkFingerTouch();
-                }
                 break;
             case RegisterFingerThread.GET_FINGER_ERROR:
                 fingerManger.setGetImf(fingerManger.context.getString(R.string.finger_error));
@@ -66,6 +68,17 @@ public class FingerHandler extends Handler {
                 break;
             case ReconizeFingerThread.GET_FINGER_CHECK_SUCCESS:
                 fingerManger.setGetCheckFingerFinish((Finger) msg.obj);
+                break;
+            case ReconizeFingerThread.GET_FINGER_CHECK_SUCCESS_TYPE2:
+                fingerManger.setGetCheckFingerFinish2((String) msg.obj);
+                break;
+            case ReconizeFingerThread.GET_FINGER_CHECK_FAIL_TYPE2:
+                fingerManger.setGetCheckFingerFinish2Fail();
+                break;
+            case START_INIT_DETIAL:
+                fingerManger.jxfvJavaInterface = new JXFVJavaInterface();
+                fingerManger.initdeviceThread = new InitdeviceThread(fingerManger);
+                fingerManger.initdeviceThread.start();
                 break;
         }
     }

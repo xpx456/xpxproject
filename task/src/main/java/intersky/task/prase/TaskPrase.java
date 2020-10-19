@@ -72,7 +72,10 @@ public class TaskPrase {
                 Task mTask = new Task();
                 mTask.userId = jo.getString("user_id");
                 mTask.taskId = jo.getString("task_id");
-                mTask.taskName = jo.getString("name");
+                if(jo.has("name"))
+                    mTask.taskName = jo.getString("name");
+                if(jo.has("alias_name"))
+                    mTask.taskName = jo.getString("alias_name");
                 mTask.parentId = jo.getString("parent_id");
                 mTask.parentIdList = jo.getString("parent_list");
                 mTask.leaderId = jo.getString("leader_id");
@@ -162,7 +165,10 @@ public class TaskPrase {
                 Task mTask = new Task();
                 mTask.userId = jo.getString("user_id");
                 mTask.taskId = jo.getString("task_id");
-                mTask.taskName = jo.getString("name");
+                if(jo.has("name"))
+                    mTask.taskName = jo.getString("name");
+                if(jo.has("alias_name"))
+                    mTask.taskName = jo.getString("alias_name");
                 mTask.parentId = jo.getString("parent_id");
                 mTask.parentIdList = jo.getString("parent_list");
                 mTask.leaderId = jo.getString("leader_id");
@@ -264,7 +270,10 @@ public class TaskPrase {
                 Task mTaskItemModel = new Task();
                 mTaskItemModel.userId = jo.getString("user_id");
                 mTaskItemModel.taskId = jo.getString("task_id");
-                mTaskItemModel.taskName = jo.getString("name");
+                if(jo.has("name"))
+                    mTaskItemModel.taskName = jo.getString("name");
+                if(jo.has("alias_name"))
+                    mTaskItemModel.taskName = jo.getString("alias_name");
                 mTaskItemModel.parentId = jo.getString("parent_id");
                 mTaskItemModel.parentIdList = jo.getString("parent_list");
                 mTaskItemModel.leaderId = jo.getString("leader_id");
@@ -375,8 +384,11 @@ public class TaskPrase {
             JSONObject jo = jsonObject.getJSONObject("data");
             mTask.userId = jo.getString("user_id");
             mTask.taskId = jo.getString("task_id");
-            if(!jo.isNull("name"))
+            if(!jo.isNull("name") && jo.has("name"))
                 mTask.taskName = jo.getString("name");
+            if(jo.has("alias_name"))
+                mTask.taskName = jo.getString("alias_name");
+
             mTask.parentId = jo.getString("parent_id");
             mTask.parentIdList = jo.getString("parent_list");
             mTask.leaderId = jo.getString("leader_id");
@@ -453,8 +465,10 @@ public class TaskPrase {
             JSONObject jo = jsonObject.getJSONObject("data");
             mTask.userId = jo.getString("user_id");
             mTask.taskId = jo.getString("task_id");
-            if(!jo.isNull("name"))
+            if(!jo.isNull("name") && jo.has("name"))
                 mTask.taskName = jo.getString("name");
+            if(jo.has("alias_name"))
+                mTask.taskName = jo.getString("alias_name");
             mTask.parentId = jo.getString("parent_id");
             mTask.parentIdList = jo.getString("parent_list");
             mTask.leaderId = jo.getString("leader_id");

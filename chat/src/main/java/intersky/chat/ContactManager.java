@@ -403,44 +403,65 @@ public class ContactManager {
         }
     }
 
+//    public static void setContactCycleHead(TextView mhead, Contacts mContacts) {
+//        String s;
+//        if(mContacts.getName().length() > 0)
+//        {
+//            if(mContacts.getName().length() > 2)
+//            {
+//                s = mContacts.getName().substring(0,2);
+//                if(AppUtils.strlen(s))
+//                {
+//                    mhead.setText(mContacts.getName().substring(0,1));
+//                }
+//                else
+//                {
+//                    mhead.setText(mContacts.getName().substring(0,2));
+//                }
+//            }
+//            else
+//            {
+//                s = mContacts.getName().toString();
+//                if(AppUtils.strlen(s))
+//                {
+//                    mhead.setText(mContacts.getName().substring(0,1));
+//                }
+//                else
+//                {
+//                    mhead.setText(mContacts.getName());
+//                }
+//            }
+//        }
+//        if(mContacts.colorhead == -1)
+//        {
+//            Random random = new Random();
+//            int ranColor = 0xff000000 | random.nextInt(0x00ffffff);
+//            mContacts.colorhead = ranColor;
+//        }
+//        GradientDrawable myGrad = (GradientDrawable)mhead.getBackground();
+//        myGrad.setColor(mContacts.colorhead);
+//    }
+
     public static void setContactCycleHead(TextView mhead, Contacts mContacts) {
         String s;
         if(mContacts.getName().length() > 0)
         {
-            if(mContacts.getName().length() > 2)
+            if(mContacts.getName().length() > 4)
             {
-                s = mContacts.getName().substring(0,2);
-                if(AppUtils.strlen(s))
-                {
-                    mhead.setText(mContacts.getName().substring(0,1));
-                }
-                else
-                {
-                    mhead.setText(mContacts.getName().substring(0,2));
-                }
+                s = mContacts.getName().substring(0,4);
+                mhead.setText(mContacts.getName().substring(0,4));
             }
             else
             {
                 s = mContacts.getName().toString();
-                if(AppUtils.strlen(s))
-                {
-                    mhead.setText(mContacts.getName().substring(0,1));
-                }
-                else
-                {
-                    mhead.setText(mContacts.getName());
-                }
+                if(s != null)
+                mhead.setText(mContacts.getName().substring(0,s.length()));
             }
         }
-        if(mContacts.colorhead == -1)
-        {
-            Random random = new Random();
-            int ranColor = 0xff000000 | random.nextInt(0x00ffffff);
-            mContacts.colorhead = ranColor;
-        }
-        GradientDrawable myGrad = (GradientDrawable)mhead.getBackground();
-        myGrad.setColor(mContacts.colorhead);
+        mhead.setBackgroundResource(R.drawable.contact_head);
     }
+
+
 
 
     public boolean chemckLock(Contacts mContact )

@@ -2,6 +2,7 @@ package intersky.appbase;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -24,6 +25,7 @@ public class PadBaseActivity extends Activity implements GestureDetector.OnGestu
     public boolean flagFillBack = true;
     public BaseReceiver baseReceiver;
     public PermissionResult permissionRepuest;
+    public String bpromisssion = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,7 @@ public class PadBaseActivity extends Activity implements GestureDetector.OnGestu
     @Override
     protected void onDestroy() {
         mBasePresenter.Destroy();
+        waitDialog.dismiss();
         super.onDestroy();
     }
 
@@ -159,6 +162,11 @@ public class PadBaseActivity extends Activity implements GestureDetector.OnGestu
         this.baseReceiver = baseReceiver;
     }
 
+    public void setBaseReceiver(BaseReceiver baseReceiver,String bpromisssion) {
+        this.baseReceiver = baseReceiver;
+        this.bpromisssion = bpromisssion;
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         mBasePresenter.oPermissionsRequest(requestCode,grantResults);
@@ -167,4 +175,6 @@ public class PadBaseActivity extends Activity implements GestureDetector.OnGestu
     public void gettouch() {
 
     }
+
+
 }

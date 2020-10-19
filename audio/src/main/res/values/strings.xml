@@ -1,0 +1,4 @@
+<resources>
+    <string name="audio_not_init">语音系统还未初始化完成</string>
+    <string name="audio_langue_no_init">请先前往设置界面配置设置语音系统</string>
+</resources>

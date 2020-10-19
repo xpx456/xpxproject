@@ -1,6 +1,7 @@
 package com.exhibition.presenter;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.provider.Settings;
 import android.view.View;
 
@@ -10,13 +11,15 @@ import com.exhibition.receiver.MainReceiver;
 import com.exhibition.view.BaseSettingView;
 import com.exhibition.view.ExhibitionApplication;
 import com.exhibition.view.QueryView;
-import com.exhibition.view.RegisterView;
 import com.exhibition.view.SafeSettingView;
 import com.exhibition.view.SystemSettingView;
 import com.exhibition.view.activity.AboutActivity;
 import com.exhibition.view.activity.MainActivity;
+import com.exhibition.view.activity.RegisterActivity;
 
 import org.json.JSONException;
+
+import java.io.File;
 
 import intersky.appbase.Presenter;
 
@@ -50,17 +53,10 @@ public class MainPresenter implements Presenter {
         mMainActivity.btn6.setOnClickListener(updateListener);
         mMainActivity.exist.setOnClickListener(existListner);
         mMainActivity.queryView = new QueryView(mMainActivity);
-        mMainActivity.registerView = new RegisterView(mMainActivity);
         mMainActivity.baseSettingView = new BaseSettingView(mMainActivity);
         mMainActivity.safeSettingView = new SafeSettingView(mMainActivity);
         mMainActivity.systemSettingView = new SystemSettingView(mMainActivity);
-        String name = "";
-        try {
-             name = ExhibitionApplication.mApp.setjson.getString("name");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        mMainActivity.title.setText(mMainActivity.getString(R.string.main_title1)+name+mMainActivity.getString(R.string.main_title2));
+        mMainActivity.title.setText(mMainActivity.getString(R.string.main_title1)+ExhibitionApplication.mApp.getName()+mMainActivity.getString(R.string.main_title2));
     }
 
     @Override
@@ -85,13 +81,15 @@ public class MainPresenter implements Presenter {
 
     @Override
     public void Destroy() {
-
+//        ExhibitionApplication.mApp.fingerManger.startReconize();
     }
     //1168 689
     public View.OnClickListener registerListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            mMainActivity.registerView.creatView(mMainActivity.findViewById(R.id.activity_main));
+            //mMainActivity.registerView.creatView(mMainActivity.findViewById(R.id.activity_main3));
+            Intent intent = new Intent(mMainActivity, RegisterActivity.class);
+            mMainActivity.startActivity(intent);
         }
     };
 
@@ -146,21 +144,9 @@ public class MainPresenter implements Presenter {
         mMainActivity.startActivity(intent);
     }
 
-    public void addFinger(Intent intent)
+    public void updataName()
     {
-        if(mMainActivity.registerView != null)
-        {
-//            mMainActivity.registerView.addFinger(ExhibitionApplication.mApp.fingerManger.lastgetFinger);
-        }
+        mMainActivity.title.setText(mMainActivity.getString(R.string.main_title1)+ExhibitionApplication.mApp.getName()+mMainActivity.getString(R.string.main_title2));
     }
 
-    public void setName(Intent intent)
-    {
-        try {
-            mMainActivity.title.setText(ExhibitionApplication.mApp.setjson.getString("name"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
 }

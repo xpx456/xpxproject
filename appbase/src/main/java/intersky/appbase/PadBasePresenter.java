@@ -3,6 +3,7 @@ package intersky.appbase;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -38,8 +39,13 @@ public class PadBasePresenter implements Presenter{
 		mBaseActivity.waitDialog = new WaitDialog(mBaseActivity);
 		mBaseActivity.waitDialog.setCancelable(true);
         if(mBaseActivity.baseReceiver != null) {
-            mBaseActivity.registerReceiver(mBaseActivity.baseReceiver,mBaseActivity.baseReceiver.intentFilter);
+        	if(mBaseActivity.bpromisssion.length() > 0)
+            mBaseActivity.registerReceiver(mBaseActivity.baseReceiver,mBaseActivity.baseReceiver.intentFilter
+					,mBaseActivity.bpromisssion,null);
+        	else
+				mBaseActivity.registerReceiver(mBaseActivity.baseReceiver,mBaseActivity.baseReceiver.intentFilter);
         }
+		mBaseActivity.getWindow().getDecorView().setSystemUiVisibility(View.GONE);
 	}
 	
 	@Override
@@ -51,6 +57,7 @@ public class PadBasePresenter implements Presenter{
 	@Override
 	public void Resume() {
 		// TODO Auto-generated method stub
+		mBaseActivity.getWindow().getDecorView().setSystemUiVisibility(View.GONE);
 	}
 
 	@Override

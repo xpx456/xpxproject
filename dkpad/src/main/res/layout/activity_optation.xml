@@ -1,0 +1,455 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+
+    <RelativeLayout
+        android:id="@+id/allcontent"
+        android:layout_width="960px"
+        android:layout_height="540px"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000">
+
+
+        <RelativeLayout
+            android:id="@+id/head"
+            android:layout_width="960px"
+            android:layout_height="80px"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/pop_bg_top">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="30px" />
+
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:src="@drawable/popclose" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="960px"
+            android:layout_height="460px"
+            android:layout_below="@+id/head"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pop_bg_buttom">
+
+
+            <View
+                android:id="@+id/y"
+                android:layout_width="1px"
+                android:layout_height="360px"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="60px"
+                android:layout_marginBottom="40px"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/arraytop"
+                android:layout_width="20px"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/y"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="50px"
+                android:layout_marginBottom="-10px"
+                android:gravity="bottom|center_horizontal"
+                android:text="▲"
+                android:textColor="#000000"
+                android:textSize="17px" />
+
+            <LinearLayout
+                android:id="@+id/ydata"
+                android:layout_width="60px"
+                android:layout_height="330px"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40px"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="32档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="30档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="28档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="26档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="24档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="22档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="20档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="18档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="16档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="14档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="12档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="10档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="8档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="6档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="4档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20px"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="2档-"
+                        android:textColor="#000000"
+                        android:textSize="16px" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:id="@+id/operscoll"
+                android:layout_width="800px"
+                android:layout_height="360px"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/y">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="360px">
+
+                    <LinearLayout
+                        android:id="@+id/listline"
+                        android:layout_width="match_parent"
+                        android:layout_height="320px"
+                        android:layout_alignParentTop="true"
+                        android:background="#ff0000"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <View
+                        android:id="@+id/x1"
+                        android:layout_width="20px"
+                        android:layout_height="1px"
+                        android:layout_below="@+id/listline"
+                        android:background="#000000" />
+
+                    <LinearLayout
+                        android:id="@+id/xline"
+                        android:layout_width="match_parent"
+                        android:layout_height="40px"
+                        android:layout_below="@+id/listline"
+                        android:layout_toRightOf="@+id/x1"
+                        android:orientation="horizontal"></LinearLayout>
+
+
+                    <View
+                        android:id="@+id/x2"
+                        android:layout_width="20px"
+                        android:layout_height="1px"
+                        android:layout_below="@+id/listline"
+                        android:layout_toRightOf="@+id/xline"
+                        android:background="#000000" />
+
+                    <TextView
+                        android:id="@+id/arrayright"
+                        android:layout_width="20px"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/listline"
+                        android:layout_marginTop="-13px"
+                        android:layout_toRightOf="@+id/x2"
+                        android:layout_marginLeft="-10px"
+                        android:gravity="bottom|center_horizontal"
+                        android:text="▶"
+                        android:textColor="#000000"
+                        android:textSize="17px" />
+                </RelativeLayout>
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:layout_width="160px"
+                android:layout_height="540px"
+                android:layout_toRightOf="@+id/operscoll">
+
+
+                <ImageView
+                    android:id="@+id/save"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20px"
+                    android:src="@drawable/baocun" />
+
+
+
+
+
+                <ImageView
+                    android:id="@+id/add"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/save"
+                    android:layout_marginTop="80px"
+                    android:src="@drawable/addone" />
+
+                <ImageView
+                    android:id="@+id/des"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/add"
+                    android:layout_marginTop="80px"
+                    android:src="@drawable/desone" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titletime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20px"
+                android:layout_toRightOf="@+id/y"
+                android:layout_marginLeft="80px"
+                android:textSize="25px"
+                android:textColor="@color/txt_nomal"
+                android:text="@string/titletime"
+                />
+
+            <TextView
+                android:id="@+id/titletimevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20px"
+                android:layout_toRightOf="@+id/titletime"
+                android:textSize="25px"
+                android:textColor="@color/txt_nomal"
+                android:text=""
+                />
+
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="25px"
+                android:layout_height="25px"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="40px"
+                android:layout_toRightOf="@+id/titletimevalue"
+                android:src="@drawable/delete" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

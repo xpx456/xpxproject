@@ -20,6 +20,7 @@ public class LoginHandler extends Handler {
     public static final int GET_FINGER_IMG_SUCCESS = 100002;
     public static final int GET_LOGIN_SUCCESS = 100003;
     public static final int GET_LOGIN_FAIL = 100004;
+    public static final int INIT_DATA = 100005;
     public LoginHandler(LoginActivity mLoginActivity) {
         theActivity = mLoginActivity;
     }
@@ -39,6 +40,9 @@ public class LoginHandler extends Handler {
                 break;
             case GET_LOGIN_FAIL:
                 theActivity.mLoginPresenter.praseLoginImf((Intent) msg.obj);
+                break;
+            case INIT_DATA:
+                ExhibitionApplication.mApp.initData((Intent) msg.obj);
                 break;
         }
 

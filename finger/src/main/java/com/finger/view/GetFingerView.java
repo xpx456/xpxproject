@@ -14,7 +14,6 @@ import intersky.mywidget.PopView;
 public class GetFingerView extends PopView {
 
     public TextView tip;
-    public View mainView;
     public GetFingerView(Context context) {
         super(context);
         initView();

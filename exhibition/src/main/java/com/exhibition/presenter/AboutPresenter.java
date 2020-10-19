@@ -11,10 +11,12 @@ import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.exhibition.R;
+import com.exhibition.entity.Page;
 import com.exhibition.utils.DepthPageTransformer;
 import com.exhibition.utils.GalleryTransformer;
 import com.exhibition.view.ExhibitionApplication;
 import com.exhibition.view.activity.AboutActivity;
+import com.exhibition.view.adapter.FlipAdapter;
 import com.exhibition.view.adapter.GallyPageAdapter;
 import com.exhibition.view.adapter.LittleGallyAdapter;
 import com.exhibition.view.adapter.LittleGallyIdAdapter;
@@ -25,6 +27,8 @@ import java.util.ArrayList;
 import intersky.appbase.Presenter;
 import intersky.apputils.BitmapCache;
 import intersky.apputils.BitmapSize;
+import intersky.mywidget.flipview.FlipView;
+import intersky.mywidget.flipview.OverFlipMode;
 
 public class AboutPresenter implements Presenter {
 
@@ -38,24 +42,34 @@ public class AboutPresenter implements Presenter {
     public void initView() {
         mAboutActivity.flagFillBack = false;
         mAboutActivity.setContentView(R.layout.activity_about);
-        mAboutActivity.mViewPager= (ViewPager) mAboutActivity.findViewById(R.id.des_pager);
+
+        mAboutActivity.mFlipView = (FlipView) mAboutActivity.findViewById(R.id.flip_view1);
+
+
         mAboutActivity.listview = mAboutActivity.findViewById(R.id.little_pager);
         mAboutActivity.back = mAboutActivity.findViewById(R.id.back1);
         mAboutActivity.back.setText("<"+mAboutActivity.getString(R.string.back));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mAboutActivity);
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         mAboutActivity.listview.setLayoutManager(linearLayoutManager);
-        mAboutActivity.mViewPager.addOnPageChangeListener(onPageChangeListener);
+
+        mAboutActivity.back.setOnClickListener(backListener);
+        mAboutActivity.mAdapter = new FlipAdapter(mAboutActivity,mAboutActivity.pages);
+        mAboutActivity.mFlipView.setAdapter(mAboutActivity.mAdapter);
+        mAboutActivity.mFlipView.setOnFlipListener(mAboutActivity);
+        mAboutActivity.mFlipView.peakNext(false);
+        mAboutActivity.mFlipView.setOverFlipMode(OverFlipMode.RUBBER_BAND);
+        mAboutActivity.mFlipView.setEmptyView(mAboutActivity.findViewById(R.id.empty_view1));
+        mAboutActivity.mFlipView.setOnOverFlipListener(mAboutActivity);
+        mAboutActivity.mFlipView.setFocusable(true);
+
         if(ExhibitionApplication.mApp.photos.size() > 0)
         {
             for(int i = 0 ; i < ExhibitionApplication.mApp.photos.size() ; i++)
             {
-                View view = mAboutActivity.getLayoutInflater().inflate(R.layout.gally_image,null);
-                ImageView imageView = view.findViewById(R.id.photo);
-                RequestOptions options = new RequestOptions()
-                        .placeholder(R.drawable.temp);
-                Glide.with(mAboutActivity).load(ExhibitionApplication.mApp.photos.get(i)).apply(options).into(imageView);
-                mAboutActivity.views.add(view);
+                Page page = new Page();
+                page.filepath = ExhibitionApplication.mApp.photos.get(i).getPath();
+                mAboutActivity.mAdapter.items.add(page);
 
             }
         }
@@ -63,26 +77,21 @@ public class AboutPresenter implements Presenter {
         {
             for(int i = 0 ; i < 5 ; i++)
             {
-                View view = mAboutActivity.getLayoutInflater().inflate(R.layout.gally_image,null);
-                ImageView imageView = view.findViewById(R.id.photo);
-                if(i%2 == 1)
+                Page page = new Page();
+                if(i%2 == 0)
                 {
-                    imageView.setImageResource(R.drawable.temp);
+                    page.sourceid = R.drawable.temp;
                     mAboutActivity.ids.add(R.drawable.temp);
                 }
                 else
                 {
-                    imageView.setImageResource(R.drawable.temp2);
+                    page.sourceid = R.drawable.temp2;
                     mAboutActivity.ids.add(R.drawable.temp2);
                 }
-                mAboutActivity.views.add(view);
+                mAboutActivity.mAdapter.items.add(page);
             }
         }
 
-        mAboutActivity.mViewPagerAdapter = new GallyPageAdapter(mAboutActivity,mAboutActivity.views);
-        mAboutActivity.mViewPager.setOffscreenPageLimit(3);
-        mAboutActivity.mViewPager.setPageTransformer(true,new DepthPageTransformer());
-        mAboutActivity.mViewPager.setAdapter(mAboutActivity.mViewPagerAdapter);
         if(ExhibitionApplication.mApp.photos.size() > 0)
         {
             mAboutActivity.mLittleViewPagerAdapter = new LittleGallyAdapter(ExhibitionApplication.mApp.photos,mAboutActivity);
@@ -95,8 +104,7 @@ public class AboutPresenter implements Presenter {
             mAboutActivity.mLittleViewPagerIdAdapter.setOnItemClickListener(onItemIdClickListener);
             mAboutActivity.listview.setAdapter(mAboutActivity.mLittleViewPagerIdAdapter);
         }
-        mAboutActivity.back.setOnClickListener(backListener);
-
+        mAboutActivity.mAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -131,43 +139,6 @@ public class AboutPresenter implements Presenter {
         }
     };
 
-    public ViewPager.OnPageChangeListener onPageChangeListener = new ViewPager.OnPageChangeListener(){
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-            if(state == 2)
-            {
-                if(ExhibitionApplication.mApp.photos.size() > 0)
-                {
-                    if(mAboutActivity.mLittleViewPagerAdapter.currentid != mAboutActivity.mViewPager.getCurrentItem())
-                    {
-                        mAboutActivity.mLittleViewPagerAdapter.currentid = mAboutActivity.mViewPager.getCurrentItem();
-                        mAboutActivity.mViewPager.setCurrentItem(mAboutActivity.mViewPager.getCurrentItem());
-                        mAboutActivity.mLittleViewPagerAdapter.notifyDataSetChanged();
-                    }
-                }
-                else
-                {
-                    if(mAboutActivity.mLittleViewPagerIdAdapter.currentid != mAboutActivity.mViewPager.getCurrentItem())
-                    {
-                        mAboutActivity.mLittleViewPagerIdAdapter.currentid = mAboutActivity.mViewPager.getCurrentItem();
-                        mAboutActivity.mViewPager.setCurrentItem(mAboutActivity.mViewPager.getCurrentItem());
-                        mAboutActivity.mLittleViewPagerIdAdapter.notifyDataSetChanged();
-                    }
-                }
-            }
-        }
-    };
 
     public LittleGallyAdapter.OnItemClickListener onItemClickListener = new LittleGallyAdapter.OnItemClickListener() {
         @Override
@@ -175,7 +146,7 @@ public class AboutPresenter implements Presenter {
             if(mAboutActivity.mLittleViewPagerAdapter.currentid != position)
             {
                 mAboutActivity.mLittleViewPagerAdapter.currentid = position;
-                mAboutActivity.mViewPager.setCurrentItem(position);
+                mAboutActivity.mFlipView.smoothFlipTo(position);
                 mAboutActivity.mLittleViewPagerAdapter.notifyDataSetChanged();
             }
         }
@@ -188,7 +159,7 @@ public class AboutPresenter implements Presenter {
             if(mAboutActivity.mLittleViewPagerIdAdapter.currentid != position)
             {
                 mAboutActivity.mLittleViewPagerIdAdapter.currentid = position;
-                mAboutActivity.mViewPager.setCurrentItem(position);
+                mAboutActivity.mFlipView.smoothFlipTo(position);
                 mAboutActivity.mLittleViewPagerIdAdapter.notifyDataSetChanged();
             }
         }

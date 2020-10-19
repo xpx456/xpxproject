@@ -1,5 +1,7 @@
 package jx.vein.javajar;
 
+import jx.vein.javajar.vein.GetUSBPermission;
+
 public class JXFVJavaInterface {
 	public static final int veinIDLength = 50;
 	public static final int groupIDLength = 20;
@@ -12,12 +14,12 @@ public class JXFVJavaInterface {
 	public static final int veinFeatureSize =1344;
 	
 	static {
-//		System.loadLibrary("JXFVJavaInterface");
-//		System.loadLibrary("JXFVM");
-//		System.loadLibrary("JXFVD");
-//		System.loadLibrary("JXFVBase");
-//		System.loadLibrary("usb1.0");
-//		System.loadLibrary("sqlite3");
+		System.loadLibrary("sqlite3");
+		System.loadLibrary("usb1.0");
+		System.loadLibrary("JXFVBase");
+		System.loadLibrary("JXFVD");
+		System.loadLibrary("JXFVM");
+		System.loadLibrary("JXFVJavaInterface");
 	}
 	
 	
@@ -59,6 +61,7 @@ public class JXFVJavaInterface {
 	
 	public long jxInitUSBDriver()
 	{
+		new GetUSBPermission();
 		return InitUSBDriver();
 	}
 	

@@ -83,14 +83,14 @@ public class BaseActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     protected void onResume() {
         mBasePresenter.Resume();
-        Bus.callData(this, "app/MoResume");
+//        Bus.callData(this, "app/MoResume");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
         mBasePresenter.Pause();
-        Bus.callData(this, "app/MoPause");
+//        Bus.callData(this, "app/MoPause");
         super.onPause();
     }
 

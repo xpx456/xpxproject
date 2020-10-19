@@ -11,6 +11,7 @@ public class IntersakyData {
     public static final String CONVERSATION_TYPE_VOTE = "msg_vote";
     public static final String CONVERSATION_TYPE_GROP_MESSAGE = "msg_grop_message";
     public static final String CONVERSATION_TYPE_IWEB_MAIL = "msg_iweb_mail";
+    public static final String CONVERSATION_TYPE_IWEB_REMIND = "msg_iweb_reminder";
     public static final String CONVERSATION_TYPE_IWEB_APPROVE = "msg_iweb_approve";
     public static final String CONVERSATION_TYPE_IWEB_APP = "msg_iweb_app";
     public static final String CONVERSATION_TYPE_IWEB_SYSTEM = "msg_iweb_system";

@@ -27,6 +27,7 @@ public class UpdateHandler extends Handler {
                 UpDataManager.mUpDataManager.checkVersin();
                 break;
             case EVETN_DOWNLOAD_FAIL:
+                UpDataManager.mUpDataManager.docheck = false;
                 UpDataManager.mUpDataManager.state = UpDataManager.UPDATA_NONE;
                 break;
             case EVETN_DOWNLOAD_UPADTE:

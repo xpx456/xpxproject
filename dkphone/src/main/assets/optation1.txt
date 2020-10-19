@@ -1,0 +1,160 @@
+option = {
+    toolbox:{
+        feature:{
+            restore:
+            {
+                show:true
+                
+            },
+            saveAsImage:
+            {
+                show:true
+                
+            }
+            
+        },
+        show:true
+        
+    },
+    series:[
+        {
+            splitNumber:11,
+            z:3,
+            splitLine:{},
+            data:
+            [{name:'km/h',value:40.0}],
+            detail:{
+                shadowBlur:5.0,
+                backgroundColor:'#444',
+                textShadowOffsetX:0.0,
+                textBorderColor:'#000',
+                shadowColor:'#333',
+                textBorderWidth:2.0,
+                borderRadius:3.0,
+                textShadowBlur:2.0,
+                fontWeight:'bolder',
+                textShadowColor:'#fff',
+                borderWidth:2.0,
+                color:'#eee',
+                shadowOffsetX:0.0,
+                borderColor:'#aaa',
+                fontSize:20.0,width:80.0,
+                rich:{},
+                textShadowOffsetY:0.0,
+                shadowOffsetY:3.0,
+                fontFamily:'Arial'
+                
+            },
+            axisTick:{
+                lineStyle:{},
+                length:20.0
+                
+            },
+            max:110.0,
+            min:0.0,
+            title:{
+                fontStyle:'italic',
+                fontWeight:'bolder',
+                fontSize:20.0
+                
+            },
+            radius:'50%',
+            axisLabel:{
+                padding:3.0,
+                backgroundColor:'auto',
+                textShadowOffsetX:1.0,
+                textShadowColor:'#222',
+                color:'#eee',
+                textShadowOffsetY:1.0,
+                borderRadius:2.0,
+                textShadowBlur:2.0
+                
+            },
+            name:'速度',
+            axisLine:{
+                lineStyle:{
+                    
+                }
+            },
+            type:'gauge'
+            
+        },
+        {
+            splitNumber:11,
+            endAngle:45,
+            splitLine:{
+                lineStyle:
+                {
+                    color:'auto'
+                    
+                },
+                length:20
+                
+            },
+            data:[{name:'bpm',value:80.0}],
+            detail:{
+                fontWeight:'bolder'
+                
+            },
+            axisTick:{
+                lineStyle:{
+                    color:'auto'
+                    
+                },
+                length:12.0
+                
+            },
+            max:220.0,
+            min:0.0,
+            pointer:{
+                width:5.0
+                
+            },
+            title:{
+                offsetCenter:[0.0,'-30%',0.0,'-30%']
+                
+            },
+            radius:'35%',
+            center:['20%','55%'],
+            name:'心率',
+            axisLine:{
+                lineStyle:{width:8.0}
+            },
+            type:'gauge'
+            
+        },
+        {
+            splitNumber:11,
+            endAngle:45,
+            splitLine:{
+                lineStyle:{color:'auto'},
+                length:20
+            },
+            data:[{name:'N',value:80.0}],
+            detail:
+            {
+                fontWeight:'bolder'
+            },
+            axisTick:{
+                lineStyle:{color:'auto'},
+                length:12.0
+            },
+            max:220.0,
+            min:0.0,
+            pointer:{width:5.0},
+            title:
+            {
+                offsetCenter:[]
+            },
+            radius:'35%',
+            center:['80%','55%'],
+            name:'阻力',
+            axisLine:{lineStyle:{width:8.0}},
+            type:'gauge'
+            
+        }],
+    tooltip:{formatter:"{a} <br/>{c} {b}"},
+}
+
+
+

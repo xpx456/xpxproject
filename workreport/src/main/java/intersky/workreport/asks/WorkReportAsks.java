@@ -119,7 +119,7 @@ public class WorkReportAsks {
             item = new BasicNameValuePair("method", String.valueOf(WORK_REPORT_ADD));
             items.add(item);
         }
-        item = new BasicNameValuePair("report_type", String.valueOf(report.mNtype));
+        item = new BasicNameValuePair("report_type", String.valueOf(report.mType));
         items.add(item);
         item = new BasicNameValuePair("complete", StringUtils.toHtmlSamle(report.mComplete));
         items.add(item);

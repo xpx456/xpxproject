@@ -1,12 +1,14 @@
 package com.exhibition.view.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -64,17 +66,17 @@ public class QueryListAdapter extends RecyclerView.Adapter {
         TextView count;
         TextView car;
         TextView card;
-        RelativeLayout bg;
+        LinearLayout bg;
         public ViewHoder(@NonNull View convertView) {
             super(convertView);
             bg = convertView.findViewById(R.id.listbg);
             time = (TextView) convertView.findViewById(R.id.head_time);
-            name = (TextView) convertView.findViewById(R.id.head_time);
-            type = (TextView) convertView.findViewById(R.id.head_time);
-            sex = (TextView) convertView.findViewById(R.id.head_time);
-            count = (TextView) convertView.findViewById(R.id.head_time);
-            car = (TextView) convertView.findViewById(R.id.head_time);
-            card = (TextView) convertView.findViewById(R.id.head_time);
+            name = (TextView) convertView.findViewById(R.id.head_name);
+            type = (TextView) convertView.findViewById(R.id.head_type);
+            sex = (TextView) convertView.findViewById(R.id.head_sex);
+            count = (TextView) convertView.findViewById(R.id.head_count);
+            car = (TextView) convertView.findViewById(R.id.head_car);
+            card = (TextView) convertView.findViewById(R.id.head_card);
 
         }
     };
@@ -93,11 +95,11 @@ public class QueryListAdapter extends RecyclerView.Adapter {
 
         if(position %2 == 0)
         {
-            mview.bg.setBackgroundColor(0xf0f4fe);
+            mview.bg.setBackgroundColor(Color.rgb(255,255,255));
         }
         else
         {
-            mview.bg.setBackgroundColor(0xffffff);
+            mview.bg.setBackgroundColor(Color.rgb(240,244,254));
         }
         mview.time.setText(mguest.time);
         mview.name.setText(mguest.name);

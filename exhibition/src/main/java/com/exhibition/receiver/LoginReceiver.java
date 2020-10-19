@@ -22,7 +22,9 @@ public class LoginReceiver extends BaseReceiver {
 		intentFilter.addAction(ExhibitionApplication.ACTION_UPDATA_TIMEOUT);
 		intentFilter.addAction(FingerManger.ACTION_GET_LOGIN_FINGER_SUCCESS);
 		intentFilter.addAction(FingerManger.ACTION_GET_LOGIN_SUCCESS);
-
+		intentFilter.addAction(Intent.ACTION_MEDIA_MOUNTED);   //接受外媒挂载过滤器
+		intentFilter.addAction(Intent.ACTION_MEDIA_REMOVED);   //接受外媒挂载过滤器
+		intentFilter.addDataScheme("file");
 	}
 	
 	@Override
@@ -52,6 +54,16 @@ public class LoginReceiver extends BaseReceiver {
 			msg.obj = intent;
 			if(mHandler!=null)
 				mHandler.sendMessage(msg);
+		}
+		else if(intent.getAction().equals(Intent.ACTION_MEDIA_MOUNTED)){
+			Message msg = new Message();
+			msg.what = LoginHandler.INIT_DATA;
+			msg.obj = intent;
+			if(mHandler!=null)
+				mHandler.sendMessage(msg);
+
+		}else if(intent.getAction().equals(Intent.ACTION_MEDIA_REMOVED)){
+
 		}
 
 	}

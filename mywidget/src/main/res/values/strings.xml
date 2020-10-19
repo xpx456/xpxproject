@@ -28,6 +28,7 @@
     <string name="button_saveandnew">保存并新建</string>
     <string name="button_new">新建</string>
     <string name="button_delete">删除</string>
+    <string name="button_login">登录</string>
     <string name="button_word_mailback">驳回</string>
     <string name="button_word_mailgo">通过</string>
     <string name="button_word_share">分享</string>
@@ -45,16 +46,33 @@
     <string name="button_word_openpic">打开图片</string>
     <string name="button_word_openfile">打开文件</string>
     <string name="button_word_open">打开</string>
+    <string name="button_word_close">关闭</string>
     <string name="button_word_exit">离开</string>
     <string name="button_word_rename">重命名</string>
     <string name="button_word_download">下载</string>
     <string name="button_word_selectall">全选</string>
     <string name="button_word_refouse">拒绝</string>
+    <string name="button_word_start">开始</string>
+    <string name="button_word_stop">停止</string>
     <string name="button_word_edit">修改</string>
     <string name="button_edit">编辑</string>
     <string name="button_word_setoff">撤销</string>
     <string name="button_set_read">设为已读</string>
     <string name="button_read">已读</string>
+    <string name="button_word_yes">是</string>
+    <string name="button_word_no">否</string>
+    <string name="button_word_use">启用</string>
+    <string name="button_word_unuse">不启用</string>
+    <string name="button_word_fast">快</string>
+    <string name="button_word_slow">慢</string>
+    <string name="button_word_show">显示</string>
+    <string name="button_word_unshow">不显示</string>
+    <string name="button_word_comm">默认</string>
+    <string name="button_word_open_use">开启</string>
+    <string name="button_word_open_close">关闭</string>
+    <string name="button_word_back">返回</string>
+    <string name="button_word_noname">未命名</string>
+    <string name="button_word_logout">退出登录</string>
 
     <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
     <string name="pull_to_refresh_footer_release_label">松开后加载</string>
@@ -73,4 +91,6 @@
     <string name="keyword_inputname">请输入文件名</string>
     <string name="add_more">正在加载更多选项...</string>
     <string name="add_all_item">已经加载全部</string>
+
+    <string name="langue_cn">中文</string>
 </resources>

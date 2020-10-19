@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    >
+
+    <RelativeLayout
+        android:id="@+id/conversationlayer"
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <intersky.mywidget.CircleImageView
+            android:id="@+id/headicon"
+            android:layout_width="38px"
+            android:layout_height="38px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5px"
+            android:visibility="visible"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_user" />
+
+        <ImageView
+            android:id="@+id/headicon2"
+            android:layout_width="38px"
+            android:layout_height="38px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5px"
+            android:visibility="invisible"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_user" />
+
+        <TextView
+            android:id="@+id/headname"
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:layout_toRightOf="@+id/headicon"
+            android:layout_marginRight="5px"
+            android:gravity="left|center_vertical"
+            android:text=""
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:textSize="20px" />
+
+        <RelativeLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentLeft="true"
+            android:background="@color/bg_line"
+            android:layout_alignParentBottom="true"
+            />
+
+        <View
+            android:id="@+id/lin2"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/bg_line"
+            />
+    </RelativeLayout>
+
+</RelativeLayout >

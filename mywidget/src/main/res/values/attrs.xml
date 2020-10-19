@@ -100,6 +100,17 @@
         <attr name="imagesize" format="dimension" />
         <attr name="textsize" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="XpxSpinnerView">
+        <attr name="xicon_src" format="reference" />
+        <attr name="xbg" format="reference" />
+        <attr name="xtextcolor" format="color" />
+        <attr name="xcanedit" format="boolean" />
+        <attr name="xheight" format="dimension" />
+        <attr name="ximagesize" format="dimension" />
+        <attr name="xtextsize" format="dimension" />
+    </declare-styleable>
+
     <declare-styleable name="PhoneCode">
         <attr name="count" format="integer" />
     </declare-styleable>
@@ -139,5 +150,25 @@
         <attr name="titletype" format="integer"/>
         <attr name="colorbegin" format="color"/>
         <attr name="colorend" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="VerticalSeekBar">
+        <attr name="seekBarRotation">
+            <!-- Clock wise - 90 deg; top = min, bottom = max -->
+            <enum name="CW90" value="90" />
+            <!-- Clock wise - 270 deg; bottom = min, top = max -->
+            <enum name="CW270" value="270" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="FlipView">
+        <attr name="orientation" format="enum">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+        <attr name="overFlipMode" format="enum">
+            <enum name="glow" value="0"/>
+            <enum name="rubber_band" value="1"/>
+        </attr>
     </declare-styleable>
 </resources>

@@ -20,6 +20,7 @@ public class Conversation  implements Parcelable {
     public static final String CONVERSATION_TYPE_GROP_MESSAGE = "msg_grop_message";
     public static final String CONVERSATION_TYPE_IWEB = "msg_iweb";
     public static final String CONVERSATION_TYPE_IWEB_MAIL = "msg_iweb_mail";
+    public static final String CONVERSATION_TYPE_IWEB_REMIND = "msg_iweb_reminder";
     public static final String CONVERSATION_TYPE_IWEB_APPROVE = "msg_iweb_approve";
     public static final String CONVERSATION_TYPE_NEWS = "msg_news";
     public static final String CONVERSATION_TYPE_MEETING = "msg_meeting";

@@ -329,6 +329,10 @@ public class FunctionAdapter extends BaseAdapter {
         {
             bmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.vote_m);
         }
+        else if(func.mCaption.equals("添加常用"))
+        {
+            bmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.funadd);
+        }
         return bmap;
     }
 

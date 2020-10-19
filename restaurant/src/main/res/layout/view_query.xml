@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_query"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/input"
+        android:layout_width="680px"
+        android:layout_height="690px"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000">
+
+        <TextView
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:background="@drawable/queryhead"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/query_title"
+            android:textColor="@color/white"
+            android:textSize="35px" />
+
+        <RelativeLayout
+            android:id="@+id/filterlayer"
+            android:layout_width="match_parent"
+            android:layout_height="105px"
+            android:layout_below="@+id/head"
+            android:background="@color/white">
+
+
+            <RelativeLayout
+                android:id="@+id/keyword"
+                android:layout_width="255px"
+                android:layout_height="45px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/filtreditbg">
+
+
+                <EditText
+                    android:id="@+id/keywordvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="10px"
+                    android:background="#00000000"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/query_keyword_title"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#737373"
+                    android:textColorHint="#156ec9"
+                    android:textSize="25px" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/searchbtn"
+                android:layout_width="125px"
+                android:layout_height="35px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:layout_toRightOf="@+id/keyword"
+                android:background="@drawable/query_btn_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/query_btn_search"
+                android:textColor="@color/white"
+                android:textSize="25px" />
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/query_check"
+                android:layout_width="wrap_content"
+                android:layout_height="35px"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/searchbtn"
+                android:layout_marginLeft="20px"
+                android:background="#00000000">
+
+                <RelativeLayout
+                    android:id="@+id/query_can_finger"
+                    android:layout_height="35px"
+                    android:layout_width="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/finger_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left|center_vertical"
+                        android:text="@string/query_finger"
+                        android:textColor="@color/settting_title2"
+                        android:textSize="22px" />
+
+                    <ImageView
+                        android:id="@+id/finger"
+                        android:layout_height="35px"
+                        android:layout_width="35px"
+                        android:layout_marginLeft="10px"
+                        android:layout_toRightOf="@+id/finger_txt"
+                        android:src="@drawable/bunselect"
+                        />
+
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/query_can_card"
+                    android:layout_height="35px"
+                    android:layout_toRightOf="@+id/query_can_finger"
+                    android:layout_marginLeft="20px"
+                    android:layout_width="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/card_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left|center_vertical"
+                        android:text="@string/query_ickard"
+                        android:textColor="@color/settting_title2"
+                        android:textSize="22px" />
+
+                    <ImageView
+                        android:id="@+id/iccard"
+                        android:layout_height="35px"
+                        android:layout_width="35px"
+                        android:layout_marginLeft="10px"
+                        android:layout_toRightOf="@+id/card_txt"
+                        android:src="@drawable/bunselect"
+                        />
+
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/listlayer"
+            android:layout_width="match_parent"
+            android:layout_height="607px"
+            android:layout_below="@+id/filterlayer"
+            android:background="@drawable/querybody">
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentTop="true"
+                android:background="#e3e3e3" />
+
+            <LinearLayout
+                android:id="@+id/listhead"
+                android:layout_width="match_parent"
+                android:layout_height="48px"
+                android:layout_below="@+id/line1"
+                android:background="#f0f4fe"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/head_id"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/query_head_id"
+                    android:textColor="#b5b9c9"
+                    android:textSize="14px" />
+
+                <TextView
+                    android:id="@+id/head_name"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/query_head_name"
+                    android:textColor="#b5b9c9"
+                    android:textSize="14px" />
+
+                <TextView
+                    android:id="@+id/head_licence"
+                    android:layout_width="170px"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/query_head_licence"
+                    android:textColor="#b5b9c9"
+                    android:textSize="14px" />
+
+                <TextView
+                    android:id="@+id/head_lock"
+                    android:layout_width="70px"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/query_head_lock"
+                    android:textColor="#b5b9c9"
+                    android:textSize="14px" />
+
+                <TextView
+                    android:id="@+id/head_can_card"
+                    android:layout_width="70px"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/query_head_can_card"
+                    android:textColor="#b5b9c9"
+                    android:textSize="14px" />
+
+                <TextView
+                    android:id="@+id/head_can_finger"
+                    android:layout_width="70px"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/query_head_can_finger"
+                    android:textColor="#b5b9c9"
+                    android:textSize="14px" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/querylist"
+                android:layout_width="match_parent"
+                android:layout_height="386px"
+                android:layout_below="@+id/listhead" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/querylist"
+                android:background="#e3e3e3" />
+
+            <RelativeLayout
+                android:id="@+id/tablayr"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/line2"
+                android:visibility="invisible"
+                android:layout_centerHorizontal="true">
+
+                <LinearLayout
+                    android:id="@+id/tebiconlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal" />
+
+                <RelativeLayout
+                    android:id="@+id/tebedit"
+                    android:layout_width="53px"
+                    android:layout_height="30px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5px"
+                    android:layout_toRightOf="@+id/tebiconlist"
+                    android:background="@drawable/tabeditbg">
+
+
+                    <EditText
+                        android:id="@+id/tebeditvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3px"
+                        android:layout_marginRight="3px"
+                        android:background="#00000000"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="#737373"
+                        android:textSize="20px" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/went"
+                    android:layout_width="45px"
+                    android:layout_height="30px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5px"
+                    android:layout_toRightOf="@+id/tebedit"
+                    android:background="@drawable/query_btn_blue"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/query_btn_go"
+                    android:textColor="@color/white"
+                    android:textSize="16px" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

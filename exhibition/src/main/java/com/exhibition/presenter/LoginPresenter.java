@@ -15,6 +15,7 @@ import com.exhibition.view.ExhibitionApplication;
 import com.exhibition.view.activity.LoginActivity;
 import com.exhibition.view.activity.MainActivity;
 import com.finger.FingerManger;
+import com.finger.entity.Finger;
 
 import org.json.JSONException;
 
@@ -54,6 +55,7 @@ public class LoginPresenter implements Presenter {
         mLoginActivity.btnLogin.setOnClickListener(loginListener);
         mLoginActivity.logingOut.setOnClickListener(logoutListener);
         mLoginActivity.hid.setOnClickListener(hidinputListener);
+        //ExhibitionApplication.mApp.icCardManager.getCardIds.add(mLoginActivity.getCardId);
         setPasswordLoginBtn();
     }
 
@@ -79,7 +81,7 @@ public class LoginPresenter implements Presenter {
 
     @Override
     public void Destroy() {
-
+        //ExhibitionApplication.mApp.icCardManager.getCardIds.remove(mLoginActivity.getCardId);
     }
 
     public void updataTimeout() {
@@ -97,11 +99,12 @@ public class LoginPresenter implements Presenter {
         mLoginActivity.botton2.setOnClickListener(fingerListener);
         mLoginActivity.passwordlayer.setVisibility(View.VISIBLE);
         mLoginActivity.fingerlayer.setVisibility(View.INVISIBLE);
+        //ExhibitionApplication.mApp.fingerManger.stopReconize();
     }
 
     public void setFaceLoginBtn() {
 
-        AppUtils.showMessage(mLoginActivity,"暂未开放");
+        AppUtils.showMessage(mLoginActivity,mLoginActivity.getString(R.string.login_no_function));
 //        mLoginActivity.botton1.setBackgroundResource(R.drawable.login_round_blue_btn);
 //        mLoginActivity.botton2.setBackgroundResource(R.drawable.finger_get_bg);
 //        mLoginActivity.image1.setImageResource(R.drawable.code);
@@ -123,27 +126,25 @@ public class LoginPresenter implements Presenter {
         mLoginActivity.botton2.setOnClickListener(faceListener);
         mLoginActivity.fingerlayer.setVisibility(View.VISIBLE);
         mLoginActivity.passwordlayer.setVisibility(View.INVISIBLE);
-        ExhibitionApplication.mApp.fingerManger.startReconize();
+        mLoginActivity.imageView.setImageResource(R.drawable.finger);
+        //ExhibitionApplication.mApp.fingerManger.startReconize();
     }
 
     public void doLogin() {
-        //ExhibitionApplication.mApp.fingerManger.stopReconize();
-        try {
-            String password = ExhibitionApplication.mApp.setjson.getString("password");
-            if(mLoginActivity.user.getText().toString().equals(ExhibitionApplication.ACCOUNT) && mLoginActivity.password.getText().toString().equals(password))
-            {
-                ExhibitionApplication.mApp.isadmin = true;
-                Intent intent = new Intent(mLoginActivity, MainActivity.class);
-                mLoginActivity.startActivity(intent);
-            }
-            else
-            {
-                AppUtils.showMessage(mLoginActivity,mLoginActivity.getString(R.string.login_error));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
+        String password = ExhibitionApplication.mApp.getPassword();
+        if(mLoginActivity.user.getText().toString().equals(ExhibitionApplication.ACCOUNT) && mLoginActivity.password.getText().toString().equals(password))
+        {
+            mLoginActivity.cangetdata = false;
+            //ExhibitionApplication.mApp.fingerManger.stopReconize();
+            ExhibitionApplication.mApp.isadmin = true;
+            Intent intent = new Intent(mLoginActivity, MainActivity.class);
+            mLoginActivity.startActivity(intent);
+        }
+        else
+        {
+            AppUtils.showMessage(mLoginActivity,mLoginActivity.getString(R.string.login_error));
+        }
     }
 
     public void praseLoginImf(Intent intent)
@@ -151,9 +152,28 @@ public class LoginPresenter implements Presenter {
         if(intent.getBooleanExtra("success",false) == true)
         {
             String fearid = intent.getStringExtra("feaid");
-            String id = fearid.substring(14,fearid.length());
-            Guest guest = DBHelper.getInstance(mLoginActivity).getGuestInfo(id);
-            AppUtils.showMessage(mLoginActivity,guest.name);
+            String id = fearid.substring(0,36);
+            Finger finger = DBHelper.getInstance(mLoginActivity).getFinger(id);
+            Guest guest = null;
+            if(finger != null)
+            {
+                guest = DBHelper.getInstance(mLoginActivity).getGuestInfo(finger.rid);
+            }
+
+            if(guest == null)
+            {
+                AppUtils.showMessage(mLoginActivity,mLoginActivity.getString(R.string.login_error2));
+                ExhibitionApplication.mApp.fingerManger.startReconize();
+            }
+            else
+            {
+                mLoginActivity.cangetdata = false;
+                ExhibitionApplication.mApp.fingerManger.stopReconize();
+                AppUtils.showMessage(mLoginActivity,guest.name+mLoginActivity.getString(R.string.login_welcome));
+                Intent intent1 = new Intent(mLoginActivity, MainActivity.class);
+                mLoginActivity.startActivity(intent1);
+            }
+
         }
         else
         {
@@ -193,7 +213,7 @@ public class LoginPresenter implements Presenter {
     public View.OnClickListener logoutListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            mLoginActivity.finish();
+            ExhibitionApplication.mApp.startVideo();
         }
     };
 
@@ -205,4 +225,27 @@ public class LoginPresenter implements Presenter {
             imm2.hideSoftInputFromWindow(mLoginActivity.password.getWindowToken(), 0);
         }
     };
+
+    public void praseIcCard(String id) {
+        if(mLoginActivity.cangetdata == true)
+        {
+            String mid = ExhibitionApplication.mApp.icCardManager.praseIcCardIs(id);
+            Guest guest = DBHelper.getInstance(mLoginActivity).getGuestInfoIc(mid);
+            if(guest == null)
+            {
+                AppUtils.showMessage(mLoginActivity,mLoginActivity.getString(R.string.login_error2));
+                ExhibitionApplication.mApp.fingerManger.startReconize();
+            }
+            else
+            {
+                mLoginActivity.cangetdata = false;
+                ExhibitionApplication.mApp.fingerManger.stopReconize();
+                AppUtils.showMessage(mLoginActivity,guest.name);
+                Intent intent1 = new Intent(mLoginActivity, MainActivity.class);
+                mLoginActivity.startActivity(intent1);
+            }
+        }
+
+    }
+
 }

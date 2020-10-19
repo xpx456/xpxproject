@@ -77,4 +77,18 @@ public class UtilScreenCapture {
             return null;
         }
     }
+
+    public static Bitmap getDrawing(View view) {
+        try {
+            view.setDrawingCacheEnabled(true);
+            Bitmap tBitmap = view.getDrawingCache();
+            // 拷贝图片，否则在setDrawingCacheEnabled(false)以后该图片会被释放掉
+            tBitmap = tBitmap.createBitmap(tBitmap);
+            view.setDrawingCacheEnabled(false);
+            return tBitmap;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

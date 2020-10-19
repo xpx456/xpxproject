@@ -9,9 +9,6 @@ import android.os.Message;
 import com.finger.FingerManger;
 import com.finger.entity.CacheFinger;
 import com.finger.entity.Finger;
-import com.zkteco.android.biometric.core.device.ParameterHelper;
-import com.zkteco.android.biometric.core.device.TransportType;
-import com.zkteco.biometric.ZKWFPModuleFactory;
 
 import java.io.File;
 import java.util.HashMap;
@@ -46,6 +43,19 @@ public class InitdeviceThread extends Thread {
         }
     }
 
+    //初始化usb驱动
+    private void initUSBDriver660()
+    {
+        devHandle = fingerManger.jxVeinJavaAPI.jxInitVeinSDK();
+        Message msg = new Message();
+        msg.what = INIT_DEVICE_SUB_FINISH;
+        msg.obj = devHandle;
+        if(fingerManger.fingerHandler != null)
+        {
+            fingerManger.fingerHandler.sendMessage(msg);
+        }
+    }
+
     //连接设备
     public void checkDeviceConnect()
     {
@@ -59,8 +69,17 @@ public class InitdeviceThread extends Thread {
 
     }
 
+
     public void ceatDb()
     {
+        if(fingerManger.isnew)
+        {
+            File file = new File(fingerManger.dbname);
+            if(file.exists())
+                file.delete();
+            fingerManger.isnew = false;
+        }
+
         if(fingerManger.jxfvJavaInterface.jxIsVeinDBExist(fingerManger.dbname) == 0)
         {
             fingerManger.jxfvJavaInterface.jxCreateVeinDatabase(fingerManger.dbname);
@@ -87,15 +106,7 @@ public class InitdeviceThread extends Thread {
         }
         else if(fingerManger.type == FingerManger.TYPE_FINGER_RESTURANT)
         {
-            Map fingerprintParams = new HashMap();
-            //set vid
-            fingerprintParams.put(ParameterHelper.PARAM_KEY_VID, FingerManger.VID);
-            //set pid
-            fingerprintParams.put(ParameterHelper.PARAM_KEY_PID, FingerManger.PID);
-            fingerManger.module = ZKWFPModuleFactory.createFingerprintSensor(fingerManger.context, TransportType.USBSCSI, fingerprintParams);
-            if(fingerManger.isOpen == false)
-            fingerManger.OnBnOpen();
-
+            initUSBDriver660();
         }
         super.run();
     }

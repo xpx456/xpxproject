@@ -27,6 +27,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
             intentMainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intentMainActivity);
         }
+
     }
 
 

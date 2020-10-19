@@ -431,7 +431,7 @@ public class WebMessagePresenter implements Presenter {
 //                mWebMessageActivity.mRelativeLayout.setVisibility(View.INVISIBLE);
 //            }
 //        });
-//        mWebMessageActivity.popupWindow1.showAtLocation(mWebMessageActivity.findViewById(R.id.activity_about),
+//        mWebMessageActivity.popupWindow1.showAtLocation(mWebMessageActivity.findViewById(R.id.activity_video),
 //                Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
 //    }
 
@@ -473,7 +473,7 @@ public class WebMessagePresenter implements Presenter {
 //                mWebMessageActivity.mRelativeLayout.setVisibility(View.INVISIBLE);
 //            }
 //        });
-//        mWebMessageActivity.popupWindow1.showAtLocation(mWebMessageActivity.findViewById(R.id.activity_about),
+//        mWebMessageActivity.popupWindow1.showAtLocation(mWebMessageActivity.findViewById(R.id.activity_video),
 //                Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
 //    }
 

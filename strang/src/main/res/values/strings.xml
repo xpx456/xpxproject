@@ -169,6 +169,7 @@
     <string name="conversation_vote">投票</string>
     <string name="conversation_mail">邮件</string>
     <string name="conversation_approve">审批</string>
+    <string name="conversation_reminder">业务示警</string>
     <string name="conversation_gropmess">团队消息</string>
     <string name="conversation_iwebapp">其他消息</string>
     <string name="conversation_iwebsystem">系统消息</string>

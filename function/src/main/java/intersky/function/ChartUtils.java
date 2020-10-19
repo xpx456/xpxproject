@@ -158,4 +158,38 @@ public class ChartUtils {
         chart.loadUrl(url);
     }
 
+    public static void loadsLineChart(ChartData mChartData, WebView chart) {
+        EchartArray dataArrray = new EchartArray();
+        EchartArray dataArrray1 = new EchartArray();
+        EchartArray dataArrray2 = new EchartArray();
+        for (int i = 0; i < mChartData.xLable.size(); i++) {
+            dataArrray1.put(mChartData.xLable.get(i));
+        }
+        for (Map.Entry<String, ChartDataItem> entry : mChartData.mDataForm.entrySet())
+        {
+            EchartObject jo = new EchartObject();
+            dataArrray2.put(entry.getKey());
+            jo.put("name", entry.getKey());
+            jo.put("type", "line");
+            EchartArray data = new EchartArray();
+            ChartDataItem chartDataItem = entry.getValue();
+            for (int j = 0; j < mChartData.xLable.size(); j++)
+            {
+                if(chartDataItem.mData.containsKey(mChartData.xLable.get(j)))
+                {
+                    data.put(chartDataItem.mData.get(mChartData.xLable.get(j)));
+                }
+                else
+                {
+                    data.put(0.00);
+                }
+            }
+            jo.put("data",data);
+            dataArrray.put(jo);
+        }
+
+        String unit = "{formatter:'{value}" + mChartData.unit + "'}";
+        String url = "javascript:createChart('colums'," + dataArrray.toString() + "," + dataArrray1.toString() + "," + dataArrray2.toString() + "," + unit + "," + dataArrray2.toString() + ");";
+        chart.loadUrl(url);
+    }
 }

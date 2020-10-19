@@ -68,11 +68,11 @@ public class MySlideBar extends View {
 		}
 		// 画字母
 		for (int i = 0; i < addletters.length; i++) {
-			paint.setColor(Color.argb(255, 91, 174, 226));
+			paint.setColor(Color.parseColor("#007AFF"));
 			// 设置字体格式
 			paint.setTypeface(Typeface.MONOSPACE);
 			paint.setAntiAlias(true);
-			paint.setTextSize(12* metric.density);
+			paint.setTextSize(8* metric.density);
 			// 如果这一项被选中，则换一种颜色画
 			if (i == choose) {
 				paint.setColor(Color.parseColor("#3399ff"));

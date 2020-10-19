@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/view_query_item"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="48px"
     android:background="#00000000">
 
     <LinearLayout
         android:id="@+id/listbg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="48px"
         android:layout_below="@+id/line1"
         android:orientation="horizontal"
         android:background="#f0f4fe">

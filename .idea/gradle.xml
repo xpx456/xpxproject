@@ -7,19 +7,27 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AppUtils" />
+            <option value="$PROJECT_DIR$/Gpio" />
             <option value="$PROJECT_DIR$/accesscontrol" />
+            <option value="$PROJECT_DIR$/accesslhome" />
+            <option value="$PROJECT_DIR$/accessmaster" />
             <option value="$PROJECT_DIR$/appbase" />
             <option value="$PROJECT_DIR$/attendance" />
+            <option value="$PROJECT_DIR$/audio" />
             <option value="$PROJECT_DIR$/autoupdate" />
             <option value="$PROJECT_DIR$/bigwiner" />
+            <option value="$PROJECT_DIR$/bluetooth" />
             <option value="$PROJECT_DIR$/budge" />
             <option value="$PROJECT_DIR$/chat" />
             <option value="$PROJECT_DIR$/conversation" />
+            <option value="$PROJECT_DIR$/dkhome" />
+            <option value="$PROJECT_DIR$/dkpad" />
+            <option value="$PROJECT_DIR$/dkphone" />
+            <option value="$PROJECT_DIR$/dktest" />
             <option value="$PROJECT_DIR$/document" />
             <option value="$PROJECT_DIR$/exhibition" />
             <option value="$PROJECT_DIR$/face" />
@@ -29,11 +37,13 @@
             <option value="$PROJECT_DIR$/guide" />
             <option value="$PROJECT_DIR$/iccard" />
             <option value="$PROJECT_DIR$/intersky" />
+            <option value="$PROJECT_DIR$/interskycloud" />
             <option value="$PROJECT_DIR$/interskypad" />
             <option value="$PROJECT_DIR$/json" />
             <option value="$PROJECT_DIR$/leave" />
             <option value="$PROJECT_DIR$/mail" />
             <option value="$PROJECT_DIR$/map" />
+            <option value="$PROJECT_DIR$/myapplication" />
             <option value="$PROJECT_DIR$/mywidget" />
             <option value="$PROJECT_DIR$/notice" />
             <option value="$PROJECT_DIR$/oa" />
@@ -43,12 +53,17 @@
             <option value="$PROJECT_DIR$/schedule" />
             <option value="$PROJECT_DIR$/select" />
             <option value="$PROJECT_DIR$/sign" />
+            <option value="$PROJECT_DIR$/sound" />
+            <option value="$PROJECT_DIR$/sportchart" />
             <option value="$PROJECT_DIR$/strang" />
             <option value="$PROJECT_DIR$/talk" />
             <option value="$PROJECT_DIR$/task" />
             <option value="$PROJECT_DIR$/test" />
             <option value="$PROJECT_DIR$/toolbar" />
+            <option value="$PROJECT_DIR$/usb" />
+            <option value="$PROJECT_DIR$/video" />
             <option value="$PROJECT_DIR$/vote" />
+            <option value="$PROJECT_DIR$/webrtc" />
             <option value="$PROJECT_DIR$/workreport" />
             <option value="$PROJECT_DIR$/xpxnet" />
           </set>

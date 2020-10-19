@@ -60,7 +60,6 @@ public class PadFragmentBaseActivity extends FragmentActivity implements Gesture
 		}
 
     }
-
     @Override
     protected void onStop() {
         super.onStop();

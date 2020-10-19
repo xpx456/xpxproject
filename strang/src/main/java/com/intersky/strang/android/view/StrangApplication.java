@@ -423,6 +423,14 @@ public class StrangApplication extends Application {
         register.moduleId = "iCloud[workflow],iweb[workflow]";
         register.mPic = R.drawable.huihua_msglist_rwsp;
         registers.add(register);
+
+        register = new Register(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND,Register.CONVERSATION_COLLECT_TYPE_BY_TYPE,1);
+        register.typeRealName = this.getString(R.string.conversation_reminder);
+        register.conversationFunctions = conversationFunctions;
+        register.moduleId = "iCloud[reminder]";
+        register.mPic = R.drawable.huihua_msglist_rwsp;
+        registers.add(register);
+
         register = new Register(IntersakyData.CONVERSATION_TYPE_IWEB_APP,Register.CONVERSATION_COLLECT_TYPE_BY_TYPE,1);
         register.typeRealName = this.getString(R.string.conversation_iwebapp);
         register.conversationFunctions = conversationFunctions;
@@ -553,8 +561,8 @@ public class StrangApplication extends Application {
     public void initUmShare()
     {
         UMConfigure.init(this, "5efd491edbc2ec078c814486", "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
-        PlatformConfig.setWeixin("wx6eb98ad4b2315a2f", "ca84fcfad71172530a5959ffabd41440");
-        PlatformConfig.setQQZone("1110647374", "pHz9kjNS1849h1nS");
+        PlatformConfig.setWeixin("wx6eb98ad4b2315a2f", "9c495686e960dd08f44f6de883a73cf3");
+        PlatformConfig.setQQZone("101905670", "Key：faffe299aa301434ecb9da04fec9bafd");
         //3921700954 /04b48b094faeb16683c32669824ebdad
         PlatformConfig.setSinaWeibo("2065070000", "b4c743f07655e09cace5a927a1cb7cca", "http://sns.whalecloud.com");
         PlatformConfig.setDing("dingoa0k7ufuwsklq4ix4p");
@@ -881,8 +889,24 @@ public class StrangApplication extends Application {
 		@Override
 		public void Open(Intent intent) {
 
+            String title = "";
+            String extend = "";
+            String json = "";
 			String type = intent.getStringExtra("type");
 			String id = intent.getStringExtra("detialid");
+			if(intent.hasExtra("json"))
+			json = intent.getStringExtra("json");
+			if(json.length() > 0)
+            {
+                try {
+                    XpxJSONObject jsonObject = new XpxJSONObject(json);
+                    XpxJSONObject msg = jsonObject.getJSONObject("message");
+                    title = msg.getString("title");
+                    type = msg.getString("extend");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
 			if(id.length() > 0)
 			{
 				if(type.equals(IntersakyData.CONVERSATION_TYPE_REPORT)) {
@@ -983,6 +1007,10 @@ public class StrangApplication extends Application {
                 else if(type.equals(IntersakyData.CONVERSATION_TYPE_IWEB_MAIL)) {
                     mApp.conversationManager.read(conversation);
                     mApp.functionUtils.commendWorkFlow.doCommend(AppActivityManager.getInstance().getCurrentActivity());
+                }
+                else if(type.equals(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND)) {
+                    mApp.conversationManager.read(conversation);
+                    FunctionUtils.getInstance().showWebMessageRemind(AppActivityManager.getInstance().getCurrentActivity(),conversation,mAccount.iscloud);
                 }
 			}
 		}
@@ -1119,7 +1147,12 @@ public class StrangApplication extends Application {
                             notificationData=     new NotificationData(data,title,msg.getString("content"),
                                     ConversationManager.getInstance().getChannel(IntersakyData.CONVERSATION_TYPE_IWEB_MAIL));
                         }
-
+                        else if(msg.getString("source_type").toLowerCase().equals("icloud[reminder]"))
+                        {
+                            notificationData = new NotificationData(data,title,msg.getString("content"),
+                                    ConversationManager.getInstance().getChannel(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND));
+                            notificationData.detialid = msg.getString("module_id");
+                        }
 
                         return notificationData;
                     }

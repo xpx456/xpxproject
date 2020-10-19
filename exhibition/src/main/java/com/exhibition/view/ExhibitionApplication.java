@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Environment;
 
+import com.exhibition.database.DBHelper;
+import com.exhibition.entity.UserDefine;
 import com.exhibition.handler.AppHandler;
 import com.exhibition.view.activity.MainActivity;
 import com.exhibition.view.activity.VideoActivity;
 import com.finger.FingerManger;
+import com.iccard.IcCardManager;
 //import com.iccard.IcCardManager;
 //import com.iccard.handler.IcCardHandler;
 
@@ -20,12 +23,16 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ThreadPoolExecutor;
 
 import intersky.appbase.AppActivityManager;
 import intersky.apputils.AppUtils;
 import intersky.apputils.GlideConfiguration;
 import intersky.filetools.FileUtils;
+import intersky.filetools.PathUtils;
+import intersky.mywidget.conturypick.DbHelper;
 
 public class ExhibitionApplication extends Application {
     public static final String ACCOUNT = "admin";
@@ -37,7 +44,6 @@ public class ExhibitionApplication extends Application {
     public static final String PHOTO_PATH = "photo";
     public static final String SETTING_PATH = "setting";
     public static final String FINGER_PATH = "finger";
-    public static final String SETTING_NAME = "setting.txt";
     public static final String UPDATA_PATH = "updata";
     public static final String UPDATA_NAME = "exhibition.apk";
     public static final String ACTION_SET_NAME = "ACTION_SET_NAME";
@@ -53,26 +59,34 @@ public class ExhibitionApplication extends Application {
     public boolean videoshow = false;
     public FileUtils fileUtils;
     public AppHandler handler = new AppHandler();
-    public JSONObject setjson = new JSONObject();
     public File video = null;
     public File fingerbase;
     public ArrayList<File> photos = new ArrayList<File>();
     public File apk;
     public FingerManger fingerManger;
+    public IcCardManager icCardManager;
     public boolean isadmin = false;
+    public String deviceid = "";
 //    public IcCardManager icCardManager;
     public void onCreate() {
         mApp = this;
-
+        deviceid = AppUtils.getAppUnicode(mApp);
         fileUtils = FileUtils.init(mApp,null,null,null);
         fileUtils.pathUtils.setBase("/exhibtion");
+        DBHelper.getInstance(mApp);
+        if(DBHelper.getInstance(mApp).lastdb == 0)
+            DBHelper.getInstance(mApp).lastdb = DBHelper.DB_VERSION;
 //        icCardManager = IcCardManager.init(mApp,IcCardManager.TYPE_FINGER_EXHIBITION);
-        //fingerManger = FingerManger.init(mApp,fileUtils.pathUtils.getfilePath("db")+"/exhibtion.db");
+//        if(DBHelper.getInstance(mApp).lastdb != DBHelper.DB_VERSION)
+//        fingerManger = FingerManger.init(mApp,fileUtils.pathUtils.getfilePath("db")+"/exhibtion.db",FingerManger.TYPE_FINGER_EXHIBITION,null,true);
+//        else
+//            fingerManger = FingerManger.init(mApp,fileUtils.pathUtils.getfilePath("db")+"/exhibtion.db",FingerManger.TYPE_FINGER_EXHIBITION,null,false);
+        DBHelper.getInstance(mApp).lastdb = DBHelper.DB_VERSION;
         File file = new File(fileUtils.pathUtils.getAppPath());
         GlideConfiguration.init(file);
         appActivityManager = AppActivityManager.getAppActivityManager(mApp);
         initData();
-        checkTimeOut();
+        //checkTimeOut();
         super.onCreate();
     }
 
@@ -120,28 +134,9 @@ public class ExhibitionApplication extends Application {
     }
 
     private void initSetting() {
-        File setpath = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH));
         fileUtils.pathUtils.getfilePath(UPDATA_PATH);
         fingerbase = new File(fileUtils.pathUtils.getfilePath(FINGER_PATH));
-        File setfile = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH)+"/"+SETTING_NAME);
         apk = new File(fileUtils.pathUtils.getfilePath(UPDATA_PATH)+"/"+UPDATA_NAME);
-        if(setfile.exists())
-        {
-            String readjson = fileUtils.getFileContent(setfile);
-            JSONObject jsonObject = mesureSettingJson(readjson);
-            if(jsonObject != null)
-            {
-                setjson = jsonObject;
-            }
-            setfile.delete();
-            fileUtils.writeTxtToFile(setjson.toString(),setpath.getPath()+"/",setfile.getName());
-        }
-        else
-        {
-            setjson = creadNewSettingJson();
-            fileUtils.writeTxtToFile(setjson.toString(),setpath.getPath()+"/",setfile.getName());
-        }
-
     }
 
     public void initVideoAndPhoto() {
@@ -161,7 +156,7 @@ public class ExhibitionApplication extends Application {
             }
         }
         if(photo.isDirectory()) {
-            File[] childFile = video.listFiles();
+            File[] childFile = photo.listFiles();
             for (File f : childFile) {
                 if(f.isFile())
                 {
@@ -221,14 +216,109 @@ public class ExhibitionApplication extends Application {
         }
     }
 
-    public void saveSetting() {
-        File setpath = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH));
-        File setfile = new File(fileUtils.pathUtils.getfilePath(SETTING_PATH)+"/"+SETTING_NAME);
-        if(setfile.exists())
+    public void initData(Intent intent)
+    {
+        File usb = new File(intent.getData().getPath());
+        if(usb.exists())
         {
-            setfile.delete();
+            File video = new File(usb.getPath()+"/exhibtion/"+VIDEO_PATH);
+            File photo = new File(usb.getPath()+"/exhibtion/"+PHOTO_PATH);
+            if(video.isDirectory()) {
+                File[] childFile = video.listFiles();
+                for (File f : childFile) {
+                    if(f.isFile())
+                    {
+                        if(fileUtils.getFileType(f.getName()) == FileUtils.FILE_TYPE_VIDEO)
+                        {
+                            mApp.video = f;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(photo.isDirectory()) {
+                File[] childFile = photo.listFiles();
+                for (File f : childFile) {
+                    if(f.isFile())
+                    {
+                        if(fileUtils.getFileType(f.getName()) == FileUtils.FILE_TYPE_PICTURE)
+                        {
+                            mApp.photos.add(f);
+                        }
+                    }
+                }
+            }
         }
-        fileUtils.writeTxtToFile(setjson.toString(),setpath.getPath()+"/",setfile.getName());
     }
 
+    public String getName() {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        String name = sharedPre.getString(UserDefine.SETTING_NAME,"");
+        return name;
+    }
+
+    public void setName(String name) {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        SharedPreferences.Editor e1 = sharedPre.edit();
+        e1.putString(UserDefine.SETTING_NAME,name);
+        e1.commit();
+    }
+
+
+    public void setPrint(boolean print) {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        SharedPreferences.Editor e1 = sharedPre.edit();
+        e1.putBoolean(UserDefine.SETTING_PRINT,print);
+        e1.commit();
+    }
+
+
+    public boolean getPrint() {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        boolean print = sharedPre.getBoolean(UserDefine.SETTING_PRINT,false);
+        return print;
+    }
+
+
+    public void setSafe(boolean print) {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        SharedPreferences.Editor e1 = sharedPre.edit();
+        e1.putBoolean(UserDefine.SETTING_SAFE,print);
+        e1.commit();
+    }
+
+
+    public boolean getSafe() {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        boolean print = sharedPre.getBoolean(UserDefine.SETTING_SAFE,false);
+        return print;
+    }
+
+    public void setLic(boolean print) {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        SharedPreferences.Editor e1 = sharedPre.edit();
+        e1.putBoolean(UserDefine.SETTING_LIC,print);
+        e1.commit();
+    }
+
+
+    public boolean getLic() {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        boolean print = sharedPre.getBoolean(UserDefine.SETTING_LIC,false);
+        return print;
+    }
+
+    public void setPassword(String print) {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        SharedPreferences.Editor e1 = sharedPre.edit();
+        e1.putString(UserDefine.SETTING_PASSWORD,print);
+        e1.commit();
+    }
+
+
+    public String getPassword() {
+        SharedPreferences sharedPre = mApp.getSharedPreferences(UserDefine.USER_SETTING, 0);
+        String print = sharedPre.getString(UserDefine.SETTING_PASSWORD,"");
+        return print;
+    }
 }

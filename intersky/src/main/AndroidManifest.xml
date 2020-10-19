@@ -44,6 +44,7 @@
 
     <uses-permission android:name="android.permission.READ_LOGS"
         tools:ignore="ProtectedPermissions" />
+
     <application
         android:name=".android.view.InterskyApplication"
         android:allowBackup="true"

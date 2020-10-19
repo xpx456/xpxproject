@@ -57,21 +57,7 @@ public class BaseSettingView extends PopView {
 
 
     private void initData(){
-        try {
-
-//            if(ExhibitionApplication.mApp.setjson.getBoolean("print") == true)
-//            {
-//                printOpen.setChecked(true);
-//            }
-//            else
-//            {
-//                printClose.setChecked(true);
-//            }
-            name.setText(ExhibitionApplication.mApp.setjson.getString("name"));
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        name.setText(ExhibitionApplication.mApp.getName());
     }
 
 
@@ -81,11 +67,11 @@ public class BaseSettingView extends PopView {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             if(checkedId == R.id.licenceopen)
             {
-                setPrint(true);
+                ExhibitionApplication.mApp.setPrint(true);
             }
             else
             {
-                setPrint(false);
+                ExhibitionApplication.mApp.setPrint(false);
             }
         }
     };
@@ -98,14 +84,7 @@ public class BaseSettingView extends PopView {
     };
 
 
-    private void setPrint(boolean print) {
-        try {
-            ExhibitionApplication.mApp.setjson.put("print",print);
-            ExhibitionApplication.mApp.saveSetting();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     private void changeName() {
 
@@ -115,38 +94,24 @@ public class BaseSettingView extends PopView {
             return;
         }
 
-        try {
-            String name = ExhibitionApplication.mApp.setjson.getString("name");
-            AlertDialog dialog = AppUtils.creatDialogTowButtonEdit(context,"",context.getString(R.string.base_setting_title_name_title),
-                    context.getString(R.string.button_word_cancle),context.getString(R.string.button_word_ok),null,new EditDialogListener(){
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            setName(editText.getText().toString());
-                        }
-                    },name);
-            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
-                }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
+        String name = ExhibitionApplication.mApp.getName();
+        AlertDialog dialog = AppUtils.creatDialogTowButtonEdit(context,"",context.getString(R.string.base_setting_title_name_title),
+                context.getString(R.string.button_word_cancle),context.getString(R.string.button_word_ok),null,new EditDialogListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ExhibitionApplication.mApp.setName(editText.getText().toString());
+                    }
+                },name);
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        });
     }
 
-    private void setName(String name) {
-        try {
-            ExhibitionApplication.mApp.setjson.put("name",name);
-            ExhibitionApplication.mApp.saveSetting();
-            this.name.setText(name);
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
     public View.OnClickListener hidinputListener = new View.OnClickListener() {
         @Override

@@ -64,28 +64,22 @@ public class SafeSettingView extends PopView {
 
 
     private void initData(){
-        try {
+        if(ExhibitionApplication.mApp.getLic() == true)
+        {
+            licOpen.setChecked(true);
+        }
+        else
+        {
+            licClose.setChecked(true);
+        }
 
-            if(ExhibitionApplication.mApp.setjson.getBoolean("licence") == true)
-            {
-                licOpen.setChecked(true);
-            }
-            else
-            {
-                licClose.setChecked(true);
-            }
-
-            if(ExhibitionApplication.mApp.setjson.getBoolean("licence") == true)
-            {
-                safeOpen.setChecked(true);
-            }
-            else
-            {
-                safeClose.setChecked(true);
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if(ExhibitionApplication.mApp.getSafe() == true)
+        {
+            safeOpen.setChecked(true);
+        }
+        else
+        {
+            safeClose.setChecked(true);
         }
     }
 
@@ -102,11 +96,11 @@ public class SafeSettingView extends PopView {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             if(checkedId == R.id.licenceopen)
             {
-                setlic(true);
+                ExhibitionApplication.mApp.setLic(true);
             }
             else
             {
-                setlic(false);
+                ExhibitionApplication.mApp.setLic(false);
             }
         }
     };
@@ -118,32 +112,15 @@ public class SafeSettingView extends PopView {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             if(checkedId == R.id.safeopen)
             {
-                setSafe(true);
+                ExhibitionApplication.mApp.setSafe(true);
             }
             else
             {
-                setSafe(false);
+                ExhibitionApplication.mApp.setSafe(false);
             }
         }
     };
 
-    private void setSafe(boolean safe) {
-        try {
-            ExhibitionApplication.mApp.setjson.put("safe",safe);
-            ExhibitionApplication.mApp.saveSetting();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void setlic(boolean lic) {
-        try {
-            ExhibitionApplication.mApp.setjson.put("licence",lic);
-            ExhibitionApplication.mApp.saveSetting();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void changePasssword() {
 
@@ -153,37 +130,24 @@ public class SafeSettingView extends PopView {
             return;
         }
 
-        try {
-            String password = ExhibitionApplication.mApp.setjson.getString("password");
-            AlertDialog dialog = AppUtils.creatDialogTowButtonEditPass(context,"",context.getString(R.string.base_setting_title_admincode_title),
-                    context.getString(R.string.button_word_cancle),context.getString(R.string.button_word_ok),null,new EditDialogListener(){
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            setPassword(editText.getText().toString());
-                        }
-                    },password);
+        String password = ExhibitionApplication.mApp.getPassword();
+        AlertDialog dialog = AppUtils.creatDialogTowButtonEditPass(context,"",context.getString(R.string.base_setting_title_admincode_title),
+                context.getString(R.string.button_word_cancle),context.getString(R.string.button_word_ok),null,new EditDialogListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ExhibitionApplication.mApp.setPassword(editText.getText().toString());
+                    }
+                },password);
 
-            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
-                }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        });
     }
 
-    private void setPassword(String pass) {
-        try {
-            ExhibitionApplication.mApp.setjson.put("password",pass);
-            ExhibitionApplication.mApp.saveSetting();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
     public View.OnClickListener hidinputListener = new View.OnClickListener() {
         @Override

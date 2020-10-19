@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">道康(test)</string>
+
+    <string name="main_buttom_home">首页</string>
+    <string name="main_buttom_equip">设备</string>
+    <string name="main_buttom_setting">设置</string>
+    <string name="main_buttom_history">历史记录</string>
+
+
+    <string name="home_btn_1">自动周期性测试模式</string>
+    <string name="home_btn_2">步进式测试模式</string>
+
+    <string name="settting_elect_title">电流阀值(mA)</string>
+    <string name="detial_elect_title">电流(mA)</string>
+    <string name="no_device_connect">您还未连接任何设备</string>
+
+    <string name="detial_cycle_title">周期测试（次）</string>
+    <string name="detial_leave_title">档位</string>
+    <string name="detial_warn_title">报警提示</string>
+
+
+    <string name="button_word_add">档位+</string>
+    <string name="button_word_del">档位-</string>
+
+    <string name="save_name">请输入一个名称</string>
+    <string name="save_unknow_name">未命名</string>
+
+</resources>

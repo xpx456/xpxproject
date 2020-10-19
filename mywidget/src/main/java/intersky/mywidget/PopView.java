@@ -24,6 +24,13 @@ public class PopView implements PopIntFace{
 
     @Override
     public void creatView(View location) {
+        if(popupWindow != null)
+        {
+            if(popupWindow.isShowing())
+            {
+                popupWindow.dismiss();
+            }
+        }
         this.location = location;
         cleanView();
         popupWindow = new PopupWindow(mainView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT, true);
@@ -69,7 +76,6 @@ public class PopView implements PopIntFace{
         {
             popupWindow.dismiss();
         }
-
     }
 
     @Override

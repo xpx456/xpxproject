@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    <intersky.mywidget.pageturn.view.BookPageView-->
+<!--        android:id="@+id/book1"-->
+<!--        android:layout_width="200px"-->
+<!--        android:layout_height="400px"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_centerVertical="true"-->
+
+<!--        />-->
+<!--    <intersky.mywidget.pageturn.view.CoverPageView-->
+<!--        android:id="@+id/book2"-->
+<!--        android:layout_width="200px"-->
+<!--        android:layout_height="400px"-->
+<!--        android:layout_toLeftOf="@+id/book1"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        />-->
+</RelativeLayout>

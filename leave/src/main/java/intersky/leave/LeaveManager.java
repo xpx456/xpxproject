@@ -54,7 +54,7 @@ public class LeaveManager {
     public static LeaveManager init(OaUtils oaUtils,Context context) {
 
         if (mLeaveManager == null) {
-            synchronized (OaUtils.class) {
+            synchronized (LeaveManager.class) {
                 if (mLeaveManager == null) {
                     mLeaveManager = new LeaveManager(oaUtils,context);
                 }

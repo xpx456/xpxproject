@@ -435,6 +435,14 @@ public class InterskyApplication extends Application {
         register.moduleId = "iCloud[workflow],iweb[workflow]";
         register.mPic = R.drawable.huihua_msglist_rwsp;
         registers.add(register);
+
+        register = new Register(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND,Register.CONVERSATION_COLLECT_TYPE_BY_TYPE,1);
+        register.typeRealName = this.getString(R.string.conversation_reminder);
+        register.conversationFunctions = conversationFunctions;
+        register.moduleId = "iCloud[reminder]";
+        register.mPic = R.drawable.huihua_msglist_rwsp;
+        registers.add(register);
+
         register = new Register(IntersakyData.CONVERSATION_TYPE_IWEB_APP,Register.CONVERSATION_COLLECT_TYPE_BY_TYPE,1);
         register.typeRealName = this.getString(R.string.conversation_iwebapp);
         register.conversationFunctions = conversationFunctions;
@@ -893,8 +901,24 @@ public class InterskyApplication extends Application {
 		@Override
 		public void Open(Intent intent) {
 
+            String title = "";
+            String extend = "";
+            String json = "";
 			String type = intent.getStringExtra("type");
 			String id = intent.getStringExtra("detialid");
+			if(intent.hasExtra("json"))
+			json = intent.getStringExtra("json");
+			if(json.length() > 0)
+            {
+                try {
+                    XpxJSONObject jsonObject = new XpxJSONObject(json);
+                    XpxJSONObject msg = jsonObject.getJSONObject("message");
+                    title = msg.getString("title");
+                    type = msg.getString("extend");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
 			if(id.length() > 0)
 			{
 				if(type.equals(IntersakyData.CONVERSATION_TYPE_REPORT)) {
@@ -927,6 +951,9 @@ public class InterskyApplication extends Application {
 				else if(type.equals(IntersakyData.CONVERSATION_TYPE_IWEB_MAIL)) {
 					MailManager.startMailMain(AppActivityManager.getInstance().getCurrentActivity());
 				}
+                else if(type.equals(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND)) {
+                    FunctionUtils.getInstance().showWebMessageRemind(AppActivityManager.getInstance().getCurrentActivity(),id,title,extend,mAccount.iscloud);
+                }
 				else if(type.equals(IntersakyData.CONVERSATION_TYPE_GROP_MESSAGE)) {
 					JSONObject jsonObject = null;
 					try {
@@ -996,6 +1023,10 @@ public class InterskyApplication extends Application {
                     mApp.conversationManager.read(conversation);
                     mApp.functionUtils.commendWorkFlow.doCommend(AppActivityManager.getInstance().getCurrentActivity());
                 }
+                else if(type.equals(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND)) {
+                    mApp.conversationManager.read(conversation);
+                    FunctionUtils.getInstance().showWebMessageRemind(AppActivityManager.getInstance().getCurrentActivity(),conversation,mAccount.iscloud);
+                }
 			}
 		}
 
@@ -1039,6 +1070,11 @@ public class InterskyApplication extends Application {
 					ConversationAsks.getFuncMessagesOne(mApp,handler,msg.getString("message_id")
 							,mAccount.mRecordId,mAccount.mCompanyId,msg.getString("source_type"));
 				}
+                else if(intent.getStringExtra("type").equals(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND))
+                {
+                    ConversationAsks.getFuncMessagesOne(mApp,handler,msg.getString("message_id")
+                            ,mAccount.mRecordId,mAccount.mCompanyId,msg.getString("source_type"));
+                }
 				else if(intent.getStringExtra("type").equals(IntersakyData.CONVERSATION_TYPE_MESSAGE))
 				{
 					InterskyApplication.mApp.chatUtils.getLeaveMessage();
@@ -1052,7 +1088,7 @@ public class InterskyApplication extends Application {
 			}
 		}
 	};
-
+//{"module_id":"F8704EA6-0BFD-4A0E-96EC-20428DA0498C","company_id":"","create_time":1598842734,"user_id":"","module":"iCloud","source_type":"iCloud[reminder]","source":"iCloud","type":"admin","message":{"extend":"客户公海","module_id":"F8704EA6-0BFD-4A0E-96EC-20428DA0498C","module":"iCloud","source_type":"iCloud[reminder]","message_id":"568736","source_id":"BEE3556C-60DC-4740-A585-6957C6F4F091","title":"测试2app","content":"测试2app"}}
     public NotificationData measureMessage(String data, String title) {
         try {
             SharedPreferences sharedPre = mApp.getSharedPreferences(LocalData.LOGIN_INFO, 0);
@@ -1085,7 +1121,8 @@ public class InterskyApplication extends Application {
                     }
                     else if (msg.getString("source_type").toLowerCase().equals("iweb[im]") || msg.getString("source_type").toLowerCase().equals("iweb[mail]")
                             || msg.getString("source_type").toLowerCase().equals("iweb[workflow]") || msg.getString("source_type").toLowerCase().equals("icloud[workflow]")
-							|| msg.getString("source_type").toLowerCase().equals("icloud[mail]")|| msg.getString("source_type").toLowerCase().equals("icloud[im]")) {
+							|| msg.getString("source_type").toLowerCase().equals("icloud[mail]")|| msg.getString("source_type").toLowerCase().equals("icloud[im]")
+                    ||msg.getString("source_type").toLowerCase().equals("icloud[reminder]")) {
                         NotificationData notificationData = null;
                         if(msg.getString("source_type").toLowerCase().equals("iweb[im]") || msg.getString("source_type").toLowerCase().equals("icloud[im]")) {
 
@@ -1131,7 +1168,12 @@ public class InterskyApplication extends Application {
                             notificationData=     new NotificationData(data,title,msg.getString("content"),
                                     ConversationManager.getInstance().getChannel(IntersakyData.CONVERSATION_TYPE_IWEB_MAIL));
                         }
-
+                        else if(msg.getString("source_type").toLowerCase().equals("icloud[reminder]"))
+                        {
+                            notificationData = new NotificationData(data,title,msg.getString("content"),
+                                    ConversationManager.getInstance().getChannel(IntersakyData.CONVERSATION_TYPE_IWEB_REMIND));
+                            notificationData.detialid = msg.getString("module_id");
+                        }
 
                         return notificationData;
                     }

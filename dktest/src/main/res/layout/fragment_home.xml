@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_shape">
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#ffffff"
+        />
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_below="@+id/stutebar"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/main_buttom_home"
+            android:textColor="#101010"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="264dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/main"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        />
+
+    <RelativeLayout
+        android:id="@+id/btn1"
+        android:layout_width="330dp"
+        android:layout_height="132dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_shape_white">
+
+        <ImageView
+            android:id="@+id/btn1img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/testbtn1"
+            />
+
+        <TextView
+            android:id="@+id/btn1title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btn1img"
+            android:text="@string/home_btn_1"
+            android:layout_marginTop="10dp"
+            android:textColor="#666666"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn2"
+        android:layout_width="330dp"
+        android:layout_height="132dp"
+        android:layout_below="@+id/btn1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_shape_white">
+
+        <ImageView
+            android:id="@+id/btn2img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/testbtn2"
+            />
+
+        <TextView
+            android:id="@+id/btn2title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btn2img"
+            android:text="@string/home_btn_2"
+            android:layout_marginTop="10dp"
+            android:textColor="#666666"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

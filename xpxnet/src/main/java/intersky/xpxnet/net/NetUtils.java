@@ -56,6 +56,11 @@ public class NetUtils {
 				.connectTimeout(TimeOut, TimeUnit.MILLISECONDS).readTimeout(TimeOut2, TimeUnit.MILLISECONDS).writeTimeout(TimeOut2, TimeUnit.MILLISECONDS).build();
 	}
 
+	public NetUtils(int timeOut ,int timeOut2) {
+		mOkHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJarImpl(new PersistentCookieStore(mContext)))
+				.connectTimeout(timeOut, TimeUnit.MILLISECONDS).readTimeout(timeOut2, TimeUnit.MILLISECONDS).writeTimeout(TimeOut2, TimeUnit.MILLISECONDS).build();
+	}
+
 	public void cleanTasks() {
 		for (Map.Entry<String, MyNetTaskManagerThread> entry : hashNetTaskManagerThread.entrySet()) {
 			MyNetTaskManagerThread taskManagerThread = entry.getValue();
@@ -80,6 +85,32 @@ public class NetUtils {
 					mContext = context;
 					mOkHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJarImpl(new PersistentCookieStore(mContext)))
 							.connectTimeout(TimeOut, TimeUnit.MILLISECONDS).readTimeout(TimeOut2, TimeUnit.MILLISECONDS).writeTimeout(TimeOut2, TimeUnit.MILLISECONDS).build();
+					if(mNetTaskManagerThread == null)
+						mNetTaskManagerThread = new NetTaskManagerThread();
+					mNetTaskManagerThread.setStop(false);
+					new Thread(mNetTaskManagerThread).start();
+				}
+			}
+		}
+		return mNetUtils;
+	}
+
+	public static NetUtils init(Context context,int timeOut ,int timeOut2 ) {
+		if (mNetUtils == null) {
+			synchronized (NetUtils.class) {
+				if (mNetUtils == null) {
+					mContext = context;
+					mNetUtils = new NetUtils(timeOut,timeOut2);
+					if(mNetTaskManagerThread == null)
+						mNetTaskManagerThread = new NetTaskManagerThread();
+					mNetTaskManagerThread.setStop(false);
+					new Thread(mNetTaskManagerThread).start();
+				}
+				else
+				{
+					mContext = context;
+					mOkHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJarImpl(new PersistentCookieStore(mContext)))
+							.connectTimeout(TimeOut, TimeUnit.MILLISECONDS).readTimeout(timeOut, TimeUnit.MILLISECONDS).writeTimeout(timeOut2, TimeUnit.MILLISECONDS).build();
 					if(mNetTaskManagerThread == null)
 						mNetTaskManagerThread = new NetTaskManagerThread();
 					mNetTaskManagerThread.setStop(false);
@@ -314,7 +345,26 @@ public class NetUtils {
 		return url;
 	}
 
+	public static String praseUrl2(Service service,String iurl) {
+		String url = "";
 
+		String path = iurl;
+		if(path.startsWith("\\"))
+		{
+			path = path.substring(1,path.length());
+		}
+		path = path.replaceAll("\\\\","/");
+		if(service.https)
+		{
+			url += service.sAddress+":"+service.sPort+"/";
+		}
+		else
+		{
+			url += service.sAddress+":"+service.sPort+"/";
+		}
+		url += path;
+		return url;
+	}
 
 	public final String praseUrl(Service service,String iurl,String params) {
 		String url = "";
@@ -589,17 +639,28 @@ public class NetUtils {
 		ConnectivityManager manager = (ConnectivityManager) context
 				.getApplicationContext().getSystemService(
 						Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connectMgr = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ethNetInfo = connectMgr.getNetworkInfo(ConnectivityManager.TYPE_ETHERNET);
+		NetworkInfo wifiNetInfo = connectMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-		if (manager == null) {
-			return false;
-		}
-		NetworkInfo networkinfo = manager.getActiveNetworkInfo();
-		if (networkinfo == null || !networkinfo.isAvailable()) {
-			return false;
-		}
 
-		return true;
+		if (ethNetInfo != null && ethNetInfo.isConnected()) {
+			return true;
+		} else if (wifiNetInfo != null && wifiNetInfo.isConnected()) {
+			return true;
+		} else {
+			NetworkInfo networkinfo = manager.getActiveNetworkInfo();
+			if (networkinfo == null || !networkinfo.isAvailable()) {
+				return false;
+			}
+			else{
+				return true;
+			}
+
+		}
 	}
+
+	public static final int TYPE_YITAI = 10001;
 
 	public static int getNetType(Context context)
 	{

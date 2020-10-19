@@ -7,6 +7,7 @@
     android:background="#00000000">
 
     <RelativeLayout
+        android:id="@+id/input"
         android:layout_width="1168px"
         android:layout_height="690px"
         android:layout_centerHorizontal="true"
@@ -215,6 +216,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/line2"
+                android:visibility="invisible"
                 android:layout_centerHorizontal="true">
 
                 <LinearLayout

@@ -1,0 +1,178 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_bg_gray">
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/scan" />
+
+    <ImageView
+        android:id="@+id/scan"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:src="@mipmap/scansafe" />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_below="@+id/search"
+        android:background="#ffffff"
+        >
+
+        <View
+            android:id="@+id/topline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="#F3F3F4" />
+
+        <LinearLayout
+            android:id="@+id/headcontent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/schedule"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/scheduleicon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/schedulesmall"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/scheduleicon"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/function_schedule"
+                        android:textColor="#ff646a73"
+                        android:textSize="13sp"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:background="#F3F3F4"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wait"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/waiticon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/waitsmall"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/function_wait"
+                        android:layout_toRightOf="@+id/waiticon"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#ff646a73"
+                        android:textSize="13sp"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:background="#F3F3F4"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/report"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/reporticon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/reportsmall"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/function_report"
+                        android:layout_toRightOf="@+id/reporticon"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#ff646a73"
+                        android:textSize="13sp"
+                        />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+        <View
+            android:id="@+id/buttomline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#F3F3F4" />
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/conversionList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:background="#ffffff"></ListView>
+</RelativeLayout>

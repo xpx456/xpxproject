@@ -31,6 +31,13 @@ public class TimeUtils {
         return data;
     }
 
+    public static String getDateC() {
+        Calendar c = Calendar.getInstance();
+        String data = String.format("%04d年%02d月%02d日", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1,
+                c.get(Calendar.DAY_OF_MONTH));
+        return data;
+    }
+
     public static String getDateTomorrow() {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE,1);//把日期往后增加一天.整数往后推,负数往前移动
@@ -231,6 +238,35 @@ public class TimeUtils {
         return Week;
     }
 
+    public static String getWeek2(Context context) {
+
+        String Week = "";
+        Calendar c = Calendar.getInstance();
+        if (c.get(Calendar.DAY_OF_WEEK) == 1) {
+            Week = context.getString(R.string.keyword_sun_e);
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 2) {
+            Week = context.getString(R.string.keyword_mon_e);
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 3) {
+            Week = context.getString(R.string.keyword_tue_e);
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 4) {
+            Week = context.getString(R.string.keyword_wen_e);
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 5) {
+            Week = context.getString(R.string.keyword_ths_e);
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 6) {
+            Week = context.getString(R.string.keyword_fri_e);
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 7) {
+            Week = context.getString(R.string.keyword_sat_e);
+        }
+
+        return Week;
+    }
+
     public static int measureDayCount3(String begin, String end) {
 
         try {
@@ -268,6 +304,13 @@ public class TimeUtils {
         return time;
     }
 
+    public static String getTimeMinuteSecond() {
+        Calendar c = Calendar.getInstance();
+        String time = String.format("%02d:%02d", c.get(Calendar.MINUTE),
+                c.get(Calendar.SECOND));
+        return time;
+    }
+
     public static String getTimeSecond(int hour,int minute) {
         Calendar c = Calendar.getInstance();
         if(hour != 0)
@@ -281,6 +324,16 @@ public class TimeUtils {
 
     public static String getDateAndTime() {
         String tmp = getDate() + " " + getTimeSecond();
+        return tmp;
+    }
+
+    public static String getDateAndTimeC() {
+        String tmp = getDateC() + " " + getTimeSecond();
+        return tmp;
+    }
+
+    public static String getDateAndTime2() {
+        String tmp = getDate() + " " + getTime();
         return tmp;
     }
 
@@ -358,6 +411,28 @@ public class TimeUtils {
         String data = String.format("%4d/%2d/",
                 c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1);
         return data;
+    }
+
+    public static boolean checkBetween(String my,String start,String end)
+    {
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(sdf.parse(formatDate(start)));
+            long start1 = cal.getTimeInMillis();
+            cal.setTime(sdf.parse(formatDate(end)));
+            long end1 = cal.getTimeInMillis();
+            cal.setTime(sdf.parse(formatDate(my)));
+            long my1 = cal.getTimeInMillis();
+            if(my1 >= start1 && my1 <= end1)
+            {
+                return true;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public static int minuteBetween(String smdate, String bdate) {

@@ -6,11 +6,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ListView
-        android:background="#ffffff"
+        android:background="@drawable/xpx_drop_bg"
         android:id="@+id/listView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:divider="@null"
+        android:divider="#444444"
         android:dividerHeight="1px">
     </ListView>
 </LinearLayout>

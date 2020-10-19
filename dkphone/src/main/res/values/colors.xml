@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="toolBarBgColor">#2ca7ea</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="iosblue">#0082ff</color>
+    <color name="navBarBkColor">#0082ff</color>
+    <color name="window_bg_gray">#f2f2f2</color>
+    <color name="whiteex">#f2f2f2</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="trans">#00000000</color>
+    <color name="textclolr_title_gray">#545454</color>
+    <color name="textclolr_title_blcak">#000000</color>
+    <color name="bg_color">#F5F5F5</color>
+    <color name="bg_line">#DDDDDD</color>
+    <color name="txt_hit">#B9B9B9</color>
+    <color name="txt_nomal">#101010</color>
+    <color name="txt_nomal2">#4C4D51</color>
+    <color name="txt_main_unselect">#DDDDDD</color>
+    <color name="strokecolor">#c3c3c3</color>
+    <color name="strokecolorselect">#28d9cf</color>
+    <color name="loginhitcolor">#dedee0</color>
+    <color name="logincolor">#000000</color>
+    <color name="btntextcolor">#ffffff</color>
+    <color name="settting_value">#666666</color>
+    <color name="logo_color1">#f08519</color>
+    <color name="logo_color2">#8b8b8c</color>
+    <color name="settting_title2">#666666</color>
+</resources>

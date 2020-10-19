@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:background="@drawable/bg">
+
+<!--    <org.webrtc.SurfaceViewRenderer-->
+<!--        android:id="@+id/remoteView"-->
+<!--        android:layout_width="800px"-->
+<!--        android:visibility="invisible"-->
+<!--        android:layout_height="1080px"/>-->
+
+<!--    <org.webrtc.SurfaceViewRenderer-->
+<!--        android:id="@+id/remoteView2"-->
+<!--        android:layout_width="800px"-->
+<!--        android:visibility="invisible"-->
+<!--        android:layout_height="1080px"/>-->
+
+    <ImageView
+        android:id="@+id/disconnect"
+        android:layout_height="130px"
+        android:layout_width="130px"
+        android:layout_marginBottom="35px"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/disconnect"
+        />
+
+    <TextView
+        android:id="@+id/imf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="250px"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:textSize="50px"
+        />
+
+</RelativeLayout>

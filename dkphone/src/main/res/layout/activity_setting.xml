@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55000000">
+
+    <RelativeLayout
+        android:id="@+id/input"
+        android:layout_width="372dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+
+        <RelativeLayout
+            android:id="@+id/head"
+            android:layout_width="527dp"
+            android:layout_height="27dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/pop_bg_top">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/setting_title"
+                android:textColor="#ffffff"
+                android:textSize="17dp" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="527dp"
+            android:layout_height="344dp"
+            android:layout_below="@+id/head"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pop_bg_buttom"
+            >
+            <RelativeLayout
+                android:id="@+id/bg"
+                android:layout_width="372dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:background="#00000000">
+
+                    <TextView
+                        android:id="@+id/basetitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/setting_base_title"
+                        android:textSize="@dimen/setting_title"
+                        android:textColor="@color/logo_color1"
+                        />
+                    <View
+                        android:id="@+id/baseline"
+                        android:layout_width="32dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/basetitle"
+                        android:background="@color/logo_color1"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/widget_volume_port"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/baseline"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/widget_volume_port_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_widget_volume_port_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_volume_port_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_volume_port_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text="@string/setting_widget_volume_port_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_volume_port_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_volume_port_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0dp"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/base_audio"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_below="@+id/widget_volume_port"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/base_audio_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_base_audio_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/base_audio_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/base_audio_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text="@string/setting_base_audio_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/base_audio_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/base_audio_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0dp"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/select_max"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/base_audio"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/select_max_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_select_max_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/select_max_value"
+                            android:layout_width="105dp"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/select_max_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text="中文"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/setting_value"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/base_password_sound"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_below="@+id/select_max"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/base_password_sound_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_base_password_title"
+                            android:textColor="@color/settting_title2"
+                            android:textSize="@dimen/setting_title" />
+
+
+                        <TextView
+                            android:id="@+id/base_password_sound_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="17dp"
+                            android:layout_toRightOf="@+id/base_password_sound_title"
+                            android:gravity="left|center_vertical"
+                            android:inputType="textPassword"
+                            android:text=""
+                            android:textColor="@color/settting_value"
+                            android:textSize="@dimen/setting_value" />
+
+                        <TextView
+                            android:id="@+id/base_password_sound_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="0dp"
+                            android:layout_toRightOf="@+id/base_password_sound_value"
+                            android:gravity="left|center_vertical"
+                            android:text="▼"
+                            android:textColor="@color/settting_value"
+                            android:textSize="@dimen/setting_value"
+                            android:visibility="invisible" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/net"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/base"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000">
+
+                    <TextView
+                        android:id="@+id/nettitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/setting_net_title"
+                        android:textSize="@dimen/setting_title"
+                        android:textColor="@color/logo_color1"
+                        />
+                    <View
+                        android:id="@+id/netline"
+                        android:layout_width="32dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/nettitle"
+                        android:background="@color/logo_color1"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/net_wifiset"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/netline"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_wifiset_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_wifiset_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_wifiset_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_wifiset_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text="@string/setting_net_wifiset_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/net_wifiset_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_wifiset_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0dp"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/net_mac"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/net_wifiset"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_mac_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_mac_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_mac_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_mac_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text="@string/setting_net_mac_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/net_mac_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_mac_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0dp"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/verson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/net"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000">
+
+
+                    <TextView
+                        android:id="@+id/versiontitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/setting_version_title"
+                        android:textSize="@dimen/setting_title"
+                        android:textColor="@color/logo_color1"
+                        />
+                    <View
+                        android:id="@+id/versionline"
+                        android:layout_width="32dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/versiontitle"
+                        android:background="@color/logo_color1"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/verson_now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/versionline"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/verson_now_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_version_now_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/verson_now_value"
+                            android:layout_width="105dp"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/verson_now_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text="1.0"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/version_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_below="@+id/verson_now"
+                        android:layout_marginTop="8dp"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/version_new_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_version_new_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/version_new_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/version_new_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text=""
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/version_new_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/version_new_value"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="left|center_vertical"
+                            android:text="@string/setting_version_btn_budata"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/logo_color1"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/widget_work_port"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/version_new"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/widget_work_port_title"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_work_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_work_port_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_work_port_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="17dp"
+                            android:text="@string/setting_work_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_work_port_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_work_port_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0dp"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

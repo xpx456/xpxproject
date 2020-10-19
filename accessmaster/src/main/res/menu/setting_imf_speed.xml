@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item  
+        android:id="@+id/open"
+        android:title="@string/button_word_fast"/>
+    <item  
+        android:id="@+id/close"
+        android:title="@string/button_word_slow"/>
+
+</menu>

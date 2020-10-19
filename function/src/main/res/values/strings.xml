@@ -9,6 +9,8 @@
     <string name="function_sign">签到</string>
     <string name="function_leave">请假</string>
     <string name="function_schedule">日程</string>
+    <string name="function_wait">代办</string>
+    <string name="function_report">汇报</string>
     <string name="function_attdence">考勤</string>
     <string name="function_systemmesage">公告</string>
     <string name="function_vote">投票</string>
@@ -59,4 +61,5 @@
     <string name="keyword_outputsuccess">导出成功</string>
     <string name="keyword_readcontactswrong">无法读取联系人，请给予相关权限</string>
     <string name="keyword_unknow">未知</string>
+    <string name="keword_carmal">照相</string>
 </resources>

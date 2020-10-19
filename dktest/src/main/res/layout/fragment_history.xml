@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/history"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#ffffff"
+        />
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_below="@+id/stutebar"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/main_buttom_history"
+            android:textColor="#101010"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btndata"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/main"
+        android:layout_alignParentRight="true"
+        >
+        <ImageView
+            android:id="@+id/dateicon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/cal"
+            />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/dateicon"
+            android:layout_marginLeft="5dp"
+            android:textSize="16dp"
+            android:textColor="#666666"
+            android:gravity="center_vertical|center_horizontal"
+            />
+
+    </RelativeLayout>
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/main"
+        android:layout_toLeftOf="@+id/btndata"
+        />
+
+
+    <ListView
+        android:id="@+id/historylist"
+        android:layout_below="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+</RelativeLayout>

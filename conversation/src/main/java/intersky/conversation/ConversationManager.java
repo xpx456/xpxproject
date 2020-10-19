@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.TextView;
 
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import intersky.appbase.BaseReceiver;
+import intersky.appbase.entity.Contacts;
 import intersky.budge.shortcutbadger.ShortcutBadger;
 import intersky.conversation.database.DBHelper;
 import intersky.conversation.entity.Channel;
@@ -104,7 +106,7 @@ public class ConversationManager {
                 channels.add(channel);
                 this.baseReceiver.intentFilter.addAction(channel.id);
             }
-            this.baseReceiver.onReceive = receive;
+            this.baseReceiver.onReceive = notificationreceive;
             context.registerReceiver(baseReceiver,this.baseReceiver.intentFilter);
         }
 
@@ -244,7 +246,7 @@ public class ConversationManager {
     public  void setBudge() {
         ShortcutBadger.applyCount(context, conversationAll.getHit());
     }
-    public BaseReceiver.Receive receive = new BaseReceiver.Receive(){
+    public BaseReceiver.Receive notificationreceive = new BaseReceiver.Receive(){
 
         @Override
         public void onReceive(Handler handler,Context context, Intent intent) {
@@ -359,5 +361,24 @@ public class ConversationManager {
             conversationAll.bastId= conversationAll.bastId+10000;
         }
         return conversationAll.nId.get(type);
+    }
+
+    public static void setContactCycleHead(TextView mhead, String name) {
+        String s;
+        if(name.length() > 0)
+        {
+            if(name.length() > 4)
+            {
+                s = name.substring(0,4);
+                mhead.setText(name.substring(0,4));
+            }
+            else
+            {
+                s = name.toString();
+                if(s != null)
+                    mhead.setText(name.substring(0,s.length()));
+            }
+        }
+        mhead.setBackgroundResource(R.drawable.contact_head);
     }
 }

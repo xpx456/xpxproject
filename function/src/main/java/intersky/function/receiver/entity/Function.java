@@ -40,6 +40,7 @@ public class Function implements Parcelable {
     public static final String LINE = "linechart";
     public static final String FUNNEL = "funnelchart";
     public static final String BAR = "barchart";
+    public static final String ADD = "addmy";
 
     public String functionId = "";
     public String mCaption = "";

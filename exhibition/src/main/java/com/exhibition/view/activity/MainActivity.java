@@ -4,15 +4,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.exhibition.R;
 import com.exhibition.presenter.MainPresenter;
 import com.exhibition.view.BaseSettingView;
 import com.exhibition.view.QueryView;
-import com.exhibition.view.RegisterView;
 import com.exhibition.view.SafeSettingView;
 import com.exhibition.view.SystemSettingView;
 
-import intersky.appbase.BaseActivity;
 import intersky.appbase.PadBaseActivity;
 
 public class MainActivity extends PadBaseActivity {
@@ -26,7 +23,6 @@ public class MainActivity extends PadBaseActivity {
     public TextView btn5;
     public TextView btn6;
     public ImageView exist;
-    public RegisterView registerView;
     public QueryView queryView;
     public BaseSettingView baseSettingView;
     public SafeSettingView safeSettingView;
@@ -42,4 +38,9 @@ public class MainActivity extends PadBaseActivity {
         mMainPresenter.updataTimeout();
     }
 
+    @Override
+    protected void onDestroy() {
+        mMainPresenter.Destroy();
+        super.onDestroy();
+    }
 }

@@ -1,28 +1,46 @@
 package com.iccard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
+import android.hardware.usb.UsbDevice;
+import android.hardware.usb.UsbDeviceConnection;
+import android.hardware.usb.UsbManager;
 import android.os.Message;
+import android.util.Base64;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
-import com.iccard.entity.SerialPort;
+
 import com.iccard.handler.IcCardHandler;
+import com.iccard.thread.CheckThread;
 import com.iccard.thread.InitdeviceThread;
-import com.iccard.thread.ReadThread;
+import com.iccard.thread.ReadCardThread;
 import com.mjk.adplayer.utils.HardWareCommunicationUtils;
-import com.mjk.adplayer.utils.HardwareInterface;
+import com.zkteco.android.biometric.core.device.ParameterHelper;
+import com.zkteco.android.biometric.core.device.TransportType;
+import com.zkteco.android.biometric.core.utils.LogHelper;
+import com.zkteco.android.biometric.core.utils.ToolUtils;
+import com.zkteco.android.biometric.module.idcard.IDCardReader;
+import com.zkteco.android.biometric.module.idcard.IDCardReaderFactory;
+import com.zkteco.android.biometric.module.idcard.exception.IDCardReaderException;
 
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.PortUnreachableException;
-import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class IcCardManager {
+    public static final String ACTION_FIND_CARD_DEVICE = "ACTION_FIND_CARD_DEVICE";
+    public static final String ACTION_UN_FIND_CARD_DEVICE = "ACTION_UN_FIND_CARD_DEVICE";
     public static final int TYPE_FINGER_EXHIBITION = 0;
     public static final int TYPE_FINGER_RESTURANT = 1;
+    public static final int TYPE_FINGER_DK = 2;
+    public static final int TYPE_FINGER_ACCESS = 2;
     public final byte COM_PKT_CMD_QUERY_MODE = 0xD; //自动读取卡号
     public final byte COM_PKT_CMD_CARD_TYPE = 0xF; //数据类型为卡号
     public final byte  COM_PKT_CMD_INIT_TYPEA	= 0x1E;
@@ -59,16 +77,25 @@ public class IcCardManager {
     public Context context;
     public int intmUartHandle = -1;
     public static final String READ_MODE = "RK30_PIN5_PC2,2,1,test";
+    public static final String READ_MODE1 = "RK30_PIN5_PC2,4,1,test";
+    public static final String PATH = "/dev/ttyS1";
     public byte[] path = new byte[1024];
-    public int speed;
+    public int speed = 9600;
     public IcCardHandler icCardHandler;
     public InitdeviceThread initdeviceThread;
-    public SerialPortFinder mSerialPortFinder;
-    public SerialPort mSerialPort;
+    public IDCardReader idCardReader = null;
+    public CheckThread checkThread;
     public int type;
-    public OutputStream mOutputStream;
-    public InputStream mInputStream;
-    public ReadThread readThread;
+    public String cid = "";
+    private final String idSerialName = "/dev/ttyS1";
+    private final int idBaudrate = 115200;
+    public HardWareCommunicationUtils hardWareCommunicationUtils;
+    public ReadCardThread readCardThread;
+    public ArrayList<GetCardId> getCardIds = new ArrayList<GetCardId>();
+    private boolean bopen = false;
+    public ICcardView iCcardView;
+    public ICCardReader icCardReader;
+    public UsbManager usbManager;
     public static IcCardManager init(Context context,int type) {
 
         if (icCardManager == null) {
@@ -77,155 +104,154 @@ public class IcCardManager {
                     icCardManager = new IcCardManager(context);
                     icCardManager.type = type;
                     icCardManager.icCardHandler = new IcCardHandler(icCardManager);
-                    icCardManager.initdeviceThread = new InitdeviceThread(icCardManager);
-                    icCardManager.initdeviceThread.start();
-                    if(icCardManager.type == TYPE_FINGER_EXHIBITION)
+                    if(type == IcCardManager.TYPE_FINGER_EXHIBITION)
                     {
-
+                        icCardManager.hardWareCommunicationUtils = new HardWareCommunicationUtils();
+                        icCardManager.initdeviceThread = new InitdeviceThread(icCardManager);
+                        icCardManager.initdeviceThread.start();
 
                     }
                     else
                     {
-//                        icCardManager.mSerialPortFinder = new SerialPortFinder();
+                        ICCardReader.addObserver(icCardManager.icCardReaderObserver);
+                        icCardManager.icCardReader = ICCardReader.getInstance();
+                        icCardManager.checkNeed();
                     }
+
                 }
                 else
                 {
                     icCardManager.context = context;
                     icCardManager.type = type;
                     icCardManager.icCardHandler = new IcCardHandler(icCardManager);
-                    icCardManager.initdeviceThread = new InitdeviceThread(icCardManager);
-                    icCardManager.initdeviceThread.start();
-                    if(icCardManager.type == TYPE_FINGER_EXHIBITION)
+                    if(type == IcCardManager.TYPE_FINGER_EXHIBITION)
                     {
-//                        icCardManager.initdeviceThread = new InitdeviceThread(icCardManager);
-//                        icCardManager.initdeviceThread.start();
+                        icCardManager.hardWareCommunicationUtils = new HardWareCommunicationUtils();
+                        icCardManager.initdeviceThread = new InitdeviceThread(icCardManager);
+                        icCardManager.initdeviceThread.start();
+
                     }
                     else
                     {
-//                        icCardManager.mSerialPortFinder = new SerialPortFinder();
-
+                        ICCardReader.addObserver(icCardManager.icCardReaderObserver);
+                        icCardManager.icCardReader = ICCardReader.getInstance();
+                        icCardManager.checkNeed();
                     }
+
                 }
             }
         }
         return icCardManager;
     }
 
+    private boolean authenticate() {
+        try {
+            idCardReader.findCard(0);
+            idCardReader.selectCard(0);
+            return true;
+        }
+        catch (IDCardReaderException e)
+        {
+            return false;
+        }
+    }
+
+
+    public void OnBnOpen()
+    {
+        try {
+            startIDCardReader();
+            if (bopen) return;
+            idCardReader.open(0);
+            bopen = true;
+        }
+        catch (IDCardReaderException e)
+        {
+            LogHelper.d("连接设备失败, 错误码：" + e.getErrorCode() + "\n错误信息：" + e.getMessage() + "\n 内部错误码=" + e.getInternalErrorCode());
+        }
+    }
+    public String OnBnMFRead(int index)
+    {
+        try {
+            if (!bopen) {
+                return "";
+            }
+            byte mode = (byte)0x01;//写操作模式0或1
+            byte blockCount = (byte)0x01;//要读多少块1-4
+            byte startAddress = (byte)0x10;//16进制0x00-0x3F 即0到63块
+            byte[]key = new byte[]{(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF};//6字节秘钥
+
+            byte[] dataCard = new byte[16];//读出的卡数据
+            byte[] cardNum = new byte[4];//读出卡序列号
+            boolean ret=  idCardReader.MF_Read(index, mode, blockCount, startAddress, key,cardNum ,dataCard);
+
+            if (ret) {
+                return ToolUtils.bytesToHexString(cardNum);
+            }
+        } catch (IDCardReaderException e) {
+            LogHelper.d("写操作失败, 错误码：" + e.getErrorCode() + "\n错误信息：" + e.getMessage() + "\n 内部错误码=" + e.getInternalErrorCode());
+        }
+        return "";
+    }
+//0501320181105000910177-1796894707
+    public void OnBnGetSamID()
+    {
+        try {
+            if (!bopen) {
+                return;
+            }
+            String samid = idCardReader.getSAMID(0);
+           String card = samid;
+
+        }
+        catch (IDCardReaderException e)
+        {
+            LogHelper.d("获取SAM模块失败, 错误码：" + e.getErrorCode() + "\n错误信息：" + e.getMessage() + "\n 内部错误码=" + e.getInternalErrorCode());
+        }
+    }
+
+    private void startIDCardReader() {
+        // Define output log level
+        LogHelper.setLevel(Log.VERBOSE);
+        // Start fingerprint sensor
+        Map idrparams = new HashMap();
+        String strSerialName = "";
+        if (strSerialName != null && strSerialName.length() > 0)
+        {
+            idrparams.put(ParameterHelper.PARAM_SERIAL_SERIALNAME, strSerialName);
+        }
+        else
+        {
+            idrparams.put(ParameterHelper.PARAM_SERIAL_SERIALNAME, idSerialName);
+        }
+
+        idrparams.put(ParameterHelper.PARAM_SERIAL_BAUDRATE, idBaudrate);
+        idCardReader = IDCardReaderFactory.createIDCardReader(context, TransportType.SERIALPORT, idrparams);
+
+    }
+
     public IcCardManager(Context context) {
         this.context = context;
     }
 
+
+    //1269748972   1487315
     public void readDate() {
-        if(type == TYPE_FINGER_EXHIBITION)
+
         {
-            byte[] buff = new byte[1024];
-            int a = HardWareCommunicationUtils.readUart(icCardManager.intmUartHandle,buff,0,1024);
-            int b = a + 1024;
-            icCardManager.icCardHandler.sendEmptyMessageDelayed(IcCardHandler.CHECK_ICCARD_READ,1000);
-        }
-        else
-        {
-            icCardManager.readThread = new ReadThread(icCardManager);
-            icCardManager.readThread.start();
-        }
-
-    }
-
-
-    public SerialPort getSerialPort(String ptah) throws SecurityException, IOException, InvalidParameterException {
-        if (mSerialPort == null) {
-            /* Read serial port parameters */
-            String path = ptah;
-            int baudrate = butrate ;
-
-            Log.i("chuan", "path="+path);
-            Log.i("chuan", "baudrate="+baudrate);
-
-            /* Check parameters */
-            if ( (path.length() == 0) || (baudrate == -1)) {
-                throw new InvalidParameterException();
+            if(readCardThread == null)
+            {
+                readCardThread = new ReadCardThread(icCardManager);
+                readCardThread.start();
             }
-
-            /* Open the serial port */
-            mSerialPort = new SerialPort(new File(path), baudrate, 0);
-        }
-        return mSerialPort;
-    }
-
-
-
-    public void make_packet(byte cmd, byte[] buf, byte len)
-    {
-        mOutputStream = mSerialPort.getOutputStream();
-        mInputStream = mSerialPort.getInputStream();
-
-        byte sum = 0;
-        byte[] send_buff = new byte[len+4];
-        sum += 0x68;
-        //sendc(HEAD);
-        send_buff[0] = 0x68;
-
-        try {
-            mOutputStream.write(0x68);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        sum += len + 4;
-        //sendc(len + 4);
-        send_buff[1] = (byte)(len+4);
-        try {
-            mOutputStream.write(len+4);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        sum += cmd;
-        //sendc(cmd);
-        try {
-            mOutputStream.write(cmd);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        send_buff[2] = cmd;
-        for(int i=0;i<len;i++)
-        {
-            sum +=buf[i];
-            send_buff[3+i] = buf[i];
-            try {
-                mOutputStream.write(buf[i]);
-            } catch (IOException e) {
-                e.printStackTrace();
+            else
+            {
+                readCardThread.stop = true;
+                readCardThread = new ReadCardThread(icCardManager);
+                readCardThread.start();
             }
         }
-        send_buff[len+3] = sum;
-        try {
-            mOutputStream.write(sum);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //sendc(sum);
-    }
 
-    public
-    void parase_pkg(byte[] buffer)
-    {
-        if((buffer[0] == 0x68)&&(buffer[1] > 0 )&&(buffer[1] < 64 ))
-        {
-            byte len = buffer[1];
-            byte sum = check_sum(buffer,len-1);
-            if(sum == buffer[len-1])
-                parase_cmd(buffer);
-        }
-    }
-
-    byte check_sum(byte[]  buf, int len)
-    {
-        byte sum = 0;
-        int i=0;
-        for(i=0;i<len;i++)
-            sum += buf[i];
-        return sum;
     }
 
     public static String BytetoHex(byte[] b) {
@@ -236,112 +262,113 @@ public class IcCardManager {
         return sb.toString();
     }
 
-    void parase_cmd(byte[] buffer)
+
+    public void getCardData(String b)
     {
-        byte cmd = buffer[2];
-        byte len = buffer[1];
-        Message msg = new Message();
-        Bundle bundle = new Bundle();
-        Log.i("hgt", " cmd:0x"+ String.format("%02x ", cmd));
-        switch(cmd)
+        for(int i = 0 ; i < icCardManager.getCardIds.size() ; i++)
         {
-            /*                0x4400 = Mifare_UltraLight
-             *                0x4400 = Mifare_One(S50_0)
-             *                0x0400 = Mifare_One(S50_3)
-             *                0x0200 = Mifare_One(S70_0)
-             *                0x4200 = Mifare_One(S70_3)
-             *                0x0800 = Mifare_Pro
-             *                0x0403 = Mifare_ProX
-             *                0x4403 = Mifare_DESFire
-             */
-            case COM_PKT_CMD_CARD_TYPE:
+            if(b.length() > 0)
+                icCardManager.getCardIds.get(i).getGardId(b);
+        }
+    }
 
-                byte[] card_type = new byte[2];
-                for(int i = 0;i < 2;i++)
-                {
-                    card_type[i]=buffer[i+3];
-                }
 
-                msg.what = CAR_TYPE;
-                msg.obj = "传递的内容";
-                bundle.putString("card_type",BytetoHex(card_type));
-                msg.setData(bundle);
+    public String praseIcCardIs(String iput)
+    {
+        if(iput.length() > 0)
+        {
+            String sixteen = Integer.toHexString(Integer.valueOf(iput));
+            if(sixteen.length() >= 8)
+            {
+                int ten = Integer.parseInt(sixteen.substring(2,8), 16);
+                return String.valueOf(ten);
+            }
+        }
+        return "";
+    }
+
+    public interface GetCardId{
+        public void getGardId(String id);
+    }
+
+
+    public void checkDevice(Context context,ICCardReader icCardManager,View location)
+    {
+//        iCcardView = new ICcardView(context);
+//        iCcardView.creatView(location);
+//        iCcardView.tip.setText(context.getString(R.string.first_ic_set));
+        if(checkThread != null)
+        {
+            checkThread.stop = true;
+        }
+        checkThread = new CheckThread(icCardManager,this);
+        checkThread.start();
+    }
+
+
+    public ICCardReaderObserver icCardReaderObserver = new ICCardReaderObserver()
+    {
+
+        @Override
+        public void findCard(String id) {
+            Message msg = new Message();
+            msg.what = IcCardHandler.CHECK_ICCARD_READ;
+            msg.obj = id;
+            icCardHandler.sendMessage(msg);
+        }
+
+        @Override
+        public void findICReader(Boolean isFound) {
+            if(isFound == true)
+            {
+                Message msg = new Message();
+                msg.what = IcCardHandler.CHECK_ICCARD_SUCCESS;
                 icCardHandler.sendMessage(msg);
-                break;
-            case COM_PKT_CMD_REQA:
-                byte[] card_num = new byte[buffer[3]];
-                for(int i = 0;i < buffer[3];i++)
-                {
-                    card_num[i]=buffer[i+4];
-                }
-                //Log.i("hgt", " card_num:"+ BytetoHex(card_num));
-                //mCardNum.setText(card_num.toString());
-
-                msg.what = CAR_NUM;
-                msg.obj = "传递的内容";
-                bundle.putString("card_num",BytetoHex(card_num));
-                msg.setData(bundle);
+            }
+            else
+            {
+                Message msg = new Message();
+                msg.what = IcCardHandler.CHECK_ICCARD_FAIL;
                 icCardHandler.sendMessage(msg);
+            }
+        }
+    };
 
-                break;
-            case COM_PKT_CMD_TYPEA_MF1_READ:
-                byte[] buf = new byte[len-5];
-                for(int i = 0;i < len-5;i++)
-                {
-                    buf[i]=buffer[i+4];
-                }
+    public void getNameSuccess()
+    {
 
-                msg.what = READ_CAR_NO;
-                msg.obj = "传递的内容";
-                bundle.putString("read_card_no",BytetoHex(buf));
-                msg.setData(bundle);
-                icCardHandler.sendMessage(msg);
-                break;
+        Intent intent = new Intent(IcCardManager.ACTION_FIND_CARD_DEVICE);
+        context.sendBroadcast(intent);
+    }
 
-            case COM_PKT_CMD_TYPEA_MF1_WRITE:
-                byte write_status = buffer[3];
+    public void unFind() {
+        Intent intent = new Intent(IcCardManager.ACTION_UN_FIND_CARD_DEVICE);
+        context.sendBroadcast(intent);
+        icCardManager.icCardReader.searchDeviceOnThread();
+    }
 
-                msg.what = WRITE_CARD_STATUS;
-                msg.obj = "传递的内容";
-                if(write_status == 0)
-                    bundle.putString("write_status","写卡成功");
-                else
-                    bundle.putString("write_status","写卡失败");
-                msg.setData(bundle);
-                icCardHandler.sendMessage(msg);
-                break;
+    public void checkNeed()
+    {
+//        SharedPreferences sharedPre = context.getSharedPreferences("device", 0);
+//        String name = sharedPre.getString("devicename","");
+//        if(name.length() == 0)
+        {
+            icCardManager.icCardReader.searchDeviceOnThread();
+        }
+//        else
+//        {
+//
+//            icCardManager.icCardReader.openDevice(name,9600);
+//        }
+    }
 
-            case COM_PKT_CMD_CPU_RST:
-                byte[] ast = new byte[buffer[1]-4];
-                for(int i = 0;i < buffer[1]-4;i++)
-                {
-                    ast[i]=buffer[i+3];
-                }
-                //Log.i("hgt", " card_num:"+ BytetoHex(card_num));
-                //mCardNum.setText(card_num.toString());
 
-                msg.what = CAR_AST;
-                msg.obj = "传递的内容";
-                bundle.putString("ast",BytetoHex(ast));
-                msg.setData(bundle);
-                icCardHandler.sendMessage(msg);
-                break;
-
-            case COM_PKT_CMD_CPU_COS:
-                byte[] cpu_cos = new byte[buffer[1]-4];
-                for(int i = 0;i < buffer[1]-4;i++)
-                {
-                    cpu_cos[i]=buffer[i+3];
-                }
-                //Log.i("hgt", " card_num:"+ BytetoHex(card_num));
-                //mCardNum.setText(card_num.toString());
-
-                msg.what = CAR_COS;
-                msg.obj = "传递的内容";
-                bundle.putString("cpu_cos",BytetoHex(cpu_cos));
-                msg.setData(bundle);
-                icCardHandler.sendMessage(msg);
-                break;
+    public void setGetCardIds(String id)
+    {
+        for(int i = 0 ; i < getCardIds.size() ; i++)
+        {
+            if(getCardIds.get(i) != null)
+            getCardIds.get(i).getGardId(id);
         }
     }
 }

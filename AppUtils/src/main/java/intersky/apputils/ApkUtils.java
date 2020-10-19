@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.LineNumberReader;
 
 public class ApkUtils {
 
@@ -72,5 +74,35 @@ public class ApkUtils {
         }
         return "";
     }
+
+
+    public static String[] apkInfo2(String absPath, Context context) {
+        File file = new File(absPath);
+        if(file.exists() == false)
+        {
+            return null;
+        }
+        PackageManager pm = context.getPackageManager();
+        PackageInfo pkgInfo = pm.getPackageArchiveInfo(absPath, PackageManager.GET_ACTIVITIES);
+        if (pkgInfo != null) {
+            ApplicationInfo appInfo = pkgInfo.applicationInfo;
+            /* 必须加这两句，不然下面icon获取是default icon而不是应用包的icon */
+            appInfo.sourceDir = absPath;
+            appInfo.publicSourceDir = absPath;
+            String[] v = new String[2];
+            String appName = pm.getApplicationLabel(appInfo).toString();// 得到应用名
+            String packageName = appInfo.packageName; // 得到包名
+            String version = pkgInfo.versionName; // 得到版本信息
+            v[0] = pkgInfo.versionName;
+            v[1] = String.valueOf(pkgInfo.versionCode);
+            /* icon1和icon2其实是一样的 */
+            Drawable icon1 = pm.getApplicationIcon(appInfo);// 得到图标信息
+            Drawable icon2 = appInfo.loadIcon(pm);
+            String pkgInfoStr = String.format("PackageName:%s, Vesion: %s, AppName: %s", packageName, version, appName);
+            return v;
+        }
+        return null;
+    }
+
 
 }

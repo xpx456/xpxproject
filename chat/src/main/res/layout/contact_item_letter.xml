@@ -7,12 +7,12 @@
     <TextView
         android:id="@+id/item_letter_name"
         android:layout_width="match_parent"
-        android:layout_height="29dp"
+        android:layout_height="30dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="15dip"
+        android:layout_marginLeft="16dip"
         android:gravity="center_vertical|left"
-        android:textColor="#8e8e8e"
-        android:textSize="17dp" />
+        android:textColor="#F0F2F4"
+        android:textSize="17sp" />
 
 </RelativeLayout>

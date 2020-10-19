@@ -11,10 +11,11 @@ import static android.content.Context.ACTIVITY_SERVICE;
 
 public class AppActivityManager {
 
-    public static Stack<Activity> activityStack;
+    public static Stack<Activity> activityStack = new Stack<Activity>();
     public ScreenDefine mScreenDefine;
     public boolean isActivity = false;
     private Context context;
+    public Activity current;
     private volatile static AppActivityManager appActivityManager = null;
 
 
@@ -56,8 +57,24 @@ public class AppActivityManager {
      * 鑾峰彇褰撳墠Activity锛堝爢鏍堜腑鏈€鍚庝竴涓帇鍏ョ殑锛?
      */
     public Activity getCurrentActivity(){
+        if(activityStack.size()  == 0)
+        {
+            return null;
+        }
         Activity activity=activityStack.lastElement();
         return activity;
+    }
+
+    public Activity getCurrent()
+    {
+        if(current == null)
+        {
+            return getCurrentActivity();
+        }
+        else
+        {
+            return current;
+        }
     }
 
     /**

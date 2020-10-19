@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/location"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66000000">
+
+    <RelativeLayout
+        android:id="@+id/input"
+        android:layout_width="480px"
+        android:layout_height="600px"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <RelativeLayout
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="40px"
+            android:background="@drawable/success_head">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35px"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/main_location"
+                android:textColor="#ffffff"
+                android:textSize="20px" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/head"
+            android:background="@drawable/success_bg">
+
+            <LinearLayout
+                android:id="@+id/locationlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5px"
+                android:layout_marginBottom="5px"
+                android:orientation="vertical" />
+
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

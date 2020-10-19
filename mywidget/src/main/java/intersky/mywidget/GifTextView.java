@@ -202,6 +202,7 @@ public class GifTextView extends AppCompatTextView {
                     bitmap= Bitmap.createScaledBitmap(bitmap, (int) (10* metric.density), (int) (10* metric.density), true);
                 }
                 ImageSpan imageSpan=new ImageSpan(getContext(),bitmap);
+                if(sb.length() >= info.end)
                 sb.setSpan(imageSpan, info.start, info.end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
             }

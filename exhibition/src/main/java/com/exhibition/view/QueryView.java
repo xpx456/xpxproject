@@ -1,6 +1,7 @@
 package com.exhibition.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
@@ -17,7 +18,11 @@ import com.exhibition.R;
 import com.exhibition.database.DBHelper;
 import com.exhibition.entity.Guest;
 import com.exhibition.entity.MyPageListData;
+import com.exhibition.view.activity.RegisterActivity;
 import com.exhibition.view.adapter.QueryListAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import intersky.apputils.AppUtils;
 import intersky.apputils.DoubleDatePickerDialog;
@@ -34,10 +39,10 @@ public class QueryView extends PopView {
     public LinearLayout tebLayer;
     public EditText tebpage;
     public TextView btngo;
-    public MyPageListData pageListData;
     public QueryListAdapter queryListAdapter;
     public PopupWindow popupWindow;
-
+    public HashMap<String,Guest> hashMap;
+    public ArrayList<Guest> guests = new ArrayList<Guest>();
     public QueryView(Context context) {
         super(context);
         initView();
@@ -57,6 +62,8 @@ public class QueryView extends PopView {
         data.setOnClickListener(detepickListener);
         listview.setLayoutManager(new LinearLayoutManager(context));
         close =mainView.findViewById(R.id.view_query);
+        View input = mainView.findViewById(R.id.input);
+        input.setOnClickListener(inputListener);
     }
 
     @Override
@@ -66,17 +73,18 @@ public class QueryView extends PopView {
 
     public void creatView(View location) {
         data.setText(TimeUtils.getDate());
-        MyPageListData pageListData = new MyPageListData(DBHelper.getInstance(context).scanGuest(TimeUtils.getDate(),""));
-        setData(pageListData);
+        hashMap = DBHelper.getInstance(context).scanGuest(TimeUtils.getDate(),"",guests);
+        //setData(pageListData);
+
+        queryListAdapter = new QueryListAdapter(guests,context);
+        queryListAdapter.setOnItemClickListener(queryItemClickListener);
+        listview.setAdapter(queryListAdapter);
         super.creatView(location);
     }
 
 
     private void setData(MyPageListData pageListData) {
-        this.pageListData = pageListData;
-        queryListAdapter = new QueryListAdapter(pageListData.getShowPage(),context);
-        queryListAdapter.setOnItemClickListener(queryItemClickListener);
-        listview.setAdapter(queryListAdapter);
+
 
         if(pageListData.getTotalpage() > 1)
         {
@@ -133,12 +141,21 @@ public class QueryView extends PopView {
 
         @Override
         public void onItemClick(Guest guest, int position, View view) {
-
+            Intent intent = new Intent(context, RegisterActivity.class);
+            intent.putExtra("rid",guest.rid);
+            context.startActivity(intent);
         }
 
     };
 
     public View.OnClickListener pageClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
+    public View.OnClickListener inputListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 

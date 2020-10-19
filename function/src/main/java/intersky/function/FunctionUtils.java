@@ -2,7 +2,9 @@ package intersky.function;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
@@ -25,11 +27,13 @@ import intersky.function.view.activity.BusinessWarnActivity;
 import intersky.function.view.activity.ChartActivity;
 import intersky.function.view.activity.FunctionModuleActivity;
 import intersky.function.view.activity.GridActivity;
+import intersky.function.view.activity.GridDetialActivity;
 import intersky.function.view.activity.LabelActivity;
 import intersky.function.view.activity.WebAppActivity;
 import intersky.function.view.activity.WebMessageActivity;
 import intersky.function.view.activity.WorkFlowActivity;
 import intersky.function.view.adapter.FunctionAdapter;
+import intersky.json.XpxJSONArray;
 import intersky.json.XpxJSONObject;
 import intersky.oa.OaAsks;
 import intersky.oa.OaUtils;
@@ -46,9 +50,13 @@ public class FunctionUtils {
     public FunData mFunData = new FunData();
     public FunData mFunData2 = new FunData();
     public ArrayList<Function> mFunctions = new ArrayList<Function>();
+    public ArrayList<Function> myFunction = new ArrayList<>();
+    public HashMap<String,Function> all = new HashMap<String,Function>();
     public Map<String,ArrayList<Function>> mFunctionGrids = new HashMap<String, ArrayList<Function>>();
     public ArrayList<Function> moreFunctions = new ArrayList<Function>();
     public ArrayList<FunctionAdapter> mFunctionAdapters = new ArrayList<FunctionAdapter>();
+    public FunctionAdapter allAdapter;
+    public FunctionAdapter myAdapter;
     public Context context;
     public Service service;
     public Account account;
@@ -120,8 +128,46 @@ public class FunctionUtils {
 
     }
 
+    public void initMy()
+    {
+        SharedPreferences sharedPre = context.getSharedPreferences(service.sAddress, 0);
+        String myjson = sharedPre.getString("myfunction","");
+        myFunction.clear();
+        if(myjson.length() > 0)
+        {
+            try {
+                XpxJSONArray ja = new XpxJSONArray(myjson);
+                for(int i= 0 ; i < ja.length() ;i++)
+                {
+                    if(all.containsKey(ja.getString(i)))
+                    {
+                        myFunction.add(all.get(ja.getString(i)));
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        JSONArray ja2 = new JSONArray();
+        for(int i = 0 ; i < myFunction.size() ; i++)
+        {
+            ja2.put(myFunction.get(i).mCaption);
+        }
+        SharedPreferences.Editor editor = sharedPre.edit();
+        editor.putString("myfunction",ja2.toString());
+        editor.commit();
+        Function tmpB;
+        tmpB = new Function();
+        tmpB.mCaption = "添加常用";
+        tmpB.typeName = Function.ADD;
+        myFunction.add(tmpB);
+        myAdapter = new FunctionAdapter(context,myFunction,false);
+    }
+
     private void addFunctions() {
         try {
+
+
             XpxJSONObject xpxJsonObject = new XpxJSONObject(account.logininfo);
             Function tmpB;
             if(account.isouter == false)
@@ -133,71 +179,75 @@ public class FunctionUtils {
                 tmpB.hintCount = hits.getInt("reminder",0);
                 mFunctions.add(tmpB);
                 addfun(tmpB);
+                all.put(tmpB.mCaption,tmpB);
                 tmpB = new Function();
                 tmpB.mCaption = context.getResources().getString(R.string.function_taskExamine);
                 tmpB.typeName = Function.EXAMINE;
                 tmpB.hintCount = hits.getInt("workflow",0);
                 mFunctions.add(tmpB);
                 addfun(tmpB);
+                all.put(tmpB.mCaption,tmpB);
             }
             List<Function> mfuncs = FunctionPrase.praseFunctions(account.logininfo);
             for (int i = 0; i < mfuncs.size(); i++) {
                 Function temp = mfuncs.get(i);
                 addfun(temp);
+                all.put(temp.mCaption,temp);
             }
             mfuncs = FunctionPrase.praseWebapp(account.logininfo);
             for (int i = 0; i < mfuncs.size(); i++) {
                 Function temp = mfuncs.get(i);
                 addfun(temp);
+                all.put(temp.mCaption,temp);
             }
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_workreport);
             tmpB.typeName = Function.WORKREPORT;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_sign);
             tmpB.typeName = Function.SIGN;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_leave);
             tmpB.typeName = Function.LEAVE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_schedule);
             tmpB.typeName = Function.DATE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_attdence);
             tmpB.typeName = Function.WORKATTDENCE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_systemmesage);
             tmpB.typeName = Function.NOTICE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_vote);
             tmpB.typeName = Function.VOTE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_task);
             tmpB.typeName = Function.TASK;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -207,49 +257,53 @@ public class FunctionUtils {
             tmpB.mCaption = context.getResources().getString(R.string.function_workreport);
             tmpB.typeName = Function.WORKREPORT;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_sign);
             tmpB.typeName = Function.SIGN;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_leave);
             tmpB.typeName = Function.LEAVE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_schedule);
             tmpB.typeName = Function.DATE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_attdence);
             tmpB.typeName = Function.WORKATTDENCE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_systemmesage);
             tmpB.typeName = Function.NOTICE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_vote);
             tmpB.typeName = Function.VOTE;
             addfun(tmpB);
-
+            all.put(tmpB.mCaption,tmpB);
             tmpB = new Function();
             tmpB.mCatalogueName = "oa";
             tmpB.mCaption = context.getResources().getString(R.string.function_task);
             tmpB.typeName = Function.TASK;
             addfun(tmpB);
+            all.put(tmpB.mCaption,tmpB);
         }
+        allAdapter = new FunctionAdapter(context,mFunctions,false);
+        initMy();
+
     }
 
     private void addfun(Function temp) {
@@ -593,6 +647,91 @@ public class FunctionUtils {
         }
         intent.putExtra("conversation", mConversationModel);
         context.startActivity(intent);
+    }
+
+
+    public void showWebMessageRemind(Context context,String detialId,String content,String cap,boolean iscloud)
+    {
+        if(iscloud == false)
+        {
+            if(cap.toLowerCase().contains("mail"))
+            {
+
+            }
+            else
+            {
+                Function info = new Function();
+                info.mCaption = cap;
+                info.mName = content;
+                info.modulflag = content;
+                info.mRecordId = detialId;
+                Intent intent = new Intent(context, GridDetialActivity.class);
+                intent.putExtra("function",info);
+                intent.putExtra("edit",false);
+                context.startActivity(intent);
+            }
+        }
+        else
+        {
+            Intent intent = new Intent(context,
+                    WebMessageActivity.class);
+            intent.putExtra("isurl", true);
+            String url = "";
+            if(FunctionUtils.getInstance().service.https)
+            {
+                url = "https://"+FunctionUtils.getInstance().service.sAddress+":"+FunctionUtils.getInstance().service.sPort+"/app/reminder/detail"+cap+"?token="+ NetUtils.getInstance().token
+                        +"&rid="+detialId+"&app_languge="+ AppUtils.getLangue(context);
+            }
+            else
+            {
+                url = "http://"+FunctionUtils.getInstance().service.sAddress+":"+FunctionUtils.getInstance().service.sPort+"/app/reminder/detail/"+cap+"?token="+NetUtils.getInstance().token
+                        +"&rid="+detialId+"&app_languge="+ AppUtils.getLangue(context);
+            }
+            intent.putExtra("url", url);
+            context.startActivity(intent);
+        }
+    }
+
+    public void showWebMessageRemind(Context context,Conversation mConversationModel,boolean iscloud)
+    {
+        if(iscloud == false)
+        {
+            if(mConversationModel.mTitle2.toLowerCase().contains("mail"))
+            {
+
+            }
+            else
+            {
+                Function info = new Function();
+                info.mCaption = mConversationModel.mTitle2;
+                info.mName = mConversationModel.mTitle;
+                info.modulflag = mConversationModel.mTitle;
+                info.mRecordId = mConversationModel.detialId;
+                Intent intent = new Intent(context, GridDetialActivity.class);
+                intent.putExtra("function",info);
+                intent.putExtra("edit",false);
+                context.startActivity(intent);
+            }
+        }
+        else
+        {
+            Intent intent = new Intent(context,
+                    WebMessageActivity.class);
+            intent.putExtra("isurl", true);
+            String url = "";
+            if(FunctionUtils.getInstance().service.https)
+            {
+                url = "https://"+FunctionUtils.getInstance().service.sAddress+":"+FunctionUtils.getInstance().service.sPort+"/app/reminder/detail"+mConversationModel.mTitle2+"?token="+ NetUtils.getInstance().token
+                        +"&rid="+mConversationModel.detialId+"&app_languge="+ AppUtils.getLangue(context);
+            }
+            else
+            {
+                url = "http://"+FunctionUtils.getInstance().service.sAddress+":"+FunctionUtils.getInstance().service.sPort+"/app/reminder/detail/"+mConversationModel.mTitle2+"?token="+NetUtils.getInstance().token
+                        +"&rid="+mConversationModel.detialId+"&app_languge="+ AppUtils.getLangue(context);
+            }
+            intent.putExtra("url", url);
+            context.startActivity(intent);
+        }
     }
 
     public void startCard(Context context)

@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <RelativeLayout
+        android:id="@+id/input"
+        android:layout_width="744px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+
+        <RelativeLayout
+            android:id="@+id/head"
+            android:layout_width="1055px"
+            android:layout_height="55px"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/setting_head">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40px"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/setting_title"
+                android:textColor="#ffffff"
+                android:textSize="35px" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="1055px"
+            android:layout_height="689px"
+            android:layout_below="@+id/head"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/success_bg2"
+            >
+            <RelativeLayout
+                android:id="@+id/bg"
+                android:layout_width="744px"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40px"
+                    android:layout_alignParentLeft="true"
+                    android:background="#00000000">
+
+                    <TextView
+                        android:id="@+id/basetitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="17px"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/setting_base_title"
+                        android:textSize="@dimen/setting_title"
+                        android:textColor="@color/settting_title"
+                        />
+                    <View
+                        android:id="@+id/baseline"
+                        android:layout_width="65px"
+                        android:layout_height="1px"
+                        android:layout_marginTop="8px"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/basetitle"
+                        android:background="@color/settting_title"
+                        />
+
+
+                    <RelativeLayout
+                        android:id="@+id/contact_equipment_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="17px"
+                        android:layout_below="@+id/baseline"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/contact_equipment_name_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_contact_equipment_name_title"
+                            android:textSize="@dimen/setting_title"
+                            android:singleLine="true"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/contact_equipment_name_value"
+                            android:layout_width="210px"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/contact_equipment_name_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textSize="@dimen/setting_value"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/contact_equipment_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/contact_equipment_name"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/contact_equipment_code_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_contact_equipment_code_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/contact_equipment_code_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/contact_equipment_code_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="点击查看"
+                            android:textSize="@dimen/setting_value"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:background="#00000000"
+                            android:textColor="@color/colorAccent"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/widget_volume_port"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/contact_equipment_code"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/widget_volume_port_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_widget_volume_port_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_volume_port_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_volume_port_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="@string/setting_widget_volume_port_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_volume_port_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_volume_port_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0px"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/base_audio"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="17px"
+                        android:layout_below="@+id/widget_volume_port"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/base_audio_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_base_audio_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/base_audio_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/base_audio_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="@string/setting_base_audio_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/base_audio_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/base_audio_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0px"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/base_password_sound"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_below="@+id/base_audio"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10px"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/base_password_sound_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_base_password_title"
+                            android:textColor="@color/settting_title2"
+                            android:textSize="@dimen/setting_title" />
+
+
+                        <TextView
+                            android:id="@+id/base_password_sound_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="35px"
+                            android:layout_toRightOf="@+id/base_password_sound_title"
+                            android:gravity="left|center_vertical"
+                            android:inputType="textPassword"
+                            android:text=""
+                            android:textColor="@color/settting_value"
+                            android:textSize="@dimen/setting_value" />
+
+                        <TextView
+                            android:id="@+id/base_password_sound_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="0px"
+                            android:layout_toRightOf="@+id/base_password_sound_value"
+                            android:gravity="left|center_vertical"
+                            android:text="▼"
+                            android:textColor="@color/settting_value"
+                            android:textSize="@dimen/setting_value"
+                            android:visibility="invisible" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/net"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17px"
+                    android:layout_below="@+id/base"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000">
+
+                    <TextView
+                        android:id="@+id/nettitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="17px"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/setting_net_title"
+                        android:textSize="@dimen/setting_title"
+                        android:textColor="@color/settting_title"
+                        />
+                    <View
+                        android:id="@+id/netline"
+                        android:layout_width="65px"
+                        android:layout_height="1px"
+                        android:layout_marginTop="8px"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/nettitle"
+                        android:background="@color/settting_title"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/net_wifiset"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="17px"
+                        android:layout_below="@+id/netline"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_wifiset_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_wifiset_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_wifiset_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_wifiset_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="@string/setting_net_wifiset_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/net_wifiset_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_wifiset_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0px"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/net_mac"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/net_wifiset"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_mac_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_mac_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_mac_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_mac_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="@string/setting_net_mac_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/net_mac_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_mac_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0px"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/net_ip"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/net_mac"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_ip_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_ip_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_ip_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_ip_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:textSize="@dimen/setting_value"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/net_mac_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/net_ip"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_mac_address_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_mac_address_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_mac_address_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_mac_address_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:textSize="@dimen/setting_value"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/net_service_port"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/net_mac_address"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_service_port_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_service_port_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_service_port_value"
+                            android:layout_width="210px"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_service_port_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/setting_value"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/net_service_ip"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/net_service_port"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_service_ip_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_service_ip_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_service_ip_value"
+                            android:layout_width="210px"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_service_ip_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:singleLine="true"
+                            android:textSize="@dimen/setting_value"
+                            android:ellipsize="end"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/net_app_service_port"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/net_service_ip"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_app_service_port_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_app_service_port_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_app_service_port_value"
+                            android:layout_width="210px"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_app_service_port_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/setting_value"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/net_app_service_ip"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="10px"
+                        android:layout_below="@+id/net_app_service_port"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/net_app_service_ip_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_net_app_service_ip_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/net_app_service_ip_value"
+                            android:layout_width="210px"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/net_app_service_ip_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:singleLine="true"
+                            android:textSize="@dimen/setting_value"
+                            android:ellipsize="end"
+                            android:background="#00000000"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/verson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/net"
+                    android:layout_marginTop="10px"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000">
+
+
+                    <TextView
+                        android:id="@+id/versiontitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="17px"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/setting_version_title"
+                        android:textSize="@dimen/setting_title"
+                        android:textColor="@color/settting_title"
+                        />
+                    <View
+                        android:id="@+id/versionline"
+                        android:layout_width="65px"
+                        android:layout_height="1px"
+                        android:layout_marginTop="8px"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/versiontitle"
+                        android:background="@color/settting_title"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/verson_now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35px"
+                        android:layout_marginTop="17px"
+                        android:layout_below="@+id/versionline"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/verson_now_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_version_now_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/verson_now_value"
+                            android:layout_width="210px"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/verson_now_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="1.0"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/version_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_below="@+id/verson_now"
+                        android:layout_marginTop="17px"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/version_new_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_version_new_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/version_new_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/version_new_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text=""
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/version_new_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/version_new_value"
+                            android:layout_marginLeft="20px"
+                            android:gravity="left|center_vertical"
+                            android:text="@string/setting_version_btn_budata"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_title"
+                            />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/widget_work_port"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="5px"
+                        android:layout_below="@+id/version_new"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/widget_work_port_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_work_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_work_port_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_work_port_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="@string/setting_work_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_work_port_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_work_port_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0px"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/widget_member_port"
+                        android:layout_width="match_parent"
+                        android:layout_height="35px"
+                        android:layout_marginTop="5px"
+                        android:layout_below="@+id/widget_work_port"
+                        android:layout_alignParentLeft="true"
+                        android:background="#00000000">
+
+                        <TextView
+                            android:id="@+id/widget_member_port_title"
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/setting_member_title"
+                            android:textSize="@dimen/setting_title"
+                            android:textColor="@color/settting_title2"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_member_port_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_member_port_title"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="35px"
+                            android:text="@string/setting_member_title2"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+                        <TextView
+                            android:id="@+id/widget_member_port_array"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/widget_member_port_value"
+                            android:gravity="left|center_vertical"
+                            android:layout_marginLeft="0px"
+                            android:text="▶"
+                            android:visibility="visible"
+                            android:textSize="@dimen/setting_value"
+                            android:textColor="@color/settting_value"
+                            />
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

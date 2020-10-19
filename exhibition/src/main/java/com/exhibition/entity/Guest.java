@@ -3,13 +3,17 @@ package com.exhibition.entity;
 import com.finger.entity.Finger;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import intersky.apputils.AppUtils;
+import intersky.apputils.SystemUtil;
+import intersky.apputils.TimeUtils;
 
 public class Guest {
 
     public Guest() {
-        rid = AppUtils.getguid();
+        Random random = new Random();
+        rid = TimeUtils.getDateAndTimeCode()+ String.format("%05d",random.nextInt(99999));
     }
 
     public String rid = "";

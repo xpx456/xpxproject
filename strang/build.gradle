@@ -51,12 +51,14 @@ android {
 //            keyAlias "intersky"
 //            keyPassword "8842500"
 //        }
+
         debug {
-            storeFile file("debug.keystore")
-            storePassword "android"
-            keyAlias "androiddebugkey"
-            keyPassword "android"
+            storeFile file('xpxproject.jks')
+            storePassword "8842500"
+            keyAlias "strang"
+            keyPassword "8842500"
         }
+
         release {
             storeFile file('xpxproject.jks')
             storePassword "8842500"

@@ -8,8 +8,8 @@ android {
         applicationId "com.restaurant"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 20
+        versionName '2.0'
         multiDexEnabled true
         ndk{
             abiFilters "armeabi-v7a"
@@ -17,6 +17,21 @@ android {
             abiFilters "armeabi"
             abiFilters "arm64-v8a"
             abiFilters "x86_64"
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('xpxproject.jks')
+            keyAlias 'restaurant'
+            storePassword '8842500'
+            keyPassword '8842500'
+        }
+        release {
+            storeFile file('xpxproject.jks')
+            keyAlias 'restaurant'
+            storePassword '8842500'
+            keyPassword '8842500'
         }
     }
 
@@ -41,8 +56,25 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    api 'com.tencent.bugly:crashreport:latest.release'
+    api 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    annotationProcessor 'org.projectlombok:lombok:1.16.20'
+    implementation 'org.greenrobot:greendao:3.3.0'
+
     implementation project(path: ':xpxnet')
     implementation project(path: ':appbase')
     implementation project(path: ':AppUtils')
     implementation project(path: ':mywidget')
+    implementation project(path: ':json')
+    implementation project(path: ':iccard')
+    implementation project(path: ':finger')
+    implementation project(path: ':filetools')
+    implementation project(path: ':Gpio')
+    implementation project(path: ':audio')
+    implementation project(path: ':autoupdate')
+    implementation project(path: ':conversation')
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }

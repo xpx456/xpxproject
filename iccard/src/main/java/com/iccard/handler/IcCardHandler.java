@@ -5,13 +5,16 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.iccard.ICCardReader;
 import com.iccard.IcCardManager;
 import com.iccard.thread.InitdeviceThread;
+import com.iccard.thread.ReadCardThread;
 
 public class IcCardHandler extends Handler {
 
     public static final int CHECK_ICCARD_READ = 10000;
-
+    public static final int CHECK_ICCARD_SUCCESS = 10001;
+    public static final int CHECK_ICCARD_FAIL = 10002;
     public IcCardManager icCardManager;
 
     public IcCardHandler(IcCardManager icCardManager)
@@ -22,12 +25,12 @@ public class IcCardHandler extends Handler {
     @Override
     public void handleMessage(Message msg) {
         switch (msg.what) {
-            case CHECK_ICCARD_READ:
-                icCardManager.readDate();
-                break;
             case InitdeviceThread.INIT_DEVICE_FINISH:
                 icCardManager.intmUartHandle = (int) msg.obj;
                 icCardManager.readDate();
+                break;
+            case ReadCardThread.GET_DATA:
+                icCardManager.getCardData((String) msg.obj);
                 break;
             case IcCardManager.CAR_NUM:
                 String resultMsg = (String) msg.obj;
@@ -77,7 +80,15 @@ public class IcCardHandler extends Handler {
 //                Log.i("hgt", " cpu_cos:"+ cpu_cos);
 //                mCpuCardCmdResult.setText(cpu_cos);
                 break;
-
+            case CHECK_ICCARD_SUCCESS:
+                icCardManager.getNameSuccess();
+                break;
+            case CHECK_ICCARD_FAIL:
+                icCardManager.unFind();
+                break;
+            case CHECK_ICCARD_READ:
+                icCardManager.setGetCardIds((String) msg.obj);
+                break;
         }
     }
 

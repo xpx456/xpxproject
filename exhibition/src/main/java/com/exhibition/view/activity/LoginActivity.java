@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.exhibition.R;
 import com.exhibition.presenter.LoginPresenter;
+import com.iccard.IcCardManager;
 
 import intersky.appbase.BaseActivity;
 import intersky.appbase.PadBaseActivity;
@@ -35,6 +36,7 @@ public class LoginActivity extends PadBaseActivity {
     public RelativeLayout passwordlayer;
     public ImageView imageView;
     public View hid;
+    public boolean cangetdata = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,4 +47,21 @@ public class LoginActivity extends PadBaseActivity {
     public void gettouch() {
         mLoginPresenter.updataTimeout();
     }
+
+    @Override
+    protected void onDestroy() {
+        mLoginPresenter.Destroy();
+        super.onDestroy();
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+    }
+
+    public IcCardManager.GetCardId getCardId = new IcCardManager.GetCardId() {
+        @Override
+        public void getGardId(String id) {
+            mLoginPresenter.praseIcCard(id);
+        }
+    };
 }
