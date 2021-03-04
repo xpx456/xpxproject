@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="104dip"
+    android:layout_height="104dip"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/layer_item"
+        android:layout_width="104dip"
+        android:layout_height="104dip"
+        android:layout_alignParentTop="true"
+        android:descendantFocusability="blocksDescendants"
+        android:background="@drawable/bocumentgridbg" >
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="14dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/plugin_camera_no_pictures"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="match_parent"
+            android:layout_height="20dip"
+            android:layout_below="@+id/item_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dip"
+            android:ellipsize="end"
+            android:gravity="center_vertical|center_horizontal"
+            android:singleLine="true"
+            android:textColor="#23272E"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

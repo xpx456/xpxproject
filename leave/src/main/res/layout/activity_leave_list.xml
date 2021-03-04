@@ -1,0 +1,236 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_busines2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#ffffff"
+        android:layout_below="@id/stutebar">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xml_leave_title_approve"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="15sp"
+            />
+
+    </RelativeLayout>
+
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/top_layer"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_below="@+id/head"
+        android:layout_centerHorizontal="true"
+        android:background="#00000000">
+    </intersky.mywidget.SearchViewLayout>
+
+    <RelativeLayout
+        android:id="@+id/teblayer"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:layout_below="@+id/top_layer"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="14dp"
+            android:background="@drawable/shape_bg_readbg">
+
+            <TextView
+                android:id="@+id/daytxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#ffffffff"
+                android:textSize="14sp"
+                android:text="@string/xml_leave_my_send"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/day"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_bg_readbgun">
+
+            <TextView
+                android:id="@+id/weektxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#8F9093"
+                android:textSize="14sp"
+                android:text="@string/xml_leave_my_approve"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/week"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_bg_readbgun">
+
+            <TextView
+                android:id="@+id/monthtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#8F9093"
+                android:textSize="14sp"
+                android:text="@string/xml_leave_my_join"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+    <intersky.mywidget.NoScrollViewPager
+        android:id="@+id/load_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/teblayer"
+        android:layout_above="@+id/buttomlayer"
+        android:background="#f5f5f5"></intersky.mywidget.NoScrollViewPager>
+
+    <RelativeLayout
+        android:id="@+id/buttomlayer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/buttomaciton"
+        android:visibility="gone"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/selectall"
+            android:layout_width="95dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical|center_horizontal"
+            android:singleLine="true"
+            android:background="#98483e"
+            android:text="@string/button_word_selectall"
+            android:visibility="invisible"
+            android:textColor="#ffffff"
+            android:textSize="17dp" />
+
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="95dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical|center_horizontal"
+            android:singleLine="true"
+            android:background="#98483e"
+            android:textColor="#ffffff"
+            android:visibility="invisible"
+            android:text="@string/button_delete"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/creat"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical|center_horizontal"
+            android:singleLine="true"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:text="@string/button_new"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/creatnotice"
+        android:layout_width="56dp"
+        android:layout_height="58dip"
+        android:layout_above="@+id/buttomaciton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ncreat" />
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+</RelativeLayout>

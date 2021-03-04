@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contacts_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#ffffff"
+        android:layout_below="@id/stutebar">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:visibility="visible"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:text="sadfaf"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdfa"
+            android:visibility="visible"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+
+    </RelativeLayout>
+
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        />
+
+    <ListView
+        android:id="@+id/contacts_List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_above="@+id/buttomaciton"
+        android:divider="#ececec"
+        android:dividerHeight="0sp"
+        android:background="#ffffff"></ListView>
+
+
+    <intersky.mywidget.MySlideBar
+        android:id="@+id/slideBar"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="right|center_vertical"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/letter_layer"
+        android:layout_width="82dip"
+        android:layout_height="82dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_bg_letter_round"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/letter_text"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_bg_letter_cycle"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="31dp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_work_sign"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5" >
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#ffffff"
+        android:layout_below="@id/stutebar">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/keyword_attendance"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+
+        <TextView
+            android:id="@+id/record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/button_word_record"
+            android:textColor="#3370FF"
+            android:layout_marginRight="16dp"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <com.amap.api.maps2d.MapView
+        android:id="@+id/detial_cion"
+        android:layout_width="match_parent"
+        android:layout_height="300dip"
+        android:layout_below="@+id/head"
+        android:clickable="false"/>
+
+    <RelativeLayout
+        android:id="@+id/sign_detial"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_below="@+id/detial_cion"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/addressbg" >
+
+
+        <ImageView
+            android:id="@+id/location"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/locate"
+            />
+
+
+        <TextView
+            android:id="@+id/address_name"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/location"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toLeftOf="@+id/time"
+            android:layout_marginRight="5dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="#ff23272e"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text=""
+            />
+
+
+        <TextView
+            android:id="@+id/address_detial"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/address_name"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="#8F9093"
+            android:textSize="14sp"
+            android:text=""
+            />
+
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="24dp"
+            android:textColor="#ff23272e"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text=""
+            />
+
+
+        <TextView
+            android:id="@+id/btn_change"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="@string/keyword_change_address"
+            android:layout_below="@+id/address_detial"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="#ff16c48d"
+            android:textSize="14sp"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/sign_btn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/sign_detial"
+        android:layout_marginTop="36dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/contact_head" >
+
+        <RelativeLayout
+            android:id="@+id/textline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000" >
+
+            <TextView
+                android:id="@+id/sign_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#ffffff"
+                android:singleLine="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/button_word_sign"
+                android:textSize="19sp" />
+
+
+            <TextView
+                android:id="@+id/sign_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sign_text1"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="#ffffff"
+                android:singleLine="true"
+                android:text="19:00:00"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+
+</RelativeLayout>

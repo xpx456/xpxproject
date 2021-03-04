@@ -1,0 +1,204 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:id="@+id/operview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+
+
+            <RelativeLayout
+                android:id="@+id/toplayer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                >
+
+                <intersky.mywidget.SemicircleProgressView
+                    android:id="@+id/carprogress"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp"
+                    app:circularSize="6dp"
+                    app:semicircbuttomText=""
+                    app:semicircleSize="130dp"
+                    app:semicirclesubtitleColor="@color/form_title_color"
+                    app:semicirclesubtitleSize="18sp"
+                    app:semicirclesubtitleText=""
+                    app:semicircletitleColor="@color/value_color"
+                    app:semicircletitleSize="35sp"
+                    app:semicircletitleText="1970" />
+
+                <TextView
+                    android:id="@+id/totalvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/carprogress"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="19dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=" "
+                    android:textColor="@color/value_color"
+                    android:textSize="21sp" />
+
+
+                <View
+                    android:id="@+id/eat"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/totalvalue"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/carprogress"
+                    android:layout_marginLeft="19dp"
+                    android:background="@drawable/shape_bg_round_eat"
+                    />
+
+                <TextView
+                    android:id="@+id/eattitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/totalvalue"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_toRightOf="@+id/eat"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/chart_head_goal_eat_add"
+                    android:textColor="#5856d6"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/eatvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/totalvalue"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=""
+                    android:textColor="@color/value_color"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/burned"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/eattitle"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/carprogress"
+                    android:layout_marginLeft="19dp"
+                    android:background="@drawable/shape_bg_round_progress"
+                    />
+
+                <TextView
+                    android:id="@+id/burneddtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/eattitle"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_toRightOf="@+id/burned"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/chart1_carl_burn"
+                    android:textColor="@color/value_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/burnedvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/eatvalue"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=""
+                    android:textColor="#ff8800"
+                    android:textSize="15sp" />
+
+                <View
+                    android:id="@+id/persent"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/burneddtitle"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/carprogress"
+                    android:layout_marginLeft="19dp"
+                    android:background="@drawable/shape_bg_round_persent"
+                    />
+
+                <TextView
+                    android:id="@+id/persenttitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/burneddtitle"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_toRightOf="@+id/persent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/chart_head_goal_progress"
+                    android:textColor="@color/value_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/persentvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/burnedvalue"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=""
+                    android:textColor="#5ac8fb"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dailyhead"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="#f4f4f4"
+                android:layout_below="@+id/toplayer">
+
+
+                <TextView
+                    android:id="@+id/dailytitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical|left"
+                    android:layout_marginLeft="@dimen/edeg_size"
+                    android:text="@string/chart_dairy"
+                    android:textColor="@color/head_title_color"
+                    android:textSize="@dimen/head_title_size" />
+            </RelativeLayout>
+
+            <WebView
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@+id/dailyhead"
+                android:background="#00000000"
+                android:visibility="invisible" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

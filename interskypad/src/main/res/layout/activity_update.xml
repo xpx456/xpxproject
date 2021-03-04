@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dip"
+    android:layout_height="240dip"
+    android:background="@drawable/shape_setting" >
+
+    <RelativeLayout
+        android:id="@+id/updata_head_layer"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/updata_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:singleLine="true"
+            android:text="同步数据"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:background="#cdccd1" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/updata_progress"
+        android:layout_width="match_parent"
+        android:layout_height="15dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:progressDrawable="@drawable/mediacontroller_seekbar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="1000" />
+
+    <TextView
+        android:id="@+id/progress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="16dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000"
+        android:textColor="#ffffff"
+        android:textSize="14dp"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/updata_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@+id/progress_text"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:text="" />
+    
+        <TextView
+        android:id="@+id/btn_cancle"
+        android:layout_width="100dip"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="20dp"
+        android:textColor="#4da3f5"
+        android:layout_marginBottom="5dip"
+        android:text="取消" />
+
+    <TextView
+        android:id="@+id/btn_backgound"
+        android:layout_width="100dip"
+        android:layout_height="40dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="20dp"
+        android:textColor="#4da3f5"
+        android:layout_marginBottom="5dip"
+        android:text="后台进行" />
+</RelativeLayout>

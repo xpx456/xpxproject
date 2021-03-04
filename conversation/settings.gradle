@@ -1,0 +1,1 @@
+include ':intersky', ':interskypad', ':appbase', ':autoupdate', ':budge', ':chat', ':conversation', ':document', ':filetools', ':function', ':json', ':leave', ':mail', ':mywidget', ':notice', ':oa', ':riche', ':scan', ':schedule', ':select', ':talk', ':task', ':toolbar', ':vote', ':workreport', ':xpxnet', ':AppUtils'

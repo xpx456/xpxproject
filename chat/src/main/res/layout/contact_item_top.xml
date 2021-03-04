@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:id="@+id/conversationlayer"
+        android:layout_width="match_parent"
+        android:layout_height="67dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#e9f0fa">
+
+
+        <ImageView
+            android:id="@+id/contact_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/bunselect">
+        </ImageView>
+
+
+        <TextView
+            android:id="@+id/conversation_title"
+            android:layout_width="match_parent"
+            android:layout_height="25dip"
+            android:layout_toRightOf="@+id/contact_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dip"
+            android:gravity="left|center_vertical"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:text="@string/button_word_selectall"
+            android:textSize="16dp" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttomline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="20dp"
+        android:background="#ececec"
+        android:layout_below="@+id/conversationlayer">
+    </RelativeLayout>
+
+</RelativeLayout >

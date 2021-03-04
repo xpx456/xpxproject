@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/content_layer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@+id/unit"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:maxLines="1"
+            android:gravity="left|center"
+            android:textColor="@color/textcolor2"
+            android:text="asdfas"
+            android:textSize="14dp" />
+
+        <RelativeLayout
+            android:id="@+id/content5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content1"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/image_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contentlayer"
+                android:background="#ffffff"
+                android:orientation="vertical"></LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:textColor="@color/navBarBkColor"
+            android:background="#00000000"
+            android:text="@string/task_add_attachemtnt"
+            android:hint=""
+            android:textColorHint="@color/text1"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/content_layer"
+        android:layout_marginTop="10dp"
+        android:background="@color/strokecolor">
+    </RelativeLayout>
+</RelativeLayout>

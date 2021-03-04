@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/example"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/addstage"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_bg_template_task_add">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:text="+"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|left"
+                />
+
+            <TextView
+                android:id="@+id/addtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/nomal_edit_size"
+                android:text="@string/project_task_view_add"
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|left"
+                android:layout_toRightOf="@+id/add"
+                android:layout_marginLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="login_little">20px</dimen>
+    <dimen name="login_edit">20px</dimen>
+    <dimen name="mian_btn">50px</dimen>
+</resources>

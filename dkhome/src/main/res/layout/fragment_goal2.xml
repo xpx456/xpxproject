@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <ScrollView
+        android:id="@+id/deviceset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/line4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <TextView
+                android:id="@+id/goal_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:gravity="center_vertical|center_horizontal"
+                android:text=""
+                android:textColor="@color/form_title_color"
+                android:textSize="@dimen/form_title_size" />
+
+
+            <EditText
+                android:id="@+id/goal_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/goal_title"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:background="#00000000"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint=""
+                android:inputType="number"
+                android:textColor="@color/form_value_color"
+                android:textColorHint="@color/form_title_color"
+                android:textSize="@dimen/form_value_size" />
+
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/goal_value"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:background="#e5e5e5" />
+
+
+            <TextView
+                android:id="@+id/day_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:gravity="center_vertical|center_horizontal"
+                android:text=""
+                android:textColor="@color/form_title_color"
+                android:textSize="@dimen/form_title_size" />
+
+
+            <EditText
+                android:id="@+id/day_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/day_title"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:background="#00000000"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint=""
+                android:inputType="number"
+                android:textColor="@color/form_value_color"
+                android:textColorHint="@color/form_title_color"
+                android:textSize="@dimen/form_value_size" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/day_value"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:background="#e5e5e5" />
+
+
+
+
+            <TextView
+                android:id="@+id/carl_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/goal_carl_day"
+                android:textColor="@color/form_title_color"
+                android:textSize="@dimen/form_title_size" />
+
+
+            <TextView
+                android:id="@+id/carl_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/carl_title"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:background="#00000000"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint=""
+                android:inputType="number"
+                android:textColor="@color/form_value_color"
+                android:textColorHint="@color/form_title_color"
+                android:textSize="@dimen/form_value_size" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/carl_value"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:background="#e5e5e5" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/btn_finish"
+        android:background="#e5e5e5" />
+
+    <TextView
+        android:id="@+id/btn_finish"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#ffffff"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/health_finish"
+        android:textColor="@color/select_color"
+        android:textSize="@dimen/form_title_size" />
+</RelativeLayout>

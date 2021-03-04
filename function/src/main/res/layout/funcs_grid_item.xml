@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+
+    <RelativeLayout
+        android:id="@+id/fun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/fun_img"
+            android:layout_width="48.0dip"
+            android:layout_height="48.0dip"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/fun_text"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@+id/fun_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dip"
+            android:ellipsize="end"
+            android:gravity="top|center_horizontal"
+            android:maxLines="2"
+            android:textColor="#23272E"
+            android:textSize="11dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/hit"
+        android:layout_width="16.0dip"
+        android:layout_height="16.0dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/shape_hit_bg_red"
+        android:textColor="#ffffff"
+        android:visibility="invisible"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="9dp"/>
+
+</RelativeLayout >

@@ -1,0 +1,35 @@
+<resources>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="PopupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_out_from_buttom</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_from_buttom</item>
+    </style>
+
+
+    <style name="popAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_buttom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_from_buttom</item>
+    </style>
+
+    <style name="PopupAnimationLeft" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_out_from_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_from_left</item>
+    </style>
+
+
+    <style name="PopupAnimationTop" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_out_from_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_from_top</item>
+    </style>
+
+    <style name="popAnimation2" parent="android:Animation">
+    </style>
+</resources>

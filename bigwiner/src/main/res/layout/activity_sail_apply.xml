@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff" />
+
+
+    <RelativeLayout
+        android:id="@+id/headlayer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_below="@+id/stutebar"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:id="@+id/titlelayer"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentTop="true"
+            android:background="#00000000">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/back2" />
+
+            <TextView
+                android:id="@+id/titletext"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/sail_apply_title"
+                android:textColor="@color/txt_nomal"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cname"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_below="@+id/headlayer"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/cnametxt"
+            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:text="@string/sail_apply_cname"
+            />
+
+
+        <TextView
+            android:id="@+id/cnamevalue"
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/cnametxt"
+            android:layout_centerVertical="true"
+            android:textColorHint="#999999"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:gravity="left|center_vertical"
+            android:hint="@string/sail_apply_cname_hit"
+            android:layout_marginRight="10dp"
+            android:textSize="14dp"
+            android:background="#00000000" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/caddress"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_below="@+id/cname"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:background="#DDDDDD"
+            />
+
+        <TextView
+            android:id="@+id/caddresstxt"
+            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:text="@string/sail_apply_caddress"
+            />
+
+
+        <TextView
+            android:id="@+id/caddressvalue"
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/caddresstxt"
+            android:layout_centerVertical="true"
+            android:textColorHint="#999999"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:hint="@string/sail_apply_caddress_hit"
+            android:gravity="left|center_vertical"
+            android:layout_marginRight="10dp"
+            android:textSize="14dp"
+            android:background="#00000000" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/contacts"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_below="@+id/caddress"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:background="#DDDDDD"
+            />
+
+        <TextView
+            android:id="@+id/contactstxt"
+            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:text="@string/sail_apply_contacts"
+            />
+
+
+        <EditText
+            android:id="@+id/contactsvalue"
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/contactstxt"
+            android:layout_centerVertical="true"
+            android:textColorHint="#999999"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:hint="@string/sail_apply_contacts_hit"
+            android:gravity="left|center_vertical"
+            android:layout_marginRight="10dp"
+            android:textSize="14dp"
+            android:background="#00000000" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mobil"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_below="@+id/contacts"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:background="#DDDDDD"
+            />
+
+        <TextView
+            android:id="@+id/mobiltxt"
+            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:text="@string/sail_apply_mobil"
+            />
+
+
+        <EditText
+            android:id="@+id/mobilvalue"
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/mobiltxt"
+            android:layout_centerVertical="true"
+            android:textColorHint="#999999"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:hint="@string/sail_apply_mobil_hit"
+            android:gravity="left|center_vertical"
+            android:layout_marginRight="10dp"
+            android:textSize="14dp"
+            android:background="#00000000" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/business"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobil"
+        android:minHeight="70dp"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:background="#DDDDDD"
+            />
+
+        <TextView
+            android:id="@+id/businesstxt"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:text="@string/sail_apply_business"
+            />
+
+
+        <EditText
+            android:id="@+id/businessvalue"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/businesstxt"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:textColorHint="#999999"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:gravity="left|top"
+            android:layout_marginRight="10dp"
+            android:hint="@string/sail_apply_business_hit"
+            android:textSize="14dp"
+            android:background="#00000000" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/join_in"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/business"
+        android:background="@drawable/shape_login_bg_btn"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/sail_btn_join"
+        />
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dip"
+    android:layout_height="50dip"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="60dip"
+        android:layout_height="50dip"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/fujian_img_big"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

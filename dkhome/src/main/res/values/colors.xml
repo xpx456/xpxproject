@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_color">#F5F5F5</color>
+    <color name="iosblue">#0082ff</color>
+    <color name="form_title_color">#a8a8a8</color>
+    <color name="form_value_color">#222222</color>
+    <color name="select_color">#ff5e3a</color>
+    <color name="value_color">#333333</color>
+    <color name="head_title_color">#999999</color>
+</resources>

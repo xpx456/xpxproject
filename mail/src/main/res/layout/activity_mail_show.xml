@@ -1,0 +1,409 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mail_show"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#ffffff"
+        android:layout_below="@id/stutebar">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+        
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/mail_buttom_layer"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_above="@+id/buttomaciton"
+        android:background="#f5f5f5">
+
+        <LinearLayout
+            android:id="@+id/mail_buttom_content_layer"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/mail_buttom_line"
+            android:background="#f5f5f5"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/mail_buttom_content_layer1"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:background="#00000000"></RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mail_buttom_content_layer2"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:background="#00000000"></RelativeLayout>
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/mail_buttom_repeat"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#f5f5f5" >-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/repeat"-->
+            <!--android:layout_width="40dip"-->
+            <!--android:layout_height="28dip"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/repeat" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/mail_buttom_delete"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#f5f5f5" >-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/delete"-->
+            <!--android:layout_width="40dip"-->
+            <!--android:layout_height="28dip"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/deletemail" />-->
+            <!--</RelativeLayout>-->
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/mail_buttom_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentTop="true"
+            android:background="#d6d6d6"></RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mail_buttom_layer"
+        android:layout_below="@+id/head"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:id="@+id/headlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/mail_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dip"
+                    android:gravity="top|left"
+                    android:textColor="#000000"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:id="@+id/open_detial_imf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mail_title"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dip"
+                    android:gravity="center|right"
+                    android:text="@string/mail_mailshowdetial"
+                    android:textColor="#589fef"
+                    android:textSize="15dp" />
+
+                <RelativeLayout
+                    android:id="@+id/imf_lyaer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mail_title"
+                    android:layout_marginTop="5dip"
+                    android:layout_toLeftOf="@+id/open_detial_imf"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/fajian_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dip"
+                        android:gravity="top|left"
+                        android:text="@string/mail_fajianren"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <TextView
+                        android:id="@+id/fajian_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_toRightOf="@+id/fajian_title"
+                        android:gravity="top|left"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <TextView
+                        android:id="@+id/shoujian_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fajian_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:gravity="top|left"
+                        android:text="@string/mail_shoujianren"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <TextView
+                        android:id="@+id/shoujian_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fajian_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_toRightOf="@+id/shoujian_title"
+                        android:gravity="top|left"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <TextView
+                        android:id="@+id/cc_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shoujian_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:gravity="top|left"
+                        android:text="@string/mail_chaosong"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <TextView
+                        android:id="@+id/cc_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shoujian_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_toRightOf="@+id/cc_title"
+                        android:gravity="top|left"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <TextView
+                        android:id="@+id/lcc_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cc_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:gravity="top|left"
+                        android:text="@string/mail_neibuchaosong"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <TextView
+                        android:id="@+id/lcc_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cc_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_toRightOf="@+id/lcc_title"
+                        android:gravity="top|left"
+                        android:textColor="#bababa"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <RelativeLayout
+                        android:id="@+id/time_layer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lcc_content"
+                        android:layout_marginTop="5dip"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/time_title_ex"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:gravity="top|left"
+                            android:text="@string/mail_neibuchaosong"
+                            android:textColor="#bababa"
+                            android:textSize="@dimen/mail_show_size"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/time_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@+id/time_title_ex"
+                            android:layout_marginLeft="10dip"
+                            android:gravity="top|left"
+                            android:text="@string/mail_shijian"
+                            android:textColor="#bababa"
+                            android:textSize="@dimen/mail_show_size" />
+
+                        <TextView
+                            android:id="@+id/time_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            android:layout_toRightOf="@+id/time_title"
+                            android:gravity="top|left"
+                            android:textColor="#bababa"
+                            android:textSize="@dimen/mail_show_size" />
+
+                        <ImageView
+                            android:id="@+id/fujianicon"
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:layout_marginLeft="80dip"
+                            android:layout_marginTop="3dp"
+                            android:layout_toRightOf="@+id/time_content"
+                            android:src="@drawable/attachment" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/imf_simple_lyaer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mail_title"
+                    android:layout_toLeftOf="@+id/open_detial_imf">
+
+                    <TextView
+                        android:id="@+id/detial_imf_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dip"
+                        android:gravity="top|left"
+                        android:textColor="#b3df56"
+                        android:textSize="@dimen/mail_show_size" />
+
+                    <ImageView
+                        android:id="@+id/detial_fujianicon"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/detial_imf_text"
+                        android:src="@drawable/attachment" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/head_buttom_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_below="@+id/headlayer"
+                android:layout_marginTop="5dip"
+                android:background="#bababa"></RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mail_webview_layer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/head_buttom_line"
+                android:background="#ffffff">
+
+                <WebView
+                    android:id="@+id/mail_webview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible"></WebView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/mail_fujian_lyaer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mail_webview_layer"
+                android:layout_marginTop="5dip"
+                android:background="#ffffff"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/theme_line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_below="@+id/mail_fujian_lyaer"
+                android:background="#eeeeee"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_below="@+id/theme_line1"
+                android:background="#00000000"></RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77000000"
+        android:visibility="gone"></RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        />
+</RelativeLayout>

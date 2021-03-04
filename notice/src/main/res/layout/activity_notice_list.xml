@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_busines2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/stutebar">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/keyword_system"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/teblayer"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:background="#ffffff"
+        android:layout_below="@+id/head">
+
+        <RelativeLayout
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="14dp"
+            android:background="@drawable/shape_bg_readbg"
+            >
+
+            <TextView
+                android:id="@+id/lefttext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/keyword_unread"
+                android:textColor="#ffffffff"
+                android:textSize="14sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/day"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_bg_readbgun">
+
+            <TextView
+                android:id="@+id/righttext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/keyword_read"
+                android:textColor="#8F9093"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <intersky.mywidget.NoScrollViewPager
+        android:id="@+id/load_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/teblayer"
+        android:layout_above="@+id/buttomaciton"
+        android:background="#f5f5f5"></intersky.mywidget.NoScrollViewPager>
+
+    <ImageView
+        android:id="@+id/creatnotice"
+        android:layout_width="56dp"
+        android:layout_height="58dip"
+        android:layout_above="@+id/buttomaciton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ncreat" />
+
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        />
+</RelativeLayout>

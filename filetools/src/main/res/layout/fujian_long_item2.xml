@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dip"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dip"
+        android:orientation="vertical" >
+
+
+        <ImageView
+            android:id="@+id/fujian_img_big"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:src="@drawable/plugin_camera_no_pictures"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/fujian_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/fujian_img_big"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:textColor="#ceced3"
+            android:textSize="14dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#ededed"
+            android:layout_alignParentBottom="true" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

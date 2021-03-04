@@ -1,0 +1,381 @@
+<resources>
+    <string name="app_name">Cargo Unions</string>
+
+    <string name="head_title_login">"登陆"</string>
+    <string name="login_phone_hit">手机号</string>
+    <string name="regiest_phone_hit">请输入手机号</string>
+    <string name="login_code_hit">登录密码</string>
+    <string name="login_check_code_hit">输入验证码</string>
+    <string name="area_title">国家/地区</string>
+    <string name="btn_login">登录</string>
+    <string name="head_title_register">"注册"</string>
+    <string name="login_xcode_hit">输入验证码</string>
+    <string name="login_code_confirm_hit">输入确认密码</string>
+    <string name="btn_getcode">获取验证码</string>
+    <string name="btn_register">手机快速注册</string>
+    <string name="btn_next">下一步</string>
+    <string name="quicklogin">快捷登录</string>
+    <string name="forget_password_set">找回密码</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="forget_submit">确认提交</string>
+    <string name="btn_setpassword">设置密码</string>
+    <string name="mobial_quick_regiest">手机号快速注册</string>
+    <string name="btn_regiest">注册</string>
+    <string name="confirm_code_send_to">验证码已发送至</string>
+    <string name="confirm_code_reget">后重新获取</string>
+    <string name="mobil_error">手机号不合法</string>
+    <string name="password_empty">密码不能为空</string>
+    <string name="confirm_code_hit">请输入手机验证码</string>
+    <string name="send_confirm_code">发送验证码</string>
+    <string name="share_success">分享成功</string>
+
+    <string name="password_code_hit">输入密码</string>
+    <string name="password_code_confrim">确认密码</string>
+    <string name="password_submit">确认提交</string>
+    <string name="password_vir">立即验证</string>
+    <string name="password_title">新密码</string>
+    <string name="password_change_title">修改密码</string>
+    <string name="password_msg">短信</string>
+    <string name="password_setp1">选择验证方式</string>
+    <string name="password_setp2">安全验证</string>
+    <string name="password_setp3">找回登录密码</string>
+    <string name="password_error">密码格式错误</string>
+    <string name="password_error2">密码输入不同</string>
+    <string name="passwordi_imf">密码长度8-32位，须包含数字、字母、符号至少2种或以上元素。</string>
+    <string name="password_old_code_hit">输入原密码</string>
+    <string name="password_new_code_hit">输入新密码</string>
+    <string name="password_new_code_confrim">输入确认密码</string>
+    <string name="getpassword_title">找回密码</string>
+    <string name="phone_code">手机号和验证码不匹配</string>
+
+    <string name="module_name_conversation">消息</string>
+    <string name="module_name_contacts">人脉</string>
+    <string name="module_name_source">资源</string>
+    <string name="module_name_tools">工具</string>
+    <string name="module_name_my">我的</string>
+    <string name="module_name_sail">SAIL</string>
+
+    <string name="share_member">名片</string>
+    <string name="share_cmember">公司名片</string>
+
+    <string name="conversation_all">全部</string>
+    <string name="conversation_notice">公告</string>
+    <string name="conversation_news">新闻</string>
+    <string name="conversation_meeting">会议</string>
+    <string name="conversation_chat">聊天记录</string>
+    <string name="conversation_gong">共</string>
+    <string name="conversation_ge">个</string>
+    <string name="conversation_friend">对话</string>
+    <string name="conversation_friend_add">添加好友</string>
+    <string name="conversation_join">立即报名</string>
+    <string name="conversation_joined">已报名</string>
+    <string name="conversation_un_joined">未报名</string>
+    <string name="conversation_un_signed">未签到</string>
+    <string name="conversation_meeting_detial_companytitle">参会企业</string>
+    <string name="conversation_meeting_detial_btn_request">反馈问卷</string>
+    <string name="conversation_meeting_detial_btn_attence">会议签到</string>
+    <string name="conversation_meeting_detial_btn_join">立即报名</string>
+
+    <string name="chat_download">正在下载</string>
+
+    <string name="contacts_title">人脉圈</string>
+    <string name="contacts_my">我的圈子</string>
+    <string name="contacts_head_city">所在城市</string>
+    <string name="contacts_head_type">业务类型</string>
+    <string name="contacts_head_area">业务区域</string>
+    <string name="contacts_list_title">我的人脉圈</string>
+    <string name="contacts_talk">正在聊天</string>
+    <string name="contacts_confirm">已认证</string>
+    <string name="contacts_unconfirm">未认证</string>
+    <string name="contacts_chating">我的好友</string>
+    <string name="contacts_add_success">添加成功</string>
+    <string name="contacts_del_success">取消成功</string>
+    <string name="contacts_un_confrim">未认证</string>
+
+    <string name="chat_title_1">与</string>
+    <string name="chat_title_2">的聊天</string>
+
+    <string name="company_country">国家：</string>
+    <string name="company_city">城市：</string>
+    <string name="company_address">地址：</string>
+    <string name="company_phone">电话：</string>
+    <string name="company_fax">传真：</string>
+    <string name="company_mail">邮箱：</string>
+    <string name="company_web">网址：</string>
+    <string name="company_characteristic">优势：</string>
+    <string name="company_detial">介绍</string>
+    <string name="company_contacts">成员</string>
+    <string name="company_marginamount">赔付金</string>
+    <string name="company_issail">SAIL会员</string>
+    <string name="company_nosail">非SAIL会员</string>
+    <string name="company_not_exist">该公司已不在系统中</string>
+
+    <string name="company_edit_title">编辑公司名片</string>
+    <string name="company_edit_logo">企业LOGO</string>
+    <string name="company_edit_bg">企业展示页背景</string>
+    <string name="company_edit_sailno">营业执照号</string>
+    <string name="company_edit_sailno_hit">请输入公司营业执照号码</string>
+    <string name="company_edit_taxno">税务登记证号</string>
+    <string name="company_edit_taxno_hit">请输入公司税务登记证号</string>
+    <string name="company_edit_city">城市</string>
+    <string name="company_edit_city_hit">请选择所在城市</string>
+    <string name="company_edit_provience">省份</string>
+    <string name="company_edit_provience_hit">请选择所在省份</string>
+    <string name="company_edit_tel">电话</string>
+    <string name="company_edit_tel_hit">请输入您的公司电话</string>
+    <string name="company_edit_fax">传真</string>
+    <string name="company_edit_fax_hit">请输入您的公司传真</string>
+    <string name="company_edit_mail">邮箱</string>
+    <string name="company_edit_mail_hit">请输入公司邮箱</string>
+    <string name="company_edit_web">公司网址</string>
+    <string name="company_edit_web_hit">请输入您的公司网址</string>
+    <string name="company_edit_ename">公司英文名称</string>
+    <string name="company_edit_ename_hit">请输入您的公司英文名称</string>
+    <string name="company_edit_name">公司名称</string>
+    <string name="company_edit_name_hit">请输入您的公司名称</string>
+    <string name="company_edit_address">公司地址</string>
+    <string name="company_edit_address_hit">请输入您的公司地址</string>
+    <string name="company_edit_better">公司优势</string>
+    <string name="company_edit_better_hit">请输入公司优势</string>
+    <string name="company_confirm_abuout">关于赔付金</string>
+    <string name="company_select_provience_before">请先选择省份</string>
+
+    <string name="attdence_mysrc">我的资源</string>
+    <string name="attdence_wantsrc">我要的资源</string>
+    <string name="attdence_title">报名</string>
+    <string name="attdence_p_title">参会人员</string>
+    <string name="attdence_p_attdenct_person">查看参会人员</string>
+    <string name="attdenct_person_title">参会人员</string>
+    <string name="attdence_p_one_chat">1对1沟通管理</string>
+    <string name="attdence_candate">可约</string>
+    <string name="attdence_need">需处理</string>
+    <string name="attdence_ready">已处理</string>
+    <string name="attdence_success">签到成功</string>
+    <string name="attdence_txt1">第</string>
+    <string name="attdence_txt2">个</string>
+    <string name="attdence_txt3">签到成功哦！</string>
+    <string name="attdence_txt4">有序进场 对号入座</string>
+    <string name="join_success">报名成功</string>
+
+    <string name="tools_othre_title">其他小工具</string>
+    <string name="tools_main_fun1">整柜查询</string>
+    <string name="tools_main_fun2">特种柜查询</string>
+    <string name="tools_main_fun3">空运</string>
+    <string name="tools_main_fun4">拼箱</string>
+    <string name="tools_main_fun5">拖卡</string>
+    <string name="tools_main_fun6">SAIL</string>
+
+
+    <string name="my_edit_title">编辑资料</string>
+    <string name="my_photo_title">更换封面</string>
+    <string name="my_btn_talk">聊天</string>
+    <string name="my_btn_add">好友</string>
+    <string name="my_btn_del">取消</string>
+    <string name="my_imf_title_des">简介：</string>
+    <string name="my_imf_title_type">业务类型：</string>
+    <string name="my_imf_title_area">业务区域：</string>
+    <string name="my_imf_title_company">公司：</string>
+    <string name="my_imf_title_address">地址：</string>
+    <string name="my_imf_title_derty">职称：</string>
+    <string name="my_imf_title_mail">邮箱：</string>+
+    <string name="my_btn_detial">查看公司名片</string>
+    <string name="my_btn_edit">编辑公司名片</string>
+    <string name="my_des">简介：</string>
+    <string name="my_cycle">我的圈子</string>
+    <string name="my_history">历史记录</string>
+    <string name="my_photo_select">相册</string>
+    <string name="my_take_photo">拍照</string>
+    <string name="my_code">我的二维码</string>
+    <string name="my_code_imf">扫一扫二维码图案，加我好友</string>
+    <string name="des_temp">这家伙很懒什么都没留下</string>
+
+    <string name="userinfo_title">修改个人资料</string>
+    <string name="userinfo_headimg">头像</string>
+    <string name="userinfo_headimg_click">点击更换</string>
+    <string name="userinfo_mobil">手机号</string>
+    <string name="userinfo_name">姓名</string>
+    <string name="userinfo_mail">邮箱</string>
+    <string name="userinfo_sex">性别</string>
+    <string name="userinfo_sex_hit">请选择您的性别</string>
+    <string name="userinfo_sex_title">请选性别</string>
+    <string name="userinfo_city">城市</string>
+    <string name="userinfo_city_hit">请选择您的城市</string>
+    <string name="userinfo_type">业务类型</string>
+    <string name="userinfo_type_hit">请选择业务类型</string>
+    <string name="userinfo_area">业务区域</string>
+    <string name="userinfo_area_hit">请选择业务区域</string>
+    <string name="userinfo_position">职位</string>
+    <string name="userinfo_name_hit">请填写您的姓名</string>
+    <string name="userinfo_mail_hit">请填写您的邮箱</string>
+    <string name="userinfo_position_hit">请选择您的职位</string>
+    <string name="userinfo_cname">公司名称</string>
+    <string name="userinfo_cname_hit">请选择您的公司名称</string>
+    <string name="userinfo_caddress">公司地址</string>
+    <string name="userinfo_caddress_hit">请填写您的公司地址</string>
+    <string name="userinfo_memo">个人简介</string>
+    <string name="userinfo_memo_hit">请填写您的个人简介
+写点什么</string>
+
+    <string name="history_title">历史记录</string>
+    <string name="history_scan">浏览历史</string>
+    <string name="history_active">活动记录</string>
+
+    <string name="meeting_contact">联系负责人</string>
+    <string name="meeting_check">查看参会人员</string>
+    <string name="meeting_count">人数限制：</string>
+    <string name="meeting_other">其他说明：</string>
+    <string name="meeting_contractor">协办方</string>
+    <string name="meeting_sponsor">主办方</string>
+    <string name="meeting_contacter_phone">咨询电话</string>
+    <string name="keword_carmal">a</string>
+    <string name="meeting_light">轻点照亮</string>
+    <string name="meeting_light_close">轻点关闭</string>
+    <string name="meeting_sign_fail">签到失败</string>
+    <string name="meeting_try_again">请重新扫描签到</string>
+    <string name="meeting_zaoniao">早鸟票¥ </string>
+    <string name="meeting_putong">普通票¥ </string>
+    <string name="meeting_can_date">可约</string>
+    <string name="meeting_un_accept">未同意</string>
+    <string name="meeting_accept">已同意</string>
+    <string name="meeting_refous">已拒绝</string>
+    <string name="meeting_join_first">您还未报名，请先报名参加</string>
+    <string name="meeting_nu_start">会议未开始，不可签到</string>
+    <string name="meeting_signed">已签到</string>
+    <string name="meeting_address_empty">地址为空</string>
+    <string name="meeting_join_source">请填写完整报名信息</string>
+
+    <string name="source_position">职位</string>
+    <string name="source_ports">口岸</string>
+    <string name="source_serices">服务</string>
+    <string name="source_routes">航线</string>
+    <string name="source_max">最多只能选择</string>
+    <string name="source_maxunit">个</string>
+    <string name="source_type_error">业务类型必须选同一种类</string>
+
+    <string name="search_result">搜索结果</string>
+    <string name="search_his">搜索记录</string>
+
+    <string name="histroy_title">历史记录</string>
+    <string name="histroy_type_join">会议报名</string>
+    <string name="histroy_type_meeting">会议</string>
+    <string name="histroy_type_new">新闻</string>
+    <string name="histroy_type_notice">公告</string>
+
+    <string name="system_set_pic_fail">设置图片失败</string>
+    <string name="system_no_login">您还未登录，请点击登录</string>
+    <string name="system_exist">2秒之内再按一次返回键退出</string>
+    <string name="system_addall">已经加载全部</string>
+    <string name="system_select_country">选择国家/地区</string>
+    <string name="system_location">定位到当前城市</string>
+
+    <string name="sail_title">国际物流供应商联盟</string>
+    <string name="sail_des">SAIL简介</string>
+    <string name="sail_person">SAIL成员查看</string>
+    <string name="sail_person_title">SAIL成员</string>
+    <string name="sail_red_black">红黑榜</string>
+    <string name="sail_btn_join">申请加入</string>
+    <string name="sail_access">开通</string>
+    <string name="sail_unaccess">未开通</string>
+
+    <string name="sail_apply_title">申请加入</string>
+    <string name="sail_apply_cname">公司名称</string>
+    <string name="sail_apply_cname_hit">请填写您的公司名称</string>
+    <string name="sail_apply_caddress">公司地址</string>
+    <string name="sail_apply_caddress_hit">请填写您的公司地址</string>
+    <string name="sail_apply_contacts">联系人</string>
+    <string name="sail_apply_contacts_hit">请填写您的姓名</string>
+    <string name="sail_apply_mobil">手机号</string>
+    <string name="sail_apply_mobil_hit">请填写您的手机号</string>
+    <string name="sail_apply_business">主营业务</string>
+    <string name="sail_apply_business_hit">请填写您的主营业务</string>
+
+    <string name="sail_bmember_title">SAIL成员</string>
+    <string name="sail_bmember_money">赔付金</string>
+    <string name="sail_bmember_sial">SAIL会员</string>
+
+    <string name="sail_complaint_request">经营户反映</string>
+    <string name="sail_complaint_result">调查结果</string>
+    <string name="sail_complaint_company">投诉企业</string>
+    <string name="sail_complaint_detial">投诉详情</string>
+
+    <string name="sail_error_member">您还不是SAIL会员，无法使用该功能</string>
+
+    <string name="sail_des_title">SAIL简介</string>
+
+    <string name="setting_title">设置</string>
+    <string name="setting_userinfo">编辑个人资料</string>
+    <string name="setting_password">修改密码</string>
+    <string name="setting_confirm">我要认证（拍照上传一张本人的名片）</string>
+    <string name="setting_cleanchat">清空聊天记录</string>
+    <string name="setting_cleanchat_title">是否清空聊天记录?</string>
+    <string name="setting_cleanchat_success">已清除所有聊天记录</string>
+    <string name="setting_exast_title">是否退出Cargo Unions?</string>
+    <string name="setting_about">关于Cargo Unions</string>
+    <string name="setting_exist">退出登录</string>
+    <string name="csetting_upload_success">上传成功</string>
+
+    <string name="setting_confirm_upload">个人认证需要上传一张个人名片</string>
+    <string name="setting_confirm_upload_btn">上传资料</string>
+
+    <string name="source_stute_open">正常</string>
+    <string name="source_stute_open_t">正常</string>
+    <string name="source_stute_close">已关闭</string>
+
+    <string name="source_type_title">资源</string>
+    <string name="source_type_all">全部资源</string>
+    <string name="source_type_want">需求资源</string>
+    <string name="source_type_offer">提供资源</string>
+    <string name="source_btn_add">添加资源</string>
+    <string name="source_btn_my">我的资源</string>
+    <string name="source_btn_collect">我的收藏</string>
+    <string name="source_do_collect">收藏</string>
+    <string name="source_add_type_want">发布需求资源</string>
+    <string name="source_add_type_offer">发布提供资源</string>
+    <string name="source_collect_title">收藏资源</string>
+    <string name="source_creat_title">发布新资源</string>
+    <string name="source_edit_title">编辑资源</string>
+    <string name="source_detial_title">资源详情</string>
+    <string name="source_btn_public">新增发布</string>
+    <string name="source_name_hit">请填写标题</string>
+    <string name="source_name">标题</string>
+    <string name="source_port">口岸</string>
+
+    <string name="source_collect">收藏资源</string>
+    <string name="source_collect_cancle">取消收藏</string>
+    <string name="source_port_hit">请选择口岸</string>
+    <string name="source_memo">资源描述</string>
+    <string name="source_memo_hit">请填写您的资源描述
+写点什么</string>
+    <string name="source_delete_title">确定要删除这条纪录吗</string>
+    <string name="source_open_title">确定要开启这条资源记录吗？开启后其他用户将可见。</string>
+    <string name="source_close_title">确定要关闭这条资源记录吗，关闭后其他用户将不可见。</string>
+    <string name="source_out">已过期</string>
+    <string name="source_start">开始日期</string>
+    <string name="source_mid">至</string>
+    <string name="source_end">截止日期</string>
+    <string name="source_start2">起始</string>
+    <string name="source_end2">截止</string>
+    <string name="source_public_time">发布时间</string>
+    <string name="source_des">描述:</string>
+    <string name="source_port2">口岸:</string>
+    <string name="source_type">业务类型:</string>
+    <string name="source_area">业务区域:</string>
+    <string name="message_begin_end">结束时间不能早于开始时间</string>
+
+    <string name="abouthuohuo">关于Cargo Unions</string>
+    <string name="webAddress">官方网站：www.sail.org.cn</string>
+    <string name="contectUs">联系我们：Elaine@sail.org.cn</string>
+    <string name="sinaWeibo">微信公众号：大赢家物流</string>
+    <string name="tele">服务热线：400-888-1727</string>
+    <string name="company">杭州同频教育科技有限公司</string>
+    <string name="mail_error">邮箱格式错误</string>
+    <string name="mail_hit">请输入邮箱地址</string>
+
+    <string name="kick_word">您的账号在别的设备登陆，请重新登陆</string>
+
+    <string name="confirm_source_title">认证后才可以发布资源</string>
+    <string name="confirm_source_meeting">认证后才可以报名</string>
+    <string name="confirm_setting">点击确定前往认证</string>
+
+    <string name="token_error">您的账号长时间未登录或在别的设备登陆，请重新登陆。</string>
+</resources>

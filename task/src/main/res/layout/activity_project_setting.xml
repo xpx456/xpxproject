@@ -1,0 +1,242 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/example"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteex">
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/stutebar"
+        android:background="#ffffff">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/project_more_setting"
+            android:textColor="#ff23272e"
+            android:textSize="17sp" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head"
+        android:layout_above="@+id/buttomaciton"
+        android:background="@color/whiteex">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/top_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/swich"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/project_setting_top"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+
+                <Switch
+                    android:id="@+id/swich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:switchMinWidth="20dp"
+                    android:textOn=""
+                    android:textOff=""
+                    android:thumb="@drawable/thumb"
+                    android:track="@drawable/track" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/whiteex">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/save_tempal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/save_tempal_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/project_setting_savetempal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/power"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/power_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/project_setting_power"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <TextView
+                    android:id="@+id/power_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/power_title"
+                    android:layout_toLeftOf="@+id/array2"
+                    android:layout_marginRight="5dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:textColor="@color/viewfinder_mask"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+
+                <ImageView
+                    android:id="@+id/array2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arraw"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/whiteex">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contral"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/contral_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/project_setting_contral"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <TextView
+                    android:id="@+id/contral_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/contral_title"
+                    android:layout_toLeftOf="@+id/array1"
+                    android:layout_marginRight="10dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:textColor="@color/viewfinder_mask"
+                    android:textSize="@dimen/nomal_edit_size" />
+
+                <ImageView
+                    android:id="@+id/array1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arraw"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/whiteex">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="10dp"
+                android:background="#00000000">
+
+                <TextView
+                    android:id="@+id/buttom_btn"
+                    android:layout_width="300dp"
+                    android:layout_height="55dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/shape_btn_bg_red"
+                    android:text="@string/delete_project"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/nomal_edit_size" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+</RelativeLayout>

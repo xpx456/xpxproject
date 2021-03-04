@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    >
+
+    <TextView
+        android:id="@+id/conversation_lable"
+        android:layout_width="wrap_content"
+        android:layout_height="23dip"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginRight="3dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:background="@drawable/conversation_lable_shape_green"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="#ffffff"
+        android:text=""
+        android:textSize="12dp" />
+
+
+</RelativeLayout >

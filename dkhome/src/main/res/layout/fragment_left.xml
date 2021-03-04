@@ -1,0 +1,292 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="295dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+           <intersky.mywidget.CircleImageView
+                android:id="@+id/icon"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="16dip"
+                android:src="@drawable/default_user"
+                />
+
+            <TextView
+                android:id="@+id/leftname"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dip"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="100dp"
+                android:gravity="center_vertical|left"
+                android:singleLine="true"
+                android:textColor="@color/value_color"
+                android:text=""
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/leftcreat"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dip"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_below="@+id/leftname"
+                android:gravity="center_vertical|left"
+                android:singleLine="true"
+                android:textColor="@color/form_title_color"
+                android:text=""
+                android:textSize="17sp"/>
+
+            <RelativeLayout
+                android:id="@+id/schedule"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dip"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/schedule_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/dairys" />
+
+                <TextView
+                    android:id="@+id/schedule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:layout_toRightOf="@+id/schedule_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="@color/value_color"
+                    android:text="@string/main_left_schedule"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/eat"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/schedule"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/eat_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/eats" />
+
+                <TextView
+                    android:id="@+id/eat_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:layout_toRightOf="@+id/eat_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="@color/value_color"
+                    android:text="@string/main_left_eat"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/data"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/eat"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/data_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/charts" />
+
+                <TextView
+                    android:id="@+id/data_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:layout_toRightOf="@+id/data_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="@color/value_color"
+                    android:text="@string/main_left_data"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/data"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/user_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/users" />
+
+                <TextView
+                    android:id="@+id/user_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:layout_toRightOf="@+id/user_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="@color/value_color"
+                    android:text="@string/main_left_user"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/health"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/user"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/health_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/healths" />
+
+                <TextView
+                    android:id="@+id/health_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:layout_toRightOf="@+id/health_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="@color/value_color"
+                    android:text="@string/main_left_health"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/goal"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/health"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/goal_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/goals" />
+
+                <TextView
+                    android:id="@+id/goal_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:layout_toRightOf="@+id/goal_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="@color/value_color"
+                    android:text="@string/main_left_goal"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/device"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/goal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/device_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/devices" />
+
+                <TextView
+                    android:id="@+id/device_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dip"
+                    android:layout_toRightOf="@+id/device_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:textColor="@color/value_color"
+                    android:text="@string/main_left_device"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

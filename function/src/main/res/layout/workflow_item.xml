@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f5f5f5"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/view"
+        >
+
+        <ImageView
+            android:id="@+id/caption"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/workflowitem"
+            />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/caption"
+                android:layout_gravity="left|center_vertical"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_toRightOf="@+id/caption"
+                android:layout_toLeftOf="@+id/date"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:ellipsize="end"
+                android:textColor="#999999"
+                android:maxLines="1"
+                android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_below="@+id/title"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginTop="4dp"
+            android:textSize="13sp"
+            android:textColor="#999999"
+            android:layout_marginRight="11dp" />
+
+    </RelativeLayout>
+</RelativeLayout>

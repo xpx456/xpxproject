@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/timelayer"
+        android:layout_width="fill_parent"
+        android:layout_height="19dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_chat_time_bg"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
+
+
+        <intersky.mywidget.CircleImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/contact_detial_head"
+            android:focusable="false" />
+
+        <RelativeLayout
+            android:id="@+id/textcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:layout_marginLeft="15dp"
+            android:background="#00000000">
+
+            <ImageView
+                android:id="@+id/tv_chatcontent"
+                style="@style/Widget.AppCompat.ActionButton.Overflow"
+                android:layout_width="wrap_content"
+                android:maxWidth="148dp"
+                android:layout_height="148dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart" />
+
+            <Button
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="148dp"
+                android:maxWidth="148dp"
+                android:background="#00000000"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="#ffffff"
+                android:gravity="center_vertical|center_horizontal"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

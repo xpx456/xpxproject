@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">畅享云</string>
+
+
+    <string name="login_title_service">服务器</string>
+    <string name="login_title_user">用户名</string>
+    <string name="login_title_password">密　码</string>
+    <string name="activity_title_login">登录</string>
+
+    <string name="main_conversation">会话</string>
+    <string name="main_word">工作</string>
+    <string name="main_my">我</string>
+    <string name="main_contact">通讯录</string>
+
+    <string name="message_claen">确定要清空所有的缓存数据?</string>
+    <string name="keyword_cleansuccess">清理成功</string>
+    <string name="message_exit">退出后不会删除任何历史数据，下次登陆依然可以使用本账号</string>
+
+    <string name="get_ip_error">获取代理地址失败，请检查服务器配置</string>
+
+
+    <string name="xml_dangqiandenglu">当前登录用户</string>
+    <string name="xml_fuwuqishezhi">服务器设置</string>
+    <string name="xml_cleandata">清空所有缓存数据</string>
+    <string name="xml_dark">暗黑模式</string>
+
+    <string name="safe_title">畅享云用户协议和隐私声明</string>
+    <string name="safe_message">请务必仔细阅读充分理解</string>
+    <string name="safe_message_end">的各项条款。点击同意，开始接受我们的服务。</string>
+    <string name="activity_title_servicelist">服务器列表</string>
+    <string name="servicelist_add">添加</string>
+    <string name="servicelist_deleteservice">删除服务器？</string>
+    <string name="dialog_word_tip">提示</string>
+    <string name="activity_title_servicesetting">服务器配置</string>
+    <string name="servicesetting_ip">IP</string>
+    <string name="servicesetting_name">名　称:</string>
+    <string name="servicesetting_pattern">模　式:</string>
+    <string name="servicesetting_address">IP地址:</string>
+    <string name="servicesetting_code">代理码:</string>
+    <string name="servicesetting_port">端　口:</string>
+    <string name="error_msg_port">端口输入有误</string>
+    <string name="servicelist_head_name">名称</string>
+    <string name="servicelist_head_address">IP地址</string>
+    <string name="servicelist_head_port">端口</string>
+    <string name="servicesetting_agent">代理远程</string>
+    <string name="servicesetting_https">HTTPS:</string>
+
+    <string name="conversation_msg">聊天</string>
+    <string name="conversation_notice">公告</string>
+    <string name="conversation_task">任务</string>
+    <string name="conversation_leave">请假</string>
+    <string name="conversation_report">工作汇报</string>
+    <string name="conversation_vote">投票</string>
+    <string name="conversation_mail">邮件</string>
+    <string name="conversation_approve">审批</string>
+    <string name="conversation_reminder">业务示警</string>
+    <string name="conversation_gropmess">团队消息</string>
+    <string name="conversation_iwebapp">其他消息</string>
+    <string name="conversation_iwebsystem">系统消息</string>
+    <string name="conversation_document">文档管理</string>
+    <string name="conversation_updata">更新</string>
+
+
+    <string name="safe_loing_title1">扫描二维码登录</string>
+    <string name="safe_loing_title2">扫描结果</string>
+
+    <string name="webAddress">官方网站:　http://www.intersky.com.cn</string>
+    <string name="contectUs">联系我们:　services@intersky.com.cn</string>
+    <string name="sinaWeibo">新浪微博:　@畅想软件</string>
+    <string name="tele">服务热线:　4006-722-622</string>
+    <string name="aboutIntersky">关于畅享云</string>
+
+    <string name="adduse">添加常用应用置顶</string>
+    <string name="use">查找应用</string>
+    <string name="register_cloud_fail">注册云推送失败</string>
+
+    <string name="select_now">已选中</string>
+    <string name="unit1">项</string>
+
+    <string name="confirm_add">确认添加</string>
+    <string name="icloud_specile">《畅享云用户协议和隐私声明》</string>
+    <string name="icloud_specile1">用户协议和隐私声明</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_cancle">分享取消</string>
+
+    <string name="permission_fail">权限申请失败</string>
+
+    <string name="click_show">点击查看:</string>
+
+    <string name="word_1">努力工作,是为了更好的生活</string>
+
+    <string name="my_work">我的工作</string>
+    <string name="my_all_work">全部应用</string>
+</resources>

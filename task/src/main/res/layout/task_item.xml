@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000">
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/project_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/v1"
+        android:background="@drawable/shape_bg_task_item">
+
+
+        <RelativeLayout
+            android:id="@+id/content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            >
+
+
+            <TextView
+                android:id="@+id/contact_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/isnew"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="11dp"
+                android:background="@drawable/contact_head"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/isnew"
+                android:layout_width="44dp"
+                android:layout_height="15dp"
+                android:background="@drawable/task_item_bg_new"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_alignParentRight="true"
+                android:maxLines="1"
+                android:text="@string/task_list_new"
+                android:textColor="#E94142"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="37dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@+id/contact_img"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    >
+                    <ImageView
+                        android:id="@+id/stare"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/stare"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/taskname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|left"
+                        android:layout_toRightOf="@+id/stare"
+                        android:layout_alignParentTop="true"
+                        android:text=""
+                        android:textColor="#23272E"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/taskdetestart"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_vertical|left"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="#8F9093"
+                    android:textSize="12dp" />
+                <TextView
+                    android:id="@+id/taskdeteend"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_vertical|left"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="#8F9093"
+                    android:textSize="12dp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/basetag"
+                            android:layout_width="4dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:background="#00000000"
+                            android:textSize="16dp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tag_1"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle1"
+                            android:textSize="16dp"
+                            android:visibility="visible" />
+
+
+                        <TextView
+                            android:id="@+id/tag_2"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle2"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tag_3"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle3"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tag_4"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle4"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tag_5"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle5"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/basetag2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:background="#00000000"
+                            android:textSize="16dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/detiallayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content1"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="#F0F2F4"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/dian2"
+                    android:layout_marginRight="10dp"
+                    android:text=""
+                    android:textSize="13sp"
+                    />
+
+
+
+                <View
+                    android:id="@+id/dian2"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/task_item_blue_dian"
+                    android:layout_toLeftOf="@+id/task_list_count_title"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    android:id="@+id/task_list_count_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/task_list_count"
+                    android:gravity="center_vertical|left"
+                    android:maxLines="1"
+                    android:text="@string/list"
+                    android:textColor="@color/textcolor"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/task_list_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/dian1"
+                    android:gravity="center_vertical|left"
+                    android:maxLines="1"
+                    android:text="2/2"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#1EA1F3"
+                    android:textSize="13sp" />
+
+
+
+                <View
+                    android:id="@+id/dian1"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/task_item_blue_dian"
+                    android:layout_toLeftOf="@+id/task_son_count_title"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    android:id="@+id/task_son_count_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/task_son_count"
+                    android:gravity="center_vertical|left"
+                    android:maxLines="1"
+                    android:text="@string/sontask"
+                    android:textColor="@color/textcolor"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/task_son_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical|left"
+                    android:maxLines="1"
+                    android:text="2/2"
+                    android:textColor="#1EA1F3"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

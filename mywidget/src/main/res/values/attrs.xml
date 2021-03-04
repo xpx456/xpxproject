@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <declare-styleable name="TextButton">
+        <attr name="shapeColor">
+            <enum name="blue" value="0"></enum>
+            <enum name="gray" value="1"></enum>
+            <enum name="green" value="2"></enum>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="max" format="integer"></attr>
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr name="onDrawable" format="reference" />
+        <attr name="offDrawable" format="reference" />
+        <attr name="thumbDrawable" format="reference" />
+        <attr name="thumb_margin" format="dimension|reference" />
+        <attr name="thumb_marginTop" format="dimension|reference" />
+        <attr name="thumb_marginBottom" format="dimension|reference" />
+        <attr name="thumb_marginLeft" format="dimension|reference" />
+        <attr name="thumb_marginRight" format="dimension|reference" />
+        <attr name="thumb_width" format="dimension|reference" />
+        <attr name="thumb_height" format="dimension|reference" />
+        <attr name="onColor" format="color|reference" />
+        <attr name="offColor" format="color|reference" />
+        <attr name="thumbColor" format="color|reference" />
+        <attr name="thumbPressedColor" format="color|reference" />
+        <attr name="animationVelocity" format="integer" />
+        <attr name="radius" format="integer" />
+        <attr name="measureFactor" format="float" />
+        <attr name="insetLeft" format="dimension|reference" />
+        <attr name="insetRight" format="dimension|reference" />
+        <attr name="insetTop" format="dimension|reference" />
+        <attr name="insetBottom" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="type" format="enum">
+            <enum name="circle" value="1" />
+            <enum name="round" value="2" />
+        </attr>
+        <attr name="iradius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TabHeadView">
+        <attr name="isScoll" format="boolean"></attr>
+        <attr name="colortxt1" format="color" />
+        <attr name="colortxt2" format="color" />
+        <attr name="colorline" format="color" />
+        <attr name="selectlingtype" format="integer" />
+        <attr name="colorlineselect" format="color" />
+        <attr name="itemheight" format="dimension" />
+        <attr name="textsizenomal" format="dimension" />
+        <attr name="textsizebig" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SearchViewLayout">
+        <attr name="searchtype" format="integer" />
+        <attr name="keepshow" format="boolean" />
+        <attr name="cleanbtn" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ScanSearchViewLayout">
+        <attr name="scansearchtype" format="integer"></attr>
+    </declare-styleable>
+
+
+    <attr name="typecycle">
+        <enum name="none" value="0" />
+        <enum name="circle" value="1" />
+        <enum name="rounded_rect" value="2" />
+    </attr>
+    <attr name="borderColor" format="color" />
+    <attr name="borderWidth" format="dimension" />
+    <attr name="rectRoundRadius" format="dimension" />
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="typecycle" />
+        <attr name="borderColor" />
+        <attr name="borderWidth" />
+        <attr name="rectRoundRadius" />
+    </declare-styleable>
+    <declare-styleable name="SpinnerView">
+        <attr name="icon_src" format="reference" />
+        <attr name="bg" format="reference" />
+        <attr name="textcolor" format="color" />
+        <attr name="canedit" format="boolean" />
+        <attr name="imagesize" format="dimension" />
+        <attr name="textsize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="XpxSpinnerView">
+        <attr name="xicon_src" format="reference" />
+        <attr name="xbg" format="reference" />
+        <attr name="xtextcolor" format="color" />
+        <attr name="xcanedit" format="boolean" />
+        <attr name="xheight" format="dimension" />
+        <attr name="ximagesize" format="dimension" />
+        <attr name="xtextsize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="PhoneCode">
+        <attr name="count" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="SideBar">
+        <attr name="letterColor" format="color" />
+        <attr name="selectColor" format="color" />
+        <attr name="letterSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeRevealLayout">
+        <attr name="dragEdge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+
+        <attr name="mode">
+            <enum name="normal" value="0" />
+            <enum name="same_level"   value="1" />
+        </attr>
+
+        <attr name="flingVelocity" format="integer" />
+
+        <attr name="minDistRequestDisallowParent" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FilletImageView">
+        <attr name="filletImageRadius" format="integer"/>
+        <attr name="topRightCorner" format="boolean"/>
+        <attr name="topLeftCorner" format="boolean"/>
+        <attr name="bottomRightCorner" format="boolean"/>
+        <attr name="bottomLeftCorner" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="TitleTextView">
+        <attr name="titletype" format="integer"/>
+        <attr name="colorbegin" format="color"/>
+        <attr name="colorend" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="VerticalSeekBar">
+        <attr name="seekBarRotation">
+            <!-- Clock wise - 90 deg; top = min, bottom = max -->
+            <enum name="CW90" value="90" />
+            <!-- Clock wise - 270 deg; bottom = min, top = max -->
+            <enum name="CW270" value="270" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="FlipView">
+        <attr name="orientation" format="enum">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+        <attr name="overFlipMode" format="enum">
+            <enum name="glow" value="0"/>
+            <enum name="rubber_band" value="1"/>
+        </attr>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="ShapedImageView">
+    <attr name="shape_mode" format="enum">
+        <enum name="round_rect" value="1" />
+        <enum name="circle" value="2" />
+    </attr>
+    <attr name="round_radius" format="dimension" />
+    </declare-styleable>
+
+</resources>

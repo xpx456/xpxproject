@@ -1,0 +1,174 @@
+<resources>
+    <string name="mail_unread_mail">未读邮件</string>
+    <string name="mail_shoujian1">收件</string>
+    <string name="mail_shoujian">收件箱</string>
+    <string name="mail_fajian">发件箱</string>
+    <string name="mail_fenfa">分发箱</string>
+    <string name="mail_mailtitlenew">新客户</string>
+    <string name="mail_mailtitlenold">"老客户</string>
+    <string name="mail_mailtitlenotcontact">未联系</string>
+    <string name="mail_mailtitlecontacting">联系中</string>
+    <string name="mail_mailtitlecontactsuccess">联系无效</string>
+    <string name="mail_mailtitlecontactfail">联系有效</string>
+    <string name="mail_mailtitlewait">待批箱</string>
+    <string name="mail_mailtitlealready">已批箱</string>
+    <string name="mail_mailtitleback">退回箱</string>
+    <string name="mail_mailtitleasend">已发箱</string>
+    <string name="mail_mailtitlercycle">垃圾箱</string>
+    <string name="mail_mailtitldelete">删除箱</string>
+    <string name="mail_mailtitledraft">草稿箱</string>
+    <string name="mail_mailtitleaplrove">审批箱</string>
+    <string name="mail_innerbox">内部箱</string>
+    <string name="keyword_mailtitleaplrove">审批箱</string>
+    <string name="keyword_mailtitleaplrove_wait">待我审批</string>
+    <string name="keyword_mailtitleaplrove_my">我的审批</string>
+    <string name="keyword_mailtitleasend">已发箱</string>
+    <string name="keyword_mailtitledraft">草稿箱</string>
+    <string name="keyword_mailtitldelete2">回收箱</string>
+    <string name="keyword_mailtitlercycle">垃圾箱</string>
+    <string name="keyword_tabtitle">标签邮件</string>
+    <string name="keyword_alltitle">邮件群发</string>
+    <string name="keyword_filetitle">文件夹</string>
+    <string name="keyword_typetitle">邮件客户分类</string>
+    <string name="keyword_mymailbox">我的邮箱</string>
+    <string name="keyword_mymailbox2">的邮箱</string>
+
+    <string name="mail_mailshowdetial">显示详情</string>
+    <string name="mail_mailhidedetial">隐藏详情</string>
+    <string name="mail_searchall">搜索邮件</string>
+    <string name="mail_fajianren">    发件人:</string>
+    <string name="mail_shoujianren">    收件人:</string>
+    <string name="mail_chaosong">        抄送:</string>
+    <string name="mail_neibuchaosong">内部抄送:</string>
+    <string name="mail_shijian">        时间:</string>
+    <string name="mail_fujian">         附件:</string>
+    <string name="mail_fajianren1">发件人:</string>
+    <string name="mail_zhuti">主题:</string>
+    <string name="mail_newmail">新邮件</string>
+    <string name="mail_repickmail">回复邮件</string>
+    <string name="mail_resendmail">编辑邮件</string>
+    <string name="mail_editmail">转发邮件</string>
+    <string name="mail_search_hit">搜索邮件</string>
+    <string name="mail_alreadyin">已在内部收件人中</string>
+    <string name="mail_bcctitle">抄送/密送/发件人：</string>
+    <string name="mail_fromtitle">发件人：</string>
+
+    <string name="mail_attachment_unfinish">附件还未加载完成,继续发送可能导致附件发送失败</string>
+
+    <string name="mail_mailaddresswrong">存在格式不正确的邮箱地址或不存在的内部收件人</string>
+    <string name="mail_mailaddressempty">收件人不能为空</string>
+    <string name="mail_mailzhuti">主题不能为空</string>
+    <string name="mail_cannotsendouter">无法发送外部邮件</string>
+    <string name="mail_cannotsendouter1">内部邮箱无法发送外部邮件!</string>
+    <string name="mail_exitmail">离开写邮件</string>
+    <string name="mail_exitmailtip">已填写的邮件内容将丢失，或保存至草稿</string>
+    <string name="mail_savemail">保存草稿</string>
+    <string name="mail_exit">离开</string>
+    <string name="mail_add">添加</string>
+    <string name="title_mymailbox">我的邮箱</string>
+    <string name="message_addall">已经加载所有数据</string>
+
+    <string name="delete_mail_fail">删除邮件失败</string>
+    <string name="submit_mail_fail">提交失败</string>
+    <string name="keyword_applovedetial">审批意见</string>
+
+    <string name="attachment_outcoche">剩余空间不足100MB，请清理手机缓存</string>
+
+    <string name="xml_mail_repeat">回复</string>
+    <string name="xml_mail_resend">转发</string>
+    <string name="xml_mail_psend">分发</string>
+    <string name="xml_mail_repeatall">回复全部</string>
+    <string name="xml_fenfagei">分发给：</string>
+    <string name="xml_chuliqixian">处理期限：</string>
+    <string name="xml_chuliqixian2">处理期限</string>
+    <string name="xml_fenfazhishi">分发指示：</string>
+    <string name="xml_biaoqian">标签：</string>
+    <string name="keyword_mailfengfa">邮件分发</string>
+    <string name="keyword_nosig">没有可选标签</string>
+    <string name="keyword_selectfengfa">请选择分发对象</string>
+    <string name="keyword_fengfasuccess">分发成功</string>
+    <string name="keyword_fengfafail">分发失败</string>
+
+    <string name="keyword_mailtitlenew">新客户</string>
+    <string name="keyword_mailtitlenold">"老客户</string>
+    <string name="keyword_mailtitlenotcontact">未联系</string>
+    <string name="keyword_mailtitlecontacting">联系中</string>
+    <string name="keyword_mailtitlecontactsuccess">联系无效</string>
+    <string name="keyword_mailtitlecontactfail">联系有效</string>
+    <string name="keyword_mailtitlewait">待批箱</string>
+    <string name="keyword_mailtitlealready">已批箱</string>
+    <string name="keyword_mailtitleback">退回箱</string>
+    <string name="keyword_mailtitldelete">删除箱</string>
+    <string name="keyword_innerbox">内部箱</string>
+
+    <string name="mail_applove_all">全部</string>、
+    <string name="mail_applove_wait">待审批</string>
+    <string name="mail_applove_access">审批通过</string>
+    <string name="mail_applove_vote">审批驳回</string>
+
+    <string name="mail_address_empty">邮件地址为空</string>
+
+    <string name="mail_save_success">发送成功</string>
+    <string name="mail_send_success">保持成功</string>
+    <string name="mail_me">我</string>
+
+
+
+    <string name="mail_title_bcc">密送:</string>
+    <string name="mail_title_shoujianren">收件人:</string>
+    <string name="mail_title_chaosong">抄送:</string>
+    <string name="mail_title_neibuchaosong">内部抄送:</string>
+    <string name="mail_title_secect_sender">选择发件人:</string>
+    <string name="mail_uploading">正在上传附件</string>
+    <string name="mail_loading">正在加载用户标签信息</string>
+
+
+    <string name="mail_wati_me">待我审批</string>
+    <string name="mail_me_approve">我的审批</string>
+    <string name="mail_all">全部</string>
+    <string name="mail_unread">未读</string>
+    <string name="mail_unread2">封未读</string>
+    <string name="mail_sunend">封未发送</string>
+    <string name="unit1">封</string>
+
+    <string name="wait_upload">等待上传</string>
+    <string name="uploading">正在上传</string>
+    <string name="upload_fail">上传失败</string>
+    <string name="receive_mail">收信</string>
+
+    <string name="button_manager">邮件管理</string>
+
+    <string name="buttom_btn_select">标记邮件</string>
+    <string name="buttom_btn_guibin">归并</string>
+    <string name="buttom_btn_fengfa">分发</string>
+    <string name="buttom_btn_move">移动</string>
+
+
+    <string name="mail_lable_lablename">标签名：</string>
+    <string name="mail_lable_lablehit">请输入标签名</string>
+    <string name="mail_lable_lable_del_hit">确定删除该标签吗？</string>
+    <string name="mail_lable_file_del_hit">文件夹下邮件将会一并删除, 确定删除该文件夹吗？</string>
+    <string name="mail_lable_file_input_hit">请输入文件夹名称</string>
+    <string name="mail_lable_file_edit">修改文件夹</string>
+    <string name="mail_lable_file_creat">新建文件夹</string>
+    <string name="mail_lable_file_move">移动邮件</string>
+    <string name="mail_lable_creat">新建标签</string>
+    <string name="mail_no_content">(无摘要)</string>
+
+    <string name="mail_guibin_select">归并选中的邮件</string>
+    <string name="mail_guibin_all">归并所有邮件</string>
+    <string name="mail_guibin_repeat">归并已回复的邮件</string>
+    <string name="mail_guibin_read">归并已读邮件</string>
+    <string name="company">我的公司</string>
+    <string name="mail_set_read">已读</string>
+    <string name="mail_set_unread">未读</string>
+    <string name="mail_set_repeeat">免回复</string>
+    <string name="mail_set_unrepeeat">取消免回复</string>
+    <string name="mail_set_tab">标签</string>
+    <string name="mail_set_allread">全部标记为已读</string>
+    <string name="main_org">组织结构</string>
+    <string name="mail_write_nomal">写邮件</string>
+    <string name="mail_write_grop">写群发邮件</string>
+    <string name="unknow">未知</string>
+    <string name="mail_fengfa_only_one">只能选择1封邮件</string>
+</resources>

@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">dkphone</string>
+    <string name="newadd">新建</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+
+    <string name="user_name_title">姓名：</string>
+    <string name="user_head_title">头像：</string>
+    <string name="user_sex_title">性别：</string>
+    <string name="user_age_title">年龄：</string>
+    <string name="user_toll_title">身高(cm)：</string>
+    <string name="user_weight_title">体重(kg)：</string>
+    <string name="new_user">新建用户</string>
+    <string name="weight_chart_title">体重变化图</string>
+    <string name="user_name_empty">请输入一个计划名称</string>
+
+
+    <string name="titletime">总时间：</string>
+
+    <string name="new_op">新建计划</string>
+    <string name="opname">计划名称</string>
+    <string name="scan">立即开始</string>
+
+    <string name="opname_empty">请输入一个计划名称</string>
+    <string name="opcount_empty">请至少增加一个设置项</string>
+    <string name="op_delete_empty">必须保留一个计划</string>
+
+    <string name="op_delete_title">是否删除该计划？</string>
+    <string name="op_delete_title_msg">该计划还未完成，是否放弃该计划？</string>
+
+    <string name="op_forgave">放弃该计划？</string>
+
+    <string name="chart_person_data">个人数据</string>
+    <string name="chart_car">卡路里/今日</string>
+    <string name="chart_sport_time_day">时长/今日(min)</string>
+    <string name="chart_avarage_set">平均阻力（%）</string>
+    <string name="chart_sport_distence">距离/今日（km）</string>
+    <string name="chart_top_speed">最高速度（km/h）</string>
+    <string name="chart_average_speed">平均速度（km/h）</string>
+    <string name="chart_person_title">运动数据分析</string>
+
+
+    <string name="select_our_watch">请选择你的设备</string>
+    <string name="select_reflash">刷新</string>
+
+    <string name="connect_device_null">请先连接设备</string>
+
+
+    <string name="home_sport_time">运动时长：</string>
+    <string name="home_sport_dis">运动距离：</string>
+    <string name="home_optation_time">计划时长：</string>
+
+    <string name="setting_title">系统设置</string>
+    <string name="setting_base_title">基础设置</string>
+    <string name="setting_widget_volume_port_title">声音设置：</string>
+    <string name="setting_widget_volume_port_title2">声音置设</string>
+    <string name="setting_base_audio_title">语音设置：</string>
+    <string name="setting_base_audio_title2">语音设置</string>
+    <string name="setting_base_password_title">管理员密码：</string>
+    <string name="setting_base_password_title2">管理员密码</string>
+    <string name="setting_speed_mode_title">数据模式:</string>
+    <string name="setting_speed_mode_speed_title">速度模式</string>
+    <string name="setting_speed_mode_round_title">转速模式</string>
+    <string name="setting_speed_mode_test_title">测试模式</string>
+
+    <string name="setting_logo_mode_title">logo:</string>
+    <string name="setting_logo_mode_show_title">显示</string>
+    <string name="setting_logo_mode_unshow_title">不显示</string>
+
+    <string name="setting_net_title">网络设置</string>
+    <string name="setting_net_wifiset_title">wifi设置：</string>
+    <string name="setting_net_wifiset_title2">wifi设置</string>
+    <string name="setting_net_mac_title">以太网设置：</string>
+    <string name="setting_net_mac_title2">以太网设置</string>
+    <string name="setting_select_max_title">最大档位数：</string>
+    <string name="setting_select_max_title2">最大档位数</string>
+
+    <string name="setting_version_title">版本设置</string>
+    <string name="setting_version_now_title">当前版本号：</string>
+    <string name="setting_version_new_title">最新版本号：</string>
+    <string name="setting_version_btn_budata">升级</string>
+
+    <string name="setting_work_title">工程模式</string>
+    <string name="setting_work_title2">工程模式：</string>
+
+    <string name="setting_passord_error">密码错误</string>
+    <string name="setting_file_not_exist">该文件不存在</string>
+    <string name="setting_deive_error">设备出现卡住状况,建议重启设备</string>
+
+
+    <string name="meeting_light">轻点照亮</string>
+    <string name="meeting_light_close">轻点关闭</string>
+
+    <string name="scan_device">请扫描设备上的二维码</string>
+</resources>

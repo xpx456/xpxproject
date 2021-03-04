@@ -1,0 +1,527 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <intersky.mywidget.PullToRefreshView
+        android:id="@+id/mail_pull_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+
+                <RelativeLayout
+                    android:id="@+id/search_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#dfdfdf">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dip"
+                        android:layout_marginRight="12dip"
+                        android:background="@drawable/shape_search_bg">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/search_img"
+                                android:layout_width="15dip"
+                                android:layout_height="15dip"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/search_noma_icon" />
+
+                            <TextView
+                                android:id="@+id/search_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dip"
+                                android:layout_toRightOf="@+id/search_img"
+                                android:gravity="center_vertical|left"
+                                android:text="@string/mail_search_hit"
+                                android:textColor="#b2b2b2"
+                                android:textSize="14dp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shoujianxiang_laye"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dip"
+                    android:layout_below="@+id/search_layer"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dip"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:id="@+id/shoujianxiang_img"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:src="@drawable/shoujianxiang" />
+
+                    <TextView
+                        android:id="@+id/shoujianxiang_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="47dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/shoujianxiang_img"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:text="@string/mail_shoujian"
+                        android:textSize="@dimen/mail_text_size" />
+
+                    <TextView
+                        android:id="@+id/shoujianxiang_count_text"
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dip"
+                        android:background="@drawable/shape_bg_round_red"
+                        android:gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/mail_hit_size"
+                        android:visibility="invisible" />
+
+                    <RelativeLayout
+                        android:id="@+id/shoujianxiang_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/shoujianxiang_img"
+                        android:background="#c8c7cc"></RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/shoujian_morebox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shoujianxiang_laye"
+                    android:orientation="vertical"
+                    android:visibility="invisible"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shenpi_laye"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dip"
+                    android:layout_below="@+id/shoujianxiang_laye"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dip"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:id="@+id/shenpi_img"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:src="@drawable/shengpi" />
+
+                    <TextView
+                        android:id="@+id/shenpi_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="47dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/shenpi_img"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:text="@string/keyword_mailtitleaplrove"
+                        android:textSize="@dimen/mail_text_size" />
+
+                    <ImageView
+                        android:id="@+id/shenpi_arraw"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dip"
+                        android:visibility="invisible"
+                        android:src="@drawable/arraw" />
+
+                    <TextView
+                        android:id="@+id/shenpi_count_text"
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@+id/shenpi_arraw"
+                        android:background="@drawable/shape_bg_round_red"
+                        android:gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/mail_hit_size"
+                        android:visibility="invisible" />
+
+                    <RelativeLayout
+                        android:id="@+id/shenpi_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/shenpi_img"
+                        android:background="#c8c7cc"></RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/shenpi_morebox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shenpi_laye"
+                    android:orientation="vertical"
+                    android:visibility="invisible"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/yifa_laye"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dip"
+                    android:layout_below="@+id/shenpi_laye"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dip"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:id="@+id/yifa_img"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:src="@drawable/yifaxiang" />
+
+                    <TextView
+                        android:id="@+id/yifa_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="47dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/yifa_img"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:text="@string/keyword_mailtitleasend"
+                        android:textSize="@dimen/mail_text_size" />
+
+                    <ImageView
+                        android:id="@+id/yifa_arraw"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dip"
+                        android:visibility="invisible"
+                        android:src="@drawable/arraw" />
+
+                    <TextView
+                        android:id="@+id/yifa_count_text"
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@+id/yifa_arraw"
+                        android:background="@drawable/shape_bg_round_red"
+                        android:gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/mail_hit_size"
+                        android:visibility="invisible" />
+
+                    <RelativeLayout
+                        android:id="@+id/yifa_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/yifa_img"
+                        android:background="#c8c7cc"></RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/yifa_morebox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/yifa_laye"
+                    android:orientation="vertical"
+                    android:visibility="invisible"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/caogao_laye"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dip"
+                    android:layout_below="@+id/yifa_laye"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dip"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:id="@+id/caogao_img"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:src="@drawable/caogaoxiang" />
+
+                    <TextView
+                        android:id="@+id/caogao_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="47dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/caogao_img"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:text="@string/keyword_mailtitledraft"
+                        android:textSize="@dimen/mail_text_size" />
+
+                    <ImageView
+                        android:id="@+id/caogao_arraw"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dip"
+                        android:visibility="invisible"
+                        android:src="@drawable/arraw" />
+
+                    <TextView
+                        android:id="@+id/caogao_count_text"
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@+id/caogao_arraw"
+                        android:background="@drawable/shape_bg_round_red"
+                        android:gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/mail_hit_size"
+                        android:visibility="invisible" />
+
+                    <RelativeLayout
+                        android:id="@+id/caogao_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/caogao_img"
+                        android:background="#c8c7cc"></RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/caogao_morebox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caogao_laye"
+                    android:orientation="vertical"
+                    android:visibility="invisible"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/laji_laye"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dip"
+                    android:layout_below="@+id/caogao_laye"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dip"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:id="@+id/laji_img"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:src="@drawable/lajixiang" />
+
+                    <TextView
+                        android:id="@+id/laji_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="47dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/laji_img"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:text="@string/keyword_mailtitldelete2"
+                        android:textSize="@dimen/mail_text_size" />
+
+                    <ImageView
+                        android:id="@+id/laji_arraw"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dip"
+                        android:visibility="invisible"
+                        android:src="@drawable/arraw" />
+
+                    <TextView
+                        android:id="@+id/laji_count_text"
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@+id/laji_arraw"
+                        android:background="@drawable/shape_bg_round_red"
+                        android:gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/mail_hit_size"
+                        android:visibility="invisible" />
+
+                    <RelativeLayout
+                        android:id="@+id/laji_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/laji_img"
+                        android:background="#c8c7cc"></RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/laji_morebox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/laji_laye"
+                    android:orientation="vertical"
+                    android:visibility="invisible"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shanchu_laye"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dip"
+                    android:layout_below="@+id/laji_laye"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dip"
+                    android:background="#ffffff">
+
+                    <ImageView
+                        android:id="@+id/shanchu_img"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:src="@drawable/shanchuxiang" />
+
+                    <TextView
+                        android:id="@+id/shanchu_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="47dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/shanchu_img"
+                        android:gravity="center_vertical|left"
+                        android:singleLine="true"
+                        android:text="@string/keyword_mailtitlercycle"
+                        android:textSize="@dimen/mail_text_size" />
+
+                    <ImageView
+                        android:id="@+id/shanchu_arraw"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dip"
+                        android:visibility="invisible"
+                        android:src="@drawable/arraw" />
+
+                    <TextView
+                        android:id="@+id/shanchu_count_text"
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@+id/shanchu_arraw"
+                        android:background="@drawable/shape_bg_round_red"
+                        android:gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/mail_hit_size"
+                        android:visibility="invisible" />
+
+                    <RelativeLayout
+                        android:id="@+id/shanchu_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/shanchu_img"
+                        android:background="#c8c7cc"></RelativeLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/shanchu_morebox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shanchu_laye"
+                    android:orientation="vertical"
+                    android:visibility="invisible"></LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </intersky.mywidget.PullToRefreshView>
+
+    <RelativeLayout
+        android:id="@+id/mail_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="invisible"/>
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ListView
+        android:id="@+id/mail_search_List"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search"
+        android:layout_marginTop="5dip"
+        android:background="#ffffff"
+        android:divider="#00000000"
+        android:dividerHeight="0dip"
+        android:focusable="true" />
+
+</RelativeLayout>

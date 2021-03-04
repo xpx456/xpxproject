@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/conversationlayer"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="22.0dip"
+            android:layout_height="22.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@mipmap/select" />
+
+
+        <ImageView
+            android:id="@+id/function_img"
+            android:layout_width="48.0dip"
+            android:layout_height="48.0dip"
+            android:layout_toRightOf="@+id/select"
+            android:layout_marginLeft="16dip"
+            android:layout_centerVertical="true" />
+
+
+        <TextView
+            android:id="@+id/function_title"
+            android:layout_width="match_parent"
+            android:layout_height="24dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="12dip"
+            android:layout_marginTop="9dip"
+            android:layout_toRightOf="@+id/function_img"
+            android:ellipsize="end"
+            android:gravity="left|center_vertical"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="#23272E"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/function_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/function_title"
+            android:layout_marginLeft="12dip"
+            android:layout_marginTop="2.0dip"
+            android:layout_toRightOf="@+id/function_img"
+            android:gravity="center_horizontal|center_vertical"
+            android:text=""
+            android:textColor="#8F9093"
+            android:textSize="14sp" />
+
+
+        <View
+            android:id="@+id/driver"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="114dp"
+            android:background="@color/whiteex" />
+    </RelativeLayout>
+</RelativeLayout>

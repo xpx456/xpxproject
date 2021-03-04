@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">talk</string>
+    <string name="record_permisstion">未获得语音录制权限</string>
+</resources>

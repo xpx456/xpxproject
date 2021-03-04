@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dip" >
+
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip" />
+
+        <TextView
+            android:id="@+id/item_mial_icon"
+            android:layout_width="42.0dip"
+            android:layout_height="42.0dip"
+            android:layout_toRightOf="@+id/item_icon"
+            android:layout_marginLeft="10dip"
+            android:layout_centerVertical="true"
+            android:textSize="20dip"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_bg_cycle"
+            android:textColor="#ffffff"/>
+
+
+        <TextView
+            android:id="@+id/item_mial_name"
+            android:layout_width="match_parent"
+            android:layout_height="25dip"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/item_mial_icon"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginLeft="15dip"
+            android:gravity="left|center_vertical"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:text=""
+            android:textSize="@dimen/nomal_edit_size" />
+
+        <TextView
+            android:id="@+id/item_mial_mial"
+            android:layout_width="match_parent"
+            android:layout_height="20dip"
+            android:layout_below="@id/item_mial_name"
+            android:layout_toRightOf="@+id/item_mial_icon"
+            android:layout_marginLeft="15dip"
+            android:maxLines="1"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:textColor="#a1a1a1"
+            android:textSize="15dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/buttomline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#ececec"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

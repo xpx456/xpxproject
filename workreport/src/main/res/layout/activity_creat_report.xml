@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+    <EditText
+        android:layout_height="0dp"
+        android:background="#00000000"
+        android:layout_width="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/stutebar"
+        android:background="#ffffff">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/xml_workreport_day"
+            android:textColor="@color/text"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <intersky.mywidget.PoorPriorityScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="65dp"
+        android:layout_below="@+id/head"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color">
+
+            <RelativeLayout
+                android:id="@+id/worktime"
+                android:layout_width="match_parent"
+                android:layout_height="56dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/worktimetitle3"
+                    android:layout_width="9dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="*"
+                    android:textColor="#ffe94142"
+                    android:textSize="@dimen/bigger_textsize" />
+
+                <TextView
+                    android:id="@+id/worktimetitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/worktimetitle3"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/xml_workreport_worktime"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+
+                <ImageView
+                    android:id="@+id/endtypearray"
+                    android:layout_width="44dip"
+                    android:layout_height="44dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/skip" />
+
+                <TextView
+                    android:id="@+id/worktimename"
+                    android:layout_width="match_parent"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/endtypearray"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:text=""
+                    android:textColor="@color/hit"
+                    android:textSize="@dimen/little_textsize" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/worktime"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/content1title1"
+                    android:layout_width="9dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="*"
+                    android:textColor="#ffe94142"
+                    android:textSize="@color/bg_color" />
+
+                <TextView
+                    android:id="@+id/content1title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/content1title1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/xml_workreport_tday1"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content1text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content1title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="19dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/hit_edit"
+                    android:minHeight="21dp"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/hit"
+                    android:textSize="@dimen/little_textsize" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/content2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content1"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/content2title1"
+                    android:layout_width="9dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="*"
+                    android:textColor="#ffe94142"
+                    android:textSize="@color/bg_color" />
+
+                <TextView
+                    android:id="@+id/content2title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/content2title1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/xml_workreport_tday2"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content2text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content2title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="19dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/hit_edit"
+                    android:minHeight="21dp"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/hit"
+                    android:textSize="@dimen/little_textsize" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/content3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content2"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/content3title1"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text=""
+                    android:textColor="#ffe94142"
+                    android:textSize="@color/bg_color" />
+
+                <TextView
+                    android:id="@+id/content3title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/content3title1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/xml_workreport_help"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content3text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content3title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="19dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/hit_edit"
+                    android:minHeight="21dp"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/hit"
+                    android:textSize="@dimen/little_textsize" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content3"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/content4title1"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text=""
+                    android:textColor="#ffe94142"
+                    android:textSize="@color/bg_color" />
+
+                <TextView
+                    android:id="@+id/content4title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/content4title1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/xml_workreport_backup"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content4text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content4title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="19dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/hit_edit"
+                    android:minHeight="21dp"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/hit"
+                    android:textSize="@dimen/little_textsize" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content4"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/title32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/upload_pic"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+
+                <intersky.mywidget.MyLinearLayout
+                    android:id="@+id/image_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title32"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dip"
+                    android:layout_marginRight="16dip"
+                    android:layout_marginTop="16dp"></intersky.mywidget.MyLinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sendayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content6"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/sendtitle1"
+                    android:layout_width="9dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="*"
+                    android:textColor="#ffe94142"
+                    android:textSize="@color/bg_color" />
+
+                <TextView
+                    android:id="@+id/sendtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/sendtitle1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/xml_workreport_sendto"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+
+                <intersky.mywidget.MyLinearLayout
+                    android:id="@+id/sender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sendtitle"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp">
+                </intersky.mywidget.MyLinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ccayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sendayer"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/cctitle1"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text=""
+                    android:textColor="#ffe94142"
+                    android:textSize="@color/bg_color" />
+
+                <TextView
+                    android:id="@+id/cctitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/cctitle1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/xml_workreport_ccto"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/bigger_textsize" />
+
+
+                <intersky.mywidget.MyLinearLayout
+                    android:id="@+id/copyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cctitle"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp">
+                </intersky.mywidget.MyLinearLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </intersky.mywidget.PoorPriorityScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_above="@+id/buttomaciton"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/publish"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/button_word_summit"
+            android:background="@drawable/shape_bg_publish_btn"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+</RelativeLayout>

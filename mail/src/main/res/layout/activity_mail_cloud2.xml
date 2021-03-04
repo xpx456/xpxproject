@@ -1,0 +1,387 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#ffffff"
+        android:layout_below="@id/stutebar">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+
+        <TextView
+            android:id="@+id/manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_manager"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:textColor="#ff23272e"
+            android:textSize="17sp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mail_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head"
+        android:layout_above="@+id/mail_buttom_layer2"
+        android:background="#ffffff">
+
+        <intersky.mywidget.SearchViewLayout
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <intersky.mywidget.PullToRefreshView
+            android:id="@+id/mail_pull_refresh_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/search"
+            android:visibility="invisible"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/mail_List"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/search_layer"
+                android:background="#ffffff"
+                android:divider="#00000000"
+                android:dividerHeight="0dip"
+                android:focusable="true" />
+        </intersky.mywidget.PullToRefreshView>
+
+
+        <RelativeLayout
+            android:id="@+id/teblayer"
+            android:layout_width="match_parent"
+            android:layout_height="47dip"
+            android:background="#ffffff"
+            android:layout_below="@+id/search"
+            android:visibility="invisible"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/shape_bg_readbg"
+                android:layout_marginLeft="14dp">
+
+                <TextView
+                    android:id="@+id/alltxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp"
+                    android:text="@string/mail_applove_all" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/all"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/shape_bg_readbgun">
+
+                <TextView
+                    android:id="@+id/waittxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#8F9093"
+                    android:textSize="14sp"
+                    android:text="@string/mail_applove_wait" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/access"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/wait"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/shape_bg_readbgun">
+
+                <TextView
+                    android:id="@+id/accesstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#8F9093"
+                    android:textSize="14sp"
+                    android:text="@string/mail_applove_access" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/vote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/access"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/shape_bg_readbgun">
+
+                <TextView
+                    android:id="@+id/votetxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#8F9093"
+                    android:textSize="14sp"
+                    android:text="@string/mail_applove_vote" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <intersky.mywidget.NoScrollViewPager
+            android:id="@+id/load_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/teblayer"
+            android:visibility="invisible"
+            android:background="#ffffff"></intersky.mywidget.NoScrollViewPager>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mail_buttom_layer2"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:layout_above="@+id/buttomaciton"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/leftmenu"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/lefticon"
+            />
+
+        <TextView
+            android:id="@+id/titlemail"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text=""
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ff999999"
+            android:textSize="11sp"
+            />
+
+        <ImageView
+            android:id="@+id/rightmenu"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/creatnew"
+            />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/mail_buttom_layer1"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:orientation="horizontal"
+        android:layout_above="@+id/buttomaciton"
+        android:visibility="invisible"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/bselect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/buttom_btn_select"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#69a7d6"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/bguibin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/buttom_btn_guibin"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#69a7d6"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/bdelete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/button_delete"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#bd6c69"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/bfengfa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/buttom_btn_fengfa"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#69a7d6"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/bmove"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/buttom_btn_move"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#69a7d6"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/mail_buttom_layer3"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:orientation="horizontal"
+        android:layout_above="@+id/buttomaciton"
+        android:visibility="invisible"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/bdelete2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/button_delete"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#bd6c69"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/mail_buttom_layer4"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:orientation="horizontal"
+        android:layout_above="@+id/buttomaciton"
+        android:visibility="invisible"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/btnaccess"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/mail_applove_access"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#69a7d6"
+            android:layout_weight="1"
+            />
+
+
+        <TextView
+            android:id="@+id/btnvote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/mail_applove_vote"
+            android:textSize="@dimen/nomal_edit_size"
+            android:textColor="#69a7d6"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        />
+
+
+</RelativeLayout>

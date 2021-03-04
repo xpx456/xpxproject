@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/buttomlayer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/cancle"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="19dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/button_word_cancle"
+                android:textColor="#69a7d6"
+                android:textSize="@dimen/nomal_edit_size" />
+
+
+            <TextView
+                android:id="@+id/ok"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="19dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/button_word_ok"
+                android:textColor="#69a7d6"
+                android:textSize="@dimen/nomal_edit_size" />
+
+
+            <TextView
+                android:id="@+id/edittitle"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_below="@+id/cancle"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="19dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/mail_lable_lablename"
+                android:textColor="#69a7d6"
+                android:textSize="@dimen/nomal_edit_size" />
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_below="@+id/cancle"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="19dp"
+                android:layout_toRightOf="@+id/edittitle"
+                android:background="@drawable/shape_search_bg2"
+                android:gravity="center_vertical|center_horizontal"
+                android:hint="@string/mail_lable_lablehit"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text=""
+                android:textColor="#333333"
+                android:textColorHint="#999999"
+                android:textSize="@dimen/nomal_edit_size" />
+
+            <intersky.mywidget.scollpick.view.ScrollPickerView
+                android:id="@+id/scroll_picker_view"
+                android:layout_width="wrap_content"
+                android:layout_height="135dp"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/edittitle"></intersky.mywidget.scollpick.view.ScrollPickerView>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

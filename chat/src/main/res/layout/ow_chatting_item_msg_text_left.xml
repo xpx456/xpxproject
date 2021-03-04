@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/timelayer"
+        android:layout_width="fill_parent"
+        android:layout_height="19dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_chat_time_bg"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
+
+        <intersky.mywidget.CircleImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/contact_detial_head"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/array"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/shape_sanjiao_l_white"
+            />
+
+        <RelativeLayout
+            android:id="@+id/textcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/array"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/shape_ow_chat_left_bg">
+
+            <intersky.talk.GifTextView
+                android:id="@+id/tv_chatcontent"
+                style="@style/Widget.AppCompat.ActionButton.Overflow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#00000000"
+                android:maxLines="50"
+                android:gravity="left|center"
+                android:minHeight="32dp"
+                android:textColor="#ff000000"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/voice_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:layout_marginLeft="15dp"
+            android:background="#00000000"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/voice_img"
+            android:layout_width="15.5dp"
+            android:layout_height="21.5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
+            android:layout_alignLeft="@+id/voice_btn"
+            android:src="@drawable/volue_b_left"
+            android:focusable="false" />
+
+
+
+        <TextView
+            android:id="@+id/voice_tiem"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textcontent"
+            android:background="#00000000"
+            android:gravity="left|center"
+            android:layout_marginLeft="-35dp"
+            android:visibility="invisible"
+            android:text=""
+            android:textColor="#60000000"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/fail"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignTop="@+id/textcontent"
+            android:layout_toRightOf="@+id/textcontent"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/shape_round_red"
+            android:gravity="center_vertical|center_horizontal"
+            android:visibility="invisible"
+            android:text="!"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/loding"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignTop="@+id/textcontent"
+            android:layout_toRightOf="@+id/textcontent"
+            android:layout_marginTop="7dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="-10dp"
+            android:src="@drawable/loding_gray"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

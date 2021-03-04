@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:minHeight="56dp">
+
+        <RelativeLayout
+            android:id="@+id/titlelayer"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/item_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dip"
+                android:gravity="center_vertical|left"
+                android:maxLines="1"
+                android:textColor="#8F9093"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/item_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="8dp"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:layout_toRightOf="@+id/item_id"
+                android:layout_toLeftOf="@+id/image_cion"
+                android:gravity="center_vertical|left"
+                android:textColor="#23272E"
+                android:textColorHint="#8F9093"
+                android:singleLine="true"
+                android:hint="@string/xml_vote_name_hit"
+                android:textSize="12sp" />
+
+
+            <ImageView
+                android:id="@+id/image_cion"
+                android:layout_width="36dip"
+                android:layout_height="36dip"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/image_delete"
+                android:src="@drawable/image" />
+
+
+            <ImageView
+                android:id="@+id/image_delete"
+                android:layout_width="36dip"
+                android:layout_height="36dip"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/delete" />
+        </RelativeLayout>
+
+        <intersky.mywidget.MyLinearLayout
+            android:id="@+id/image_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/titlelayer"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"></intersky.mywidget.MyLinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="16dp"
+            android:background="#F3F3F4"></RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

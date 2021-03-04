@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/foodselect"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp" />
+
+        <TextView
+            android:id="@+id/foodselect_name"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/foodselect"
+            android:gravity="center_vertical|left"
+            android:text="sdfa"
+            android:textColor="#666666"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/foodselect_car"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_below="@+id/foodselect_name"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/foodselect"
+            android:gravity="center_vertical|left"
+            android:text="sdfa"
+            android:textColor="#666666"
+            android:textSize="16dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/selectlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="19dp"
+            >
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/btnadd"
+                />
+
+            <TextView
+                android:id="@+id/foodselect_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/add"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="0"
+                android:textColor="#333333"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/des"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toLeftOf="@+id/foodselect_count"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/btndes"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

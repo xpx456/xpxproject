@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/timelayer"
+        android:layout_width="fill_parent"
+        android:layout_height="18dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="21dp">
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="#23272E"
+            android:text="4646464654"
+            android:textSize="13sp" />
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:background="#E6E6E6"
+            android:layout_toLeftOf="@+id/tv_sendtime"
+            />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="16dp"
+            android:background="#E6E6E6"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_sendtime"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="21dp">
+
+        <TextView
+            android:id="@+id/iv_userhead"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textSize="7dip"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/contact_head"
+            android:clickable="true" />
+
+
+        <RelativeLayout
+            android:id="@+id/textcontent"
+            android:layout_width="280dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_userhead"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/shape_chat_left_bg">
+
+            <ImageView
+                android:id="@+id/tv_chatcontent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/icon_list_unknown"
+                android:background="#00000000"/>
+
+            <TextView
+                android:id="@+id/filename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:gravity="right|center_vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:ellipsize="end"
+                android:layout_toRightOf="@+id/tv_chatcontent"
+                android:textColor="#000000"
+                android:text="adfssdfad.pdf"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/filesize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:gravity="left|center_vertical"
+                android:layout_below="@+id/filename"
+                android:layout_marginRight="15dp"
+                android:textColor="#C9C7CD"
+                android:layout_marginTop="5dp"
+                android:textSize="13dp"
+                android:text="unkonow size"
+                android:layout_alignParentRight="true"
+                />
+
+            <ProgressBar
+                android:id="@+id/roundProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_below="@+id/tv_chatcontent"
+                android:visibility="invisible"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:progressDrawable="@drawable/shape_seekbar_bg" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fail"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignTop="@+id/textcontent"
+            android:layout_toRightOf="@+id/textcontent"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/shape_round_red"
+            android:gravity="center_vertical|center_horizontal"
+            android:visibility="invisible"
+            android:text="!"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/loding"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignTop="@+id/textcontent"
+            android:layout_toRightOf="@+id/textcontent"
+            android:layout_marginTop="7dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="-10dp"
+            android:src="@drawable/loding_gray"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

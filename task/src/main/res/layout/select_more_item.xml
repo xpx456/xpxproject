@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="50dip" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dip"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/item_mial_address"
+            android:layout_width="match_parent"
+            android:layout_height="51dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/item_mial_select_icon"
+            android:layout_marginLeft="10dip"
+            android:gravity="center_vertical|left"
+            android:textColor="#808080"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/about_detial_size" />
+
+        <ImageView
+            android:id="@+id/item_mial_select_icon"
+            android:layout_width="18dip"
+            android:layout_height="15dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip" 
+            android:src="@drawable/selectmial"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="10dip"
+            android:layout_alignParentBottom="true"
+            android:background="#ededed">
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

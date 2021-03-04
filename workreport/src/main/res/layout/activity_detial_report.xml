@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/stutebar"
+        android:background="#ffffff">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textColor="#ff23272e"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:text="..."
+            android:textColor="#ff23272e"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <intersky.mywidget.PoorPriorityScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/head"
+        android:background="@color/bg_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color">
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/worktime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+
+                <TextView
+                    android:id="@+id/headimg"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/contact_head"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="12sp"
+                    android:textColor="#ffffff"
+                    />
+
+                <TextView
+                    android:id="@+id/headname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/headimg"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="#23272E"
+                    />
+
+                <TextView
+                    android:id="@+id/worktimename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_below="@+id/headname"
+                    android:layout_toRightOf="@+id/headimg"
+                    android:layout_marginLeft="11dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text=""
+                    android:textIsSelectable="true"
+                    android:textColor="#23272E"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/content1title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/worktimename"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/xml_workreport_tday1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#23272E"
+                    android:textSize="17sp" />
+
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content1text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content1title"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#23272E"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp" />
+
+
+
+
+                <TextView
+                    android:id="@+id/content2title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/content1text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/xml_workreport_tday2"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#23272E"
+                    android:textSize="17sp" />
+
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content2text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content2title"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#23272E"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp" />
+
+
+
+                <TextView
+                    android:id="@+id/content3title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/content2text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/xml_workreport_help"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#23272E"
+                    android:textSize="17sp" />
+
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content3text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content3title"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#23272E"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp" />
+
+
+                <TextView
+                    android:id="@+id/content4title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/content3text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/xml_workreport_backup"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#23272E"
+                    android:textSize="17sp" />
+
+
+                <intersky.mywidget.WebEdit
+                    android:id="@+id/content4text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content4title"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#23272E"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/image_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content4text"
+                    android:background="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"></LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/sendtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/image_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/xml_workreport_sendto"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#23272E"
+                    android:textSize="17sp" />
+
+
+                <HorizontalScrollView
+                    android:id="@+id/sendayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/sendtitle"
+                    android:background="#00000000"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/sender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        android:layout_centerVertical="true"
+                        android:background="#00000000"
+                        android:orientation="horizontal" />
+
+                </HorizontalScrollView>
+
+
+
+
+                <TextView
+                    android:id="@+id/cctitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/sendayer"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/xml_workreport_ccto"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#23272E"
+                    android:textSize="17sp" />
+
+
+                <HorizontalScrollView
+                    android:id="@+id/copylayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/cctitle"
+                    android:background="#00000000"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/copyer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        android:layout_centerVertical="true"
+                        android:background="#00000000"
+                        android:orientation="horizontal" />
+
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:layout_below="@+id/worktime"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/answertitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="15dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/xml_workreport_replay"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <RelativeLayout
+                    android:id="@+id/line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/answertitle"
+                    android:layout_marginTop="15dp"
+                    android:background="#f2f2f2"></RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/answeritem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line6"
+                    android:background="#ffffff"
+                    android:orientation="vertical"></LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </intersky.mywidget.PoorPriorityScrollView>
+
+    <LinearLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttomaciton" >
+
+        <!-- 聊天输入框 -->
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/custom_facerelativelayout" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#77000000">
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+</RelativeLayout>

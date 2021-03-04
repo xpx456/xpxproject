@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.restaurant"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 29
+        versionName '2.9'
+        multiDexEnabled true
+        ndk{
+            abiFilters "armeabi-v7a"
+            abiFilters "x86"
+            abiFilters "armeabi"
+            abiFilters "arm64-v8a"
+            abiFilters "x86_64"
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('xpxproject.jks')
+            keyAlias 'restaurant'
+            storePassword '8842500'
+            keyPassword '8842500'
+        }
+        release {
+            storeFile file('xpxproject.jks')
+            keyAlias 'restaurant'
+            storePassword '8842500'
+            keyPassword '8842500'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    api 'com.tencent.bugly:crashreport:latest.release'
+    api 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation project(path: ':sound')
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    annotationProcessor 'org.projectlombok:lombok:1.16.20'
+    implementation 'org.greenrobot:greendao:3.3.0'
+
+    implementation project(path: ':xpxnet')
+    implementation project(path: ':appbase')
+    implementation project(path: ':AppUtils')
+    implementation project(path: ':mywidget')
+    implementation project(path: ':json')
+    implementation project(path: ':iccard')
+    implementation project(path: ':finger')
+    implementation project(path: ':filetools')
+    implementation project(path: ':Gpio')
+    implementation project(path: ':audio')
+    implementation project(path: ':autoupdate')
+    implementation project(path: ':conversation')
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+}

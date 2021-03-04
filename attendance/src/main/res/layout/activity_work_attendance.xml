@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/work_attendance"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/stutebar"
+        android:background="#ffffff">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back" />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/keyword_workattdence"
+            android:textColor="#ff23272e"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:text="强制签到"
+            android:textColor="#329bf1"
+            android:textSize="15sp"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/bglayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttomaciton"
+        android:layout_below="@+id/head"
+        android:background="#f5f5f5">
+
+        <RelativeLayout
+            android:id="@+id/bglayer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f5f5f5">
+
+            <RelativeLayout
+                android:id="@+id/conversationlayer"
+                android:layout_width="match_parent"
+                android:layout_height="72dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/conversation_img"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dip"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/contact_head"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/conversation_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/conversation_img"
+                    android:text=""
+                    android:textColor="#ff23272e"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:id="@+id/conversation_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_below="@+id/conversation_title"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toRightOf="@+id/conversation_img"
+                    android:text=""
+                    android:textColor="#ff1ea1f3"
+                    android:textSize="13sp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/datelayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="#00000000">
+
+                    <RelativeLayout
+                        android:id="@+id/datebtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/date_array">
+
+                        <TextView
+                            android:id="@+id/date_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#ff747a82"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/date_array"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/downarr" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/signtitlelayer"
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/conversationlayer"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/signtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@+id/updata"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/message_work_attdence_time"
+                    android:textColor="#b4b4b4"
+                    android:textSize="@dimen/report_edit_size" />
+
+                <RelativeLayout
+                    android:id="@+id/updata"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="#00000000">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/refresh_ico" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/signtitlelayer"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <LinearLayout
+                    android:id="@+id/work_attendance_List"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="26dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical"></LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/sign"
+                    android:layout_width="120dip"
+                    android:layout_height="120dip"
+                    android:layout_below="@+id/work_attendance_List"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/shape_bg_round2">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/signtitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="29dp"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="#ffffffff"
+                            android:textSize="21sp" />
+
+                        <TextView
+                            android:id="@+id/signtime2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_below="@+id/signtitle1"
+                            android:layout_centerHorizontal="true"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="#ffffffff"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77000000"
+        android:visibility="invisible"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+
+</RelativeLayout>

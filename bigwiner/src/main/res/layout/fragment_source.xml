@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_bg_gray">
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff" />
+
+    <intersky.mywidget.SearchViewLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stutebar"
+        android:background="#ffffff"
+        app:cleanbtn="false"
+        app:keepshow="true"
+        app:searchtype="1" />
+
+    <RelativeLayout
+        android:id="@+id/toplayer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/search">
+
+        <RelativeLayout
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:background="#00000000">
+
+            <TextView
+                android:id="@+id/typetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/source_type_all"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/typetxt"
+                android:src="@drawable/sniper1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/collectsource"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_source_gray_conor_btn"
+            >
+
+            <ImageView
+                android:id="@+id/collectimg"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:src="@drawable/mycollect"
+                />
+
+            <TextView
+                android:id="@+id/collecttext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/collectimg"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_centerVertical="true"
+                android:textColor="#333333"
+                android:textSize="13dp"
+                android:text="@string/source_btn_collect"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/addsource"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_toLeftOf="@+id/collectsource"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_source_gray_conor_btn"
+            >
+
+            <ImageView
+                android:id="@+id/addimg"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:src="@drawable/sourceadd"
+                />
+
+            <TextView
+                android:id="@+id/addtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/addimg"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_centerVertical="true"
+                android:textColor="#333333"
+                android:textSize="13dp"
+                android:text="@string/source_btn_my"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <intersky.mywidget.PullToRefreshView
+        android:id="@+id/headview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toplayer"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/source_List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:divider="@color/bg_color"
+            android:dividerHeight="10dp"></androidx.recyclerview.widget.RecyclerView>
+
+    </intersky.mywidget.PullToRefreshView>
+
+</RelativeLayout>

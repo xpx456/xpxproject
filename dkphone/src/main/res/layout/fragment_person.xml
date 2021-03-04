@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+
+    <RelativeLayout
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg002"
+        >
+
+        <ImageView
+            android:id="@+id/headmy"
+            android:layout_height="400dp"
+            android:layout_width="400dp"
+            android:layout_alignParentLeft="true"
+            android:visibility="invisible"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/bg2"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#00000000"
+        android:visibility="invisible"
+        />
+
+    <WebView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="70dp"
+        android:layout_alignParentBottom="true"
+        android:layerType="software"
+        android:background="#00000000" />
+
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/card"-->
+<!--        android:layout_width="166dp"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:background="@drawable/cardbg"-->
+<!--        android:layout_marginRight="70dp">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/head"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="240dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/cardname"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:textSize="17dp"-->
+<!--            android:textColor="@color/logo_color2"-->
+<!--            android:gravity="center_horizontal|center_vertical"-->
+<!--            />-->
+
+<!--    </RelativeLayout>-->
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/btnpk"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginRight="60dp"-->
+<!--        android:src="@drawable/pk"-->
+<!--        />-->
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/pkuser"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="180dp"-->
+<!--        android:layout_below="@+id/btnpk"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:visibility="invisible"-->
+<!--        android:background="@drawable/head_select_bg">-->
+
+<!--        <ListView-->
+<!--            android:id="@+id/headlist"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="165dp" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/headline"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_below="@+id/headlist"-->
+<!--            android:background="#ececec" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/btnheadshow"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="10dp"-->
+<!--            android:layout_below="@+id/headline"-->
+<!--            android:background="#00000000" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/headarray"-->
+<!--            android:layout_width="10dp"-->
+<!--            android:layout_height="10dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_marginBottom="2dp"-->
+<!--            android:src="@drawable/uparray" />-->
+<!--    </RelativeLayout>-->
+</RelativeLayout>

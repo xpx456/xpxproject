@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/about_activity"
+    android:layout_width="480dip"
+    android:layout_height="450dip" >
+
+    <RelativeLayout
+        android:id="@+id/about_head_layer"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/shape_about_head" >
+
+        <TextView
+            android:id="@+id/about_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:singleLine="true"
+            android:text="关于"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <RelativeLayout
+            android:id="@+id/about_head_back_layer"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/about_head_back_icon"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/iconbacklist" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/about_end_layer"
+        android:layout_width="match_parent"
+        android:layout_height="400dip"
+        android:layout_below="@+id/about_head_layer"
+        android:background="@drawable/shape_about_end" >
+
+        <ImageView
+            android:id="@+id/about_logo"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dip"
+            android:src="@drawable/hlogo" />
+
+        <TextView
+            android:id="@+id/about_version_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/about_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical|center"
+            android:singleLine="true"
+            android:text="@string/about_net"
+            android:textColor="#cccccc"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/about_net_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/about_version_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/about_net"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/about_mail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/about_net_text"
+            android:layout_alignLeft="@+id/about_net_text"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/about_mail"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/about_weibo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/about_mail_text"
+            android:layout_alignLeft="@+id/about_net_text"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/about_weibo"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/about_pahone_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/about_weibo_text"
+            android:layout_alignLeft="@+id/about_net_text"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/about_phone"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

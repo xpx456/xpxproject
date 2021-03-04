@@ -1,0 +1,232 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/example"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/morearea"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ntask_nodeadd" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/detial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/morearea"
+            android:minHeight="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/stage_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="left|center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="16dip" />
+
+            <LinearLayout
+                android:id="@+id/iform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="#00000000">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/basetag"
+                            android:layout_width="4dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:background="#00000000"
+                            android:textSize="16dp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tag_1"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle1"
+                            android:textSize="16dp"
+                            android:visibility="visible" />
+
+
+                        <TextView
+                            android:id="@+id/tag_2"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle2"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tag_3"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle3"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tag_4"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle4"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tag_5"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-4dp"
+                            android:background="@drawable/shape_bg_tag_cycle5"
+                            android:textSize="16dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/basetag2"
+                            android:layout_width="5dp"
+                            android:layout_height="12dp"
+                            android:layout_centerVertical="true"
+                            android:background="#00000000"
+                            android:textSize="16dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/taskdete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical|left"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/textcolor"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/task_son"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="0dp"
+                        android:src="@drawable/ntask_ztask" />
+
+                    <TextView
+                        android:id="@+id/task_son_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/task_son"
+                        android:gravity="center_vertical|left"
+                        android:maxLines="1"
+                        android:text="2/2"
+                        android:textColor="@color/textcolor"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/task_list"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/ntask_list" />
+
+                    <TextView
+                        android:id="@+id/task_list_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/task_list"
+                        android:gravity="center_vertical|left"
+                        android:maxLines="1"
+                        android:text="2/2"
+                        android:textColor="@color/textcolor"
+                        android:textSize="12dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sontaskarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detial"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="7dp"
+            android:background="@color/strokecolor"
+            android:orientation="vertical"></LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/sontaskarea"
+            android:layout_marginLeft="30dp"
+            android:background="@color/whiteex"></RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

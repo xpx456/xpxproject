@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FaceRelativeLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/record_area"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:id="@+id/volue_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp">
+
+            <ImageView
+                android:id="@+id/titleimg"
+                android:layout_width="57dp"
+                android:layout_height="95dp"
+                android:src="@drawable/imbigvolue" />
+
+            <LinearLayout
+                android:id="@+id/volue_leave_area"
+                android:layout_width="wrap_content"
+                android:layout_height="95dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/titleimg"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/leave6"
+                    android:layout_width="31dp"
+                    android:layout_height="7dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/imvleave6" />
+
+                <ImageView
+                    android:id="@+id/leave5"
+                    android:layout_width="28dp"
+                    android:layout_height="7dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/imvleave5" />
+
+                <ImageView
+                    android:id="@+id/leave4"
+                    android:layout_width="25dp"
+                    android:layout_height="7dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/imvleave4" />
+
+                <ImageView
+                    android:id="@+id/leave3"
+                    android:layout_width="22dp"
+                    android:layout_height="7dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/imvleave3" />
+
+                <ImageView
+                    android:id="@+id/leave2"
+                    android:layout_width="19dp"
+                    android:layout_height="7dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/imvleave2" />
+
+                <ImageView
+                    android:id="@+id/leave1"
+                    android:layout_width="15dp"
+                    android:layout_height="7dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/imvleave1" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/canclevoice"
+            android:layout_width="74dp"
+            android:layout_height="95dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="25dp"
+            android:visibility="invisible"
+            android:src="@drawable/imvoicecancle"
+            />
+
+        <TextView
+            android:id="@+id/title_volue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/volue_area"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="#00000000"
+            android:text="@string/volue_move_up_cancle"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

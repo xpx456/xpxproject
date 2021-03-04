@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff" >
+
+        <RelativeLayout
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="8.5dip"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="19dp"
+            android:background="#989EB4" >
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cyclework1"
+            android:layout_width="7dip"
+            android:layout_height="7dip"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/line"
+            android:layout_marginLeft="16dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@drawable/shape_bg_round_blue"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#ffffff"
+            android:textSize="14.0dp" />
+
+
+        <TextView
+            android:id="@+id/signtime"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text=""
+            android:textColor="#ff8f9093"
+            android:textSize="17sp"
+            android:layout_toRightOf="@+id/cyclework1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

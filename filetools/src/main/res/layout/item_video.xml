@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dip" >
+
+    <RelativeLayout
+        android:id="@+id/layer_item"
+        android:layout_width="match_parent"
+        android:layout_height="55dip"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="47dip"
+            android:layout_height="47dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip" />
+
+        <TextView
+            android:id="@+id/video_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="40dip"
+            android:layout_toRightOf="@+id/item_icon"
+            android:singleLine="true"
+            android:gravity="center_vertical|left"
+            android:ellipsize="end"
+            android:textColor="#969ca5"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/video_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/video_name"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="40dip"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/item_icon"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:textColor="#969ca5"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:id="@+id/item_selecticon"
+            android:layout_width="17dip"
+            android:layout_height="17dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/layer_item"
+        android:background="#ececec" >
+    </RelativeLayout>
+
+</RelativeLayout>

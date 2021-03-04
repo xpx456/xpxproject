@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <ScrollView
+        android:id="@+id/deviceset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/goal_your_goal"
+                android:textColor="@color/value_color"
+                android:textSize="@dimen/form_title_size" />
+
+
+            <TextView
+                android:id="@+id/goal1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:background="@drawable/shape_btn_goal"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/goal_name1"
+                android:textColor="@color/shape_btn_goal_text"
+                android:textSize="@dimen/form_value_size" />
+
+
+            <TextView
+                android:id="@+id/goal2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/goal1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:background="@drawable/shape_btn_goal"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/goal_name2"
+                android:textColor="@color/shape_btn_goal_text"
+                android:textSize="@dimen/form_value_size" />
+
+
+            <TextView
+                android:id="@+id/goal3"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/goal2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/edeg_size"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="@dimen/edeg_size"
+                android:background="@drawable/shape_btn_goal"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/goal_name3"
+                android:textColor="@color/shape_btn_goal_text"
+                android:textSize="@dimen/form_value_size" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

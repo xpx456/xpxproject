@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="56dip">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:background="#ffffff">
+
+            <ImageView
+                android:id="@+id/image_cion"
+                android:layout_width="36dip"
+                android:layout_height="36dip"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/icon_ent_add" />
+
+            <TextView
+                android:id="@+id/item_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/image_cion"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|left"
+                android:maxLines="1"
+                android:textColor="#ff1ea1f3"
+                android:textSize="15sp"
+                android:text="@string/xml_vote_item_add"/>
+    </RelativeLayout>
+
+</RelativeLayout>

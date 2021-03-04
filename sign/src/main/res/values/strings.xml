@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">sign</string>
+    <string name="keyword_sign_remark">请填写签到备注</string>
+    <string name="xml_save_attendance_success">签到成功</string>
+    <string name="xml_sing_address">签到地点:</string>
+    <string name="keyword_attendance">签到</string>
+    <string name="keyword_statistics">签到记录</string>
+    <string name="xml_attendanceat">拜访对象</string>
+    <string name="xml_attendanceat2">签到原因</string>
+    <string name="xml_attendancetime">签到时间</string>
+    <string name="xml_attendanceaddress">签到地点</string>
+    <string name="xml_attendancelocation">所在位置</string>
+    <string name="xml_pic">图片</string>
+    <string name="keyword_dete">日期</string>
+    <string name="xml_xuanzeriqi">选择日期</string>
+    <string name="xml_sign_none">今日你还未签到</string>
+    <string name="xml_sign_count">今日你已签到</string>
+    <string name="xml_sign_count_a">次</string>
+    <string name="xml_statistics_top">的签到记录</string>
+    <string name="keyword_selectaddress">所在位置</string>
+    <string name="keyword_myattdence">我的签到</string>
+    <string name="keyword_otherattdence">成员签到</string>
+    <string name="keyword_signtime">签到时间</string>
+    <string name="keyword_change_address">地点微调</string>
+    <string name="keyword_statistics_detoal">签到地址</string>
+    <string name="keyword_mark">备注</string>
+    <string name="keyword_xingqi">星期</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="signcount">当日签到</string>
+    <string name="unit1">次</string>
+</resources>

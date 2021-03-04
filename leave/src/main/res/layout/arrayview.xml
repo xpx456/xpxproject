@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/tableall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/conversationlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/arr_right" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:background="#ff0000"
+        android:layout_toRightOf="@+id/tableall" />
+
+</RelativeLayout>

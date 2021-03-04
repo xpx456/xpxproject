@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/contentlayer"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:background="@drawable/shape_bg_tasklist_item">
+
+
+
+        <TextView
+            android:id="@+id/conversation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:textColor="#23272e"
+            android:textSize="17sp"
+            />
+
+
+        <TextView
+            android:id="@+id/conversation_content"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/conversation_title"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#ff3a3e42"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/contact_img"
+            android:layout_width="24.0dip"
+            android:layout_height="24.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dip"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/conversation_content"
+            android:textSize="10dip"
+            android:singleLine="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/contact_head"
+            android:textColor="#ffffff"/>
+
+
+        <TextView
+            android:id="@+id/conversation_dete"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:text=""
+            android:textColor="#ff8f9093"
+            android:textSize="12sp"
+            android:layout_below="@+id/conversation_content"
+            android:layout_toRightOf="@+id/contact_img"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="12dp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

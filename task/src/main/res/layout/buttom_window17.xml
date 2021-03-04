@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="#ffffff"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:layout_alignParentTop="true"
+            android:textSize="16dp"
+            android:textColor="@color/textcolor"
+            android:text="@string/task_detial_more"
+            android:gravity="center_horizontal|center_vertical"/>
+
+        <intersky.mywidget.HorizontalListView
+            android:id="@+id/horizon_listview1"
+            android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="95dp">
+        </intersky.mywidget.HorizontalListView>
+
+        <RelativeLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/horizon_listview1"
+            android:background="@color/whiteex"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"/>
+
+        <intersky.mywidget.HorizontalListView
+            android:id="@+id/horizon_listview2"
+            android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/line"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="95dp">
+        </intersky.mywidget.HorizontalListView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/serverhead"
+        android:layout_below="@+id/content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/cancle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/line2"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="@string/button_word_cancle"
+        android:gravity="center_horizontal|center_vertical"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,493 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:id="@+id/operview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/sptorttimetitle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp"
+                    android:src="@drawable/alam" />
+
+                <TextView
+                    android:id="@+id/sptorttimedragvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/sptorttimetitle"
+                    android:text=""
+                    android:textColor="@color/select_color"
+                    android:textSize="15sp" />
+
+
+                <ImageView
+                    android:id="@+id/sptortdistitle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/sptorttimedragvalue"
+                    android:src="@drawable/dis" />
+
+
+                <TextView
+                    android:id="@+id/sptortdisvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/sptortdistitle"
+                    android:text="20km"
+                    android:textColor="@color/select_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/sptortcarltitle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/sptortdisvalue"
+                    android:src="@drawable/carl" />
+
+
+                <TextView
+                    android:id="@+id/sptortcarlvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/sptortcarltitle"
+                    android:text="0cal"
+                    android:textColor="@color/select_color"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/time2"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/time"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/sptortherttitle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="19dp"
+                    android:src="@drawable/hert" />
+
+
+                <TextView
+                    android:id="@+id/sptorthertvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/sptortherttitle"
+                    android:text="0bpm"
+                    android:textColor="@color/select_color"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <WebView
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_below="@+id/time2"
+                android:background="#00000000" />
+
+            <RelativeLayout
+                android:id="@+id/ptime"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/chart">
+
+                <ImageView
+                    android:id="@+id/ptimetitle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp"
+                    android:src="@drawable/plantime" />
+
+                <TextView
+                    android:id="@+id/ptimevalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/ptimetitle"
+                    android:text="80分钟"
+                    android:textColor="@color/select_color"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/pdevicetitle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@+id/ptimevalue"
+                    android:src="@drawable/devicec" />
+
+                <TextView
+                    android:id="@+id/pdevicealue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/pdevicetitle"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="已连接"
+                    android:textColor="@color/select_color"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/pherttitle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@+id/pdevicealue"
+                    android:src="@drawable/hert" />
+
+                <TextView
+                    android:id="@+id/phertvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/pherttitle"
+                    android:text="点击连接"
+                    android:textColor="@color/select_color"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/seek"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/ptime">
+
+                <ImageView
+                    android:id="@+id/dragtitle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp"
+                    android:src="@drawable/leavels" />
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/dragseekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_toLeftOf="@+id/dragvalue"
+                    android:layout_toRightOf="@+id/dragtitle"
+                    android:maxHeight="8dp"
+                    android:minHeight="8dp"
+                    android:progressDrawable="@drawable/shape_seek_progress_bg_drag"
+                    android:thumb="@drawable/shape_seek_video_thumb" />
+
+
+                <TextView
+                    android:id="@+id/dragvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="19dp"
+                    android:text=""
+                    android:textColor="@color/select_color"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/addlayer"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/seek">
+
+                <RelativeLayout
+                    android:id="@+id/btnadd1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp">
+
+                    <ImageView
+                        android:id="@+id/add1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/nadd" />
+
+                    <TextView
+                        android:id="@+id/add1txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/add1"
+                        android:text="1%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/btnadd5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/btnadd1">
+
+                    <ImageView
+                        android:id="@+id/add5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/nadd" />
+
+                    <TextView
+                        android:id="@+id/add2txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/add5"
+                        android:text="5%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/btnadd10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/btnadd5">
+
+                    <ImageView
+                        android:id="@+id/add10"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/nadd" />
+
+                    <TextView
+                        android:id="@+id/add10txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/add10"
+                        android:text="10%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/btnadd20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/btnadd10">
+
+                    <ImageView
+                        android:id="@+id/add20"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/nadd" />
+
+                    <TextView
+                        android:id="@+id/add20txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/add20"
+                        android:text="20%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/deslayer"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/addlayer">
+
+                <RelativeLayout
+                    android:id="@+id/btndes1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="19dp">
+
+                    <ImageView
+                        android:id="@+id/des1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ndes" />
+
+                    <TextView
+                        android:id="@+id/des1txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/des1"
+                        android:text="1%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/btndes5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/btndes1">
+
+                    <ImageView
+                        android:id="@+id/des5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ndes" />
+
+                    <TextView
+                        android:id="@+id/des2txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/des5"
+                        android:text="5%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/btndes10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/btndes5">
+
+                    <ImageView
+                        android:id="@+id/des10"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ndes" />
+
+                    <TextView
+                        android:id="@+id/des10txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/des10"
+                        android:text="10%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/btndes20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/btndes10">
+
+                    <ImageView
+                        android:id="@+id/des20"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ndes" />
+
+                    <TextView
+                        android:id="@+id/des20txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/des20"
+                        android:text="20%"
+                        android:textColor="@color/select_color"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/scan"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/pop_btn_bg"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/home_scan"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
+
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_query_item"
+    android:layout_width="match_parent"
+    android:layout_height="48px"
+    android:background="#00000000">
+
+    <LinearLayout
+        android:id="@+id/listbg"
+        android:layout_width="match_parent"
+        android:layout_height="48px"
+        android:orientation="horizontal"
+        android:background="#f0f4fe">
+
+        <TextView
+            android:id="@+id/head_time"
+            android:layout_width="270px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14px"
+            android:textColor="#b5b9c9"
+            android:background="#00000000"
+            android:text="@string/query_head_time"
+            />
+
+        <TextView
+            android:id="@+id/head_name"
+            android:layout_width="150px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14px"
+            android:textColor="#b5b9c9"
+            android:background="#00000000"
+            android:text="@string/query_head_time"
+            />
+
+        <TextView
+            android:id="@+id/head_type"
+            android:layout_width="170px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14px"
+            android:textColor="#b5b9c9"
+            android:background="#00000000"
+            android:text="@string/query_head_type"
+            />
+
+        <TextView
+            android:id="@+id/head_sex"
+            android:layout_width="70px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14px"
+            android:textColor="#b5b9c9"
+            android:background="#00000000"
+            android:text="@string/query_head_sex"
+            />
+
+        <TextView
+            android:id="@+id/head_count"
+            android:layout_width="120px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14px"
+            android:textColor="#b5b9c9"
+            android:background="#00000000"
+            android:text="@string/query_head_count"
+            />
+
+        <TextView
+            android:id="@+id/head_car"
+            android:layout_width="180px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14px"
+            android:textColor="#b5b9c9"
+            android:background="#00000000"
+            android:text="@string/query_head_car"
+            />
+
+        <TextView
+            android:id="@+id/head_card"
+            android:layout_width="205px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14px"
+            android:textColor="#b5b9c9"
+            android:background="#00000000"
+            android:text="@string/query_head_card"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

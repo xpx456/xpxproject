@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/timelayer"
+        android:layout_width="fill_parent"
+        android:layout_height="19dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/shape_chat_time_bg"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
+
+
+        <intersky.mywidget.CircleImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/contact_detial_head"
+            android:focusable="false" />
+
+        <RelativeLayout
+            android:id="@+id/textcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:layout_marginLeft="15dp"
+            android:background="#00000000">
+
+            <RelativeLayout
+                android:id="@+id/map"
+                android:layout_width="210dp"
+                android:layout_height="85dp"
+                android:background="@drawable/shape_card_bg"
+                >
+
+                <ImageView
+                    android:id="@+id/tv_chatcontent"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/maptitle"
+                    android:layout_width="210dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/tv_chatcontent"
+                    android:background="#ffffff"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:gravity="left|center_vertical"
+                    android:textColor="#000000"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/mapdetial"
+                    android:layout_width="210dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/maptitle"
+                    android:layout_toRightOf="@+id/tv_chatcontent"
+                    android:background="#ffffff"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:gravity="left|center"
+                    android:textColor="#C9C7CD"
+                    android:textSize="13dp" />
+
+                <RelativeLayout
+                    android:id="@+id/line"
+                    android:layout_width="210dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/mapdetial"
+                    android:background="#C9C7CD"
+                    />
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/line"
+                    android:background="#ffffff"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:gravity="left|center"
+                    android:text="@string/button_word_card"
+                    android:textColor="#C9C7CD"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+
+            <intersky.mywidget.RoundProgressBar
+                android:id="@+id/roundProgressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"
+                app:max="100"
+                app:roundColor="#a6a6a6"
+                app:roundProgressColor="#22ef16"
+                app:roundWidth="2dip"
+                app:textColor="#a6a6a6"
+                app:textIsDisplayable="false"
+                app:textSize="8dp"/>
+
+            <TextView
+                android:id="@+id/fail"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/map"
+                android:background="@drawable/shape_round_red"
+                android:gravity="center_vertical|center_horizontal"
+                android:visibility="invisible"
+                android:text="!"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/loding"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/map"
+                android:visibility="invisible"
+                android:src="@drawable/loding_gray"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

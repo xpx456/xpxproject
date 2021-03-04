@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/padbg" >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="376dp"
+        android:layout_height="85dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        />
+
+    <SurfaceView
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:id="@+id/add"
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="50px"
+        android:layout_marginBottom="20px"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"
+        android:src="@drawable/add" />
+
+
+    <ImageView
+        android:id="@+id/des"
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50px"
+        android:layout_marginBottom="20px"
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible"
+        android:src="@drawable/des" />
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <RelativeLayout
+        android:id="@+id/stutebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        />
+
+    <RelativeLayout
+        android:id="@+id/backlayer"
+        android:layout_width="43dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/stutebar"
+        android:background="#ffffff"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back2"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/nomal"
+        android:layout_width="match_parent"
+        android:layout_height="64dip"
+        android:layout_toRightOf="@+id/backlayer"
+        android:layout_below="@+id/stutebar"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/shape_search_bg2">
+
+            <ImageView
+                android:id="@+id/search_img"
+                android:layout_width="24dip"
+                android:layout_height="24dip"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="26dp"
+                android:src="@drawable/search_noma_icon" />
+
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dip"
+                android:layout_toRightOf="@+id/search_img"
+                android:gravity="center_vertical|left"
+                android:text="@string/searchview_title_search"
+                android:textColor="#B9B9B9"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <intersky.mywidget.PullToRefreshView
+        android:id="@+id/headview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/nomal"
+        android:layout_above="@+id/buttomaciton"
+        android:orientation="vertical"
+        >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/busines_List"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:dividerHeight="0dp"
+        android:divider="#00000000"
+        android:background="@color/bg_color">
+    </androidx.recyclerview.widget.RecyclerView>
+    </intersky.mywidget.PullToRefreshView>
+
+
+    <RelativeLayout
+        android:id="@+id/buttomaciton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        />
+</RelativeLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="540dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/pop_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/select_2"
+                    android:textColor="#8F9093"
+                    android:textSize="12sp"
+                    />
+
+
+                <ImageView
+                    android:id="@+id/close"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8F9093"
+                    android:layout_alignParentBottom="true"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/finish_state"
+                    android:textColor="#8F9093"
+                    android:textSize="12sp"
+                    />
+            </RelativeLayout>
+
+            <intersky.mywidget.MyLinearLayout
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/join_type"
+                    android:textColor="#8F9093"
+                    android:textSize="12sp"
+                    />
+            </RelativeLayout>
+
+            <intersky.mywidget.MyLinearLayout
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/order_type"
+                    android:textColor="#8F9093"
+                    android:textSize="12sp"
+                    />
+            </RelativeLayout>
+
+            <intersky.mywidget.MyLinearLayout
+                android:id="@+id/order"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/color_lable"
+                    android:textColor="#8F9093"
+                    android:textSize="12sp"
+                    />
+            </RelativeLayout>
+
+            <intersky.mywidget.MyLinearLayout
+                android:id="@+id/color"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal"
+                />
+
+            <RelativeLayout
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="128dp"
+                >
+
+                <TextView
+                    android:id="@+id/reset"
+                    android:layout_width="163dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/button_word_reset"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/buttom_select_bg_gary"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="#ff1ea1f3"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:id="@+id/ok"
+                    android:layout_width="163dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/button_word_ok"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/buttom_select_bg_blue"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

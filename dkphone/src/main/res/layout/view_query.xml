@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_query"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/allcontent"
+        android:layout_width="480dp"
+        android:layout_height="270dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000">
+
+
+        <RelativeLayout
+            android:id="@+id/head"
+            android:layout_width="480dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/pop_bg_top">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="@string/select_our_watch"
+                android:textColor="#ffffff"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/reflash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/close"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="@string/select_reflash"
+                android:textColor="#ffffff"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/popclose" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="480dp"
+            android:layout_height="230dp"
+            android:layout_below="@+id/head"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pop_bg_buttom">
+
+
+            <ListView
+                android:id="@+id/equiplist"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_marginBottom="10dp"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/equiplist2"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:background="#ffffff"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>

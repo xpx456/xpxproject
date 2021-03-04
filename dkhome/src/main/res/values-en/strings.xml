@@ -1,0 +1,152 @@
+<resources>
+    <string name="app_name">道康</string>
+    <string name="splash_1">Simple Tips to Balance Your Mind, Body and Soul</string>
+    <string name="splash_2">Small changes can make a big difference</string>
+    <string name="splash_3">This app will allow you to achieve great results</string>
+
+    <string name="register_title">SIGN UP</string>
+    <string name="register_name">YOUR NAME</string>
+    <string name="register_age">YOUR AGE</string>
+    <string name="register_male">MALE</string>
+    <string name="register_female">FEMAL</string>
+    <string name="register_next">NEXT</string>
+    <string name="register_error_name">please input your name</string>
+    <string name="register_error_age">please input your age</string>
+    <string name="register_error_age2">Must be greater than 0</string>
+    <string name="register_error_tall">please input your tall</string>
+    <string name="register_error_weight">please input your weight</string>
+
+    <string name="health_title">HEALTH DATA</string>
+    <string name="health_tall">How tall are you(cm)?</string>
+    <string name="health_weight">How much do you currently weight(kg)?</string>
+    <string name="health_finish">DONE</string>
+    <string name="health_chart_name">weight history</string>
+    <string name="health_chart_max">Max</string>
+    <string name="health_chart_min">Min</string>
+
+    <string name="main_title">DIARY</string>
+    <string name="main_goal_title">Your goal</string>
+    <string name="main_weight_title">Your weight,</string>
+    <string name="main_eat_title">Eaten</string>
+    <string name="main_burned_title">Burned</string>
+    <string name="main_calor_lose_title">need burn</string>
+    <string name="main_calor_add_title">neet intake</string>
+    <string name="main_calor_add1_title">intake</string>
+    <string name="main_head_plan_title">WORKOUT COURSE</string>
+    <string name="main_head_plan_add">ADD COURSE</string>
+    <string name="main_hellow_word_1">Hello</string>
+    <string name="main_hellow_word_2">Things look allright</string>
+    <string name="main_tab_dairy">Dairy</string>
+    <string name="main_tab_course">Course</string>
+    <string name="main_tab_set">Setting</string>
+    <string name="main_left_schedule">schedule</string>
+    <string name="main_left_eat">plan</string>
+    <string name="main_left_data">sport</string>
+    <string name="main_left_user">user</string>
+    <string name="main_left_health">health</string>
+    <string name="main_left_goal">goal</string>
+    <string name="main_left_device">device</string>
+    <string name="main_left_creat">Scinece</string>
+    <string name="mian_day_goal_finish">finish</string>
+
+    <string name="goal_title">Goal</string>
+    <string name="goal_your_goal">What is you goal</string>
+    <string name="goal_name1">BE HEALTHIER</string>
+    <string name="goal_name2">LOSE WEIGHT</string>
+    <string name="goal_name3">GAIN WEIGHT</string>
+    <string name="goal_lweight">How mouch would you like to lose?(kg)</string>
+    <string name="goal_lday">Your Plan is to reach your goal in(week)</string>
+    <string name="goal_gweight">How mouch would you like to gain?(kg)</string>
+    <string name="goal_gday">Your Plan is to reach your goal in(week)</string>
+    <string name="goal_carl_day">with a daily calorie goal of(Cal)</string>
+    <string name="goal_fail">weight or week empty</string>
+
+    <string name="dayfood_title">Day Food</string>
+    <string name="food_select">Add</string>
+    <string name="food_detial">Detial</string>
+
+    <string name="main_setting_about">About Fit Energy</string>
+    <string name="main_setting_dark">Dark mode</string>
+    <string name="tele">Service hotline:　4006-722-622</string>
+    <string name="contectUs">Contact us:　services@intersky.com.cn</string>
+
+    <string name="newplan_title">NEW COURSE</string>
+    <string name="newplan_name">COURSE NAME</string>
+    <string name="newplan_add_video">ADD VIDEO</string>
+    <string name="newplan_name_hit">COURSE</string>
+
+
+    <string name="home_drag_title">Resistance：</string>
+    <string name="home_sport_time_title">Duration：</string>
+    <string name="home_sport_dis_title">Distance：</string>
+    <string name="home_sport_chart_leavel">Resistance</string>
+    <string name="home_sport_chart_leavel_unit">Resistance(%)</string>
+    <string name="home_sport_chart_speed">Speed</string>
+    <string name="home_sport_chart_speed_unit">Speed(km/h)</string>
+    <string name="home_sport_chart_avg_speed">Average</string>
+    <string name="home_sport_chart_hert_unit">Heart rate(kbm)</string>
+    <string name="home_sport_chart_time">Time</string>
+
+    <string name="home_scan">SCAN CONNECT</string>
+    <string name="home_device_list_title">DEVICE LIST</string>
+    <string name="home_device_mode">Device Type:</string>
+    <string name="home_mode1">DK20N02</string>
+    <string name="home_mode2">DK20W02</string>
+    <string name="home_mode3">DKTEST</string>
+    <string name="home_device_leavel">Leavel Max:</string>
+    <string name="home_leave_mode1">24L</string>
+    <string name="home_leave_mode2">32L</string>
+    <string name="home_tab_data">DATA</string>
+    <string name="home_tab_sport">SPORT</string>
+    <string name="home_tab_device">DEVICE</string>
+    <string name="device_disconnect">DISCONNECT</string>
+    <string name="device_state_nomal">Nomal</string>
+    <string name="device_state_change">Changing</string>
+    <string name="device_state_error">Error</string>
+    <string name="course_same_message">Do you have the same course in progress, continue or start over?</string>
+
+    <string name="meeting_light">Open light</string>
+    <string name="meeting_light_close">Closd light</string>
+    <string name="connecting_bluetooth">Connecting...</string>
+
+
+    <string name="delete_course">delete course</string>
+    <string name="schdule_select_time">select time</string>
+
+    <string name="chart_title">Sport data</string>
+    <string name="chart1_carl_eat">Eat</string>
+    <string name="chart1_carl_burn">Burn</string>
+    <string name="chart1_carl_hert">Hert Rat</string>
+    <string name="chart1_sport_time">Exercise time</string>
+    <string name="chart1_carl_unit_c">kcal</string>
+    <string name="chart1_carl_unit_b">Burned(kCal)</string>
+    <string name="chart1_carl_unit_b1">Base Burned(kCal)</string>
+    <string name="chart1_carl_unit_b2">Sport Burned(kCal)</string>
+    <string name="chart1_carl_unit_e">Intale(kCal)</string>
+    <string name="chart1_time_unit">min</string>
+    <string name="chart_head_history">History</string>
+    <string name="chart_head_goal">Goal</string>
+    <string name="chart_head_goal_total_add">gain</string>
+    <string name="chart_head_goal_total_des">lose</string>
+    <string name="chart_head_goal_soprt_des">bruned</string>
+    <string name="chart_head_goal_eat_add">intake</string>
+    <string name="chart_head_goal_progress">goal persent</string>
+    <string name="chart_dairy">Dairy goal</string>
+    <string name="chart_head_goal_total_time">total time</string>
+    <string name="chart_head_goal_total_burn">total burned</string>
+    <string name="chart_burn_type">Type</string>
+    <string name="chart_burn_base">base</string>
+    <string name="device_type_elliptical_machine">Elliptical Machine</string>
+    <string name="device_type_rowing_machine">Rowing Machine</string>
+    <string name="device_type_exercise_bike">Exercise Bike</string>
+    <string name="device_type_spinning_bike">Spinning Bike</string>
+    <string name="chart_unit_day">day</string>
+
+    <string name="chart_sport_total_title1">Since</string>
+
+
+    <string name="chart_name_rpm">revolution</string>
+    <string name="chart_name_speed">speed</string>
+    <string name="chart_name_select">resistance</string>
+    <string name="chart_name_hert">hert rat</string>
+</resources>

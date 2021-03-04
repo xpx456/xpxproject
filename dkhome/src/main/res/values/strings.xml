@@ -1,0 +1,156 @@
+<resources>
+    <string name="app_name">Fit Energy</string>
+    <string name="splash_1">平衡身心的简单提示</string>
+    <string name="splash_2">不积跬步无以至千里</string>
+    <string name="splash_3">这个应用程序会让你取得好成绩</string>
+
+    <string name="register_title">注册</string>
+    <string name="register_name">您的昵称</string>
+    <string name="register_age">您的年龄</string>
+
+    <string name="register_male">男</string>
+    <string name="register_female">女</string>
+    <string name="register_next">下一步</string>
+    <string name="register_error_name">请输入昵称</string>
+    <string name="register_error_age">请输入年龄</string>
+    <string name="register_error_age2">必须大于0</string>
+    <string name="register_error_tall">请输入身高</string>
+    <string name="register_error_weight">请输入体重</string>
+
+    <string name="health_title">健康数据</string>
+    <string name="health_tall">您的身高(cm)?</string>
+    <string name="health_weight">您的体重(kg)?</string>
+    <string name="health_finish">完成</string>
+    <string name="health_chart_name">历史体重</string>
+    <string name="health_chart_max">最大</string>
+    <string name="health_chart_min">最小</string>
+
+
+
+    <string name="goal_title">健身目标</string>
+    <string name="goal_your_goal">您的目标</string>
+    <string name="goal_name1">保持健康</string>
+    <string name="goal_name2">减重</string>
+    <string name="goal_name3">增重</string>
+    <string name="goal_lweight">减重目标(kg)</string>
+    <string name="goal_lday">减重时间(星期)</string>
+    <string name="goal_gweight">增重目标(kg)</string>
+    <string name="goal_gday">增重时间(星期)</string>
+    <string name="goal_carl_day">每日消耗热量(Cal)</string>
+    <string name="goal_fail">目标体重和时间不能为空</string>
+
+    <string name="dayfood_title">每日饮食</string>
+    <string name="food_select">添加食物</string>
+    <string name="food_detial">饮食详情</string>
+
+    <string name="main_title">日常</string>
+    <string name="main_goal_title">您的目标</string>
+    <string name="main_weight_title">您的体重,</string>
+    <string name="main_eat_title">摄入</string>
+    <string name="main_burned_title">消耗</string>
+    <string name="main_calor_lose_title">需要消耗</string>
+    <string name="main_calor_add_title">需要摄入</string>
+    <string name="main_calor_add1_title">已摄入</string>
+    <string name="main_head_plan_title">训练课程</string>
+    <string name="main_head_plan_add">添加课程</string>
+    <string name="main_hellow_word_1">你好</string>
+    <string name="main_hellow_word_2">一切顺利</string>
+    <string name="main_tab_dairy">日常</string>
+    <string name="main_tab_course">课程</string>
+    <string name="main_tab_set">设置</string>
+    <string name="main_left_schedule">训练日程</string>
+    <string name="main_left_eat">饮食计划</string>
+    <string name="main_left_data">运动数据</string>
+    <string name="main_left_user">用户资料</string>
+    <string name="main_left_health">健康信息</string>
+    <string name="main_left_goal">健身目标</string>
+    <string name="main_left_device">设备连接</string>
+    <string name="main_left_creat">创建于</string>
+    <string name="mian_day_goal_finish">已完成</string>
+
+
+    <string name="main_setting_about">关于Fit Energy</string>
+    <string name="main_setting_dark">暗黑模式</string>
+    <string name="tele">服务热线:　4006-722-622</string>
+    <string name="contectUs">联系我们:　services@intersky.com.cn</string>
+
+    <string name="newplan_title">新建课程</string>
+    <string name="newplan_name">课程名称</string>
+    <string name="newplan_name_hit">训练课程</string>
+    <string name="newplan_add_video">添加视频</string>
+
+    <string name="home_sport_time_title">运动时长</string>
+    <string name="home_sport_dis_title">运动距离</string>
+    <string name="home_drag_title">阻力调节：</string>
+    <string name="home_sport_chart_leavel">阻力</string>
+    <string name="home_sport_chart_leavel_unit">阻力(%)</string>
+    <string name="home_sport_chart_speed">速度</string>
+    <string name="home_sport_chart_speed_unit">速度(km/h)</string>
+    <string name="home_sport_chart_avg_speed">平均速度</string>
+    <string name="home_sport_chart_time">运动时间</string>
+    <string name="home_sport_chart_hert_unit">心率(kbm)</string>
+
+    <string name="home_scan">扫码连接设备</string>
+    <string name="home_device_list_title">设备列表</string>
+    <string name="home_device_mode">设备类型:</string>
+    <string name="home_mode1">DK20N02</string>
+    <string name="home_mode2">DK20W02</string>
+    <string name="home_mode3">DKTEST</string>
+    <string name="home_device_leavel">最大档位:</string>
+    <string name="home_leave_mode1">24档</string>
+    <string name="home_leave_mode2">32档</string>
+    <string name="home_tab_data">数据</string>
+    <string name="home_tab_sport">运动</string>
+    <string name="home_tab_device">设备</string>
+    <string name="device_disconnect">断开</string>
+    <string name="device_state_nomal">运转正常</string>
+    <string name="device_state_change">调整档位</string>
+    <string name="device_state_error">调整异常</string>
+    <string name="course_same_message">你已经有个相同的课程在进行重，继续经行或重新开始？</string>
+
+
+    <string name="meeting_light">轻点照亮</string>
+    <string name="meeting_light_close">轻点关闭</string>
+    <string name="connecting_bluetooth">正在连接蓝牙</string>
+
+
+    <string name="delete_course">删除课程</string>
+    <string name="schdule_select_time">选择时间</string>
+
+
+    <string name="chart_title">运动数据</string>
+    <string name="chart1_carl_eat">摄入热量</string>
+    <string name="chart1_carl_burn">消耗热量</string>
+    <string name="chart1_carl_hert">心率</string>
+    <string name="chart1_sport_time">运动时间</string>
+    <string name="chart1_carl_unit_c">kcal</string>
+    <string name="chart1_carl_unit_b">消耗(kCal)</string>
+    <string name="chart1_carl_unit_b1">基础消耗</string>
+    <string name="chart1_carl_unit_b2">运动消耗</string>
+    <string name="chart1_carl_unit_e">摄入(kCal)</string>
+    <string name="chart1_time_unit">min</string>
+    <string name="chart_head_history">历史</string>
+    <string name="chart_head_goal">目标</string>
+    <string name="chart_head_goal_total_add">目标消耗</string>
+    <string name="chart_head_goal_total_des">目标增加</string>
+    <string name="chart_head_goal_soprt_des">运动消耗</string>
+    <string name="chart_head_goal_eat_add">总计摄入</string>
+    <string name="chart_head_goal_progress">完成进度</string>
+    <string name="chart_dairy">每日目标</string>
+    <string name="chart_head_goal_total_time">运动总时长</string>
+    <string name="chart_head_goal_total_burn">总消耗</string>
+    <string name="chart_burn_type">消耗分类</string>
+    <string name="chart_burn_base">基础消耗</string>
+    <string name="device_type_elliptical_machine">椭圆机</string>
+    <string name="device_type_rowing_machine">划船机</string>
+    <string name="device_type_exercise_bike">健身车</string>
+    <string name="device_type_spinning_bike">动感单车</string>
+    <string name="chart_unit_day">天</string>
+
+    <string name="chart_sport_total_title1">您已使用</string>
+
+    <string name="chart_name_rpm">转速</string>
+    <string name="chart_name_speed">速度</string>
+    <string name="chart_name_select">阻力</string>
+    <string name="chart_name_hert">心率</string>
+</resources>

@@ -1,0 +1,167 @@
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+    <string name="app_name">accesscontrol</string>
+    <string name="main_fail">考勤失败</string>
+    <string name="main_success">考勤成功</string>
+
+    <string name="setting_title">系统设置</string>
+    <string name="setting_base_title">基础设置</string>
+    <string name="setting_base_time_title">时间设置：</string>
+    <string name="setting_base_24hour_title">24小时制：</string>
+    <string name="setting_base_time_check">校对</string>
+    <string name="setting_base_langue_title">语言设置：</string>
+    <string name="setting_base_system_sound_title">系统提示音：</string>
+    <string name="setting_base_key_sound_title">按键提示音：</string>
+    <string name="setting_base_ic_title">ic卡加密：</string>
+    <string name="setting_base_password_title">管理员密码：</string>
+    <string name="setting_base_password_title2">管理员密码</string>
+    <string name="setting_base_super_title">超级管理员：</string>
+
+
+    <string name="setting_contact_title">通讯设置</string>
+    <string name="setting_contact_equipment_name_title">设备名称：</string>
+    <string name="setting_contact_equipment_name_title2">设备名称</string>
+    <string name="setting_contact_equipment_code_title">设备编号：</string>
+    <string name="setting_contact_equipment_code_title2">设备编号</string>
+    <string name="setting_contact_rs485rat_title">RS485波特率：</string>
+    <string name="setting_contact_rs485type_title">RS485模式：</string>
+    <string name="setting_contact_nettype_title">网络模式：</string>
+    <string name="setting_contact_wify_title">WIFI模式：</string>
+    <string name="setting_contact_bag_title">包大小：</string>
+
+    <string name="setting_contact_net_type_service">服务器</string>
+    <string name="setting_contact_net_type_client">客户端</string>
+
+    <string name="setting_alert_title">报警设置</string>
+    <string name="setting_alert_output_title">报警输出：</string>
+    <string name="setting_alert_sound_title">声音报警：</string>
+    <string name="setting_alert_ver_title">验证失败次数：</string>
+    <string name="setting_alert_vertime_title">验证失败时长：</string>
+    <string name="setting_alert_detory_title">防拆报警：</string>
+
+
+
+    <string name="setting_net_title">网络设置</string>
+    <string name="setting_net_dchp_title">DCHP：</string>
+    <string name="setting_net_port_title">端口：</string>
+    <string name="setting_net_ip_title">IP：</string>
+    <string name="setting_net_subnet_mask_title">子网掩码：</string>
+    <string name="setting_net_gateway_title">网关信息：</string>
+    <string name="setting_net_wifiset_title">wifi设置：</string>
+    <string name="setting_net_wifiset_title2">wifi设置</string>
+    <string name="setting_net_mac_title">以太网设置：</string>
+    <string name="setting_net_mac_title2">以太网设置</string>
+    <string name="setting_net_service_port_title">mqtt服务器端口：</string>
+    <string name="setting_net_service_port_title2">mqtt服务器端口</string>
+    <string name="setting_net_service_ip_title">mqtt服务器ip：</string>
+    <string name="setting_net_service_ip_title2">mqtt服务器ip</string>
+    <string name="setting_net_app_service_port_title">应用服务器端口：</string>
+    <string name="setting_net_app_service_port_title2">应用服务器端口</string>
+    <string name="setting_net_app_service_ip_title">应用服务器ip：</string>
+    <string name="setting_net_app_service_ip_title2">应用服务器ip</string>
+    <string name="setting_net_v_service_port_title">视频服务器端口：</string>
+    <string name="setting_net_v_service_port_title2">视频服务器端口</string>
+    <string name="setting_net_v_service_ip_title">视频服务器ip：</string>
+    <string name="setting_net_v_service_ip_title2">视频服务器ip</string>
+
+
+
+    <string name="setting_net_timeout_title">超时设置：</string>
+
+
+    <string name="setting_widget_title">界面设置</string>
+    <string name="setting_widget_imf_speed_title">滚动速度：</string>
+    <string name="setting_widget_img_title">静脉图像：</string>
+    <string name="setting_widget_vertime_title">停留时间：</string>
+    <string name="setting_widget_bg_title">背景设置：</string>
+    <string name="setting_widget_light_title">亮度设置：</string>
+    <string name="setting_widget_volume_port_title">声音设置：</string>
+    <string name="setting_widget_volume_port_title2">声音置设</string>
+
+    <string name="setting_base_audio_title">语音设置：</string>
+    <string name="setting_base_audio_title2">语音设置</string>
+
+    <string name="setting_reboot_title">切换桌面:</string>
+    <string name="setting_reboot_title2">切换桌面</string>
+    <string name="setting_work_title">工程模式:</string>
+    <string name="setting_work_title2">工程模式</string>
+    <string name="setting_member_title">成员列表:</string>
+    <string name="setting_member_title2">成员列表</string>
+
+    <string name="setting_upload_title">上传指静脉图片:</string>
+    <string name="setting_upload_title1">点击打开</string>
+    <string name="setting_upload_title2">点击关闭</string>
+
+    <string name="setting_weigen_title">韦根设置</string>
+    <string name="setting_weigen_digit_title">自定义位数：</string>
+    <string name="setting_weigen_digit_title2">自定义位数</string>
+    <string name="setting_weigen_pulse_w_title">脉冲宽度：</string>
+    <string name="setting_weigen_pulse_w_title2">脉冲宽度</string>
+    <string name="setting_weigen_pulse_interval_title">脉冲间隔：</string>
+    <string name="setting_weigen_pulse_interval_title2">脉冲间隔</string>
+    <string name="setting_weigen_content_title">韦根内容：</string>
+    <string name="setting_weigen_content_title2">韦根内容</string>
+    <string name="setting_weigen_output_title">韦根输出：</string>
+    <string name="setting_weigen_output_title2">韦根输出</string>
+
+    <string name="setting_weigen_content_cnumber">卡号</string>
+    <string name="setting_weigen_content_wnumber">工号</string>
+
+    <string name="setting_weigen_output_26">韦根26</string>
+    <string name="setting_weigen_output_34">韦根34</string>
+    <string name="setting_weigen_output_66">韦根36</string>
+
+    <string name="setting_version_title">版本设置</string>
+    <string name="setting_version_now_title">当前版本号：</string>
+    <string name="setting_version_new_title">最新版本号：</string>
+    <string name="setting_version_btn_budata">升级</string>
+
+    <string name="setting_check_super_error">请打开超级管理员设置</string>
+    <string name="setting_title_admincode_title">设置超级管理员密码</string>
+    <string name="setting_title_service_port_title">设置服务器端口</string>
+    <string name="setting_title_service_ip_title">设置服务器IP</string>
+
+    <string name="setting_net_mac_address_title">MAC地址：</string>
+
+    <string name="mqtt_error_no_ip_port">您还未配置mqtt服务器ip和端口</string>
+    <string name="mqtt_error_no_app_ip_port">您还未配置应用服务器ip和端口</string>
+
+
+    <string name="success_name_title">姓名：</string>
+    <string name="success_number_title">编号：</string>
+    <string name="success_time_title">考勤时间：</string>
+
+    <string name="register_title">注册设备</string>
+    <string name="register_device_imf">填写设备信息</string>
+    <string name="register_name">设备名称</string>
+    <string name="register_adderss">设备位置</string>
+    <string name="register_access">门禁设备</string>
+    <string name="register_attdence">考勤设备</string>
+
+    <string name="register_success">注册成功</string>
+    <string name="register_fail">注册失败</string>
+
+    <string name="register_name_empty">设备名称不能为空</string>
+    <string name="register_address_empty">设备地址不能为空</string>
+
+    <string name="register_has_connect">正在和别的设备通话</string>
+
+    <string name="main_location">选择位置</string>
+
+
+    <string name="query_head_id">用户id</string>
+    <string name="query_head_name">用户名称</string>
+    <string name="query_head_licence">卡号</string>
+    <string name="query_head_lock">锁定</string>
+    <string name="query_head_can_card">ic卡</string>
+    <string name="query_head_can_finger">指静脉</string>
+
+
+    <string name="query_keyword_title">关键字</string>
+    <string name="query_btn_search">查询</string>
+    <string name="query_title">查询记录</string>
+    <string name="query_btn_go">前往</string>
+
+    <string name="query_finger">指静脉</string>
+    <string name="query_ickard">ic卡</string>
+</resources>

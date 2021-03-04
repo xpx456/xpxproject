@@ -1,0 +1,108 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="56dip"
+    android:layout_centerHorizontal="true"
+    android:background="#ffffff" >
+
+    <intersky.mywidget.SwipeRevealLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        app:dragEdge="right"
+        app:mode="same_level">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="56dip">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/edit"
+                    android:layout_width="80dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:background="#c7c6cb"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="@string/button_edit"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/delete"
+                    android:layout_width="80dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:background="#ff5e3a"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="@string/button_delete"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dip">
+
+            <RelativeLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="56dip"
+                android:background="#ffffff">
+
+                <View
+                    android:id="@+id/shoujianxiangxin_img"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="66dip" />
+
+                <TextView
+                    android:id="@+id/shoujianxiang_text_xin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dip"
+                    android:layout_toRightOf="@+id/shoujianxiangxin_img"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:layout_toLeftOf="@+id/shoujianxiang_count_text_xin"
+                    android:textColor="#23272E"
+                    android:text=""
+                    android:layout_marginRight="5dp"
+                    android:ellipsize="end"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/shoujianxiang_count_text_xin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="1"
+                    android:textColor="#23272E"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+    </intersky.mywidget.SwipeRevealLayout>
+
+
+</RelativeLayout>

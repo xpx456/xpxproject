@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical|left"
+            android:text=""
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toRightOf="@+id/video"
+            android:textColor="@color/value_color"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:id="@+id/video"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/edeg_size"
+            />
+
+        <TextView
+            android:id="@+id/during_value"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/video"
+            android:layout_below="@+id/name_title"
+            android:text=""
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/head_title_color"
+            android:textSize="17sp" />
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

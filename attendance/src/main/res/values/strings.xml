@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">attendance</string>
+    <string name="keyword_savesuccess">保存成功</string>
+    <string name="keyword_workattdence">考勤</string>
+    <string name="keyword_newwattdence">新建考勤</string>
+    <string name="keyword_workattdenceset">考勤设置</string>
+    <string name="keyword_workattdencename">班次名称</string>
+    <string name="keyword_workattdencenamehit">输入班次名称</string>
+    <string name="keyword_workattdencenametime">考勤时间</string>
+    <string name="keyword_workattdencenametimestart">上班时间</string>
+    <string name="keyword_workattdencenametimeend">下班时间</string>
+    <string name="keyword_workattdencenametimeday">考勤日期</string>
+    <string name="keyword_workattdencenamepersion">考勤人员</string>
+    <string name="message_work_attdence_shang">上班打卡</string>
+    <string name="message_work_attdence_xia">下班打卡</string>
+    <string name="message_work_attdence_shang1">上班打卡</string>
+    <string name="message_work_attdence_xia1">下班打卡</string>
+    <string name="message_work_attdence_shang2">上班打卡</string>
+    <string name="message_work_attdence_xia2">下班打卡</string>
+    <string name="message_work_attdence_time">打卡位置</string>
+    <string name="xml_attdacne_title_top">的考勤</string>
+    <string name="keyword_signtime">签到时间</string>
+    <string name="attdence_update">确定要更新此次打卡吗</string>
+    <string name="attdence_update1">更新打卡</string>
+    <string name="keyword_mywattdence">我的考勤</string>
+    <string name="keyword_otherwattdence">成员考勤</string>
+    <string name="keyword_setwattdence">考勤设置</string>
+    <string name="keyword_set_attdance_person">考勤人员不能为空</string>
+    <string name="xml_attdance_new_title">新建考勤</string>
+    <string name="xml_attdance_day">办公日期设置</string>
+    <string name="xml_attdance_delete">删除该班次</string>
+    <string name="xml_attdance_delete_msg">您确定要删除该班次</string>
+    <string name="xml_workreport_deletehead">（点击头像删除）</string>
+
+    <string name="every_day">每天</string>
+    <string name="work_day">工作日</string>
+    <string name="attence_success">更新打卡成功</string>
+
+    <string name="on">上</string>
+    <string name="off">下</string>
+
+    <string name="xml_attdence_success">打卡成功</string>
+    <string name="xml_ban">班</string>
+    <string name="xml_word">辛苦？因为在走上坡路!</string>
+    <string name="xml_know">我知道了</string>
+
+    <string name="xml_address_updata">更新位置</string>
+    <string name="xml_address">地点：</string>
+</resources>

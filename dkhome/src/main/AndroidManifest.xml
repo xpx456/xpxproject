@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dk.dkhome">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+    <application
+        android:name="com.dk.dkhome.view.DkhomeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_round"
+        android:configChanges="uiMode"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        tools:replace="android:allowBackup"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/AppTheme">
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.dk.dkhome.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:configChanges="uiMode"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+
+
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:launchMode="singleTask">
+        </activity>
+
+
+        <activity
+            android:name=".view.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:launchMode="singleTask">
+        </activity>
+
+
+        <activity
+            android:name=".view.activity.HealthActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name=".view.activity.GoalActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name=".view.activity.NewPlanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="intersky.guide.view.activity.GuideActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+
+        <activity android:name=".view.activity.AboutActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
+        </activity>
+
+        <activity android:name="intersky.filetools.view.activity.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity android:name="intersky.select.view.activity.SelectActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity android:name=".view.activity.SportDetialActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            tools:ignore="LockedOrientationActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity android:name=".view.activity.ScheduleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity android:name=".view.activity.FoodActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity android:name=".view.activity.ChartActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity android:name=".view.activity.DeviceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity android:name=".view.activity.BigChartActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" >
+        </activity>
+
+        <activity
+            android:name=".view.activity.BigwinerScan2Activity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            ></activity>
+    </application>
+
+</manifest>

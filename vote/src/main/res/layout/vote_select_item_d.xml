@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:minHeight="56dp">
+
+        <RelativeLayout
+            android:id="@+id/titlelayer"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#ffffff">
+
+            <ImageView
+                android:id="@+id/image_cion"
+                android:layout_width="22dip"
+                android:layout_height="22dip"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dip"
+                android:src="@drawable/checkbox_unchecked" />
+
+            <TextView
+                android:id="@+id/item_id"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginLeft="16dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/image_cion"
+                android:gravity="center_vertical|left"
+                android:textColor="#23272E"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/item_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/item_count"
+                android:layout_marginTop="18dp"
+                android:layout_alignParentTop="true"
+                android:minHeight="21dp"
+                android:layout_toRightOf="@+id/item_id"
+                android:gravity="center_vertical|left"
+                android:textColor="#23272E"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/item_count"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="18dp"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical|right"
+                android:maxLines="1"
+                android:textColor="#23272E"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+        <intersky.mywidget.MyLinearLayout
+            android:id="@+id/image_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/titlelayer"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"></intersky.mywidget.MyLinearLayout>
+
+        <ProgressBar
+            android:id="@+id/roundProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dip"
+            android:progressDrawable="@drawable/shape_seekbar_bg1" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:background="#F5F6F6"></RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

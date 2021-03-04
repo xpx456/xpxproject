@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+    <RelativeLayout
+        android:id="@+id/aboutlayer"
+        android:layout_width="match_parent"
+        android:layout_height="68dip"
+        android:layout_marginTop="11dp"
+        android:background="#ffffff"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/abouticon"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:src="@drawable/aboutimg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_setting_about"
+            android:id="@+id/about"
+            android:textSize="16dip"
+            android:textColor="#23272E"
+            android:layout_toRightOf="@+id/abouticon"
+            android:gravity="center_vertical|left"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:singleLine="true" />
+
+
+        <ImageView
+            android:layout_width="44dip"
+            android:layout_height="44dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/skip"/>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/darkayer"
+        android:layout_width="match_parent"
+        android:layout_height="68dip"
+        android:background="#ffffff"
+        android:visibility="invisible"
+        android:layout_below="@+id/aboutlayer">
+
+        <ImageView
+            android:id="@+id/darkicon"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:src="@drawable/dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_setting_dark"
+            android:id="@+id/dark"
+            android:textSize="16sp"
+            android:textColor="#23272E"
+            android:layout_toRightOf="@+id/darkicon"
+            android:gravity="center_vertical|left"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:singleLine="true" />
+
+
+        <Switch
+            android:id="@+id/darkbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:switchMinWidth="20dp"
+            android:textOn="on"
+            android:textOff="off"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="52dip"
+        android:text="@string/button_word_logout"
+        android:id="@+id/exit"
+        android:textSize="16dip"
+        android:textColor="#1EA1F3"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_below="@+id/darkayer"
+        android:background="#ffffff"
+        android:singleLine="true" />
+
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="keyword_photoaddmax1">最多只能选择</string>
+    <string name="keyword_photoaddmax2">张图片</string>
+    <string name="cicle_delete_pic">您确定要删除此图片？</string>
+    <string name="cicle_delete_attachment">您确定要删除此附件？</string>
+    <string name="cicle_delete_pic_title">删除图片</string>
+
+    <string name="xml_mail_all">[全体人员]</string>
+    <string name="xml_workreport_norepy">暂无评论</string>
+    <string name="xml_workreport_replay">评论</string>
+    <string name="xml_workreport_replay_no">暂无评论</string>
+    <string name="select_contact_add">增加</string>
+    <string name="reply_mesage_send_content">请输入评价内容</string>
+    <string name="xml_reply_delete">您确定要删除此评论？</string>
+    <string name="menu_more">更多</string>
+    <string name="complaint_mesage_content">请输入举报原因</string>
+    <string name="complaint_mesage_receive">非常感谢您的举报，我们会人真审核处理的</string>
+
+    <string name="select_contact">选择联系人</string>
+    <string name="location_fail">定位失败</string>
+</resources>

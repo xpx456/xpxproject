@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_person_item"
+    android:layout_width="match_parent"
+    android:layout_height="45dip" >
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="330dp"
+        android:layout_height="45dip"
+        android:background="#ffffff" >
+
+        <View
+            android:id="@+id/item_mial_color"
+            android:layout_width="20dp"
+            android:layout_height="20dip"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            />
+
+        <View
+            android:id="@+id/item_mial_color2"
+            android:layout_width="30dp"
+            android:layout_height="30dip"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

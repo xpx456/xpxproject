@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cargo Unions</string>
+
+    <string name="head_title_login">"Login"</string>
+    <string name="login_phone_hit">Mobil</string>
+    <string name="regiest_phone_hit">input your mobil</string>
+    <string name="login_code_hit">Password</string>
+    <string name="login_check_code_hit">input your password</string>
+    <string name="area_title">Country/Region</string>
+    <string name="btn_login">Login</string>
+    <string name="head_title_register">"Register"</string>
+    <string name="login_xcode_hit">input verification code</string>
+    <string name="login_code_confirm_hit">confirm password</string>
+    <string name="btn_getcode">Get Verification Code </string>
+    <string name="btn_register">Quick Register</string>
+    <string name="btn_next">Next</string>
+    <string name="quicklogin">quick login</string>
+    <string name="forget_password_set">Get Password</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="forget_submit">Submit</string>
+    <string name="btn_setpassword">Set Password</string>
+    <string name="mobial_quick_regiest">Mobil Quick Register</string>
+    <string name="btn_regiest">Register</string>
+    <string name="confirm_code_send_to">verification code send to</string>
+    <string name="confirm_code_reget">Get Again</string>
+    <string name="mobil_error">illegal mobile number</string>
+    <string name="password_empty">password cannot be empty</string>
+    <string name="confirm_code_hit">please input verification code</string>
+    <string name="send_confirm_code">Send Code</string>
+    <string name="share_success">share successuly</string>
+
+    <string name="password_code_hit">input password</string>
+    <string name="password_code_confrim">confirm password</string>
+    <string name="password_submit">Submit</string>
+    <string name="password_vir">Verify Now</string>
+    <string name="password_title">new password</string>
+    <string name="password_change_title">Change Password</string>
+    <string name="password_msg">sms</string>
+    <string name="password_setp1">select form</string>
+    <string name="password_setp2">safe verify</string>
+    <string name="password_setp3">get password</string>
+    <string name="password_error">password format error</string>
+    <string name="password_error2">different password input</string>
+    <string name="passwordi_imf">密码长度8-32位，须包含数字、字母、符号至少2种或以上元素。</string>
+    <string name="password_old_code_hit">input old password</string>
+    <string name="password_new_code_hit">input new password</string>
+    <string name="password_new_code_confrim">input confirm password</string>
+    <string name="getpassword_title">Get Password</string>
+    <string name="phone_code">mobile or password error</string>
+
+    <string name="module_name_conversation">Messages</string>
+    <string name="module_name_contacts">Contacts</string>
+    <string name="module_name_source">Resources</string>
+    <string name="module_name_tools">Tools</string>
+    <string name="module_name_my">My</string>
+    <string name="module_name_sail">SAIL</string>
+
+    <string name="share_member">Business Card</string>
+    <string name="share_cmember">Business card</string>
+
+    <string name="conversation_all">All</string>
+    <string name="conversation_notice">Notice</string>
+    <string name="conversation_news">News</string>
+    <string name="conversation_meeting">CONF</string>
+    <string name="conversation_chat">Chat Records</string>
+    <string name="conversation_gong"></string>
+    <string name="conversation_ge"></string>
+    <string name="conversation_friend">Chat</string>
+    <string name="conversation_friend_add">Add Friend</string>
+    <string name="conversation_join">Sign Up</string>
+    <string name="conversation_joined">Signed Up</string>
+    <string name="conversation_un_joined">Not Signed</string>
+    <string name="conversation_un_signed">Not signed in</string>
+    <string name="conversation_meeting_detial_companytitle">Join Company</string>
+    <string name="conversation_meeting_detial_btn_request">Feedback</string>
+    <string name="conversation_meeting_detial_btn_attence">Sign In</string>
+    <string name="conversation_meeting_detial_btn_join">Join Now</string>
+
+    <string name="chat_download">downloding</string>
+
+    <string name="contacts_title">Contacts</string>
+    <string name="contacts_my">My Contacts</string>
+    <string name="contacts_head_city">City</string>
+    <string name="contacts_head_type">Type</string>
+    <string name="contacts_head_area">Area</string>
+    <string name="contacts_list_title">My Contacts</string>
+    <string name="contacts_talk">Chating</string>
+    <string name="contacts_confirm">Certified</string>
+    <string name="contacts_unconfirm">Not Certified</string>
+    <string name="contacts_chating">My Friends</string>
+    <string name="contacts_add_success">Add Success</string>
+    <string name="contacts_del_success">Cancle Success</string>
+    <string name="contacts_un_confrim">未认证</string>
+
+    <string name="chat_title_1">Chating With</string>
+    <string name="chat_title_2"></string>
+
+    <string name="company_country">Country:</string>
+    <string name="company_city">City:</string>
+    <string name="company_address">add.:</string>
+    <string name="company_phone">Phone:</string>
+    <string name="company_fax">Fax:</string>
+    <string name="company_mail">Email:</string>
+    <string name="company_web">Website:</string>
+    <string name="company_characteristic">Advantage:</string>
+    <string name="company_detial">Introduce</string>
+    <string name="company_contacts">Member</string>
+    <string name="company_marginamount">Compensation</string>
+    <string name="company_issail">SAIL会员</string>
+    <string name="company_nosail">非SAIL会员</string>
+    <string name="company_not_exist">The company is no longer in the system</string>
+
+    <string name="company_edit_title">Edit Company</string>
+    <string name="company_edit_logo">Company LOGO</string>
+    <string name="company_edit_bg">Company Background</string>
+    <string name="company_edit_sailno">Business License</string>
+    <string name="company_edit_sailno_hit">Please enter the company business license</string>
+    <string name="company_edit_taxno">Tax registration certificate</string>
+    <string name="company_edit_taxno_hit">Please enter company tax registration number</string>
+    <string name="company_edit_city">City</string>
+    <string name="company_edit_city_hit">Please select your city</string>
+    <string name="company_edit_provience">Province</string>
+    <string name="company_edit_provience_hit">Please select your province</string>
+    <string name="company_edit_tel">Phone</string>
+    <string name="company_edit_tel_hit">Please enter your company phone</string>
+    <string name="company_edit_fax">Fax</string>
+    <string name="company_edit_fax_hit">Please enter your company fax</string>
+    <string name="company_edit_mail">Email</string>
+    <string name="company_edit_mail_hit">Please enter company email</string>
+    <string name="company_edit_web">Company Website</string>
+    <string name="company_edit_web_hit">Please enter your company website</string>
+    <string name="company_edit_ename">English name of the company</string>
+    <string name="company_edit_ename_hit">Please enter your company name in English</string>
+    <string name="company_edit_name">Company Name</string>
+    <string name="company_edit_name_hit">Please enter your company name</string>
+    <string name="company_edit_address">Company Add.</string>
+    <string name="company_edit_address_hit">Please enter your company address</string>
+    <string name="company_edit_better">Company Advantages</string>
+    <string name="company_edit_better_hit">Please enter company advantage</string>
+    <string name="company_confirm_abuout">About Compensation</string>
+    <string name="company_select_provience_before">Please select a province first</string>
+
+    <string name="attdence_mysrc">My Resources</string>
+    <string name="attdence_wantsrc">Resources I Want</string>
+    <string name="attdence_title">Sign Up</string>
+    <string name="attdence_p_title">Participants</string>
+    <string name="attdence_p_attdenct_person">View Attendees</string>
+    <string name="attdenct_person_title">Participants</string>
+    <string name="attdence_p_one_chat">1 to 1 communication management</string>
+    <string name="attdence_candate">Reducible</string>
+    <string name="attdence_need">Need Dealt</string>
+    <string name="attdence_ready">Processed</string>
+    <string name="attdence_success">Sign In Succeeded</string>
+    <string name="attdence_txt1"></string>
+    <string name="attdence_txt2"></string>
+    <string name="attdence_txt3">Check-in Succeeded！</string>
+    <string name="attdence_txt4">Enter the site in order</string>
+    <string name="join_success">Successfully Registered</string>
+
+    <string name="tools_othre_title">Other Gadgets</string>
+    <string name="tools_main_fun1">Whole Cabinet</string>
+    <string name="tools_main_fun2">Special Cabinet</string>
+    <string name="tools_main_fun3">Air transport</string>
+    <string name="tools_main_fun4">LCL</string>
+    <string name="tools_main_fun5">Drag Card</string>
+    <string name="tools_main_fun6">SAIL</string>
+
+
+    <string name="my_edit_title">Edit Information</string>
+    <string name="my_photo_title">Change Cover</string>
+    <string name="my_btn_talk">Chat</string>
+    <string name="my_btn_add">Friends</string>
+    <string name="my_btn_del">Cancle</string>
+    <string name="my_imf_title_des">Profile:</string>
+    <string name="my_imf_title_type">Business Type:</string>
+    <string name="my_imf_title_area">Business Area:</string>
+    <string name="my_imf_title_company">Conpany:</string>
+    <string name="my_imf_title_address">Add.:</string>
+    <string name="my_imf_title_derty">Position:</string>
+    <string name="my_imf_title_mail">Email:</string>+
+    <string name="my_btn_detial">View Company</string>
+    <string name="my_btn_edit">Edit Company</string>
+    <string name="my_des">Profile:</string>
+    <string name="my_cycle">My Cycle</string>
+    <string name="my_history">History</string>
+    <string name="my_photo_select">Album</string>
+    <string name="my_take_photo">Photograph</string>
+    <string name="my_code">My QR Code</string>
+    <string name="my_code_imf">Scan the QR code and add my friends</string>
+    <string name="des_temp">nothing</string>
+
+    <string name="userinfo_title">Modify Personal Data</string>
+    <string name="userinfo_headimg">Head Icon</string>
+    <string name="userinfo_headimg_click">Change</string>
+    <string name="userinfo_mobil">Mobil</string>
+    <string name="userinfo_name">Name</string>
+    <string name="userinfo_mail">Email</string>
+    <string name="userinfo_sex">Sex</string>
+    <string name="userinfo_sex_hit">select your gender</string>
+    <string name="userinfo_sex_title">choose gender</string>
+    <string name="userinfo_city">City</string>
+    <string name="userinfo_city_hit">Please select city</string>
+    <string name="userinfo_type">Type</string>
+    <string name="userinfo_type_hit">Please select business type</string>
+    <string name="userinfo_area">Business Area</string>
+    <string name="userinfo_area_hit">Please select business area</string>
+    <string name="userinfo_position">Position</string>
+    <string name="userinfo_name_hit">Please fill in your name</string>
+    <string name="userinfo_mail_hit">Please fill in your email</string>
+    <string name="userinfo_position_hit">Please select your position</string>
+    <string name="userinfo_cname">Company Name</string>
+    <string name="userinfo_cname_hit">Please select your company name</string>
+    <string name="userinfo_caddress">Company Add.</string>
+    <string name="userinfo_caddress_hit">Please fill in your company address</string>
+    <string name="userinfo_memo">Personal Profile</string>
+    <string name="userinfo_memo_hit">Please fill in your profile</string>
+
+    <string name="history_title">History</string>
+    <string name="history_scan">Browse History</string>
+    <string name="history_active">Activity Record</string>
+
+    <string name="meeting_contact">Contact</string>
+    <string name="meeting_check">Attendees</string>
+    <string name="meeting_count">Number limit:</string>
+    <string name="meeting_other">Other Instructions:</string>
+    <string name="meeting_contractor">Co-Sponsor</string>
+    <string name="meeting_sponsor">Sponsor</string>
+    <string name="meeting_contacter_phone">Phone</string>
+    <string name="keword_carmal">a</string>
+    <string name="meeting_light">Light</string>
+    <string name="meeting_light_close">Close</string>
+    <string name="meeting_sign_fail">Sign in failed</string>
+    <string name="meeting_try_again">Please rescan the check-in</string>
+    <string name="meeting_zaoniao">Early bird ticket¥ </string>
+    <string name="meeting_putong">Ordinary ticket¥ </string>
+    <string name="meeting_can_date">Can Appointment</string>
+    <string name="meeting_un_accept">Not Access</string>
+    <string name="meeting_accept">Access</string>
+    <string name="meeting_refous">Rejected</string>
+    <string name="meeting_join_first">Please sign up first</string>
+    <string name="meeting_nu_start">The conference has not started and cannot be signed in</string>
+    <string name="meeting_signed">Signed in</string>
+    <string name="meeting_address_empty">Address is empty</string>
+    <string name="meeting_join_source">Please fill in the complete registration information</string>
+
+    <string name="source_position">Position</string>
+    <string name="source_ports">Port</string>
+    <string name="source_serices">Service</string>
+    <string name="source_routes">Route</string>
+    <string name="source_max">You can only select at most</string>
+    <string name="source_maxunit"></string>
+    <string name="source_type_error">Business type must be the same type</string>
+
+    <string name="search_result">Search Result</string>
+    <string name="search_his">Search Records</string>
+
+    <string name="histroy_title">History</string>
+    <string name="histroy_type_join">Conference Registration</string>
+    <string name="histroy_type_meeting">Conference</string>
+    <string name="histroy_type_new">News</string>
+    <string name="histroy_type_notice">Notice</string>
+
+    <string name="system_set_pic_fail">Failed to set picture</string>
+    <string name="system_no_login">You are not logged in yet. Please click log in</string>
+    <string name="system_exist">Press the back key again in 2 seconds to exit</string>
+    <string name="system_addall">All loaded</string>
+    <string name="system_select_country">Select Country/Region</string>
+    <string name="system_location">Locate to current city</string>
+
+    <string name="sail_title">International logistics supplier Alliance</string>
+    <string name="sail_des">SAIL Introduction</string>
+    <string name="sail_person">SAIL Member Check</string>
+    <string name="sail_person_title">SAIL Member</string>
+    <string name="sail_red_black">Red and black list</string>
+    <string name="sail_btn_join">Apply</string>
+    <string name="sail_access">Open</string>
+    <string name="sail_unaccess">Not opened</string>
+
+    <string name="sail_apply_title">Apply</string>
+    <string name="sail_apply_cname">Company Name</string>
+    <string name="sail_apply_cname_hit">Please fill in your company name</string>
+    <string name="sail_apply_caddress">Company Add.</string>
+    <string name="sail_apply_caddress_hit">Please fill in your company address</string>
+    <string name="sail_apply_contacts">Contacts</string>
+    <string name="sail_apply_contacts_hit">Please fill in your name</string>
+    <string name="sail_apply_mobil">Mobile</string>
+    <string name="sail_apply_mobil_hit">Please fill in your mobile number</string>
+    <string name="sail_apply_business">Main business</string>
+    <string name="sail_apply_business_hit">Please fill in your main business</string>
+
+    <string name="sail_bmember_title">SAIL Member</string>
+    <string name="sail_bmember_money">Compensation</string>
+    <string name="sail_bmember_sial">SAIL Member</string>
+
+    <string name="sail_complaint_request">Report of operating account</string>
+    <string name="sail_complaint_result">Findings</string>
+    <string name="sail_complaint_company">Complaint Enterprises</string>
+    <string name="sail_complaint_detial">Complaint details</string>
+
+    <string name="sail_error_member">You are not a member of sail and cannot use this function</string>
+
+    <string name="sail_des_title">SAIL Introduction</string>
+
+    <string name="setting_title">Setting</string>
+    <string name="setting_userinfo">Edit Profile</string>
+    <string name="setting_password">Chage Password</string>
+    <string name="setting_confirm">Authentication（Take a picture and upload a business card）</string>
+    <string name="setting_cleanchat">Clear chat</string>
+    <string name="setting_cleanchat_title">Clear chat?</string>
+    <string name="setting_cleanchat_success">All chat records have been cleared</string>
+    <string name="setting_exast_title">sign out Cargo Unions?</string>
+    <string name="setting_about">About Cargo Unions</string>
+    <string name="setting_exist">Sign Out</string>
+    <string name="csetting_upload_success">upload success</string>
+
+    <string name="setting_confirm_upload">Personal certification needs to upload a personal card</string>
+    <string name="setting_confirm_upload_btn">Upload data</string>
+
+    <string name="source_stute_open">正常</string>
+    <string name="source_stute_open_t">normal</string>
+    <string name="source_stute_close">closed</string>
+
+    <string name="source_type_title">Resources</string>
+    <string name="source_type_all">All Resources</string>
+    <string name="source_type_want">Demand Resources</string>
+    <string name="source_type_offer">Provide Resources</string>
+    <string name="source_btn_add">Add Resource</string>
+    <string name="source_btn_my">My Resources</string>
+    <string name="source_btn_collect">My Collection</string>
+    <string name="source_do_collect">Collection</string>
+    <string name="source_add_type_want">Publish Demand Resources</string>
+    <string name="source_add_type_offer">Publish Provided Resources</string>
+    <string name="source_collect_title">Collection Resources</string>
+    <string name="source_creat_title">Publish Resources</string>
+    <string name="source_edit_title">Edit Resources</string>
+    <string name="source_detial_title">Resources Detial</string>
+    <string name="source_btn_public">New Publish</string>
+    <string name="source_name_hit">Please fill in the title</string>
+    <string name="source_name">Title</string>
+    <string name="source_port">Port</string>
+
+    <string name="source_collect">Collection Resources</string>
+    <string name="source_collect_cancle">Cancle Collection</string>
+    <string name="source_port_hit">Please select port</string>
+    <string name="source_memo">Resource Description</string>
+    <string name="source_memo_hit">Please fill in your resource description</string>
+    <string name="source_delete_title">Are you sure you want to delete this record</string>
+    <string name="source_open_title">Are you sure you want to open this resource record? When on, other users will be visible.</string>
+    <string name="source_close_title">Are you sure you want to close this resource record? Other users will not be visible after closing.</string>
+    <string name="source_out">Expired</string>
+    <string name="source_start">Start Date</string>
+    <string name="source_mid">to</string>
+    <string name="source_end">Closing Date</string>
+    <string name="source_start2">Start</string>
+    <string name="source_end2">End</string>
+    <string name="source_public_time">Publish Time</string>
+    <string name="source_des">Describe:</string>
+    <string name="source_port2">Port:</string>
+    <string name="source_type">type:</string>
+    <string name="source_area">area:</string>
+    <string name="message_begin_end">End time cannot be earlier than start time</string>
+
+    <string name="abouthuohuo">About Cargo Unions</string>
+    <string name="webAddress">Official Website：www.sail.org.cn</string>
+    <string name="contectUs">Email：Elaine@sail.org.cn</string>
+    <string name="sinaWeibo">WeChat official account：大赢家物流</string>
+    <string name="tele">Phone：400-888-1727</string>
+    <string name="company"></string>
+    <string name="mail_error">Mailbox format error</string>
+    <string name="mail_hit">Please enter email address</string>
+
+    <string name="kick_word">Your account is logged in to another device, please log in again</string>
+
+    <string name="confirm_source_title">Resources can only be published after authentication</string>
+    <string name="confirm_source_meeting">Only after certification can you sign up</string>
+    <string name="confirm_setting">Click OK to go to authentication</string>
+
+    <string name="token_error">token error,please login again</string>
+</resources>

@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/equip_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="false"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|left"
+            android:text=""
+            android:textColor="#666666"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

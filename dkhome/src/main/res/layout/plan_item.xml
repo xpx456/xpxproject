@@ -1,0 +1,193 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color">
+
+    <intersky.mywidget.SwipeRevealLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dragEdge="right"
+        app:mode="same_level">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/btndelete"
+                    android:layout_width="60dp"
+                    android:layout_height="112dp"
+                    android:background="#ff5e3a">
+
+                    <RelativeLayout
+                        android:id="@+id/img"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/shape_bg_round_white">
+
+
+                        <ImageView
+                            android:id="@+id/deleteimg"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/delete" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img"
+                        android:layout_marginTop="10dp"
+                        android:background="#00000000"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="@string/button_delete"
+                        android:textColor="#ffffff"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/time_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/edeg_size"
+                    android:layout_marginTop="12dp"
+                    android:layout_toLeftOf="@+id/roundProgressBar"
+                    android:text="今天"
+                    android:textColor="@color/head_title_color"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/time_title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/edeg_size"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/roundProgressBar"
+                    android:text=""
+                    android:textColor="@color/value_color"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/alam"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/name_title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/edeg_size"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/alam2" />
+
+                <TextView
+                    android:id="@+id/during_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/name_title"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/alam"
+                    android:text=""
+                    android:textColor="@color/head_title_color"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/video"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/name_title"
+                    android:layout_marginLeft="@dimen/edeg_size"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@+id/during_value"
+                    android:src="@drawable/imgvideo2"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/video_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/name_title"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_toLeftOf="@+id/roundProgressBar"
+                    android:layout_toRightOf="@+id/video"
+                    android:text=""
+                    android:textColor="@color/head_title_color"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <intersky.mywidget.RoundProgressBar
+                    android:id="@+id/roundProgressBar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="19dip"
+                    android_custom:roundColor="#e5e5e5"
+                    android_custom:roundProgressColor="#5ac8fb"
+                    android_custom:roundWidth="4dip"
+                    android_custom:textColor="#333333"
+                    android_custom:textIsDisplayable="false"
+                    android_custom:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/persent"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="29dip"
+                    android:background="#00000000"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text=""
+                    android:textColor="#5ac8fb"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+    </intersky.mywidget.SwipeRevealLayout>
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/swipe"
+        android:background="#f5f5f5" />
+</RelativeLayout>
