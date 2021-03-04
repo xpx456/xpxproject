@@ -1,7 +1,0 @@
-<resources>
-    <string name="keyword_n_mess">平台推送</string>
-    <string name="new_message">您收到一条新的消息</string>
-
-    <string name="remove_conversation">删除后将清空该类型的该推送消息记录</string>
-    <string name="delete_conversation">删除该推送消息记录</string>
-</resources>

@@ -1,6 +1,0 @@
-<resources>
-    <string name="keyword_scan">扫描二维码</string>
-    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
-    <string name="promiss_error_camera">无法使用拍照功能,请检查相关权限</string>
-    <string name="safelogin">PC端账户安全登录确认</string>
-</resources>

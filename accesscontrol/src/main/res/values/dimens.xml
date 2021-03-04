@@ -1,5 +1,0 @@
-<resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name = "setting_title">20px</dimen>		<!-- 动态按钮默认字体大小 -->
-    <dimen name = "setting_value">18px</dimen>
-</resources>

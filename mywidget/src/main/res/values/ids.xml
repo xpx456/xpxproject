@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <item name="tv_remove" type="id" />
-    <item name="tv_up" type="id" />
-    <item name="tv_unread" type="id" />
-
-</resources>
